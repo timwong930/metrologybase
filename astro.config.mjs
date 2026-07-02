@@ -21,7 +21,17 @@ export default defineConfig({
       sidebar: [
         { label: 'Start here', link: '/' },
         { label: 'Metrology basics', link: '/metrology-basics/' },
-        { label: 'Pressure calibration', link: '/pressure-calibration/' },
+        {
+          label: 'Pressure calibration',
+          items: [
+            { label: 'Overview', link: '/pressure-calibration/' },
+            { label: 'Gauge vs absolute vs differential', link: '/pressure-calibration/gauge-vs-absolute-vs-differential/' },
+            { label: 'Pressure units', link: '/pressure-calibration/pressure-units/' },
+            { label: 'Full-scale accuracy', link: '/pressure-calibration/full-scale-accuracy/' },
+            { label: 'TUR basics', link: '/pressure-calibration/tur-basics/' },
+            { label: 'Choosing a pressure range', link: '/pressure-calibration/choosing-a-pressure-range/' },
+          ],
+        },
         { label: 'Temperature calibration', link: '/temperature-calibration/' },
         { label: 'Tools', link: '/tools/' },
         { label: 'Buying guides', link: '/buying-guides/' },

@@ -1,0 +1,151 @@
+---
+const units = [
+  { value: 'psi', label: 'psi' },
+  { value: 'bar', label: 'bar' },
+  { value: 'kPa', label: 'kPa' },
+  { value: 'Pa', label: 'Pa' },
+  { value: 'MPa', label: 'MPa' },
+  { value: 'inH2O', label: 'inH2O' },
+  { value: 'inHg', label: 'inHg' },
+  { value: 'mmHg', label: 'mmHg' },
+  { value: 'mbar', label: 'mbar' },
+];
+---
+
+<div class="converter" data-pressure-unit-converter>
+  <div class="grid">
+    <label>
+      <span>Value</span>
+      <input data-input type="number" step="any" value="1" inputmode="decimal" />
+    </label>
+    <label>
+      <span>From</span>
+      <select data-from>
+        {units.map((unit) => <option value={unit.value}>{unit.label}</option>)}
+      </select>
+    </label>
+    <label>
+      <span>To</span>
+      <select data-to>
+        {units.map((unit) => <option value={unit.value}>{unit.label}</option>)}
+      </select>
+    </label>
+  </div>
+
+  <div class="result" aria-live="polite">
+    <strong data-result>—</strong>
+    <p data-formula></p>
+  </div>
+</div>
+
+<script>
+  const unitToPa = {
+    psi: 6894.757293168,
+    bar: 100000,
+    kPa: 1000,
+    Pa: 1,
+    MPa: 1000000,
+    inH2O: 249.08891,
+    inHg: 3386.389,
+    mmHg: 133.322387415,
+    mbar: 100,
+  };
+
+  const formatValue = (value) => {
+    if (!Number.isFinite(value)) return '—';
+    if (value === 0) return '0';
+
+    const abs = Math.abs(value);
+    if (abs >= 1_000_000 || abs < 0.001) {
+      return value.toExponential(6).replace(/\.?(0+)e/, 'e');
+    }
+
+    return new Intl.NumberFormat(undefined, {
+      maximumSignificantDigits: 8,
+    }).format(value);
+  };
+
+  const root = document.querySelector('[data-pressure-unit-converter]');
+  if (root) {
+    const input = root.querySelector('[data-input]');
+    const from = root.querySelector('[data-from]');
+    const to = root.querySelector('[data-to]');
+    const result = root.querySelector('[data-result]');
+    const formula = root.querySelector('[data-formula]');
+
+    const update = () => {
+      const value = Number(input.value);
+      if (!Number.isFinite(value)) {
+        result.textContent = 'Enter a number';
+        formula.textContent = '';
+        return;
+      }
+
+      const fromUnit = from.value;
+      const toUnit = to.value;
+      const converted = (value * unitToPa[fromUnit]) / unitToPa[toUnit];
+
+      result.textContent = `${formatValue(converted)} ${toUnit}`;
+      formula.textContent = `${formatValue(value)} ${fromUnit} = ${formatValue(converted)} ${toUnit}`;
+    };
+
+    input.addEventListener('input', update);
+    from.addEventListener('change', update);
+    to.addEventListener('change', update);
+    update();
+  }
+</script>
+
+<style>
+  .converter {
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 0.9rem;
+    padding: 1rem;
+    background: var(--sl-color-black);
+    box-shadow: var(--sl-shadow-sm);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 0.9rem;
+  }
+
+  label {
+    display: grid;
+    gap: 0.35rem;
+    font-size: var(--sl-text-sm);
+  }
+
+  span {
+    font-weight: 600;
+  }
+
+  input,
+  select {
+    width: 100%;
+    border-radius: 0.6rem;
+    border: 1px solid var(--sl-color-gray-5);
+    padding: 0.65rem 0.75rem;
+    background: var(--sl-color-bg-nav);
+    color: var(--sl-color-text);
+  }
+
+  .result {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--sl-color-hairline);
+  }
+
+  .result strong {
+    display: block;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    line-height: 1.2;
+  }
+
+  .result p {
+    margin: 0.35rem 0 0;
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+  }
+</style>
