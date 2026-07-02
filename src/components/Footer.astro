@@ -1,0 +1,46 @@
+---
+import EditLink from 'virtual:starlight/components/EditLink';
+import LastUpdated from 'virtual:starlight/components/LastUpdated';
+import Pagination from 'virtual:starlight/components/Pagination';
+---
+
+<footer class="sl-flex mb-6">
+  <div class="meta sl-flex">
+    <EditLink />
+    <LastUpdated />
+  </div>
+  <Pagination />
+  <p class="disclaimer">
+    MetrologyBase is an independent educational resource and is not affiliated with any manufacturer, employer, or calibration laboratory. Content is for general educational purposes only.
+  </p>
+</footer>
+
+<style>
+  @layer starlight.core {
+    footer {
+      flex-direction: column;
+      gap: 1.25rem;
+      padding-top: 1.5rem;
+    }
+
+    .meta {
+      gap: 0.75rem 3rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: var(--sl-text-sm);
+      color: var(--sl-color-gray-3);
+    }
+
+    .meta > :global(p:only-child) {
+      margin-inline-start: auto;
+    }
+
+    .disclaimer {
+      margin: 0;
+      font-size: var(--sl-text-xs);
+      line-height: 1.6;
+      color: var(--sl-color-gray-4);
+      max-width: 70ch;
+    }
+  }
+</style>

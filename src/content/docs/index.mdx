@@ -1,40 +1,44 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: MetrologyBase
+description: A clean beginner-friendly guide to measurement, calibration, uncertainty, and selection basics.
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
-  image:
-    file: ../../assets/houston.webp
+  tagline: Learn metrology without the jargon.
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Start here
+      link: /metrology-basics/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Browse tools
+      link: /tools/
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## What you'll find here
+
+MetrologyBase is a simple educational reference for people who want the basics of measurement systems, calibration thinking, and practical buying decisions.
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="Metrology basics" icon="open-book">
+    Start with the core ideas: calibration vs verification vs adjustment, accuracy vs precision, and uncertainty.
+  </Card>
+  <Card title="Pressure calibration" icon="analytics">
+    Learn gauge, absolute, and differential pressure, plus the ideas behind TUR and selection.
+  </Card>
+  <Card title="Temperature calibration" icon="document">
+    See how sensors, stability, and setup choices affect measurement quality.
+  </Card>
+  <Card title="Tools" icon="setting">
+    Use small calculators and helpers for unit conversion, TUR checks, and spec comparisons.
+  </Card>
 </CardGrid>
+
+## Quick start
+
+1. Read [Metrology basics](/metrology-basics/) first.
+2. Move to [Pressure calibration](/pressure-calibration/) or [Temperature calibration](/temperature-calibration/).
+3. Check [Glossary](/glossary/) whenever a term feels fuzzy.
+4. Use [Tools](/tools/) to sanity-check a spec or estimate a fit.
+5. Review the [Disclaimer](/disclaimer/) before using any content in a real decision.
