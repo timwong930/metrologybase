@@ -1,17 +1,10 @@
 {
   "name": "metrologybase",
-  "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MetrologyBase — practical, independent metrology education and tools.",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/starlight": "^0.41.2",
-    "astro": "^7.0.2",
-    "sharp": "^0.34.5"
+    "dev": "npx serve .",
+    "build": "rm -rf dist && mkdir -p dist && cp index.html styles.css app.js dist/ && cp -R public/. dist/"
   }
 }
