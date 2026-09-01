@@ -5,6 +5,6 @@
   "description": "MetrologyBase — practical, independent metrology education and tools.",
   "scripts": {
     "dev": "npx serve .",
-    "build": "echo 'Static site — no build required'"
+    "build": "rm -rf dist && mkdir -p dist && cp index.html styles.css app.js dist/ && cp -R public/. dist/"
   }
 }
