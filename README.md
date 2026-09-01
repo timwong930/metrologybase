@@ -1,49 +1,28 @@
-# Starlight Starter Kit: Basics
+# MetrologyBase
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+MetrologyBase is an independent, practical metrology reference built to make calibration and measurement concepts easier to understand and use.
 
-```
-npm create astro@latest -- --template starlight
-```
+## Current direction
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The site is a custom static website rather than a documentation theme. The first revival release includes:
 
-## 🚀 Project Structure
+- Metrology fundamentals learning tracks
+- Pressure, temperature, and electrical topic areas
+- Interactive pressure-unit conversion
+- Interactive TUR calculation
+- Plain-language glossary content
+- Responsive custom design inspired by the Made Visibly visual system
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+## Development
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+The site is framework-free HTML, CSS, and JavaScript.
+
+```bash
+npm run build
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+The build outputs the deployable site to `dist/`. Vercel is configured through `vercel.json`.
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+## Disclaimer
 
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+MetrologyBase is educational. Always verify acceptance criteria, specifications, uncertainty requirements, and procedures against authoritative standards, accredited procedures, and official manufacturer documentation.
