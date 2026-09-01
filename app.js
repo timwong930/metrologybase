@@ -1,0 +1,8 @@
+const factors={psi:6894.757293168,bar:100000,kpa:1000,mpa:1000000,inh2o:249.08891};
+const labels={psi:'psi',bar:'bar',kpa:'kPa',mpa:'MPa',inh2o:'inH₂O'};
+function format(n){if(!Number.isFinite(n))return '—';const a=Math.abs(n);if(a===0)return '0';if(a>=1000)return n.toLocaleString(undefined,{maximumFractionDigits:3});if(a>=1)return n.toLocaleString(undefined,{maximumFractionDigits:5});return n.toPrecision(6)}
+function updatePressure(){const value=parseFloat(document.querySelector('#pressureValue')?.value);const from=document.querySelector('#pressureFrom')?.value;const to=document.querySelector('#pressureTo')?.value;const out=document.querySelector('#pressureResult');if(!out||!factors[from]||!factors[to])return;const result=value*factors[from]/factors[to];out.textContent=`${format(result)} ${labels[to]}`}
+function updateTur(){const dut=Math.abs(parseFloat(document.querySelector('#dutTolerance')?.value));const ref=Math.abs(parseFloat(document.querySelector('#refUncertainty')?.value));const out=document.querySelector('#turResult');const status=document.querySelector('#turStatus');if(!out||!status)return;if(!Number.isFinite(dut)||!Number.isFinite(ref)||ref===0){out.textContent='—';status.textContent='Enter valid non-zero values';return}const tur=dut/ref;out.textContent=`${tur.toFixed(2)} : 1`;status.textContent=tur>=4?'Common 4:1 target met':tur>=3?'Below 4:1 — review your requirement':'Low ratio — review measurement capability'}
+document.querySelectorAll('#pressureValue,#pressureFrom,#pressureTo').forEach(el=>el.addEventListener('input',updatePressure));
+document.querySelectorAll('#dutTolerance,#refUncertainty').forEach(el=>el.addEventListener('input',updateTur));
+updatePressure();updateTur();
