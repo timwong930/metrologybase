@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MetrologyBase — Practical metrology, explained clearly</title>
+  <meta name="description" content="Independent metrology education, calibration references, practical selection guides, and fast engineering calculators." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="MetrologyBase home">
+      <span class="brand-mark">M</span><span>MetrologyBase</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#learn">Learn</a>
+      <a href="#tools">Tools</a>
+      <a href="#glossary">Glossary</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="nav-cta" href="#tools">Open tools</a>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="eyebrow"><span></span> Independent metrology reference</div>
+      <div class="hero-grid">
+        <div>
+          <h1>Measurement is technical.<br><em>Learning it shouldn’t be.</em></h1>
+          <p class="hero-copy">Practical explanations, calculators, and reference guides for calibration, pressure, temperature, uncertainty, and instrument selection.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#learn">Start learning</a>
+            <a class="button ghost" href="#tools">Try the calculators →</a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Quick reference example">
+          <div class="panel-top"><span>QUICK REFERENCE</span><span class="status-dot">LIVE</span></div>
+          <div class="reference-row"><span>Calibration</span><strong>Comparison against a reference</strong></div>
+          <div class="reference-row"><span>Accuracy</span><strong>Closeness to the true value</strong></div>
+          <div class="reference-row"><span>Precision</span><strong>Repeatability of results</strong></div>
+          <div class="reference-row"><span>TUR</span><strong>Test uncertainty ratio</strong></div>
+          <a href="#glossary" class="panel-link">Browse the glossary →</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="signal-strip">
+      <div class="shell signal-grid">
+        <div><span>01</span><strong>Vendor-neutral</strong><p>Learn concepts without a sales pitch.</p></div>
+        <div><span>02</span><strong>Practical first</strong><p>Focused on what you actually need to know.</p></div>
+        <div><span>03</span><strong>Built for reference</strong><p>Fast answers when you’re mid-job or mid-call.</p></div>
+      </div>
+    </section>
+
+    <section class="section shell" id="learn">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span></span> Learn</div><h2>Build the fundamentals,<br>then go deeper.</h2></div>
+        <p>Start with the concepts that show up everywhere, then move into the measurement discipline you actually work with.</p>
+      </div>
+      <div class="track-grid">
+        <article class="track featured">
+          <div class="track-number">01</div>
+          <div class="track-icon">◎</div>
+          <h3>Metrology fundamentals</h3>
+          <p>Calibration vs. verification, accuracy vs. precision, traceability, uncertainty, tolerance, and why each matters.</p>
+          <div class="tag-row"><span>Beginner</span><span>8 concepts</span></div>
+        </article>
+        <article class="track">
+          <div class="track-number">02</div>
+          <div class="track-icon">↕</div>
+          <h3>Pressure</h3>
+          <p>Gauge, absolute, differential and vacuum pressure, reference standards, media, ranges, and calibration setups.</p>
+          <div class="tag-row"><span>Core</span><span>Pressure</span></div>
+        </article>
+        <article class="track">
+          <div class="track-number">03</div>
+          <div class="track-icon">°</div>
+          <h3>Temperature</h3>
+          <p>RTDs, thermocouples, dry blocks, baths, stability, uniformity, immersion depth, and practical sensor behavior.</p>
+          <div class="tag-row"><span>Core</span><span>Temperature</span></div>
+        </article>
+        <article class="track">
+          <div class="track-number">04</div>
+          <div class="track-icon">⌁</div>
+          <h3>Electrical</h3>
+          <p>Voltage, current, resistance, loop signals, sourcing vs. measuring, and how electrical calibration connects to process instruments.</p>
+          <div class="tag-row"><span>New</span><span>Electrical</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tools-section" id="tools">
+      <div class="shell">
+        <div class="section-heading light">
+          <div><div class="eyebrow light"><span></span> Tools</div><h2>Useful math,<br>without the spreadsheet.</h2></div>
+          <p>Fast educational calculators for common calibration and specification checks.</p>
+        </div>
+        <div class="tool-grid">
+          <article class="tool-card">
+            <div class="tool-label">PRESSURE CONVERTER</div>
+            <h3>Convert pressure units</h3>
+            <div class="form-row">
+              <label>Value<input id="pressureValue" type="number" value="100" step="any"></label>
+              <label>From<select id="pressureFrom"><option value="psi">psi</option><option value="bar">bar</option><option value="kpa">kPa</option><option value="mpa">MPa</option><option value="inh2o">inH₂O</option></select></label>
+              <label>To<select id="pressureTo"><option value="bar">bar</option><option value="psi">psi</option><option value="kpa">kPa</option><option value="mpa">MPa</option><option value="inh2o">inH₂O</option></select></label>
+            </div>
+            <div class="result"><span>RESULT</span><strong id="pressureResult">6.89476 bar</strong></div>
+          </article>
+          <article class="tool-card">
+            <div class="tool-label">TUR CALCULATOR</div>
+            <h3>Check test uncertainty ratio</h3>
+            <div class="form-row two">
+              <label>DUT tolerance<input id="dutTolerance" type="number" value="1" step="any"></label>
+              <label>Reference uncertainty<input id="refUncertainty" type="number" value="0.25" step="any"></label>
+            </div>
+            <div class="result"><span>RESULT</span><strong id="turResult">4.00 : 1</strong><small id="turStatus">Common 4:1 target met</small></div>
+          </article>
+        </div>
+        <p class="tool-note">Educational use only. Always follow your organization’s procedures, uncertainty budget, specifications, and applicable standards for acceptance decisions.</p>
+      </div>
+    </section>
+
+    <section class="section shell" id="glossary">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span></span> Quick glossary</div><h2>The terms people use<br>without explaining.</h2></div>
+        <p>Plain-language definitions designed to help you understand a conversation, specification, or procedure faster.</p>
+      </div>
+      <div class="glossary-grid">
+        <div class="term"><span>Accuracy</span><p>How close a measurement is to the accepted or true value.</p></div>
+        <div class="term"><span>Precision</span><p>How closely repeated measurements agree with one another.</p></div>
+        <div class="term"><span>Traceability</span><p>An unbroken, documented chain of calibrations back to recognized references.</p></div>
+        <div class="term"><span>Uncertainty</span><p>A quantified statement of doubt associated with a measurement result.</p></div>
+        <div class="term"><span>Tolerance</span><p>The allowed deviation from a specified nominal or target value.</p></div>
+        <div class="term"><span>TUR</span><p>The ratio between the DUT tolerance and the uncertainty of the calibration process.</p></div>
+      </div>
+    </section>
+
+    <section class="section shell about" id="about">
+      <div class="about-card">
+        <div><div class="eyebrow"><span></span> Why MetrologyBase</div><h2>A reference built for people who are still learning while doing the work.</h2></div>
+        <div><p>Metrology can become jargon-heavy very quickly. MetrologyBase is meant to bridge the gap between a textbook, a manufacturer manual, and the practical question you need answered right now.</p><p>Content is educational and independent. Product specifications and standards should always be verified against their official sources.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div><a class="brand footer-brand" href="#top"><span class="brand-mark">M</span><span>MetrologyBase</span></a><p>Practical metrology, explained clearly.</p></div>
+      <div class="footer-links"><a href="#learn">Learn</a><a href="#tools">Tools</a><a href="#glossary">Glossary</a><a href="#about">About</a></div>
+      <div class="footer-meta">Independent educational reference.<br>Not a substitute for accredited procedures or official specifications.</div>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
