@@ -3,30 +3,75 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Articles — MetrologyBase</title>
-  <meta name="description" content="Browse practical metrology articles and guides from MetrologyBase." />
+  <title>Articles & Guides — MetrologyBase</title>
+  <meta name="description" content="Browse practical, source-aware metrology articles on calibration, pressure, temperature, accuracy, uncertainty, and measurement terminology." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
   <style>
-    .page-hero{padding:88px 0 44px}
-    .page-hero h1{font:700 clamp(50px,7vw,86px)/.98 'Fraunces',serif;letter-spacing:-.045em;margin:0}
-    .page-hero p{max-width:760px;font-size:19px;color:#536176;margin:26px 0 0}
-    .article-library{padding:0 0 110px}
-    .article-list{max-width:920px;border-top:1px solid var(--line)}
-    .article-row{display:grid;grid-template-columns:150px 1fr auto;gap:28px;align-items:start;padding:30px 0;border-bottom:1px solid var(--line);color:inherit;text-decoration:none}
-    .article-row:hover h2{color:var(--blue)}
-    .article-meta{font:500 11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.07em;color:#6c788c;padding-top:7px}
-    .article-copy h2{font:600 31px/1.12 'Fraunces',serif;letter-spacing:-.025em;margin:0 0 10px;transition:.2s ease}
-    .article-copy p{margin:0;color:#5d697d;font-size:16px;max-width:690px}
-    .article-arrow{font-size:24px;color:var(--blue);line-height:1;padding-top:6px}
-    .empty-note{font-size:14px;color:#778195;margin-top:24px}
-    @media(max-width:700px){
-      .page-hero{padding:58px 0 34px}
-      .article-row{grid-template-columns:1fr auto;gap:16px}
-      .article-meta{grid-column:1/-1}
-      .article-copy h2{font-size:27px}
+    .articles-hero{padding:92px 0 62px}
+    .articles-hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:end}
+    .articles-hero h1{font:700 clamp(54px,7vw,92px)/.96 'Fraunces',serif;letter-spacing:-.05em;margin:0}
+    .articles-hero h1 em{font-style:normal;color:var(--blue)}
+    .articles-hero p{max-width:760px;font-size:19px;color:#536176;margin:28px 0 0}
+    .library-note{padding:24px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.45)}
+    .library-note-label{font:500 11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:#6c788c}
+    .library-note strong{display:block;font:600 25px 'Fraunces',serif;margin:9px 0 7px}
+    .library-note p{font-size:14px;margin:0;color:#667085}
+    .featured-wrap{padding:0 0 84px}
+    .featured-guide{display:grid;grid-template-columns:.72fr 1.28fr;gap:48px;padding:42px;border-radius:30px;background:var(--ink);color:white;text-decoration:none;box-shadow:var(--shadow);transition:.25s ease}
+    .featured-guide:hover{transform:translateY(-3px)}
+    .featured-kicker{font:500 11px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#91b8ff}
+    .featured-mark{font:600 68px/1 'Fraunces',serif;color:#fff;margin-top:30px}
+    .featured-copy h2{font:600 clamp(35px,4vw,54px)/1 'Fraunces',serif;letter-spacing:-.035em;margin:0 0 18px}
+    .featured-copy p{color:#c3cfde;font-size:17px;max-width:720px;margin:0 0 24px}
+    .featured-meta{display:flex;gap:8px;flex-wrap:wrap}
+    .featured-meta span{font:500 11px 'DM Mono',monospace;padding:7px 10px;border:1px solid rgba(255,255,255,.3);border-radius:999px;color:#dbe5f1}
+    .featured-link{display:inline-block;margin-top:24px;color:#8db7ff;font-weight:700}
+    .library-section{padding:92px 0;background:rgba(255,255,255,.3);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .library-heading{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;margin-bottom:34px}
+    .library-heading h2{font:600 clamp(38px,5vw,60px)/1 'Fraunces',serif;letter-spacing:-.04em;margin:0}
+    .library-count{font:500 12px 'DM Mono',monospace;color:#6f7b8e}
+    .library-controls{display:grid;grid-template-columns:minmax(240px,1fr) auto;gap:16px;align-items:center;margin-bottom:34px}
+    .search-wrap{position:relative}
+    .search-wrap input{width:100%;padding:14px 16px 14px 44px;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);font:500 15px 'DM Sans',sans-serif;outline:none}
+    .search-wrap input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,104,229,.1)}
+    .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#7c8798;font-size:17px}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .filter-button{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:9px 12px;font:600 12px 'DM Sans',sans-serif;cursor:pointer}
+    .filter-button:hover,.filter-button.active{background:var(--ink);border-color:var(--ink);color:white}
+    .article-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .article-card{display:block;position:relative;min-height:270px;padding:28px;background:var(--paper);border:1px solid var(--line);border-radius:22px;color:inherit;text-decoration:none;transition:.23s ease}
+    .article-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .article-card:hover h3{color:var(--blue)}
+    .article-card-meta{font:500 11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.07em;color:#6f7b8e}
+    .article-card h3{font:600 31px/1.08 'Fraunces',serif;letter-spacing:-.025em;margin:28px 0 12px;transition:.2s ease}
+    .article-card p{font-size:15px;color:#657287;margin:0 0 52px}
+    .article-card-footer{position:absolute;left:28px;right:28px;bottom:24px;display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;color:var(--blue)}
+    .empty-state{display:none;padding:34px;border:1px dashed #c8c3b8;border-radius:20px;color:#667085;background:rgba(255,255,255,.4)}
+    .principles{padding:100px 0}
+    .principles-heading{max-width:700px;margin-bottom:42px}
+    .principles-heading h2{font:600 clamp(38px,5vw,58px)/1 'Fraunces',serif;letter-spacing:-.04em;margin:0 0 18px}
+    .principles-heading p{color:#657287;font-size:17px;margin:0}
+    .principles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .principle{padding:28px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.42)}
+    .principle-number{font:500 11px 'DM Mono',monospace;color:var(--gold)}
+    .principle h3{font:600 25px 'Fraunces',serif;margin:22px 0 10px}
+    .principle p{font-size:14px;color:#687487;margin:0}
+    @media(max-width:850px){
+      .articles-hero-grid,.featured-guide{grid-template-columns:1fr;gap:34px}
+      .library-controls{grid-template-columns:1fr}
+      .filters{justify-content:flex-start}
+      .article-grid{grid-template-columns:1fr}
+      .principles-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:560px){
+      .articles-hero{padding:58px 0 42px}
+      .featured-guide{padding:28px}
+      .featured-mark{font-size:52px;margin-top:18px}
+      .library-section{padding:72px 0}
+      .library-heading{grid-template-columns:1fr;gap:10px}
     }
   </style>
 </head>
@@ -37,7 +82,7 @@
     </a>
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="/#learn">Learn</a>
-      <a href="/articles">Articles</a>
+      <a href="/articles" aria-current="page">Articles</a>
       <a href="/#tools">Tools</a>
       <a href="/#glossary">Glossary</a>
       <a href="/#about">About</a>
@@ -46,24 +91,107 @@
   </header>
 
   <main>
-    <section class="page-hero shell">
-      <div class="eyebrow"><span></span> Article library</div>
-      <h1>Articles</h1>
-      <p>Practical metrology explainers and reference guides collected in one place so you can review them without searching through the homepage.</p>
+    <section class="articles-hero shell">
+      <div class="articles-hero-grid">
+        <div>
+          <div class="eyebrow"><span></span> Article library</div>
+          <h1>Practical metrology,<br><em>explained clearly.</em></h1>
+          <p>Standalone guides for the specifications, terminology, calculations, and measurement concepts that are easy to misread when you are working from a datasheet or procedure.</p>
+        </div>
+        <aside class="library-note">
+          <div class="library-note-label">Library approach</div>
+          <strong>Useful before exhaustive.</strong>
+          <p>Each guide starts with the practical answer, then explains the terminology, math, and source context behind it.</p>
+        </aside>
+      </div>
     </section>
 
-    <section class="article-library shell">
-      <div class="article-list">
-        <a class="article-row" href="/full-scale-vs-full-span">
-          <div class="article-meta">Terminology · Accuracy</div>
-          <div class="article-copy">
-            <h2>Full scale vs. full span</h2>
-            <p>Understand the difference between full scale and full span, why “FS” can be ambiguous, and how the definition changes accuracy calculations.</p>
+    <section class="featured-wrap shell">
+      <a class="featured-guide" href="/full-scale-vs-full-span">
+        <div>
+          <div class="featured-kicker">Featured guide</div>
+          <div class="featured-mark">FS</div>
+        </div>
+        <div class="featured-copy">
+          <h2>Full scale vs. full span</h2>
+          <p>“FS” looks simple until two manufacturers use it differently. This guide explains full scale, full span, why they can produce different numbers, and how the definition changes a percentage-based accuracy calculation.</p>
+          <div class="featured-meta">
+            <span>Terminology</span>
+            <span>Accuracy</span>
+            <span>Pressure</span>
           </div>
-          <div class="article-arrow" aria-hidden="true">→</div>
-        </a>
+          <span class="featured-link">Read the guide →</span>
+        </div>
+      </a>
+    </section>
+
+    <section class="library-section">
+      <div class="shell">
+        <div class="library-heading">
+          <div>
+            <div class="eyebrow"><span></span> Browse</div>
+            <h2>All articles</h2>
+          </div>
+          <div class="library-count" id="articleCount">1 article</div>
+        </div>
+
+        <div class="library-controls">
+          <div class="search-wrap">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="articleSearch" type="search" placeholder="Search articles…" aria-label="Search articles" />
+          </div>
+          <div class="filters" aria-label="Filter articles by topic">
+            <button class="filter-button active" type="button" data-filter="all">All</button>
+            <button class="filter-button" type="button" data-filter="fundamentals">Fundamentals</button>
+            <button class="filter-button" type="button" data-filter="pressure">Pressure</button>
+            <button class="filter-button" type="button" data-filter="temperature">Temperature</button>
+            <button class="filter-button" type="button" data-filter="electrical">Electrical</button>
+          </div>
+        </div>
+
+        <div class="article-grid" id="articleGrid">
+          <a class="article-card" href="/full-scale-vs-full-span"
+             data-title="full scale vs full span fs accuracy terminology pressure"
+             data-tags="fundamentals pressure">
+            <div class="article-card-meta">Terminology · Accuracy</div>
+            <h3>Full scale vs. full span</h3>
+            <p>Learn why the two terms can mean the same thing on a zero-based range but produce different results on compound and suppressed-zero ranges.</p>
+            <div class="article-card-footer">
+              <span>Read article</span>
+              <span aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+          No articles match that search or topic yet. Try another filter or clear the search.
+        </div>
       </div>
-      <p class="empty-note">More guides can be added here as the library grows.</p>
+    </section>
+
+    <section class="principles shell">
+      <div class="principles-heading">
+        <div class="eyebrow"><span></span> Editorial approach</div>
+        <h2>What to expect from a MetrologyBase guide</h2>
+        <p>The goal is to make technical material easier to use without flattening the distinctions that actually matter.</p>
+      </div>
+      <div class="principles-grid">
+        <div class="principle">
+          <div class="principle-number">01</div>
+          <h3>Plain language first</h3>
+          <p>Start with the practical meaning, then introduce the formal terminology needed to read specifications correctly.</p>
+        </div>
+        <div class="principle">
+          <div class="principle-number">02</div>
+          <h3>Show the math</h3>
+          <p>When a specification changes a real-world result, the guide works through the numbers instead of stopping at a definition.</p>
+        </div>
+        <div class="principle">
+          <div class="principle-number">03</div>
+          <h3>Check the source</h3>
+          <p>Manufacturer conventions and standards can differ, so guides call out where definitions must be verified against the original source.</p>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -74,5 +202,41 @@
       <div class="footer-meta">Independent educational reference.<br>Not a substitute for accredited procedures or official specifications.</div>
     </div>
   </footer>
+
+  <script>
+    const searchInput = document.querySelector('#articleSearch');
+    const filterButtons = [...document.querySelectorAll('.filter-button')];
+    const cards = [...document.querySelectorAll('.article-card')];
+    const emptyState = document.querySelector('#emptyState');
+    const articleCount = document.querySelector('#articleCount');
+    let activeFilter = 'all';
+
+    function updateArticles(){
+      const query = (searchInput.value || '').trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const searchable = (card.dataset.title || '').toLowerCase();
+        const tags = (card.dataset.tags || '').toLowerCase().split(/\s+/);
+        const matchesSearch = !query || searchable.includes(query);
+        const matchesFilter = activeFilter === 'all' || tags.includes(activeFilter);
+        const show = matchesSearch && matchesFilter;
+        card.style.display = show ? '' : 'none';
+        if(show) visible++;
+      });
+
+      articleCount.textContent = visible + (visible === 1 ? ' article' : ' articles');
+      emptyState.style.display = visible ? 'none' : 'block';
+    }
+
+    searchInput.addEventListener('input', updateArticles);
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        activeFilter = button.dataset.filter;
+        filterButtons.forEach(item => item.classList.toggle('active', item === button));
+        updateArticles();
+      });
+    });
+  </script>
 </body>
 </html>
