@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>0.05% vs 0.1% Pressure Gauges: What’s the Difference? — MetrologyBase</title>
+  <meta name="description" content="Compare 0.05% and 0.1% pressure gauge accuracy, full-scale vs reading specifications, real error examples, calibration implications, and recommended digital pressure gauges from Additel, Crystal, WIKA, and Fluke." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .article-hero{padding:88px 0 46px}
+    .article-hero h1{font:700 clamp(48px,7vw,86px)/.98 'Fraunces',serif;letter-spacing:-.045em;margin:0;max-width:1100px}
+    .article-hero h1 em{font-style:normal;color:var(--blue)}
+    .article-lede{font-size:20px;color:#536176;max-width:900px;margin:28px 0 0}
+    .article-body{padding:0 0 110px}
+    .article-prose{max-width:960px}
+    .article-prose h2{font:600 38px/1.08 'Fraunces',serif;letter-spacing:-.025em;margin:64px 0 20px}
+    .article-prose h3{font:600 24px/1.2 'Fraunces',serif;margin:30px 0 10px}
+    .article-prose p,.article-prose li{font-size:17px;color:#526075}
+    .article-prose strong{color:var(--ink)}
+    .article-prose a{color:var(--blue);font-weight:600}
+    .summary-box{margin-top:40px;padding:26px 28px;background:var(--ink);color:white;border-radius:22px}
+    .summary-box span{font:500 11px 'DM Mono',monospace;letter-spacing:.08em;color:#91b8ff}
+    .summary-box p{margin:8px 0 0;color:#d6deea;font-size:18px}
+    .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0}
+    .metric-card{padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.45)}
+    .metric-card .label{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:#6f7b8e}
+    .metric-card strong{display:block;font:600 31px 'Fraunces',serif;margin:8px 0}
+    .metric-card p{font-size:14px;margin:0}
+    .table-wrap{overflow-x:auto;margin:24px 0}
+    .spec-table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line)}
+    .spec-table th,.spec-table td{padding:15px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+    .spec-table th{font:500 11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.05em;color:#68768b;background:#f0ece3}
+    .spec-table td{font-size:15px;color:#526075}
+    .spec-table tr:last-child td{border-bottom:0}
+    .callout{margin:28px 0;padding:22px 24px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.45)}
+    .callout.warning{border-color:#d4b56f;background:#faf3df}
+    .formula{font:600 22px/1.35 'DM Mono',monospace;color:var(--ink);padding:18px 20px;background:#f0ece3;border-radius:14px;margin:20px 0}
+    .calc{margin:32px 0;padding:28px;border:1px solid var(--line);border-radius:22px;background:var(--paper)}
+    .calc h3{margin:0 0 8px}
+    .calc p{font-size:14px;margin:0 0 20px}
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .calc label{display:block;font:600 12px 'DM Sans',sans-serif;color:#566277;margin-bottom:6px}
+    .calc input{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12px;background:white;font:500 15px 'DM Sans',sans-serif;color:var(--ink)}
+    .calc-results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .calc-result{padding:18px;border-radius:14px;background:#0d1b2f;color:white}
+    .calc-result span{font:500 10px 'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:#91b8ff}
+    .calc-result strong{display:block;color:white;font-size:22px;margin-top:7px}
+    .calc-note{font-size:12px!important;color:#7b8492!important;margin-top:12px!important}
+    .product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:26px 0}
+    .product-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--paper)}
+    .product-card img{display:block;width:100%;height:300px;object-fit:contain;background:white}
+    .product-copy{padding:22px}
+    .product-kicker{font:500 10px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+    .product-copy h3{margin:8px 0 10px}
+    .product-copy p{font-size:15px;margin:0 0 14px}
+    .product-copy ul{padding-left:18px;margin:0}
+    .product-copy li{font-size:14px;margin:6px 0}
+    .product-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .product-links a{font-size:13px}
+    .image-source{display:block;margin-top:12px;font-size:11px;color:#7a8493}
+    .recommendation{padding:26px;background:var(--ink);border-radius:22px;color:white;margin:28px 0}
+    .recommendation .eyeline{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:#91b8ff}
+    .recommendation h3{color:white;font-size:30px;margin:8px 0 10px}
+    .recommendation p{color:#d6deea;margin:0}
+    .source-list{padding-left:20px}
+    .source-list li{margin:12px 0}
+    .article-note{margin-top:54px;padding-top:20px;border-top:1px solid var(--line);font-size:13px!important;color:#7b8492!important}
+    @media(max-width:760px){
+      .article-hero{padding:58px 0 32px}
+      .article-lede{font-size:18px}
+      .metric-grid,.product-grid,.calc-results{grid-template-columns:1fr}
+      .calc-grid{grid-template-columns:1fr}
+      .article-prose h2{font-size:32px;margin-top:52px}
+      .product-card img{height:auto;max-height:320px}
+    }
+  </style>
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="MetrologyBase home">
+      <span class="brand-mark">M</span><span>MetrologyBase</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="/#learn">Learn</a>
+      <a href="/articles">Articles</a>
+      <a href="/#tools">Tools</a>
+      <a href="/products">What to Buy</a>
+      <a href="/#glossary">Glossary</a>
+      <a href="/#about">About</a>
+    </nav>
+    <a class="nav-cta" href="/articles">All articles</a>
+  </header>
+
+  <main>
+    <section class="article-hero shell">
+      <div class="eyebrow"><span></span> Pressure · Accuracy</div>
+      <h1>0.05% pressure gauge vs. 0.1%: <em>what is the actual difference?</em></h1>
+      <p class="article-lede">A 0.05% gauge is not automatically “twice as good” in every real-world situation. The accuracy basis — full scale, span, or reading — matters just as much as the percentage. Here is how to compare the specifications, calculate the real error, and choose a gauge that actually fits the job.</p>
+
+      <div class="summary-box">
+        <span>SHORT VERSION</span>
+        <p>If two gauges use the <strong>same range and the same accuracy basis</strong>, a 0.05% gauge permits half the error of a 0.1% gauge. But a <strong>0.1% of-reading</strong> gauge can outperform a <strong>0.05% full-scale</strong> gauge through much of the lower half of its range. Always compare the complete specification, not just the percentage printed in the brochure.</p>
+      </div>
+    </section>
+
+    <section class="article-body shell">
+      <article class="article-prose">
+        <h2>Start with the simplest comparison</h2>
+        <p>Assume two 0–1,000 psi gauges are both specified as a percentage of full scale.</p>
+
+        <div class="metric-grid">
+          <div class="metric-card">
+            <div class="label">0.05% of full scale</div>
+            <strong>±0.5 psi</strong>
+            <p>Maximum stated error anywhere across a 0–1,000 psi range.</p>
+          </div>
+          <div class="metric-card">
+            <div class="label">0.1% of full scale</div>
+            <strong>±1.0 psi</strong>
+            <p>Twice the maximum stated error on the same range.</p>
+          </div>
+          <div class="metric-card">
+            <div class="label">Difference</div>
+            <strong>2×</strong>
+            <p>When the basis and pressure range are identical, 0.05% is twice as accurate numerically.</p>
+          </div>
+        </div>
+
+        <div class="formula">Full-scale error = pressure range × accuracy %</div>
+
+        <p>For a 1,000 psi gauge, 0.05% FS is 1,000 × 0.0005 = 0.5 psi. A 0.1% FS gauge is 1,000 × 0.001 = 1.0 psi. That error limit stays the same at 100 psi, 500 psi, and 1,000 psi because the specification is tied to the range, not the reading.</p>
+
+        <h2>Where people get tripped up: % full scale vs. % of reading</h2>
+        <p>A percentage of reading behaves differently. Instead of calculating the error from the entire gauge range, you calculate it from the pressure being measured.</p>
+
+        <div class="formula">Of-reading error = current reading × accuracy %</div>
+
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Test point on a 1,000 psi gauge</th>
+                <th>0.05% FS</th>
+                <th>0.1% FS</th>
+                <th>0.1% of reading</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>1,000 psi</strong></td><td>±0.50 psi</td><td>±1.00 psi</td><td>±1.00 psi</td></tr>
+              <tr><td><strong>750 psi</strong></td><td>±0.50 psi</td><td>±1.00 psi</td><td>±0.75 psi</td></tr>
+              <tr><td><strong>500 psi</strong></td><td>±0.50 psi</td><td>±1.00 psi</td><td>±0.50 psi</td></tr>
+              <tr><td><strong>250 psi</strong></td><td>±0.50 psi</td><td>±1.00 psi</td><td>±0.25 psi</td></tr>
+              <tr><td><strong>100 psi</strong></td><td>±0.50 psi</td><td>±1.00 psi</td><td>±0.10 psi*</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="calc-note">*Pure mathematical comparison only. Real gauges often add a low-end floor or switch to an FS specification below a stated percentage of range. Use the manufacturer's full accuracy table.</p>
+
+        <div class="callout">
+          <strong>The crossover is 50% of range.</strong>
+          <p>For the simplified example above, 0.1% of reading and 0.05% of full scale are equal at 50% of range. Above 50%, 0.05% FS is tighter. Below 50%, 0.1% of reading is tighter. This is why “0.05 vs. 0.1” is incomplete without the basis.</p>
+        </div>
+
+        <h2>Try the numbers on your own range</h2>
+        <div class="calc" id="accuracyCalc">
+          <h3>Pressure gauge error calculator</h3>
+          <p>Enter the gauge range and the pressure where you care about the measurement. Results are idealized specification limits.</p>
+          <div class="calc-grid">
+            <div>
+              <label for="rangeInput">Full-scale range</label>
+              <input id="rangeInput" type="number" min="0" step="any" value="1000" />
+            </div>
+            <div>
+              <label for="readingInput">Test pressure / reading</label>
+              <input id="readingInput" type="number" min="0" step="any" value="250" />
+            </div>
+          </div>
+          <div class="calc-results">
+            <div class="calc-result"><span>0.05% FS</span><strong id="error005">±0.500</strong></div>
+            <div class="calc-result"><span>0.1% FS</span><strong id="error01fs">±1.000</strong></div>
+            <div class="calc-result"><span>0.1% reading</span><strong id="error01rd">±0.250</strong></div>
+          </div>
+          <p class="calc-note">Units follow whatever unit you enter for range and pressure — psi, bar, kPa, etc. This calculator does not include low-end floors, uncertainty, temperature effects, stability, resolution, or calibration uncertainty.</p>
+        </div>
+
+        <h2>When is 0.05% worth paying for?</h2>
+        <p><strong>0.05% is usually worth it when the gauge is functioning as a reference standard, when you are calibrating tighter-tolerance devices, or when your procedure needs more test uncertainty ratio headroom.</strong> It can also reduce the number of ranges needed when your workload spans several DUT classes.</p>
+        <p>If you are simply verifying a process gauge with a 1% or 1.6% accuracy class, a properly ranged 0.1% reference may already be more than adequate. Buying more accuracy than the uncertainty budget or procedure can use does not automatically improve the calibration.</p>
+
+        <div class="callout warning">
+          <strong>Accuracy is not the same thing as measurement uncertainty.</strong>
+          <p>A 0.05% accuracy specification can be one input to an uncertainty budget, but it is not automatically the expanded uncertainty of your calibration. Reference calibration uncertainty, resolution, repeatability, pressure generation, temperature, head height, media, hysteresis, and the DUT all matter.</p>
+        </div>
+
+        <h2>What does this mean for a 4:1 TUR?</h2>
+        <p>As a quick screening check only, a 0.05% FS reference aligns numerically with a 0.2% FS DUT at a 4:1 ratio, while a 0.1% FS reference aligns with a 0.4% FS DUT. Real calibration decisions should use the uncertainty required by your procedure or quality system rather than substituting the catalog accuracy number for a complete uncertainty analysis.</p>
+
+        <h2>Recommended pressure gauges</h2>
+        <p>These are the gauges I would shortlist for calibration and pressure-test work today. The goal is not to name a universal winner; it is to match accuracy basis, range, ruggedness, connectivity, and hazardous-area requirements to the work.</p>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="https://www.instrumart.com/assets/Additel-681A-Digital-Pressure-Gauge-Front.jpg"
+                 alt="Additel 681A digital pressure gauge"
+                 loading="lazy" />
+            <div class="product-copy">
+              <div class="product-kicker">Best overall flexibility</div>
+              <h3>Additel 681A</h3>
+              <p>The strongest all-around choice when you want multiple accuracy classes and a very wide pressure range in one product family.</p>
+              <ul>
+                <li>0.01%, 0.02%, or 0.05% FS versions; 0.1% of-reading version also available.</li>
+                <li>Ranges up to 60,000 psi (4,200 bar), depending on configuration.</li>
+                <li>Bluetooth, USB-C, RS-232, large display, IP67 housing, and optional logging.</li>
+                <li>Intrinsically safe 681AEx version available.</li>
+              </ul>
+              <div class="product-links">
+                <a href="https://additel.com/product-detail.html/681A-wireless-digital-pressure-gauge/" target="_blank" rel="noopener">Manufacturer specs →</a>
+              </div>
+              <span class="image-source">Photo source: Instrumart product listing.</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://www.ametekdistributor.com/-/media/ametekdistributor/download-links/cal/pressure/xp3i/xp3i-images/digital-pressure-gauge-xp3i-lower-hi-res.png?la=en&revision=fe8bd4e3-2e37-4c12-8e79-693a6c2c1992"
+                 alt="Crystal XP3i digital pressure gauge"
+                 loading="lazy" />
+            <div class="product-copy">
+              <div class="product-kicker">Best for wide turndown</div>
+              <h3>Crystal XP3i</h3>
+              <p>A particularly strong choice when you want an of-reading specification and often work well below the top of the gauge range.</p>
+              <ul>
+                <li>Standard spec transitions from 0.02% FS at the lower part of the range to 0.05% of reading above 40% of range.</li>
+                <li>Optional 0.05% FS and 0.02% FS versions.</li>
+                <li>Ranges to 15,000 psi, Bluetooth and USB-C connectivity.</li>
+                <li>Intrinsically safe and fully temperature compensated from -20 to 50 °C.</li>
+              </ul>
+              <div class="product-links">
+                <a href="https://www.ametekcalibration.com/products/pressure/digital-pressure-gauges/xp3i-digital-pressure-gauge" target="_blank" rel="noopener">Manufacturer specs →</a>
+              </div>
+              <span class="image-source">Photo source: AMETEK authorized distributor media library.</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://www.integralel.com/175-tm_thickbox_default/model-cpg1500-precision-digital-pressure-gauge.jpg"
+                 alt="WIKA CPG1500 precision digital pressure gauge"
+                 loading="lazy" />
+            <div class="product-copy">
+              <div class="product-kicker">Best configurable 0.1% / 0.05%</div>
+              <h3>WIKA CPG1500</h3>
+              <p>A clean choice when you want to stay in the same platform but choose between standard 0.1% of span and an optional 0.05% of span configuration.</p>
+              <ul>
+                <li>0.1% of span standard with optional 0.05% of span; some configurations support tighter options.</li>
+                <li>Ranges up to 15,000 psi on the current U.S. product page.</li>
+                <li>Integrated logger, up to 50 readings per second, and WIKA wireless communication.</li>
+                <li>Intrinsically safe version available.</li>
+              </ul>
+              <div class="product-links">
+                <a href="https://www.wika.com/en-us/cpg1500.WIKA" target="_blank" rel="noopener">Manufacturer specs →</a>
+              </div>
+              <span class="image-source">Photo source: Integral Electronics product listing.</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://www.tester.co.uk/media/catalog/product/cache/4e97ee541d2c2591d4b5b803c88d3d0b/f/l/fluke-700-pressure-gauges.jpg"
+                 alt="Fluke 700G precision pressure test gauge"
+                 loading="lazy" />
+            <div class="product-copy">
+              <div class="product-kicker">Best simple field reference</div>
+              <h3>Fluke 700G</h3>
+              <p>A straightforward and familiar field gauge when you specifically want a 0.05% FS reference without needing a more advanced touchscreen or software ecosystem.</p>
+              <ul>
+                <li>Many positive-pressure ranges are specified at ±0.05% FS.</li>
+                <li>Pressure coverage from low pressure to 10,000 psi across the series.</li>
+                <li>Rugged, portable format with internal measurement memory.</li>
+                <li>Check the exact model: the lowest ranges and vacuum portions can carry different accuracy specifications.</li>
+              </ul>
+              <div class="product-links">
+                <a href="https://www.fluke.com/en-us/product/calibration-tools/pressure-calibrators/fluke-700g" target="_blank" rel="noopener">Manufacturer specs →</a>
+              </div>
+              <span class="image-source">Photo source: Tester.co.uk product listing.</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="recommendation">
+          <div class="eyeline">Best overall pick</div>
+          <h3>Additel 681A</h3>
+          <p>If I were buying one platform for a calibration shop, the 681A would be my first look because it lets you choose 0.05% FS or a reading-based configuration, covers an unusually wide range of pressures, and combines field durability with Bluetooth, logging, and intrinsically safe options. If your work spends a lot of time below half of range, the Crystal XP3i is the more compelling alternative because its reading-based specification gives excellent turndown.</p>
+        </div>
+
+        <h2>Which accuracy should you buy?</h2>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr><th>Your use case</th><th>What I would choose</th><th>Why</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>General process checks</strong></td><td>0.1% can be enough</td><td>If the DUT is relatively loose and the reference is well ranged, extra accuracy may not change the result.</td></tr>
+              <tr><td><strong>Calibration reference</strong></td><td>Prefer 0.05% or better</td><td>More margin for uncertainty and TUR, especially as DUT tolerances get tighter.</td></tr>
+              <tr><td><strong>Wide pressure span with one gauge</strong></td><td>Consider % of reading</td><td>Reading-based accuracy can maintain much tighter absolute error as pressure drops.</td></tr>
+              <tr><td><strong>Mostly one fixed high-end test point</strong></td><td>0.05% FS is simple and strong</td><td>At the upper end of range, the tighter FS specification is easy to interpret and compare.</td></tr>
+              <tr><td><strong>Hazardous-area field work</strong></td><td>Choose the required Ex / IS version first</td><td>Safety certification is a hard requirement; then optimize accuracy, range, and features within that constraint.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Three things to check before ordering</h2>
+        <p><strong>1. Accuracy basis.</strong> Confirm whether the percentage is of full scale, span, reading, or a combination with a floor. <strong>2. Exact pressure range.</strong> A tighter percentage on an oversized range can still produce more absolute error than a looser percentage on a correctly sized range. <strong>3. The complete accuracy statement.</strong> Look for temperature compensation, stability period, vacuum behavior, low-end floors, resolution, and whether calibration data is included.</p>
+
+        <h2>Sources and manufacturer references</h2>
+        <ul class="source-list">
+          <li><a href="https://additel.com/product-detail.html/681A-wireless-digital-pressure-gauge/" target="_blank" rel="noopener">Additel — 681A Digital Pressure Gauge</a>, including accuracy options, pressure ranges, environmental ratings, connectivity, and logging.</li>
+          <li><a href="https://www.additel.com/download/datasheet/681A/681A_Digital_Pressure_Gauges.pdf" target="_blank" rel="noopener">Additel — 681A datasheet</a>, including the 0.1% of-reading specification and lower-range FS floor.</li>
+          <li><a href="https://www.ametekcalibration.com/products/pressure/digital-pressure-gauges/xp3i-digital-pressure-gauge" target="_blank" rel="noopener">AMETEK Crystal — XP3i Digital Pressure Gauge</a>.</li>
+          <li><a href="https://www.ametekcalibration.com/-/media/ametekcalibration/download_links/pressure/xp3i/digital-pressure-gauge-xp3i-datasheet-psi.pdf" target="_blank" rel="noopener">AMETEK Crystal — XP3i pressure gauge datasheet</a>, including the 0.02% FS / 0.05% of-reading transition.</li>
+          <li><a href="https://www.wika.com/en-us/cpg1500.WIKA" target="_blank" rel="noopener">WIKA — CPG1500 Precision Digital Pressure Gauge</a>, including 0.1% and optional 0.05% span specifications.</li>
+          <li><a href="https://www.fluke.com/en-us/product/calibration-tools/pressure-calibrators/fluke-700g" target="_blank" rel="noopener">Fluke — 700G Precision Pressure Gauge Calibrator</a>, including model-by-model accuracy ranges.</li>
+        </ul>
+
+        <p class="article-note">MetrologyBase is an independent educational reference. Product specifications can vary by pressure range, pressure type, ordering code, firmware, region, and revision. Always verify the exact manufacturer's current datasheet and your calibration procedure before purchasing or using a gauge as a reference standard.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div><a class="brand footer-brand" href="/"><span class="brand-mark">M</span><span>MetrologyBase</span></a><p>Practical tools and resources for calibration professionals.</p></div>
+      <div class="footer-links"><a href="/#learn">Learn</a><a href="/articles">Articles</a><a href="/#tools">Tools</a><a href="/products">What to Buy</a><a href="/#glossary">Glossary</a><a href="/#about">About</a></div>
+      <div class="footer-meta">Independent educational reference.<br>Not a substitute for accredited procedures or official specifications.</div>
+    </div>
+  </footer>
+
+  <script>
+    const rangeInput = document.querySelector('#rangeInput');
+    const readingInput = document.querySelector('#readingInput');
+    const error005 = document.querySelector('#error005');
+    const error01fs = document.querySelector('#error01fs');
+    const error01rd = document.querySelector('#error01rd');
+
+    function formatError(value){
+      if(!Number.isFinite(value)) return '—';
+      if(Math.abs(value) >= 100) return '±' + value.toFixed(1);
+      if(Math.abs(value) >= 10) return '±' + value.toFixed(2);
+      return '±' + value.toFixed(3);
+    }
+
+    function updateAccuracyCalc(){
+      const range = Number(rangeInput.value);
+      const reading = Number(readingInput.value);
+      error005.textContent = formatError(range * 0.0005);
+      error01fs.textContent = formatError(range * 0.001);
+      error01rd.textContent = formatError(reading * 0.001);
+    }
+
+    rangeInput.addEventListener('input', updateAccuracyCalc);
+    readingInput.addEventListener('input', updateAccuracyCalc);
+    updateAccuracyCalc();
+  </script>
+</body>
+</html>
