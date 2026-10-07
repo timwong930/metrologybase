@@ -8,21 +8,22 @@
 
   const originalImage = image.getAttribute("src") || "";
   const sourceUrl = sourceLink.getAttribute("href") || "";
+
   let sourceHost = "";
   try {
     sourceHost = new URL(sourceUrl).hostname.toLowerCase().replace(/^www\./, "");
   } catch {}
 
-  const params = new URLSearchParams({ source: sourceUrl, model });
-  const isWebsitePreview = /s\.wordpress\.com\/mshots/i.test(originalImage);
   const isAdditel = sourceHost === "additel.com" || sourceHost.endsWith(".additel.com");
+  const isWebsitePreview = /s\.wordpress\.com\/mshots/i.test(originalImage);
 
-  // Additel pages should always resolve the real device image from Additel's page.
-  // Never pass a screenshot/live-page preview as an image candidate.
-  if (!isWebsitePreview && !isAdditel && originalImage.startsWith("https://")) {
-    params.set("image", originalImage);
+  // Leave verified direct manufacturer images alone.
+  if (!isAdditel && !isWebsitePreview && originalImage) {
+    frame.classList.add("media-ready");
+    return;
   }
 
+  const params = new URLSearchParams({ source: sourceUrl, model });
   const proxied = "/api/product-image?" + params.toString();
 
   frame.classList.add("media-loading");
