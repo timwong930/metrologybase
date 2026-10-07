@@ -68,7 +68,7 @@ function urlFromFile(file) {
 function inferType(url,title) {
   if (url === '/') return 'Home';
   if (url === '/products' || url === '/pressure-gauges' || url === '/articles') return 'Directory';
-  if (url.startsWith('/pressure-gauges/')) return 'Product';
+  if (url.startsWith('/pressure-gauges/') || url.startsWith('/products/')) return 'Product';
   if (url === '/full-scale-vs-full-span') return 'Tool';
   if (/calculator/i.test(title)) return 'Tool';
   return 'Article';
