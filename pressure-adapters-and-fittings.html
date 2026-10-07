@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pressure Adapters & Fittings: Types, Threads, Seals & Uses — MetrologyBase</title>
+  <meta name="description" content="A practical guide to pressure adapters and fittings for calibration: NPT, BSPP, BSPT, SAE O-ring boss, tube fittings, face seals, cone-and-thread, quick connectors, sealing methods, and typical applications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .article-hero{padding:88px 0 46px}
+    .article-hero h1{font:700 clamp(48px,7vw,86px)/.98 'Fraunces',serif;letter-spacing:-.045em;margin:0;max-width:1080px}
+    .article-hero h1 em{font-style:normal;color:var(--blue)}
+    .article-lede{font-size:20px;color:#536176;max-width:900px;margin:28px 0 0}
+    .article-body{padding:0 0 110px}
+    .article-prose{max-width:920px}
+    .article-prose h2{font:600 38px/1.08 'Fraunces',serif;letter-spacing:-.025em;margin:64px 0 20px}
+    .article-prose h3{font:600 24px/1.2 'Fraunces',serif;margin:30px 0 10px}
+    .article-prose p,.article-prose li{font-size:17px;color:#526075}
+    .article-prose strong{color:var(--ink)}
+    .article-prose a{color:var(--blue);font-weight:600}
+    .summary-box{margin-top:40px;padding:26px 28px;background:var(--ink);color:white;border-radius:22px}
+    .summary-box span{font:500 11px 'DM Mono',monospace;letter-spacing:.08em;color:#91b8ff}
+    .summary-box p{margin:8px 0 0;color:#d6deea;font-size:18px}
+    .connection-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:26px 0}
+    .connection-card{padding:26px;background:var(--paper);border:1px solid var(--line);border-radius:20px}
+    .connection-card .label{font:500 11px 'DM Mono',monospace;color:var(--blue);letter-spacing:.07em;text-transform:uppercase}
+    .connection-card h3{margin:10px 0 9px}
+    .connection-card p{font-size:15px;margin:0}
+    .table-wrap{overflow-x:auto;margin:24px 0}
+    .spec-table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line)}
+    .spec-table th,.spec-table td{padding:15px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+    .spec-table th{font:500 11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.05em;color:#68768b;background:#f0ece3}
+    .spec-table td{font-size:15px;color:#526075}
+    .spec-table tr:last-child td{border-bottom:0}
+    .callout{margin:28px 0;padding:22px 24px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.45)}
+    .callout.warning{border-color:#d4b56f;background:#faf3df}
+    .seal-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}
+    .seal-chip{padding:18px;border-radius:16px;background:#0d1b2f;color:white}
+    .seal-chip span{display:block;font:500 10px 'DM Mono',monospace;letter-spacing:.07em;text-transform:uppercase;color:#91b8ff}
+    .seal-chip strong{display:block;margin-top:7px;font-size:15px;color:white}
+    .use-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0}
+    .use-card{padding:24px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.42)}
+    .use-card h3{margin:0 0 8px}
+    .use-card p{font-size:15px;margin:0}
+    .source-list{padding-left:20px}
+    .source-list li{margin:12px 0}
+    .article-note{margin-top:54px;padding-top:20px;border-top:1px solid var(--line);font-size:13px!important;color:#7b8492!important}
+    @media(max-width:700px){
+      .article-hero{padding:58px 0 32px}
+      .article-lede{font-size:18px}
+      .connection-grid,.use-grid{grid-template-columns:1fr}
+      .seal-strip{grid-template-columns:1fr 1fr}
+      .article-prose h2{font-size:32px;margin-top:52px}
+    }
+  </style>
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="MetrologyBase home">
+      <span class="brand-mark">M</span><span>MetrologyBase</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="/#learn">Learn</a>
+      <a href="/articles">Articles</a>
+      <a href="/#tools">Tools</a>
+      <a href="/products">What to Buy</a>
+      <a href="/#glossary">Glossary</a>
+      <a href="/#about">About</a>
+    </nav>
+    <a class="nav-cta" href="/articles">All articles</a>
+  </header>
+
+  <main>
+    <section class="article-hero shell">
+      <div class="eyebrow"><span></span> Pressure · Connections</div>
+      <h1>Pressure adapters & fittings: <em>what connects to what?</em></h1>
+      <p class="article-lede">Pressure calibration gets complicated quickly when the device under test, reference, pump, hose, and manifold all use different connections. This guide explains the thread families, sealing methods, adapter shapes, and specialty fittings you are most likely to encounter — plus where each is normally used.</p>
+      <div class="summary-box">
+        <span>SHORT VERSION</span>
+        <p>Do not choose a pressure fitting by thread diameter alone. Identify the <strong>thread standard</strong>, <strong>thread form</strong>, <strong>seal location</strong>, <strong>pressure rating</strong>, <strong>media compatibility</strong>, and <strong>male/female orientation</strong>. Similar-looking fittings can use completely different sealing methods and may not be interchangeable.</p>
+      </div>
+    </section>
+
+    <section class="article-body shell">
+      <article class="article-prose">
+        <h2>Start with the distinction: thread vs. seal</h2>
+        <p>The threads are not always the part that stops the pressure from leaking. In a tapered pipe connection such as NPT, the threaded interface contributes to the seal and normally requires thread sealant. In many straight-thread connections, the threads mainly provide mechanical holding force while an O-ring, washer, flare, ferrule, or metal gasket creates the actual pressure seal.</p>
+
+        <div class="seal-strip">
+          <div class="seal-chip"><span>Tapered pipe</span><strong>Thread + sealant</strong></div>
+          <div class="seal-chip"><span>Parallel pipe</span><strong>Washer / gasket</strong></div>
+          <div class="seal-chip"><span>Straight boss</span><strong>O-ring</strong></div>
+          <div class="seal-chip"><span>Tube / face seal</span><strong>Ferrule, flare or gasket</strong></div>
+        </div>
+
+        <p>This is why two fittings that seem to screw together can still be the wrong connection. The pitch, thread angle, taper, sealing surface, or required gasket may be different.</p>
+
+        <h2>The most common threaded pressure connections</h2>
+
+        <div class="connection-grid">
+          <div class="connection-card">
+            <div class="label">North America · Tapered</div>
+            <h3>NPT</h3>
+            <p>National Pipe Taper. Very common on pressure gauges, pumps, regulators, manifolds, transducers, and general industrial process equipment in the U.S. and Canada.</p>
+          </div>
+          <div class="connection-card">
+            <div class="label">International · Parallel</div>
+            <h3>BSPP / G</h3>
+            <p>British Standard Pipe Parallel, commonly marked with a G designation. Common on European and international instrumentation. The threads are straight and the seal is normally made by a washer or gasket.</p>
+          </div>
+          <div class="connection-card">
+            <div class="label">International · Tapered</div>
+            <h3>BSPT / R</h3>
+            <p>British Standard Pipe Taper. Similar in function to NPT but based on a different thread form. It is commonly associated with ISO 7 connections and should not be mixed with NPT.</p>
+          </div>
+          <div class="connection-card">
+            <div class="label">Hydraulic · Straight</div>
+            <h3>SAE straight thread / ORB</h3>
+            <p>Often called O-ring boss. Common in hydraulic systems. Straight threads provide the clamping force while an elastomer O-ring seals against the port geometry.</p>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Connection</th>
+                <th>Thread shape</th>
+                <th>Typical seal</th>
+                <th>Common places you see it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>NPT</strong></td>
+                <td>Tapered, 60° thread form</td>
+                <td>Thread sealant or PTFE tape appropriate for the service</td>
+                <td>U.S. gauges, pumps, regulators, transducers, manifolds and process piping</td>
+              </tr>
+              <tr>
+                <td><strong>BSPT / R</strong></td>
+                <td>Tapered, 55° Whitworth thread form</td>
+                <td>Thread sealant</td>
+                <td>International process and instrumentation systems</td>
+              </tr>
+              <tr>
+                <td><strong>BSPP / G</strong></td>
+                <td>Parallel, 55° Whitworth thread form</td>
+                <td>Sealing washer, bonded seal, O-ring or specified gasket geometry</td>
+                <td>European/international gauges, calibrators and process instruments</td>
+              </tr>
+              <tr>
+                <td><strong>SAE ORB</strong></td>
+                <td>Straight Unified thread</td>
+                <td>O-ring compressed at the port</td>
+                <td>Hydraulic equipment, mobile machinery and pressure components</td>
+              </tr>
+              <tr>
+                <td><strong>Metric straight thread</strong></td>
+                <td>Parallel metric thread</td>
+                <td>Depends on the port: O-ring, bonded seal, gasket or defined sealing face</td>
+                <td>European and Asian industrial equipment, hydraulic components and instrumentation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout warning">
+          <strong>Do not treat BSP and NPT as interchangeable.</strong>
+          <p>NPT uses a 60° thread form, while BSP pipe threads use a 55° form. Some nominal sizes can look close enough to start threading together, but that does not make them a correct pressure connection. Use the proper adapter instead.</p>
+        </div>
+
+        <h2>NPT: the common calibration workhorse</h2>
+        <p>NPT is one of the connections calibration technicians encounter most often in North America. Common pressure-gauge sizes include <strong>1/8 in., 1/4 in., and 1/2 in. NPT</strong>. Because NPT is tapered, tightening creates an interference fit between the male and female threads. A compatible sealing compound or tape is normally used to block the spiral leak path between the threads.</p>
+        <p>NPT works well for permanent and semi-permanent connections, but repeated assembly can be less convenient. Every disconnect may require inspection, cleaning, and resealing. Over-tightening can also damage threads or make future removal difficult.</p>
+
+        <h2>BSPP vs. BSPT: same family, very different behavior</h2>
+        <p><strong>BSPT</strong> is tapered and seals in a similar general manner to NPT: the threaded connection is tightened with a compatible sealant. <strong>BSPP</strong>, commonly designated <strong>G</strong>, is straight. A BSPP connection usually seals against a washer, gasket, bonded seal, or O-ring rather than by wedging the threads together.</p>
+        <p>This makes BSPP useful where an instrument is removed and reinstalled frequently, provided the correct sealing element and mating geometry are used. It also means that adding thread tape to a BSPP fitting does not convert the threads into the intended sealing surface.</p>
+
+        <h2>SAE O-ring boss: common in hydraulics</h2>
+        <p>SAE straight-thread O-ring boss connections are widely used on hydraulic ports. The male fitting carries an O-ring, and the straight thread pulls the fitting into the port so the O-ring can be compressed against the designed sealing surface.</p>
+        <p>For calibration work, you may encounter ORB when connecting to hydraulic components, pumps, test stands, mobile equipment, or devices removed from hydraulic systems. The O-ring material matters: pressure, temperature, hydraulic fluid, gas, and cleaning requirements can all affect compatibility.</p>
+
+        <h2>Tube fittings and compression fittings</h2>
+        <p>Instrumentation systems often use tube fittings instead of pipe threads between components. A compression-style tube fitting uses one or more ferrules to grip the tube and create the seal as the nut is tightened. These are common in test stands, gas panels, pressure-controller plumbing, laboratories, refineries, chemical plants, and other small-bore instrumentation systems.</p>
+        <p>Tube size is not the same thing as pipe-thread size. A <strong>1/4 in. tube fitting</strong> describes the outside diameter of the tubing it accepts; a <strong>1/4 in. NPT</strong> connection is a nominal pipe-thread size. They are different systems.</p>
+
+        <h2>Flared fittings: JIC and similar connections</h2>
+        <p>Flared fittings seal where a shaped tube flare contacts a matching seat. The threads pull the two sealing surfaces together rather than sealing the pressure themselves. <strong>37° JIC</strong> fittings are especially common in hydraulic equipment, test rigs, hose assemblies, and mobile machinery.</p>
+        <p>If a DUT comes from hydraulic equipment, a flare-to-NPT or flare-to-quick-connect adapter may be more appropriate than trying to replace the original fitting at the component.</p>
+
+        <h2>Face-seal fittings</h2>
+        <p>Face-seal connections move the sealing surface to the face of the fitting. Metal-gasket systems such as VCR-style fittings are common in semiconductor, high-purity gas, vacuum, and other applications where cleanliness, low trapped volume, and material compatibility are especially important. Other face-seal designs use elastomer O-rings.</p>
+        <p>These systems should be treated as complete connection standards, not merely as matching thread sizes. The gland, nut, gasket, surface finish, assembly procedure, and mating geometry all matter.</p>
+
+        <h2>Cone-and-thread fittings for high-pressure systems</h2>
+        <p>Specialized high-pressure systems often use cone-and-thread connections rather than ordinary pipe threads. They are common in high-pressure test stands, hydraulic systems, water-jet equipment, research systems, and other applications where the connection must repeatedly withstand elevated pressure.</p>
+        <p>The tubing end is prepared to the specified cone and thread geometry and assembled with the correct gland and collar. These systems require the matching tubing, preparation tools, components, and installation procedure for the connection family being used.</p>
+
+        <div class="callout warning">
+          <strong>High pressure changes the consequences of a fitting mistake.</strong>
+          <p>Never assume an adapter is safe because it physically fits. Verify the working-pressure rating of the fitting, hose, tubing, valve, gauge, seal, and every adapter in the stack. The usable system pressure is limited by the weakest rated component.</p>
+        </div>
+
+        <h2>Quick connectors: especially useful for calibration</h2>
+        <p>Pressure-calibration quick connectors are designed for setups that are connected and disconnected repeatedly. Depending on the design, they can let the technician attach common NPT, BSP, or metric DUT connections without repeatedly applying thread tape or using multiple wrenches.</p>
+        <p>This is useful on hand pumps, pressure controllers, manifolds, portable calibration kits, and production benches. Besides saving setup time, reducing repeated threaded make-and-break operations can reduce opportunities for damaged threads, contaminated sealant, or small setup leaks.</p>
+        <p>Quick-connect designs are not automatically interchangeable across manufacturers. Treat the quick-connect side as its own connection standard and verify the specific mating parts, pressure rating, seals, and media compatibility.</p>
+
+        <h2>Hoses, swivels and flexible connections</h2>
+        <p>A pressure hose lets the DUT sit in a convenient position instead of hanging directly from the pump or reference. This is often useful for large gauges, transmitters, awkward field installations, or calibrations where the instrument needs to remain upright.</p>
+        <p>A swivel or positionable adapter can solve a different problem: orientation. It allows the instrument or hose to be positioned without using the process thread itself as the final alignment adjustment.</p>
+        <p>At low pressure, hose volume can slow pressure changes and increase the amount of gas that must be compressed. At high pressure, hose construction and condition become major safety considerations. Always use a hose specifically rated for the intended pressure and media.</p>
+
+        <h2>Common adapter shapes and what they do</h2>
+        <div class="use-grid">
+          <div class="use-card">
+            <h3>Reducer / enlarger</h3>
+            <p>Changes connection size, such as 1/2 NPT to 1/4 NPT.</p>
+          </div>
+          <div class="use-card">
+            <h3>Thread adapter</h3>
+            <p>Changes standards, such as NPT to BSPP, metric, ORB, flare, or another connection family.</p>
+          </div>
+          <div class="use-card">
+            <h3>Coupling / union</h3>
+            <p>Joins two male ends or provides a removable in-line connection.</p>
+          </div>
+          <div class="use-card">
+            <h3>Nipple</h3>
+            <p>Provides a male connection on both ends, often used between two female ports.</p>
+          </div>
+          <div class="use-card">
+            <h3>Elbow</h3>
+            <p>Changes direction and can help with instrument clearance.</p>
+          </div>
+          <div class="use-card">
+            <h3>Tee</h3>
+            <p>Adds another branch for a reference, DUT, valve, or vent path.</p>
+          </div>
+          <div class="use-card">
+            <h3>Bulkhead fitting</h3>
+            <p>Passes a pressure line through a panel or enclosure wall.</p>
+          </div>
+          <div class="use-card">
+            <h3>Manifold</h3>
+            <p>Expands one pressure source into multiple controlled or shared test ports.</p>
+          </div>
+        </div>
+
+        <h2>Where different connections typically show up</h2>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr><th>Application</th><th>Connections you may encounter</th><th>What matters most</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pressure-gauge calibration</td>
+                <td>NPT, BSPP/G, BSPT, metric, quick connectors</td>
+                <td>Correct seal style, easy make/break, gauge orientation</td>
+              </tr>
+              <tr>
+                <td>Pressure transmitters</td>
+                <td>NPT, BSPP/G, metric, sanitary/process adapters</td>
+                <td>Process-port geometry, media compatibility, trapped volume</td>
+              </tr>
+              <tr>
+                <td>Hydraulic components</td>
+                <td>SAE ORB, JIC 37°, NPT, metric hydraulic ports</td>
+                <td>O-ring/flared seal condition and hydraulic-fluid compatibility</td>
+              </tr>
+              <tr>
+                <td>Bench calibration systems</td>
+                <td>Tube fittings, quick connectors, manifolds, NPT/BSP adapters</td>
+                <td>Repeatability, leak rate, dead volume, serviceability</td>
+              </tr>
+              <tr>
+                <td>High-purity / vacuum</td>
+                <td>Metal face seals, welded tube, specialized vacuum fittings</td>
+                <td>Cleanliness, leak integrity, trapped volume, materials</td>
+              </tr>
+              <tr>
+                <td>Specialized high pressure</td>
+                <td>Cone-and-thread, rated high-pressure tube systems</td>
+                <td>Exact component family, tubing preparation, pressure rating, safety</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>How to identify an unknown pressure connection</h2>
+        <ol>
+          <li><strong>Confirm whether it is tapered or straight.</strong> A visibly tapered male pipe thread immediately narrows the possibilities.</li>
+          <li><strong>Measure the outside diameter.</strong> Do not assume the nominal size equals the measured diameter.</li>
+          <li><strong>Measure thread pitch.</strong> Use a thread-pitch gauge when possible.</li>
+          <li><strong>Look at the sealing surface.</strong> Check for an O-ring groove, flat gasket face, internal cone, flare seat, ferrule, or metal-gasket face.</li>
+          <li><strong>Check markings and documentation.</strong> Manufacturer drawings are safer than identifying a connection by eye alone.</li>
+          <li><strong>Verify the mating standard.</strong> A fitting that starts threading into a port is not proof that the thread form is correct.</li>
+        </ol>
+
+        <h2>What to check before using an adapter</h2>
+        <ul>
+          <li><strong>Maximum working pressure:</strong> use the lowest-rated component in the entire setup as the limiting value.</li>
+          <li><strong>Pressure media:</strong> air, nitrogen, water, oil, hydraulic fluid, refrigerant, oxygen service, and aggressive chemicals can require different materials and cleaning.</li>
+          <li><strong>Body material:</strong> stainless steel, brass, plated steel, and specialty alloys have different compatibility and corrosion behavior.</li>
+          <li><strong>Seal material:</strong> O-rings and gaskets must be compatible with pressure, temperature, and media.</li>
+          <li><strong>Repeated connection cycles:</strong> frequent calibration work may favor a designed quick connector, union, or straight-thread sealing system over repeatedly remaking tapered threads.</li>
+          <li><strong>Internal volume:</strong> long hoses and large adapter stacks add volume, which can make pneumatic calibration slower and harder to stabilize.</li>
+          <li><strong>Contamination:</strong> hydraulic oil, water, thread sealant, and particles can damage or contaminate pressure controllers, piston gauges, sensors, and pneumatic standards.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Practical calibration rule:</strong>
+          <p>Use the fewest adapters needed to make a correct, rated connection. Every extra joint adds another possible leak path, another sealing surface, and more internal volume.</p>
+        </div>
+
+        <h2>A simple adapter kit for general pressure calibration</h2>
+        <p>A useful general-purpose kit is usually organized around the connection on your calibrator or hose, then adapts outward to the DUT. For a North American pressure bench, that often means a common base connection plus adapters for the NPT sizes you see most frequently, several BSPP/BSP sizes, a few common metric connections, and application-specific hydraulic fittings where needed.</p>
+        <p>The exact kit should follow your workload rather than trying to include every thread ever made. A calibration lab that works mainly on industrial gauges will need a very different set from a hydraulic service shop or semiconductor facility.</p>
+
+        <h2>Sources and further reading</h2>
+        <ul class="source-list">
+          <li><a href="https://georgia.swagelok.com/en/blog/basic-pipe-threads-explained-11-19" target="_blank" rel="noopener">Swagelok — Basic Pipe Threads Explained</a>, covering NPT, ISO/BSP tapered and parallel threads, sealing methods, and SAE straight-thread O-ring connections.</li>
+          <li><a href="https://blog.wika.com/us/knowhow/pressure-gauge-difference-between-npt-and-g-connections/" target="_blank" rel="noopener">WIKA — Difference Between NPT and G Connections</a>, with pressure-gauge examples, common sizes, thread angles, and sealing differences.</li>
+          <li><a href="https://www.fluke.com/en/learn/blog/calibration/best-pressure-calibrator-accessories" target="_blank" rel="noopener">Fluke Calibration — Pressure Calibration Accessories</a>, discussing hoses, fittings, repeated sealing, and field setup considerations.</li>
+          <li><a href="https://additel.com/product-detail.html/103-quick-connect-adapters/" target="_blank" rel="noopener">Additel — Pressure Hoses, Adapters and Fittings</a>, an example of hand-tight calibration adapters across NPT, BSP and metric connections.</li>
+          <li><a href="https://additel.com/product-detail.html/100-hose-test-kit/" target="_blank" rel="noopener">Additel — Hose Test Kit</a>, an example of rated calibration hoses and quick-connect configurations.</li>
+          <li><a href="https://products.swagelok.com/en/all-products/fittings/vcr-metal-gasket-face-seal-fittings/c/110" target="_blank" rel="noopener">Swagelok — VCR Metal Gasket Face Seal Fittings</a>, describing metal-to-metal face seals for high-purity systems from vacuum to positive pressure.</li>
+          <li><a href="https://ph.parker.com/us/en/high-pressure-adapters" target="_blank" rel="noopener">Parker Autoclave Engineers — High Pressure Adapters</a>, for specialized high-pressure adapter and cone-and-thread applications.</li>
+        </ul>
+
+        <p class="article-note">MetrologyBase is an independent educational reference. Connection standards, pressure ratings, assembly procedures, material compatibility, and sealing requirements vary by manufacturer and application. Always verify the exact fitting specification and procedure before pressurizing a system.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div><a class="brand footer-brand" href="/"><span class="brand-mark">M</span><span>MetrologyBase</span></a><p>Practical tools and resources for calibration professionals.</p></div>
+      <div class="footer-links"><a href="/#learn">Learn</a><a href="/articles">Articles</a><a href="/#tools">Tools</a><a href="/products">What to Buy</a><a href="/#glossary">Glossary</a><a href="/#about">About</a></div>
+      <div class="footer-meta">Independent educational reference.<br>Not a substitute for accredited procedures or official specifications.</div>
+    </div>
+  </footer>
+</body>
+</html>
