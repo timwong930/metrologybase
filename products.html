@@ -33,8 +33,8 @@
     .directory-heading h2{font:600 clamp(36px,5vw,54px)/1 'Fraunces',serif;letter-spacing:-.035em;margin:0}
     .result-count{font:500 12px 'DM Mono',monospace;color:#6f7b8e}
     .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .product-card{display:flex;flex-direction:column;min-height:365px;padding:26px;border:1px solid var(--line);border-radius:22px;background:var(--paper);transition:.23s ease}
-    .product-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .product-card{position:relative;display:flex;flex-direction:column;min-height:365px;padding:26px;border:1px solid var(--line);border-radius:22px;background:var(--paper);transition:.23s ease;cursor:pointer}
+    .product-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(23,104,229,.28);background:#fff}.product-card:focus-visible{outline:3px solid rgba(23,104,229,.25);outline-offset:3px}.product-card:active{transform:translateY(-1px)}
     .product-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
     .brand-pill{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;padding:7px 9px;border-radius:999px;background:#eef2f7;color:#4c5d74}
     .category-pill{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--blue)}
@@ -143,7 +143,7 @@
           <div class="product-type">Automatic handheld pressure calibrator</div>
           <p>Compact self-contained pressure generation and control with replaceable ranges and field-focused workflow features.</p>
           <div class="best-for"><span>Best for</span><strong>Technicians who want automated pressure generation in a handheld package.</strong></div>
-          <a class="product-link" href="https://www.additel.com/product-detail.html/760A-760S-automatic-handheld-pressure-calibrator/" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/additel-760a-760s">View details →</a><a class="product-link" href="https://www.additel.com/product-detail.html/760A-760S-automatic-handheld-pressure-calibrator/" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
 
         <article class="product-card" data-category="pressure" data-search="fluke 729 pro automatic pressure calibrator hart portable 1000 psi">
@@ -152,7 +152,7 @@
           <div class="product-type">Automatic pressure calibrator</div>
           <p>Portable automatic pressure generation with replaceable pressure modules, HART support, and documented test workflows.</p>
           <div class="best-for"><span>Best for</span><strong>Process technicians who want automated transmitter and pressure-device calibration.</strong></div>
-          <a class="product-link" href="https://www.fluke.com/en-us/product/calibration-tools/pressure-calibrators/729pro" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/fluke-729-pro">View details →</a><a class="product-link" href="https://www.fluke.com/en-us/product/calibration-tools/pressure-calibrators/729pro" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
 
         <article class="product-card" data-category="pressure" data-search="druck dpi 612 flex pressure calibrator portable pump manual pneumatic hydraulic baker hughes">
@@ -161,7 +161,7 @@
           <div class="product-type">Portable pressure calibrator family</div>
           <p>A modular portable platform spanning pneumatic and hydraulic applications with interchangeable pressure modules.</p>
           <div class="best-for"><span>Best for</span><strong>Field users who value an established manual-generation workflow and wide pressure coverage.</strong></div>
-          <a class="product-link" href="https://www.bakerhughes.com/druck/test-and-calibration-instrumentation/dpi-612" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/druck-dpi-612-flex">View details →</a><a class="product-link" href="https://www.bakerhughes.com/druck/test-and-calibration-instrumentation/dpi-612" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
 
         <article class="product-card" data-category="pressure" data-search="wika cpc6050 pressure controller modular benchtop laboratory production">
@@ -170,7 +170,7 @@
           <div class="product-type">Modular pressure controller</div>
           <p>Configurable benchtop pressure control intended for calibration labs, production environments, and higher-throughput workflows.</p>
           <div class="best-for"><span>Best for</span><strong>Labs that need automated bench pressure control rather than a handheld field instrument.</strong></div>
-          <a class="product-link" href="https://www.wika.com/en-us/cpc6050.WIKA" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/wika-cpc6050">View details →</a><a class="product-link" href="https://www.wika.com/en-us/cpc6050.WIKA" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
 
         <article class="product-card" data-category="process pressure temperature electrical" data-search="beamex mc6 advanced field calibrator communicator hart foundation fieldbus profibus pressure temperature electrical">
@@ -179,7 +179,7 @@
           <div class="product-type">Advanced field calibrator & communicator</div>
           <p>Multifunction field platform for pressure, temperature, and electrical calibration with documenting and fieldbus communication capabilities.</p>
           <div class="best-for"><span>Best for</span><strong>Plants standardizing on a high-end documenting calibrator and digital calibration workflow.</strong></div>
-          <a class="product-link" href="https://www.beamex.com/us/calibrators/beamex-mc6/" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/beamex-mc6">View details →</a><a class="product-link" href="https://www.beamex.com/us/calibrators/beamex-mc6/" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
 
         <article class="product-card" data-category="process temperature electrical pressure" data-search="fluke 754 documenting process calibrator hart loop pressure temperature">
@@ -188,7 +188,7 @@
           <div class="product-type">Documenting process calibrator with HART</div>
           <p>A long-established documenting calibrator for process signals, HART transmitters, temperature work, and pressure when paired with modules.</p>
           <div class="best-for"><span>Best for</span><strong>Industrial teams already invested in Fluke process-calibration workflows.</strong></div>
-          <a class="product-link" href="https://www.fluke.com/en-us/product/calibration-tools/multifunction-calibrators/fluke-754" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/fluke-754">View details →</a><a class="product-link" href="https://www.fluke.com/en-us/product/calibration-tools/multifunction-calibrators/fluke-754" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
 
         <article class="product-card" data-category="process pressure temperature electrical" data-search="additel 227 multifunction process calibrator hart pressure temperature electrical">
@@ -197,7 +197,7 @@
           <div class="product-type">Multifunction process calibrator</div>
           <p>Portable multifunction platform for pressure, temperature, and electrical signals, with models supporting integrated HART communication.</p>
           <div class="best-for"><span>Best for</span><strong>Field technicians who want a modern touchscreen multifunction calibrator.</strong></div>
-          <a class="product-link" href="https://www.additel.com/product-detail.html/227-documenting-multifunction-documenting-process-calibrator/" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/additel-227">View details →</a><a class="product-link" href="https://www.additel.com/product-detail.html/227-documenting-multifunction-documenting-process-calibrator/" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
 
         <article class="product-card" data-category="temperature" data-search="fluke 9144 field metrology well temperature calibrator dry block rtd thermocouple">
@@ -206,7 +206,7 @@
           <div class="product-type">Portable high-temperature metrology well</div>
           <p>A field-oriented temperature source with process versions that add sensor readout, loop power, automation, and documentation.</p>
           <div class="best-for"><span>Best for</span><strong>High-temperature field calibration where metrology performance matters more than minimum cost.</strong></div>
-          <a class="product-link" href="https://www.fluke.com/en-us/product/calibration-tools/temperature-calibrators/fluke-calibration-9144" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/fluke-9144-metrology-well">View details →</a><a class="product-link" href="https://www.fluke.com/en-us/product/calibration-tools/temperature-calibrators/fluke-calibration-9144" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
 
         <article class="product-card" data-category="temperature" data-search="isotech fast-cal dry block temperature calibrator portable low medium high">
@@ -215,7 +215,7 @@
           <div class="product-type">Portable dry-block calibrator family</div>
           <p>A portable dry-block family covering low, medium, and high temperature work with basic and reference-enabled configurations.</p>
           <div class="best-for"><span>Best for</span><strong>Portable sensor checks and industrial temperature calibration across multiple ranges.</strong></div>
-          <a class="product-link" href="https://isotech.co.uk/industrial-calibration/fast-calibrators/" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/isotech-fast-cal">View details →</a><a class="product-link" href="https://isotech.co.uk/industrial-calibration/fast-calibrators/" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
 
         <article class="product-card" data-category="electrical" data-search="fluke 87v industrial multimeter true rms dmm field troubleshooting">
@@ -224,7 +224,7 @@
           <div class="product-type">Industrial true-RMS digital multimeter</div>
           <p>A rugged general-purpose industrial meter for field troubleshooting and everyday electrical measurement.</p>
           <div class="best-for"><span>Best for</span><strong>Technicians who need a dependable field DMM — not a laboratory reference standard.</strong></div>
-          <a class="product-link" href="https://www.fluke.com/en-us/product/electrical-testing/digital-multimeters/fluke-87v" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/fluke-87v">View details →</a><a class="product-link" href="https://www.fluke.com/en-us/product/electrical-testing/digital-multimeters/fluke-87v" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
 
         <article class="product-card" data-category="electrical" data-search="keysight 34465a 6.5 digit truevolt bench digital multimeter dmm laboratory">
@@ -233,7 +233,7 @@
           <div class="product-type">6½-digit bench digital multimeter</div>
           <p>A higher-resolution bench DMM with fast reading capability, data logging, graphical analysis, and automation interfaces.</p>
           <div class="best-for"><span>Best for</span><strong>Bench measurement, lab automation, and applications that need more resolution than a handheld DMM.</strong></div>
-          <a class="product-link" href="https://www.keysight.com/us/en/product/34465A/digital-multimeter-6-5-digit-truevolt-dmm.html" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/keysight-34465a">View details →</a><a class="product-link" href="https://www.keysight.com/us/en/product/34465A/digital-multimeter-6-5-digit-truevolt-dmm.html" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
 
         <article class="product-card" data-category="dimensional" data-search="mitutoyo absolute digimatic caliper series 500 digital caliper dimensional inspection">
@@ -242,7 +242,7 @@
           <div class="product-type">Series 500 digital caliper</div>
           <p>A widely used digital-caliper family for outside, inside, depth, and step measurements with multiple sizes and output options.</p>
           <div class="best-for"><span>Best for</span><strong>General dimensional inspection when you want a proven professional caliper platform.</strong></div>
-          <a class="product-link" href="https://dev.pim.mitutoyo.com/products/small-tool-instruments-and-data-management/calipers/digimatic-calipers/absolute-digimatic-caliper/" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/mitutoyo-absolute-digimatic">View details →</a><a class="product-link" href="https://dev.pim.mitutoyo.com/products/small-tool-instruments-and-data-management/calipers/digimatic-calipers/absolute-digimatic-caliper/" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
 
         <article class="product-card" data-category="dimensional" data-search="starrett 798 electronic caliper ip67 digital dimensional inspection machinist">
@@ -251,7 +251,7 @@
           <div class="product-type">IP67 electronic caliper family</div>
           <p>A shop-focused electronic caliper family with coolant and dust protection, multiple sizes, and data-output options.</p>
           <div class="best-for"><span>Best for</span><strong>Machine-shop environments where IP67 protection and traditional inspection ergonomics matter.</strong></div>
-          <a class="product-link" href="https://www.starrett.com/products/precision-measuring-tools/precision-hand-tools/slide-calipers/electronic-calipers" target="_blank" rel="noopener">Official product page →</a>
+          <div class="product-actions"><a class="detail-link" href="/products/starrett-798">View details →</a><a class="product-link" href="https://www.starrett.com/products/precision-measuring-tools/precision-hand-tools/slide-calipers/electronic-calipers" target="_blank" rel="noopener">Official page ↗</a></div>
         </article>
       </div>
 
@@ -289,6 +289,29 @@
   <script>
     const cards=[...document.querySelectorAll('.product-card')];
     const buttons=[...document.querySelectorAll('.filter-button')];
+
+    cards.forEach(card=>{
+      const detailLink=card.querySelector('.detail-link');
+      if(!detailLink) return;
+      const href=detailLink.getAttribute('href');
+      card.dataset.href=href;
+      card.setAttribute('role','link');
+      card.setAttribute('tabindex','0');
+      card.setAttribute('aria-label','Open '+(card.querySelector('h3')?.textContent||'product')+' details');
+
+      card.addEventListener('click',event=>{
+        if(event.target.closest('a,button,input,select,textarea,label')) return;
+        window.location.href=href;
+      });
+
+      card.addEventListener('keydown',event=>{
+        if(event.target!==card) return;
+        if(event.key==='Enter'||event.key===' '){
+          event.preventDefault();
+          window.location.href=href;
+        }
+      });
+    });
     const search=document.querySelector('#productSearch');
     const count=document.querySelector('#productCount');
     const empty=document.querySelector('#emptyState');
