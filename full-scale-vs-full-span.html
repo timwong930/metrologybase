@@ -44,10 +44,33 @@
     .source-list{padding-left:20px}
     .source-list li{margin:12px 0}
     .article-note{margin-top:54px;padding-top:20px;border-top:1px solid var(--line);font-size:13px!important;color:#7b8492!important}
+    .range-calculator{margin:30px 0;padding:28px;border:1px solid var(--line);border-radius:24px;background:var(--paper);box-shadow:var(--shadow)}
+    .range-calculator .calc-kicker{font:500 11px 'DM Mono',monospace;color:var(--blue);letter-spacing:.07em;text-transform:uppercase}
+    .range-calculator h3{margin:8px 0 8px;font-size:28px}
+    .range-calculator>p{margin:0 0 22px;font-size:15px;color:#667085}
+    .range-inputs{display:grid;grid-template-columns:1fr 1fr .75fr .9fr;gap:12px}
+    .range-inputs label{font:500 11px 'DM Mono',monospace;color:#6f7b8e;text-transform:uppercase;letter-spacing:.05em}
+    .range-inputs input{width:100%;margin-top:8px;padding:13px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font:600 15px 'DM Sans',sans-serif;outline:none}
+    .range-inputs input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,104,229,.1)}
+    .range-results{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+    .range-result{padding:18px;border:1px solid var(--line);border-radius:16px;background:#faf7f0}
+    .range-result span{display:block;font:500 10px 'DM Mono',monospace;color:#6f7b8e;letter-spacing:.06em;text-transform:uppercase}
+    .range-result strong{display:block;margin-top:5px;font-size:24px;color:var(--ink)}
+    .range-result.primary{background:var(--ink);border-color:var(--ink)}
+    .range-result.primary span{color:#91b8ff}
+    .range-result.primary strong{color:#fff}
+    .accuracy-compare{margin-top:14px;padding:18px;border-radius:16px;background:#edf3fd;border:1px solid #d5e2f7}
+    .accuracy-compare .compare-title{font:500 10px 'DM Mono',monospace;color:#54709a;letter-spacing:.06em;text-transform:uppercase}
+    .accuracy-values{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+    .accuracy-values div{font-size:14px;color:#5c6b80}
+    .accuracy-values strong{display:block;color:var(--ink);font-size:18px;margin-top:2px}
+    .range-status{margin:14px 0 0!important;font-size:13px!important;color:#6d7889!important}
     @media(max-width:700px){
       .article-hero{padding:58px 0 32px}
       .article-lede{font-size:18px}
       .definition-grid{grid-template-columns:1fr}
+      .range-inputs{grid-template-columns:1fr 1fr}
+      .range-results,.accuracy-values{grid-template-columns:1fr}
       .article-prose h2{font-size:32px;margin-top:52px}
     }
   </style>
@@ -101,6 +124,47 @@
         </div>
 
         <div class="formula">Full span = upper range value − lower range value</div>
+
+        <div class="range-calculator" aria-labelledby="rangeCalculatorTitle">
+          <div class="calc-kicker">Interactive tool</div>
+          <h3 id="rangeCalculatorTitle">Full scale vs. full span calculator</h3>
+          <p>Enter the lower and upper limits of a range. This tool uses the convention discussed in this article: <strong>full scale = upper range value (URV)</strong>. Always verify how the manufacturer defines FS before applying a %FS specification.</p>
+
+          <div class="range-inputs">
+            <label>Lower range value (LRV)
+              <input id="rangeLower" type="number" step="any" value="-15" inputmode="decimal" />
+            </label>
+            <label>Upper range value (URV)
+              <input id="rangeUpper" type="number" step="any" value="30" inputmode="decimal" />
+            </label>
+            <label>Unit
+              <input id="rangeUnit" type="text" value="psi" maxlength="12" aria-label="Engineering unit" />
+            </label>
+            <label>Accuracy (% FS)
+              <input id="rangeAccuracy" type="number" step="any" min="0" value="0.1" inputmode="decimal" />
+            </label>
+          </div>
+
+          <div class="range-results" aria-live="polite">
+            <div class="range-result">
+              <span>Full scale · URV convention</span>
+              <strong id="fullScaleResult">30 psi</strong>
+            </div>
+            <div class="range-result primary">
+              <span>Full span · URV − LRV</span>
+              <strong id="fullSpanResult">45 psi</strong>
+            </div>
+          </div>
+
+          <div class="accuracy-compare">
+            <div class="compare-title">What the entered %FS would mean under each definition</div>
+            <div class="accuracy-values">
+              <div>FS = full scale / upper value<strong id="scaleAccuracyResult">±0.030 psi</strong></div>
+              <div>FS = full span<strong id="spanAccuracyResult">±0.045 psi</strong></div>
+            </div>
+          </div>
+          <p class="range-status" id="rangeStatus">These values differ because the range does not start at zero.</p>
+        </div>
 
         <h2>When are they the same?</h2>
         <p>For a range that starts at zero, the maximum value and the span are numerically identical. That makes the terminology easy to overlook.</p>
@@ -184,5 +248,78 @@
       <div class="footer-meta">Independent educational reference.<br>Not a substitute for accredited procedures or official specifications.</div>
     </div>
   </footer>
+  <script>
+    (() => {
+      const lowerInput = document.querySelector('#rangeLower');
+      const upperInput = document.querySelector('#rangeUpper');
+      const unitInput = document.querySelector('#rangeUnit');
+      const accuracyInput = document.querySelector('#rangeAccuracy');
+      const fullScaleResult = document.querySelector('#fullScaleResult');
+      const fullSpanResult = document.querySelector('#fullSpanResult');
+      const scaleAccuracyResult = document.querySelector('#scaleAccuracyResult');
+      const spanAccuracyResult = document.querySelector('#spanAccuracyResult');
+      const status = document.querySelector('#rangeStatus');
+
+      const formatValue = (value, digits = 6) => {
+        if (!Number.isFinite(value)) return '—';
+        const abs = Math.abs(value);
+        if (abs === 0) return '0';
+        if (abs >= 1000) return value.toLocaleString(undefined, { maximumFractionDigits: 3 });
+        return Number(value.toPrecision(digits)).toString();
+      };
+
+      const updateCalculator = () => {
+        const lower = Number.parseFloat(lowerInput.value);
+        const upper = Number.parseFloat(upperInput.value);
+        const accuracy = Number.parseFloat(accuracyInput.value);
+        const unit = unitInput.value.trim();
+        const suffix = unit ? ` ${unit}` : '';
+
+        if (!Number.isFinite(lower) || !Number.isFinite(upper)) {
+          fullScaleResult.textContent = '—';
+          fullSpanResult.textContent = '—';
+          scaleAccuracyResult.textContent = '—';
+          spanAccuracyResult.textContent = '—';
+          status.textContent = 'Enter valid lower and upper range values.';
+          return;
+        }
+
+        if (upper <= lower) {
+          fullScaleResult.textContent = `${formatValue(upper)}${suffix}`;
+          fullSpanResult.textContent = '—';
+          scaleAccuracyResult.textContent = '—';
+          spanAccuracyResult.textContent = '—';
+          status.textContent = 'The upper range value must be greater than the lower range value.';
+          return;
+        }
+
+        const span = upper - lower;
+        fullScaleResult.textContent = `${formatValue(upper)}${suffix}`;
+        fullSpanResult.textContent = `${formatValue(span)}${suffix}`;
+
+        if (Number.isFinite(accuracy) && accuracy >= 0) {
+          const scaleError = Math.abs(upper) * accuracy / 100;
+          const spanError = Math.abs(span) * accuracy / 100;
+          scaleAccuracyResult.textContent = `±${formatValue(scaleError)}${suffix}`;
+          spanAccuracyResult.textContent = `±${formatValue(spanError)}${suffix}`;
+        } else {
+          scaleAccuracyResult.textContent = 'Enter a valid percentage';
+          spanAccuracyResult.textContent = 'Enter a valid percentage';
+        }
+
+        if (lower === 0) {
+          status.textContent = 'The range starts at zero, so the upper value and full span are numerically the same.';
+        } else if (upper === 0) {
+          status.textContent = 'This range ends at zero. “Full scale” conventions can be especially ambiguous here, so verify the manufacturer’s definition.';
+        } else {
+          const difference = Math.abs(span - upper);
+          status.textContent = `The full-span value differs from the upper value by ${formatValue(difference)}${suffix} because the range does not start at zero.`;
+        }
+      };
+
+      [lowerInput, upperInput, unitInput, accuracyInput].forEach((input) => input.addEventListener('input', updateCalculator));
+      updateCalculator();
+    })();
+  </script>
 </body>
 </html>
