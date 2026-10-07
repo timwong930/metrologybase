@@ -16,6 +16,14 @@
 
   const isAdditel = sourceHost === "additel.com" || sourceHost.endsWith(".additel.com");
   const isWebsitePreview = /s\.wordpress\.com\/mshots/i.test(originalImage);
+  const isVerifiedDirectProductImage = image.dataset.directProductImage === "true";
+
+  // Explicit distributor/manufacturer product images should never be routed
+  // through the extractor. Render the known-good asset directly.
+  if (isVerifiedDirectProductImage) {
+    frame.classList.add("media-ready");
+    return;
+  }
 
   // Leave verified direct manufacturer images alone.
   if (!isAdditel && !isWebsitePreview && originalImage) {
