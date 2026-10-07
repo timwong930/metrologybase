@@ -1,350 +1,441 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>What Should I Buy? — Metrology Product Directory | MetrologyBase</title>
-  <meta name="description" content="A vendor-neutral directory of metrology and calibration equipment organized by use case, including pressure, process, temperature, electrical, and dimensional tools." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css" />
-  <style>
-    .directory-hero{padding:92px 0 54px}
-    .directory-hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:70px;align-items:end}
-    .directory-hero h1{font:700 clamp(54px,7vw,92px)/.96 'Fraunces',serif;letter-spacing:-.05em;margin:0}
-    .directory-hero h1 em{font-style:normal;color:var(--blue)}
-    .directory-hero p{max-width:760px;font-size:19px;color:#536176;margin:28px 0 0}
-    .directory-note{padding:24px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.48)}
-    .directory-note span{font:500 11px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#6c788c}
-    .directory-note strong{display:block;font:600 25px 'Fraunces',serif;margin:9px 0 7px}
-    .directory-note p{font-size:14px;margin:0;color:#667085}
-    .directory-controls-wrap{position:sticky;top:69px;z-index:10;padding:18px 0;background:rgba(245,241,232,.94);backdrop-filter:blur(16px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .directory-controls{display:grid;grid-template-columns:minmax(240px,1fr) auto;gap:16px;align-items:center}
-    .search-wrap{position:relative}
-    .search-wrap input{width:100%;padding:14px 16px 14px 44px;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);font:500 15px 'DM Sans',sans-serif;outline:none}
-    .search-wrap input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,104,229,.1)}
-    .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#7c8798}
-    .filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-    .filter-button{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:9px 12px;font:600 12px 'DM Sans',sans-serif;cursor:pointer}
-    .filter-button:hover,.filter-button.active{background:var(--ink);border-color:var(--ink);color:white}
-    .directory-section{padding:72px 0 104px}
-    .directory-heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}
-    .directory-heading h2{font:600 clamp(36px,5vw,54px)/1 'Fraunces',serif;letter-spacing:-.035em;margin:0}
-    .result-count{font:500 12px 'DM Mono',monospace;color:#6f7b8e}
-    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .product-card{position:relative;display:flex;flex-direction:column;min-height:365px;padding:26px;border:1px solid var(--line);border-radius:22px;background:var(--paper);transition:.23s ease;cursor:pointer}
-    .product-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(23,104,229,.28);background:#fff}.product-card:focus-visible{outline:3px solid rgba(23,104,229,.25);outline-offset:3px}.product-card:active{transform:translateY(-1px)}
-    .product-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
-    .brand-pill{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;padding:7px 9px;border-radius:999px;background:#eef2f7;color:#4c5d74}
-    .category-pill{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--blue)}
-    .product-card h3{font:600 29px/1.05 'Fraunces',serif;letter-spacing:-.025em;margin:26px 0 10px}
-    .product-type{font:600 13px 'DM Sans',sans-serif;color:#4d5d72;margin-bottom:18px}
-    .product-card p{font-size:14px;color:#667085;margin:0}
-    .best-for{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
-    .best-for span{display:block;font:500 10px 'DM Mono',monospace;letter-spacing:.07em;text-transform:uppercase;color:#7b8798;margin-bottom:6px}
-    .best-for strong{font-size:14px}
-    .product-link{margin-top:auto;padding-top:24px;color:var(--blue);font-weight:700;text-decoration:none;font-size:14px}
-    .product-link:hover{text-decoration:underline}
-    .empty-state{display:none;padding:34px;border:1px dashed #c8c3b8;border-radius:20px;color:#667085;background:rgba(255,255,255,.4)}
-    .how-we-choose{padding:94px 0;background:var(--navy);color:white}
-    .how-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px}
-    .how-we-choose h2{font:600 clamp(40px,5vw,62px)/1 'Fraunces',serif;letter-spacing:-.04em;margin:0}
-    .how-we-choose .eyebrow{color:#9eacc0}
-    .criteria-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .criterion{padding:22px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:#122641}
-    .criterion span{font:500 10px 'DM Mono',monospace;color:#84adff}
-    .criterion strong{display:block;margin:8px 0 6px;font-size:16px}
-    .criterion p{margin:0;color:#aebccd;font-size:13px}
-    .directory-disclaimer{padding:38px 0}
-    .directory-disclaimer p{max-width:900px;margin:0;color:#697386;font-size:13px}
-    @media(max-width:980px){.product-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:850px){.directory-hero-grid,.how-grid{grid-template-columns:1fr;gap:34px}.directory-controls{grid-template-columns:1fr}.filters{justify-content:flex-start}.directory-controls-wrap{position:static}.criteria-grid{grid-template-columns:1fr}}
-    @media(max-width:620px){.directory-hero{padding:58px 0 42px}.product-grid{grid-template-columns:1fr}.directory-heading{align-items:flex-start;flex-direction:column}.product-card{min-height:0}}
-  </style>
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Equipment Gallery — Calibration & Metrology Instruments | MetrologyBase</title>
+<meta name="description" content="Browse and filter calibration and measurement equipment by measurement discipline, manufacturer, instrument type, application, and work environment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.gallery-hero{padding:82px 0 52px}.gallery-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:end}
+.gallery-hero h1{font:700 clamp(52px,7vw,88px)/.95 'Fraunces',serif;letter-spacing:-.05em;margin:0}.gallery-hero h1 em{font-style:normal;color:var(--blue)}
+.gallery-hero p{max-width:760px;font-size:18px;color:#536176;margin:26px 0 0}.gallery-note{padding:24px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.5)}
+.gallery-note span{font:500 10px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#6d7a8d}.gallery-note strong{display:block;font:600 25px 'Fraunces',serif;margin:8px 0}
+.gallery-note p{margin:0;font-size:13px;color:#667085}.deep-dive-link{display:inline-flex;margin-top:14px;color:var(--blue);font-weight:700;text-decoration:none;font-size:13px}
+.filter-shell{position:sticky;top:69px;z-index:10;background:rgba(245,241,232,.96);backdrop-filter:blur(16px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.filter-wrap{padding:16px 0}.search-row{display:grid;grid-template-columns:minmax(260px,1fr) auto;gap:12px;align-items:center}.search-wrap{position:relative}
+.search-wrap input{width:100%;padding:13px 15px 13px 42px;border:1px solid var(--line);border-radius:14px;background:var(--paper);font:500 14px 'DM Sans',sans-serif;color:var(--ink);outline:none}
+.search-wrap input:focus,.filter-select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,104,229,.1)}.search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#7b8798}
+.clear-filters{border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);padding:10px 14px;font-weight:700;cursor:pointer}
+.filter-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:12px}.filter-field label{display:block;margin:0 0 5px;font:500 9px 'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:#778397}
+.filter-select{width:100%;padding:10px 11px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);font:600 12px 'DM Sans',sans-serif;outline:none}
+.gallery-section{padding:60px 0 100px}.gallery-heading{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:24px}.gallery-heading h2{font:600 clamp(34px,5vw,52px)/1 'Fraunces',serif;letter-spacing:-.035em;margin:0}
+.result-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}.result-count{font:500 11px 'DM Mono',monospace;color:#68758a}.active-filter-summary{font-size:12px;color:#697386}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.product-card{display:flex;flex-direction:column;min-height:350px;padding:24px;border:1px solid var(--line);border-radius:21px;background:var(--paper);transition:.2s ease;cursor:pointer}
+.product-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(23,104,229,.28);background:#fff}.product-card:focus-visible{outline:3px solid rgba(23,104,229,.24);outline-offset:3px}
+.product-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.brand-pill,.measurement-pill{font:500 9px 'DM Mono',monospace;letter-spacing:.07em;text-transform:uppercase;border-radius:999px;padding:6px 8px}
+.brand-pill{background:#eef2f7;color:#4e5f74}.measurement-pill{color:var(--blue);border:1px solid #ccdbf4;background:#f4f8ff}
+.product-card h3{font:600 28px/1.05 'Fraunces',serif;letter-spacing:-.025em;margin:23px 0 8px}.product-type{font-weight:700;font-size:12px;color:#4f6074;margin-bottom:14px}.product-card>p{font-size:13px;color:#687487;margin:0}
+.card-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:17px}.card-meta span{padding:5px 7px;border-radius:999px;background:#f0eee8;color:#6b7280;font:500 9px 'DM Mono',monospace}
+.best-for{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}.best-for span{display:block;font:500 9px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.07em;color:#7b8798;margin-bottom:5px}.best-for strong{font-size:13px;line-height:1.4}
+.product-actions{margin-top:auto;padding-top:20px}.detail-link{color:var(--blue);font-weight:700;text-decoration:none;font-size:13px}.detail-link:hover{text-decoration:underline}
+.empty-state{display:none;padding:34px;border:1px dashed #c8c3b8;border-radius:20px;color:#667085;background:rgba(255,255,255,.4)}
+.gallery-explainer{padding:82px 0;background:var(--navy);color:white}.explainer-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}.gallery-explainer h2{font:600 clamp(38px,5vw,58px)/1 'Fraunces',serif;letter-spacing:-.04em;margin:0}.gallery-explainer .eyebrow{color:#9eacc0}
+.explainer-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.explainer-card{padding:20px;border:1px solid rgba(255,255,255,.13);border-radius:17px;background:#122641}.explainer-card strong{display:block;font-size:14px;margin-bottom:5px}.explainer-card p{margin:0;color:#aebccd;font-size:12px}
+@media(max-width:1050px){.filter-grid{grid-template-columns:repeat(3,1fr)}.product-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:850px){.gallery-hero-grid,.explainer-grid{grid-template-columns:1fr;gap:32px}.filter-shell{position:static}.filter-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.gallery-hero{padding:58px 0 38px}.search-row{grid-template-columns:1fr}.filter-grid,.product-grid,.explainer-cards{grid-template-columns:1fr}.gallery-heading{align-items:flex-start;flex-direction:column}.result-meta{justify-content:flex-start}.product-card{min-height:0}}
+</style>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script><script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="MetrologyBase home">
-      <span class="brand-mark">M</span><span>MetrologyBase</span>
-    </a>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="/#learn">Learn</a>
-      <a href="/articles">Articles</a>
-      <a href="/#tools">Tools</a>
-      <a href="/products" aria-current="page">What to Buy</a>
-      <a href="/pressure-gauges">Pressure Gauges</a>
-      <a href="/#glossary">Glossary</a>
-    </nav>
-    <a class="nav-cta" href="/#tools">Open tools</a>
-  </header>
+<header class="site-header">
+<a class="brand" href="/" aria-label="MetrologyBase home"><span class="brand-mark">M</span><span>MetrologyBase</span></a>
+<nav class="nav-links" aria-label="Primary navigation"><a href="/#learn">Learn</a><a href="/articles">Articles</a><a href="/#tools">Tools</a><a href="/products" aria-current="page">Equipment Gallery</a><a href="/#glossary">Glossary</a></nav>
+<a class="nav-cta" href="/pressure-gauges">Pressure deep dive</a>
+</header>
+<main>
+<section class="gallery-hero shell">
+<div class="gallery-hero-grid">
+<div><div class="eyebrow"><span></span> Unified equipment directory</div><h1>Find the right instrument<br><em>for the work.</em></h1><p>Browse pressure, process, temperature, electrical, and dimensional equipment in one gallery. Filter by what you measure, the instrument type, manufacturer, calibration task, and where the work happens.</p></div>
+<aside class="gallery-note"><span>Current catalog</span><strong>34 units and product families</strong><p>Pressure gauges are now part of this same gallery instead of living in a separate buying directory.</p><a class="deep-dive-link" href="/pressure-gauges">Open the detailed pressure-gauge comparison →</a></aside>
+</div>
+</section>
 
-  <main>
-    <section class="directory-hero shell">
-      <div class="directory-hero-grid">
-        <div>
-          <div class="eyebrow"><span></span> Vendor-neutral product directory</div>
-          <h1>What should<br><em>I buy?</em></h1>
-          <p>Start with the measurement problem, then compare equipment across manufacturers. This directory is designed to help calibration professionals build a shortlist — not push a single brand.</p>
-        </div>
-        <aside class="directory-note">
-          <span>How to use this</span>
-          <strong>Shortlist first. Verify second.</strong>
-          <p>Use the “best for” notes to narrow the field, then confirm range, accuracy, uncertainty, safety ratings, accessories, and current specifications with the manufacturer before purchasing.</p>
-        </aside>
-      </div>
-    </section>
+<section class="filter-shell" aria-label="Equipment filters">
+<div class="shell filter-wrap">
+<div class="search-row"><div class="search-wrap"><span class="search-icon" aria-hidden="true">⌕</span><input id="equipmentSearch" type="search" placeholder="Search model, capability, accuracy, use case…" aria-label="Search equipment gallery"></div><button class="clear-filters" id="clearFilters" type="button">Clear filters</button></div>
+<div class="filter-grid">
+<div class="filter-field"><label for="measurementFilter">Measurement</label><select class="filter-select" id="measurementFilter"><option value="all">All measurements</option><option value="pressure">Pressure</option><option value="temperature">Temperature</option><option value="electrical">Electrical</option><option value="dimensional">Dimensional</option><option value="process">Process / multifunction</option></select></div>
+<div class="filter-field"><label for="brandFilter">Brand / company</label><select class="filter-select" id="brandFilter"><option value="all">All brands</option><option value="Additel">Additel</option><option value="Ashcroft">Ashcroft</option><option value="Beamex">Beamex</option><option value="Crystal / AMETEK">Crystal / AMETEK</option><option value="Druck / Baker Hughes">Druck / Baker Hughes</option><option value="Fluke">Fluke</option><option value="Fluke Calibration">Fluke Calibration</option><option value="Isotech">Isotech</option><option value="KELLER">KELLER</option><option value="Keysight">Keysight</option><option value="Mitutoyo">Mitutoyo</option><option value="OMEGA">OMEGA</option><option value="Starrett">Starrett</option><option value="WIKA">WIKA</option></select></div>
+<div class="filter-field"><label for="equipmentFilter">Instrument type</label><select class="filter-select" id="equipmentFilter"><option value="all">All instrument types</option><option value="pressure-calibrator">Pressure calibrator</option><option value="pressure-controller">Pressure controller</option><option value="process-calibrator">Multifunction calibrator</option><option value="temperature-source">Temperature source</option><option value="digital-multimeter">Digital multimeter</option><option value="caliper">Caliper</option><option value="digital-pressure-gauge">Digital pressure gauge</option><option value="differential-pressure-gauge">Differential pressure gauge</option><option value="panel-pressure-gauge">Panel pressure gauge</option><option value="mechanical-pressure-gauge">Mechanical pressure gauge</option></select></div>
+<div class="filter-field"><label for="useFilter">Calibration / use case</label><select class="filter-select" id="useFilter"><option value="all">All use cases</option><option value="reference-calibration">Reference calibration</option><option value="field-calibration">Field calibration</option><option value="process-maintenance">Process maintenance</option><option value="lab-bench">Lab / bench work</option><option value="hazardous-area">Hazardous-area work</option><option value="production-automation">Production / automation</option><option value="general-indication">General indication</option><option value="troubleshooting">Troubleshooting</option><option value="dimensional-inspection">Dimensional inspection</option></select></div>
+<div class="filter-field"><label for="environmentFilter">Work environment</label><select class="filter-select" id="environmentFilter"><option value="all">All environments</option><option value="field">Field</option><option value="lab">Laboratory</option><option value="bench">Bench</option><option value="hazardous">Hazardous area</option><option value="process">Process plant</option><option value="panel">Panel / fixed install</option><option value="shop">Machine shop</option></select></div>
+</div>
+</div>
+</section>
 
-    <section class="shell" style="padding:0 0 54px">
-      <a href="/pressure-gauges" style="display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;padding:28px;border-radius:24px;background:#10233f;color:white;text-decoration:none;box-shadow:var(--shadow)">
-        <div>
-          <div style="font:500 10px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#8db7ff;margin-bottom:8px">New deep-dive directory</div>
-          <strong style="display:block;font:600 clamp(28px,4vw,42px)/1 'Fraunces',serif">Pressure gauges: 21 products compared</strong>
-          <p style="margin:10px 0 0;color:#c3cfde;max-width:760px">Compare Additel, Crystal/AMETEK, Fluke, WIKA, Druck, Ashcroft, KELLER, and OMEGA by range, accuracy basis, pressure type, environmental rating, logging, hazardous-area use, and best-fit application.</p>
-        </div>
-        <span style="font-size:28px;color:#8db7ff">→</span>
-      </a>
-    </section>
+<section class="gallery-section shell">
+<div class="gallery-heading"><div><div class="eyebrow"><span></span> Equipment gallery</div><h2>Compare the shortlist.</h2></div><div class="result-meta"><span class="result-count" id="resultCount">34 units</span><span class="active-filter-summary" id="activeFilterSummary">Showing everything</span></div></div>
+<div class="product-grid" id="productGrid"><article class="product-card" data-measurement="pressure" data-brand="Additel" data-equipment="pressure-calibrator" data-use="field-calibration process-maintenance" data-environment="field" data-detail="/products/additel-760a-760s" data-search="Additel 760A / 760S Pressure Automatic handheld pressure calibrator Self-contained portable pressure generation and control for field calibration workflows. Automated pressure generation in a handheld field package. automatic handheld pump controller" tabindex="0" role="link" aria-label="Open Additel 760A / 760S details">
+  <div class="product-top"><span class="brand-pill">Additel</span><span class="measurement-pill">Pressure</span></div>
+  <h3>760A / 760S</h3>
+  <div class="product-type">Automatic handheld pressure calibrator</div>
+  <p>Self-contained portable pressure generation and control for field calibration workflows.</p>
+  <div class="card-meta"><span>Pressure calibrator</span></div>
+  <div class="best-for"><span>Best for</span><strong>Automated pressure generation in a handheld field package.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/additel-760a-760s">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure process" data-brand="Fluke" data-equipment="pressure-calibrator" data-use="field-calibration process-maintenance" data-environment="field process" data-detail="/products/fluke-729-pro" data-search="Fluke 729 Pro Pressure Automatic pressure calibrator Portable automatic pressure generation with HART and documented transmitter-test workflows. Automated transmitter and pressure-device calibration. hart transmitter automatic" tabindex="0" role="link" aria-label="Open Fluke 729 Pro details">
+  <div class="product-top"><span class="brand-pill">Fluke</span><span class="measurement-pill">Pressure</span></div>
+  <h3>729 Pro</h3>
+  <div class="product-type">Automatic pressure calibrator</div>
+  <p>Portable automatic pressure generation with HART and documented transmitter-test workflows.</p>
+  <div class="card-meta"><span>Pressure calibrator</span></div>
+  <div class="best-for"><span>Best for</span><strong>Automated transmitter and pressure-device calibration.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/fluke-729-pro">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Druck / Baker Hughes" data-equipment="pressure-calibrator" data-use="field-calibration process-maintenance" data-environment="field" data-detail="/products/druck-dpi-612-flex" data-search="Druck / Baker Hughes DPI 612 Flex Pressure Portable pressure calibrator family Modular pneumatic and hydraulic field platform with interchangeable pressure modules. Portable manual pressure generation across a wide application range. pneumatic hydraulic pump module" tabindex="0" role="link" aria-label="Open Druck / Baker Hughes DPI 612 Flex details">
+  <div class="product-top"><span class="brand-pill">Druck / Baker Hughes</span><span class="measurement-pill">Pressure</span></div>
+  <h3>DPI 612 Flex</h3>
+  <div class="product-type">Portable pressure calibrator family</div>
+  <p>Modular pneumatic and hydraulic field platform with interchangeable pressure modules.</p>
+  <div class="card-meta"><span>Pressure calibrator</span></div>
+  <div class="best-for"><span>Best for</span><strong>Portable manual pressure generation across a wide application range.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/druck-dpi-612-flex">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="WIKA" data-equipment="pressure-controller" data-use="reference-calibration lab-bench production-automation" data-environment="lab bench" data-detail="/products/wika-cpc6050" data-search="WIKA CPC6050 Pressure Modular pressure controller Configurable benchtop pressure control for calibration labs and higher-throughput workflows. Automated bench pressure calibration and production test. controller automated laboratory production" tabindex="0" role="link" aria-label="Open WIKA CPC6050 details">
+  <div class="product-top"><span class="brand-pill">WIKA</span><span class="measurement-pill">Pressure</span></div>
+  <h3>CPC6050</h3>
+  <div class="product-type">Modular pressure controller</div>
+  <p>Configurable benchtop pressure control for calibration labs and higher-throughput workflows.</p>
+  <div class="card-meta"><span>Pressure controller</span></div>
+  <div class="best-for"><span>Best for</span><strong>Automated bench pressure calibration and production test.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/wika-cpc6050">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="process pressure temperature electrical" data-brand="Beamex" data-equipment="process-calibrator" data-use="field-calibration process-maintenance reference-calibration" data-environment="field process" data-detail="/products/beamex-mc6" data-search="Beamex MC6 Process Advanced field calibrator &amp; communicator Multifunction documenting platform for pressure, temperature and electrical calibration. Integrated plant calibration and digital documenting workflows. hart fieldbus documenting communicator" tabindex="0" role="link" aria-label="Open Beamex MC6 details">
+  <div class="product-top"><span class="brand-pill">Beamex</span><span class="measurement-pill">Process</span></div>
+  <h3>MC6</h3>
+  <div class="product-type">Advanced field calibrator &amp; communicator</div>
+  <p>Multifunction documenting platform for pressure, temperature and electrical calibration.</p>
+  <div class="card-meta"><span>Multifunction calibrator</span></div>
+  <div class="best-for"><span>Best for</span><strong>Integrated plant calibration and digital documenting workflows.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/beamex-mc6">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="process pressure temperature electrical" data-brand="Fluke" data-equipment="process-calibrator" data-use="field-calibration process-maintenance" data-environment="field process" data-detail="/products/fluke-754" data-search="Fluke 754 Process Documenting process calibrator with HART Documenting calibrator for process signals, HART, temperature and pressure modules. Industrial process calibration and transmitter maintenance. hart documenting loop transmitter" tabindex="0" role="link" aria-label="Open Fluke 754 details">
+  <div class="product-top"><span class="brand-pill">Fluke</span><span class="measurement-pill">Process</span></div>
+  <h3>754</h3>
+  <div class="product-type">Documenting process calibrator with HART</div>
+  <p>Documenting calibrator for process signals, HART, temperature and pressure modules.</p>
+  <div class="card-meta"><span>Multifunction calibrator</span></div>
+  <div class="best-for"><span>Best for</span><strong>Industrial process calibration and transmitter maintenance.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/fluke-754">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="process pressure temperature electrical" data-brand="Additel" data-equipment="process-calibrator" data-use="field-calibration process-maintenance" data-environment="field process" data-detail="/products/additel-227" data-search="Additel 227 Process Multifunction process calibrator Touchscreen multifunction platform for pressure, temperature and electrical signals. Modern portable multifunction field calibration. hart touchscreen documenting" tabindex="0" role="link" aria-label="Open Additel 227 details">
+  <div class="product-top"><span class="brand-pill">Additel</span><span class="measurement-pill">Process</span></div>
+  <h3>227</h3>
+  <div class="product-type">Multifunction process calibrator</div>
+  <p>Touchscreen multifunction platform for pressure, temperature and electrical signals.</p>
+  <div class="card-meta"><span>Multifunction calibrator</span></div>
+  <div class="best-for"><span>Best for</span><strong>Modern portable multifunction field calibration.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/additel-227">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="temperature" data-brand="Fluke Calibration" data-equipment="temperature-source" data-use="field-calibration reference-calibration" data-environment="field lab" data-detail="/products/fluke-9144-metrology-well" data-search="Fluke Calibration 9144 Metrology Well Temperature Portable high-temperature metrology well Portable high-temperature source with process configurations for readout and documentation. High-temperature field calibration with metrology-grade performance. dry block rtd thermocouple metrology well" tabindex="0" role="link" aria-label="Open Fluke Calibration 9144 Metrology Well details">
+  <div class="product-top"><span class="brand-pill">Fluke Calibration</span><span class="measurement-pill">Temperature</span></div>
+  <h3>9144 Metrology Well</h3>
+  <div class="product-type">Portable high-temperature metrology well</div>
+  <p>Portable high-temperature source with process configurations for readout and documentation.</p>
+  <div class="card-meta"><span>Temperature source</span></div>
+  <div class="best-for"><span>Best for</span><strong>High-temperature field calibration with metrology-grade performance.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/fluke-9144-metrology-well">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="temperature" data-brand="Isotech" data-equipment="temperature-source" data-use="field-calibration reference-calibration" data-environment="field lab" data-detail="/products/isotech-fast-cal" data-search="Isotech Fast-Cal Temperature Portable dry-block calibrator family Portable dry-block family for low, medium and high-temperature sensor work. Portable industrial sensor calibration across multiple ranges. dry block sensor" tabindex="0" role="link" aria-label="Open Isotech Fast-Cal details">
+  <div class="product-top"><span class="brand-pill">Isotech</span><span class="measurement-pill">Temperature</span></div>
+  <h3>Fast-Cal</h3>
+  <div class="product-type">Portable dry-block calibrator family</div>
+  <p>Portable dry-block family for low, medium and high-temperature sensor work.</p>
+  <div class="card-meta"><span>Temperature source</span></div>
+  <div class="best-for"><span>Best for</span><strong>Portable industrial sensor calibration across multiple ranges.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/isotech-fast-cal">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="electrical" data-brand="Fluke" data-equipment="digital-multimeter" data-use="troubleshooting process-maintenance" data-environment="field process" data-detail="/products/fluke-87v" data-search="Fluke 87V Electrical Industrial true-RMS digital multimeter Rugged handheld meter for everyday industrial electrical troubleshooting. Dependable field electrical measurement and troubleshooting. dmm true rms handheld" tabindex="0" role="link" aria-label="Open Fluke 87V details">
+  <div class="product-top"><span class="brand-pill">Fluke</span><span class="measurement-pill">Electrical</span></div>
+  <h3>87V</h3>
+  <div class="product-type">Industrial true-RMS digital multimeter</div>
+  <p>Rugged handheld meter for everyday industrial electrical troubleshooting.</p>
+  <div class="card-meta"><span>Digital multimeter</span></div>
+  <div class="best-for"><span>Best for</span><strong>Dependable field electrical measurement and troubleshooting.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/fluke-87v">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="electrical" data-brand="Keysight" data-equipment="digital-multimeter" data-use="lab-bench production-automation" data-environment="lab bench" data-detail="/products/keysight-34465a" data-search="Keysight 34465A Electrical 6½-digit bench digital multimeter Higher-resolution bench DMM with logging, graphical analysis and automation interfaces. Bench measurement, automation and higher-resolution electrical work. 6.5 digit dmm truevolt bench" tabindex="0" role="link" aria-label="Open Keysight 34465A details">
+  <div class="product-top"><span class="brand-pill">Keysight</span><span class="measurement-pill">Electrical</span></div>
+  <h3>34465A</h3>
+  <div class="product-type">6½-digit bench digital multimeter</div>
+  <p>Higher-resolution bench DMM with logging, graphical analysis and automation interfaces.</p>
+  <div class="card-meta"><span>Bench multimeter</span></div>
+  <div class="best-for"><span>Best for</span><strong>Bench measurement, automation and higher-resolution electrical work.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/keysight-34465a">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="dimensional" data-brand="Mitutoyo" data-equipment="caliper" data-use="dimensional-inspection" data-environment="shop" data-detail="/products/mitutoyo-absolute-digimatic" data-search="Mitutoyo ABSOLUTE Digimatic Dimensional Series 500 digital caliper Professional digital caliper family for outside, inside, depth and step measurements. General dimensional inspection and professional shop measurement. digital caliper inspection" tabindex="0" role="link" aria-label="Open Mitutoyo ABSOLUTE Digimatic details">
+  <div class="product-top"><span class="brand-pill">Mitutoyo</span><span class="measurement-pill">Dimensional</span></div>
+  <h3>ABSOLUTE Digimatic</h3>
+  <div class="product-type">Series 500 digital caliper</div>
+  <p>Professional digital caliper family for outside, inside, depth and step measurements.</p>
+  <div class="card-meta"><span>Caliper</span></div>
+  <div class="best-for"><span>Best for</span><strong>General dimensional inspection and professional shop measurement.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/mitutoyo-absolute-digimatic">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="dimensional" data-brand="Starrett" data-equipment="caliper" data-use="dimensional-inspection" data-environment="shop" data-detail="/products/starrett-798" data-search="Starrett 798 Electronic Caliper Dimensional IP67 electronic caliper family Shop-focused electronic caliper family with coolant and dust protection. Dimensional inspection in machine-shop environments. ip67 digital caliper machinist" tabindex="0" role="link" aria-label="Open Starrett 798 Electronic Caliper details">
+  <div class="product-top"><span class="brand-pill">Starrett</span><span class="measurement-pill">Dimensional</span></div>
+  <h3>798 Electronic Caliper</h3>
+  <div class="product-type">IP67 electronic caliper family</div>
+  <p>Shop-focused electronic caliper family with coolant and dust protection.</p>
+  <div class="card-meta"><span>Caliper</span></div>
+  <div class="best-for"><span>Best for</span><strong>Dimensional inspection in machine-shop environments.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/products/starrett-798">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Additel" data-equipment="digital-pressure-gauge" data-use="reference-calibration field-calibration" data-environment="field lab" data-detail="/pressure-gauges/additel-adt686" data-search="Additel ADT686 Pressure Reference digital pressure gauge Touchscreen reference gauge covering low pressure through ultra-high pressure configurations. High-performance reference pressure work and data-rich calibration workflows. 0.02 0.05 fs 0.1 reading 60000 psi bluetooth wifi" tabindex="0" role="link" aria-label="Open Additel ADT686 details">
+  <div class="product-top"><span class="brand-pill">Additel</span><span class="measurement-pill">Pressure</span></div>
+  <h3>ADT686</h3>
+  <div class="product-type">Reference digital pressure gauge</div>
+  <p>Touchscreen reference gauge covering low pressure through ultra-high pressure configurations.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span></div>
+  <div class="best-for"><span>Best for</span><strong>High-performance reference pressure work and data-rich calibration workflows.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/additel-adt686">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Additel" data-equipment="digital-pressure-gauge" data-use="reference-calibration field-calibration hazardous-area" data-environment="field lab hazardous" data-detail="/pressure-gauges/additel-adt685" data-search="Additel ADT685 / ADT685Ex Pressure Reference digital pressure gauge High-accuracy digital gauge family with broad pressure coverage and intrinsically safe option. Reference pressure calibration including hazardous-area work. 0.01 0.02 0.05 fs 0.1 reading ex intrinsically safe" tabindex="0" role="link" aria-label="Open Additel ADT685 / ADT685Ex details">
+  <div class="product-top"><span class="brand-pill">Additel</span><span class="measurement-pill">Pressure</span></div>
+  <h3>ADT685 / ADT685Ex</h3>
+  <div class="product-type">Reference digital pressure gauge</div>
+  <p>High-accuracy digital gauge family with broad pressure coverage and intrinsically safe option.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Reference pressure calibration including hazardous-area work.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/additel-adt685">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Additel" data-equipment="digital-pressure-gauge" data-use="reference-calibration field-calibration hazardous-area" data-environment="field lab hazardous" data-detail="/pressure-gauges/additel-adt681a" data-search="Additel ADT681A / ADT681AEx Pressure Digital pressure gauge Button-driven reference-class gauge with Bluetooth, logging and wide range coverage. Reference pressure work for users who prefer physical controls. 0.01 0.02 0.05 fs 0.1 reading ip67 bluetooth configurator" tabindex="0" role="link" aria-label="Open Additel ADT681A / ADT681AEx details">
+  <div class="product-top"><span class="brand-pill">Additel</span><span class="measurement-pill">Pressure</span></div>
+  <h3>ADT681A / ADT681AEx</h3>
+  <div class="product-type">Digital pressure gauge</div>
+  <p>Button-driven reference-class gauge with Bluetooth, logging and wide range coverage.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Reference pressure work for users who prefer physical controls.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/additel-adt681a">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Additel" data-equipment="digital-pressure-gauge" data-use="field-calibration process-maintenance hazardous-area" data-environment="field hazardous" data-detail="/pressure-gauges/additel-adt680a" data-search="Additel ADT680A / ADT680AEx Pressure Rugged digital pressure gauge Rugged service gauge with broad pressure coverage, communications and Ex option. Field pressure service where ruggedness matters more than top reference accuracy. 0.1 0.2 fs ip67 bluetooth rs232" tabindex="0" role="link" aria-label="Open Additel ADT680A / ADT680AEx details">
+  <div class="product-top"><span class="brand-pill">Additel</span><span class="measurement-pill">Pressure</span></div>
+  <h3>ADT680A / ADT680AEx</h3>
+  <div class="product-type">Rugged digital pressure gauge</div>
+  <p>Rugged service gauge with broad pressure coverage, communications and Ex option.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Field pressure service where ruggedness matters more than top reference accuracy.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/additel-adt680a">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Additel" data-equipment="digital-pressure-gauge" data-use="hazardous-area process-maintenance field-calibration" data-environment="field hazardous process" data-detail="/pressure-gauges/additel-adt601ex" data-search="Additel ADT601Ex Pressure Intrinsically safe digital pressure gauge Hazardous-area digital gauge designed as a rugged replacement for mechanical indication. Intrinsically safe field pressure indication and service. 0.5 fs ex ia iic ip67 bluetooth 15000 psi" tabindex="0" role="link" aria-label="Open Additel ADT601Ex details">
+  <div class="product-top"><span class="brand-pill">Additel</span><span class="measurement-pill">Pressure</span></div>
+  <h3>ADT601Ex</h3>
+  <div class="product-type">Intrinsically safe digital pressure gauge</div>
+  <p>Hazardous-area digital gauge designed as a rugged replacement for mechanical indication.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Intrinsically safe field pressure indication and service.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/additel-adt601ex">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Crystal / AMETEK" data-equipment="digital-pressure-gauge" data-use="reference-calibration field-calibration hazardous-area" data-environment="field lab hazardous" data-detail="/pressure-gauges/crystal-xp3i" data-search="Crystal / AMETEK XP3i Pressure Reference digital pressure gauge Rugged intrinsically safe reference gauge with reading-based and full-scale accuracy options. Portable reference calibration and hazardous-area pressure work. 0.05 reading 0.02 fs intrinsically safe bluetooth usb c" tabindex="0" role="link" aria-label="Open Crystal / AMETEK XP3i details">
+  <div class="product-top"><span class="brand-pill">Crystal / AMETEK</span><span class="measurement-pill">Pressure</span></div>
+  <h3>XP3i</h3>
+  <div class="product-type">Reference digital pressure gauge</div>
+  <p>Rugged intrinsically safe reference gauge with reading-based and full-scale accuracy options.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Portable reference calibration and hazardous-area pressure work.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/crystal-xp3i">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Crystal / AMETEK" data-equipment="digital-pressure-gauge" data-use="reference-calibration field-calibration hazardous-area" data-environment="field hazardous" data-detail="/pressure-gauges/crystal-xp2i" data-search="Crystal / AMETEK XP2i Pressure Digital test gauge Established intrinsically safe digital test gauge with logging and serial communication. Field calibration where proven rugged digital test gauges are preferred. 0.1 reading 0.02 0.05 fs rs232 logger" tabindex="0" role="link" aria-label="Open Crystal / AMETEK XP2i details">
+  <div class="product-top"><span class="brand-pill">Crystal / AMETEK</span><span class="measurement-pill">Pressure</span></div>
+  <h3>XP2i</h3>
+  <div class="product-type">Digital test gauge</div>
+  <p>Established intrinsically safe digital test gauge with logging and serial communication.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Field calibration where proven rugged digital test gauges are preferred.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/crystal-xp2i">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Crystal / AMETEK" data-equipment="differential-pressure-gauge" data-use="reference-calibration hazardous-area field-calibration" data-environment="field hazardous" data-detail="/pressure-gauges/crystal-xp2i-dp" data-search="Crystal / AMETEK XP2i-DP Pressure Differential pressure gauge Wet/wet differential pressure gauge with strong accuracy and hazardous-area capability. Differential pressure calibration and field DP measurements. differential dp wet wet 0.1 reading" tabindex="0" role="link" aria-label="Open Crystal / AMETEK XP2i-DP details">
+  <div class="product-top"><span class="brand-pill">Crystal / AMETEK</span><span class="measurement-pill">Pressure</span></div>
+  <h3>XP2i-DP</h3>
+  <div class="product-type">Differential pressure gauge</div>
+  <p>Wet/wet differential pressure gauge with strong accuracy and hazardous-area capability.</p>
+  <div class="card-meta"><span>Differential pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Differential pressure calibration and field DP measurements.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/crystal-xp2i-dp">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Crystal / AMETEK" data-equipment="panel-pressure-gauge" data-use="general-indication process-maintenance" data-environment="panel process" data-detail="/pressure-gauges/crystal-wt-series" data-search="Crystal / AMETEK WT Series Pressure Panel-mount digital pressure gauge Large-format digital replacement for traditional panel pressure gauges. Panel indication where a large digital display and front service access matter. panel mount 6 inch 8.5 inch 0.1 reading" tabindex="0" role="link" aria-label="Open Crystal / AMETEK WT Series details">
+  <div class="product-top"><span class="brand-pill">Crystal / AMETEK</span><span class="measurement-pill">Pressure</span></div>
+  <h3>WT Series</h3>
+  <div class="product-type">Panel-mount digital pressure gauge</div>
+  <p>Large-format digital replacement for traditional panel pressure gauges.</p>
+  <div class="card-meta"><span>Panel pressure gauge</span></div>
+  <div class="best-for"><span>Best for</span><strong>Panel indication where a large digital display and front service access matter.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/crystal-wt-series">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Crystal / AMETEK" data-equipment="digital-pressure-gauge" data-use="field-calibration general-indication" data-environment="field" data-detail="/pressure-gauges/crystal-m1" data-search="Crystal / AMETEK m1 Pressure Digital pressure gauge Simple compact digital gauge covering vacuum through high-pressure ranges. Straightforward portable pressure measurement without advanced communications. 0.2 reading battery compact" tabindex="0" role="link" aria-label="Open Crystal / AMETEK m1 details">
+  <div class="product-top"><span class="brand-pill">Crystal / AMETEK</span><span class="measurement-pill">Pressure</span></div>
+  <h3>m1</h3>
+  <div class="product-type">Digital pressure gauge</div>
+  <p>Simple compact digital gauge covering vacuum through high-pressure ranges.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span></div>
+  <div class="best-for"><span>Best for</span><strong>Straightforward portable pressure measurement without advanced communications.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/crystal-m1">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Fluke" data-equipment="digital-pressure-gauge" data-use="field-calibration hazardous-area" data-environment="field hazardous" data-detail="/pressure-gauges/fluke-700g" data-search="Fluke 700G Series Pressure Precision pressure test gauge family Portable pressure gauge family covering low differential through high pressure. Field pressure calibration in a familiar Fluke ecosystem. 0.05 fs csa atex track logger" tabindex="0" role="link" aria-label="Open Fluke 700G Series details">
+  <div class="product-top"><span class="brand-pill">Fluke</span><span class="measurement-pill">Pressure</span></div>
+  <h3>700G Series</h3>
+  <div class="product-type">Precision pressure test gauge family</div>
+  <p>Portable pressure gauge family covering low differential through high pressure.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Field pressure calibration in a familiar Fluke ecosystem.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/fluke-700g">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="WIKA" data-equipment="digital-pressure-gauge" data-use="reference-calibration field-calibration hazardous-area" data-environment="field lab hazardous" data-detail="/pressure-gauges/wika-cpg1500" data-search="WIKA CPG1500 Pressure Precision digital pressure gauge Reference-oriented digital gauge with wireless connectivity and optional higher accuracy. Calibration labs and field users needing a modern reference gauge. 0.1 span 0.05 span wireless wika cal" tabindex="0" role="link" aria-label="Open WIKA CPG1500 details">
+  <div class="product-top"><span class="brand-pill">WIKA</span><span class="measurement-pill">Pressure</span></div>
+  <h3>CPG1500</h3>
+  <div class="product-type">Precision digital pressure gauge</div>
+  <p>Reference-oriented digital gauge with wireless connectivity and optional higher accuracy.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Calibration labs and field users needing a modern reference gauge.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/wika-cpg1500">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="WIKA" data-equipment="digital-pressure-gauge" data-use="field-calibration process-maintenance hazardous-area" data-environment="field hazardous" data-detail="/pressure-gauges/wika-cpg1200" data-search="WIKA CPG1200 Pressure Rugged service digital pressure gauge Service-focused digital gauge for hydrostatic, leak and pressure-switch work. Mobile service where reference-grade accuracy is not required. 0.25 fs usb bluetooth logger" tabindex="0" role="link" aria-label="Open WIKA CPG1200 details">
+  <div class="product-top"><span class="brand-pill">WIKA</span><span class="measurement-pill">Pressure</span></div>
+  <h3>CPG1200</h3>
+  <div class="product-type">Rugged service digital pressure gauge</div>
+  <p>Service-focused digital gauge for hydrostatic, leak and pressure-switch work.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Mobile service where reference-grade accuracy is not required.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/wika-cpg1200">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Druck / Baker Hughes" data-equipment="digital-pressure-gauge" data-use="reference-calibration field-calibration hazardous-area" data-environment="field hazardous" data-detail="/pressure-gauges/druck-dpi-104" data-search="Druck / Baker Hughes DPI 104 / 104-IS Pressure Digital test gauge Compact digital test gauge with 0.05% FS performance and traditional serial/analog integration. Classic test-gauge applications with simple integration. 0.05 fs rs232 analog output intrinsically safe" tabindex="0" role="link" aria-label="Open Druck / Baker Hughes DPI 104 / 104-IS details">
+  <div class="product-top"><span class="brand-pill">Druck / Baker Hughes</span><span class="measurement-pill">Pressure</span></div>
+  <h3>DPI 104 / 104-IS</h3>
+  <div class="product-type">Digital test gauge</div>
+  <p>Compact digital test gauge with 0.05% FS performance and traditional serial/analog integration.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Classic test-gauge applications with simple integration.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/druck-dpi-104">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Ashcroft" data-equipment="digital-pressure-gauge" data-use="reference-calibration lab-bench hazardous-area" data-environment="lab bench hazardous" data-detail="/pressure-gauges/ashcroft-2084-2086-2089" data-search="Ashcroft 2084 / 2086 / 2089 Pressure Digital test gauge family Digital gauge family with total-error-band accuracy tiers for calibration and test work. Calibration benches where total-error-band performance is useful. teb 0.25 0.10 0.05 span ip65" tabindex="0" role="link" aria-label="Open Ashcroft 2084 / 2086 / 2089 details">
+  <div class="product-top"><span class="brand-pill">Ashcroft</span><span class="measurement-pill">Pressure</span></div>
+  <h3>2084 / 2086 / 2089</h3>
+  <div class="product-type">Digital test gauge family</div>
+  <p>Digital gauge family with total-error-band accuracy tiers for calibration and test work.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Calibration benches where total-error-band performance is useful.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/ashcroft-2084-2086-2089">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Ashcroft" data-equipment="digital-pressure-gauge" data-use="general-indication process-maintenance" data-environment="field process" data-detail="/pressure-gauges/ashcroft-dg25" data-search="Ashcroft DG25 Pressure General-purpose digital pressure gauge Compact industrial digital indication for process and OEM applications. General industrial indication rather than precision reference calibration. 0.5 0.25 span compact" tabindex="0" role="link" aria-label="Open Ashcroft DG25 details">
+  <div class="product-top"><span class="brand-pill">Ashcroft</span><span class="measurement-pill">Pressure</span></div>
+  <h3>DG25</h3>
+  <div class="product-type">General-purpose digital pressure gauge</div>
+  <p>Compact industrial digital indication for process and OEM applications.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span></div>
+  <div class="best-for"><span>Best for</span><strong>General industrial indication rather than precision reference calibration.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/ashcroft-dg25">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="KELLER" data-equipment="digital-pressure-gauge" data-use="reference-calibration field-calibration hazardous-area" data-environment="field lab hazardous" data-detail="/pressure-gauges/keller-lex1" data-search="KELLER LEX1 Pressure Digital precision gauge Compact precision gauge with strong total-error performance and RS-485 integration. Calibration and test work prioritizing compact precision and integration. 0.05 fs teb rs485 pressuresuite" tabindex="0" role="link" aria-label="Open KELLER LEX1 details">
+  <div class="product-top"><span class="brand-pill">KELLER</span><span class="measurement-pill">Pressure</span></div>
+  <h3>LEX1</h3>
+  <div class="product-type">Digital precision gauge</div>
+  <p>Compact precision gauge with strong total-error performance and RS-485 integration.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Calibration and test work prioritizing compact precision and integration.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/keller-lex1">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="KELLER" data-equipment="digital-pressure-gauge" data-use="field-calibration general-indication hazardous-area" data-environment="field hazardous" data-detail="/pressure-gauges/keller-leo2" data-search="KELLER LEO2 / LEO2-Ei Pressure Compact digital pressure gauge Simple battery-powered digital gauge with quantified accuracy and intrinsically safe variant. Compact pressure indication and field service. 0.1 fs 0.2 teb intrinsically safe" tabindex="0" role="link" aria-label="Open KELLER LEO2 / LEO2-Ei details">
+  <div class="product-top"><span class="brand-pill">KELLER</span><span class="measurement-pill">Pressure</span></div>
+  <h3>LEO2 / LEO2-Ei</h3>
+  <div class="product-type">Compact digital pressure gauge</div>
+  <p>Simple battery-powered digital gauge with quantified accuracy and intrinsically safe variant.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span><span>Hazardous-area option</span></div>
+  <div class="best-for"><span>Best for</span><strong>Compact pressure indication and field service.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/keller-leo2">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="OMEGA" data-equipment="digital-pressure-gauge" data-use="process-maintenance production-automation general-indication" data-environment="field process" data-detail="/pressure-gauges/omega-dpg409" data-search="OMEGA DPG409 Pressure High-accuracy digital pressure gauge Digital gauge family with analog retransmission options for system integration. Pressure indication where analog output to another system is useful. 0.08 bsl 4-20ma 0-5v 0-10v" tabindex="0" role="link" aria-label="Open OMEGA DPG409 details">
+  <div class="product-top"><span class="brand-pill">OMEGA</span><span class="measurement-pill">Pressure</span></div>
+  <h3>DPG409</h3>
+  <div class="product-type">High-accuracy digital pressure gauge</div>
+  <p>Digital gauge family with analog retransmission options for system integration.</p>
+  <div class="card-meta"><span>Digital pressure gauge</span></div>
+  <div class="best-for"><span>Best for</span><strong>Pressure indication where analog output to another system is useful.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/omega-dpg409">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="WIKA" data-equipment="mechanical-pressure-gauge" data-use="general-indication process-maintenance" data-environment="process field" data-detail="/pressure-gauges/wika-232-30-233-30" data-search="WIKA 232.30 / 233.30 Pressure Mechanical safety pressure gauge Solid-front mechanical gauge family for permanent process indication. Process indication where mechanical simplicity and safety construction matter. mechanical solid front liquid filled ip65" tabindex="0" role="link" aria-label="Open WIKA 232.30 / 233.30 details">
+  <div class="product-top"><span class="brand-pill">WIKA</span><span class="measurement-pill">Pressure</span></div>
+  <h3>232.30 / 233.30</h3>
+  <div class="product-type">Mechanical safety pressure gauge</div>
+  <p>Solid-front mechanical gauge family for permanent process indication.</p>
+  <div class="card-meta"><span>Mechanical pressure gauge</span></div>
+  <div class="best-for"><span>Best for</span><strong>Process indication where mechanical simplicity and safety construction matter.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/wika-232-30-233-30">Review unit →</a></div>
+</article>
+<article class="product-card" data-measurement="pressure" data-brand="Ashcroft" data-equipment="mechanical-pressure-gauge" data-use="general-indication process-maintenance" data-environment="process field" data-detail="/pressure-gauges/ashcroft-1279-duragauge" data-search="Ashcroft 1279 Duragauge Pressure Mechanical process pressure gauge Configurable mechanical process gauge with broad materials, ranges and fill options. Process plants needing serviceable mechanical pressure indication. mechanical solid front 30000 psi grade 2a" tabindex="0" role="link" aria-label="Open Ashcroft 1279 Duragauge details">
+  <div class="product-top"><span class="brand-pill">Ashcroft</span><span class="measurement-pill">Pressure</span></div>
+  <h3>1279 Duragauge</h3>
+  <div class="product-type">Mechanical process pressure gauge</div>
+  <p>Configurable mechanical process gauge with broad materials, ranges and fill options.</p>
+  <div class="card-meta"><span>Mechanical pressure gauge</span></div>
+  <div class="best-for"><span>Best for</span><strong>Process plants needing serviceable mechanical pressure indication.</strong></div>
+  <div class="product-actions"><a class="detail-link" href="/pressure-gauges/ashcroft-1279-duragauge">Review unit →</a></div>
+</article></div>
+<div class="empty-state" id="emptyState">No equipment matches that combination. Clear one of the filters or try a broader search.</div>
+</section>
 
-    <section class="directory-controls-wrap" aria-label="Directory filters">
-      <div class="shell directory-controls">
-        <div class="search-wrap">
-          <span class="search-icon" aria-hidden="true">⌕</span>
-          <input id="productSearch" type="search" placeholder="Search products, brands, or use cases…" aria-label="Search product directory" />
-        </div>
-        <div class="filters">
-          <button class="filter-button active" type="button" data-filter="all">All</button>
-          <button class="filter-button" type="button" data-filter="pressure">Pressure</button>
-          <button class="filter-button" type="button" data-filter="process">Process</button>
-          <button class="filter-button" type="button" data-filter="temperature">Temperature</button>
-          <button class="filter-button" type="button" data-filter="electrical">Electrical</button>
-          <button class="filter-button" type="button" data-filter="dimensional">Dimensional</button>
-        </div>
-      </div>
-    </section>
+<section class="gallery-explainer"><div class="shell explainer-grid"><div><div class="eyebrow"><span></span> Filter by the actual job</div><h2>Start with the measurement problem, not the logo.</h2></div><div class="explainer-cards"><div class="explainer-card"><strong>Measurement</strong><p>Pressure, temperature, electrical, dimensional, or multifunction process work.</p></div><div class="explainer-card"><strong>Instrument type</strong><p>Separate gauges, calibrators, controllers, temperature sources, DMMs, and dimensional tools.</p></div><div class="explainer-card"><strong>Use case</strong><p>Reference calibration, field service, hazardous-area work, process maintenance, bench work, automation, and inspection.</p></div><div class="explainer-card"><strong>Environment</strong><p>Narrow choices for field, laboratory, bench, process-plant, panel, hazardous-area, or machine-shop use.</p></div></div></div></section>
+</main>
+<footer><div class="shell footer-grid"><div><a class="brand footer-brand" href="/"><span class="brand-mark">M</span><span>MetrologyBase</span></a><p>Practical tools and resources for calibration professionals.</p></div><div class="footer-links"><a href="/articles">Articles</a><a href="/#tools">Tools</a><a href="/products">Equipment Gallery</a><a href="/pressure-gauges">Pressure deep dive</a></div><div class="footer-meta">Independent, vendor-neutral reference.<br>Verify exact product specifications before purchase.</div></div></footer>
 
-    <section class="directory-section shell">
-      <div class="directory-heading">
-        <div>
-          <div class="eyebrow"><span></span> Browse equipment</div>
-          <h2>Use-case-first recommendations</h2>
-        </div>
-        <div class="result-count" id="productCount">13 products</div>
-      </div>
+<script>
+const cards=[...document.querySelectorAll('.product-card')];
+const search=document.querySelector('#equipmentSearch');
+const filters={
+  measurement:document.querySelector('#measurementFilter'),
+  brand:document.querySelector('#brandFilter'),
+  equipment:document.querySelector('#equipmentFilter'),
+  use:document.querySelector('#useFilter'),
+  environment:document.querySelector('#environmentFilter')
+};
+const resultCount=document.querySelector('#resultCount');
+const summary=document.querySelector('#activeFilterSummary');
+const empty=document.querySelector('#emptyState');
+const clear=document.querySelector('#clearFilters');
 
-      <div class="product-grid" id="productGrid">
-        <article class="product-card" data-category="pressure" data-search="additel 760a 760s automatic handheld pressure calibrator automated field pump controller 375 psi">
-          <div class="product-top"><span class="brand-pill">Additel</span><span class="category-pill">Pressure</span></div>
-          <h3>760A / 760S</h3>
-          <div class="product-type">Automatic handheld pressure calibrator</div>
-          <p>Compact self-contained pressure generation and control with replaceable ranges and field-focused workflow features.</p>
-          <div class="best-for"><span>Best for</span><strong>Technicians who want automated pressure generation in a handheld package.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/additel-760a-760s">View details →</a><a class="product-link" href="https://www.additel.com/product-detail.html/760A-760S-automatic-handheld-pressure-calibrator/" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
+function tokens(value){return (value||'').split(' ').filter(Boolean);}
+function matchesToken(card,key,value){
+  if(value==='all') return true;
+  if(key==='brand') return card.dataset.brand===value;
+  return tokens(card.dataset[key]).includes(value);
+}
+function render(){
+  const q=(search.value||'').trim().toLowerCase();
+  let shown=0;
+  cards.forEach(card=>{
+    const text=((card.dataset.search||'')+' '+card.textContent).toLowerCase();
+    const hit=!q||q.split(/\s+/).every(term=>text.includes(term));
+    const match=hit&&Object.entries(filters).every(([key,select])=>matchesToken(card,key,select.value));
+    card.style.display=match?'flex':'none';
+    if(match) shown++;
+  });
+  resultCount.textContent=shown+' unit'+(shown===1?'':'s');
+  empty.style.display=shown?'none':'block';
+  const active=[];
+  Object.values(filters).forEach(select=>{if(select.value!=='all') active.push(select.options[select.selectedIndex].text);});
+  if(q) active.push('“'+q+'”');
+  summary.textContent=active.length?active.join(' · '):'Showing everything';
+}
+cards.forEach(card=>{
+  const href=card.dataset.detail;
+  card.addEventListener('click',event=>{if(event.target.closest('a,button,input,select,textarea,label')) return;location.href=href;});
+  card.addEventListener('keydown',event=>{if(event.target!==card) return;if(event.key==='Enter'||event.key===' '){event.preventDefault();location.href=href;}});
+});
+search.addEventListener('input',render);
+Object.values(filters).forEach(select=>select.addEventListener('change',render));
+clear.addEventListener('click',()=>{search.value='';Object.values(filters).forEach(select=>select.value='all');history.replaceState(null,'',location.pathname);render();});
 
-        <article class="product-card" data-category="pressure" data-search="fluke 729 pro automatic pressure calibrator hart portable 1000 psi">
-          <div class="product-top"><span class="brand-pill">Fluke</span><span class="category-pill">Pressure</span></div>
-          <h3>729 Pro</h3>
-          <div class="product-type">Automatic pressure calibrator</div>
-          <p>Portable automatic pressure generation with replaceable pressure modules, HART support, and documented test workflows.</p>
-          <div class="best-for"><span>Best for</span><strong>Process technicians who want automated transmitter and pressure-device calibration.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/fluke-729-pro">View details →</a><a class="product-link" href="https://www.fluke.com/en-us/product/calibration-tools/pressure-calibrators/729pro" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
-
-        <article class="product-card" data-category="pressure" data-search="druck dpi 612 flex pressure calibrator portable pump manual pneumatic hydraulic baker hughes">
-          <div class="product-top"><span class="brand-pill">Druck</span><span class="category-pill">Pressure</span></div>
-          <h3>DPI 612 Flex</h3>
-          <div class="product-type">Portable pressure calibrator family</div>
-          <p>A modular portable platform spanning pneumatic and hydraulic applications with interchangeable pressure modules.</p>
-          <div class="best-for"><span>Best for</span><strong>Field users who value an established manual-generation workflow and wide pressure coverage.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/druck-dpi-612-flex">View details →</a><a class="product-link" href="https://www.bakerhughes.com/druck/test-and-calibration-instrumentation/dpi-612" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
-
-        <article class="product-card" data-category="pressure" data-search="wika cpc6050 pressure controller modular benchtop laboratory production">
-          <div class="product-top"><span class="brand-pill">WIKA</span><span class="category-pill">Pressure</span></div>
-          <h3>CPC6050</h3>
-          <div class="product-type">Modular pressure controller</div>
-          <p>Configurable benchtop pressure control intended for calibration labs, production environments, and higher-throughput workflows.</p>
-          <div class="best-for"><span>Best for</span><strong>Labs that need automated bench pressure control rather than a handheld field instrument.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/wika-cpc6050">View details →</a><a class="product-link" href="https://www.wika.com/en-us/cpc6050.WIKA" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
-
-        <article class="product-card" data-category="process pressure temperature electrical" data-search="beamex mc6 advanced field calibrator communicator hart foundation fieldbus profibus pressure temperature electrical">
-          <div class="product-top"><span class="brand-pill">Beamex</span><span class="category-pill">Process</span></div>
-          <h3>MC6</h3>
-          <div class="product-type">Advanced field calibrator & communicator</div>
-          <p>Multifunction field platform for pressure, temperature, and electrical calibration with documenting and fieldbus communication capabilities.</p>
-          <div class="best-for"><span>Best for</span><strong>Plants standardizing on a high-end documenting calibrator and digital calibration workflow.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/beamex-mc6">View details →</a><a class="product-link" href="https://www.beamex.com/us/calibrators/beamex-mc6/" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
-
-        <article class="product-card" data-category="process temperature electrical pressure" data-search="fluke 754 documenting process calibrator hart loop pressure temperature">
-          <div class="product-top"><span class="brand-pill">Fluke</span><span class="category-pill">Process</span></div>
-          <h3>754</h3>
-          <div class="product-type">Documenting process calibrator with HART</div>
-          <p>A long-established documenting calibrator for process signals, HART transmitters, temperature work, and pressure when paired with modules.</p>
-          <div class="best-for"><span>Best for</span><strong>Industrial teams already invested in Fluke process-calibration workflows.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/fluke-754">View details →</a><a class="product-link" href="https://www.fluke.com/en-us/product/calibration-tools/multifunction-calibrators/fluke-754" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
-
-        <article class="product-card" data-category="process pressure temperature electrical" data-search="additel 227 multifunction process calibrator hart pressure temperature electrical">
-          <div class="product-top"><span class="brand-pill">Additel</span><span class="category-pill">Process</span></div>
-          <h3>227</h3>
-          <div class="product-type">Multifunction process calibrator</div>
-          <p>Portable multifunction platform for pressure, temperature, and electrical signals, with models supporting integrated HART communication.</p>
-          <div class="best-for"><span>Best for</span><strong>Field technicians who want a modern touchscreen multifunction calibrator.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/additel-227">View details →</a><a class="product-link" href="https://www.additel.com/product-detail.html/227-documenting-multifunction-documenting-process-calibrator/" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
-
-        <article class="product-card" data-category="temperature" data-search="fluke 9144 field metrology well temperature calibrator dry block rtd thermocouple">
-          <div class="product-top"><span class="brand-pill">Fluke Calibration</span><span class="category-pill">Temperature</span></div>
-          <h3>9144 Metrology Well</h3>
-          <div class="product-type">Portable high-temperature metrology well</div>
-          <p>A field-oriented temperature source with process versions that add sensor readout, loop power, automation, and documentation.</p>
-          <div class="best-for"><span>Best for</span><strong>High-temperature field calibration where metrology performance matters more than minimum cost.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/fluke-9144-metrology-well">View details →</a><a class="product-link" href="https://www.fluke.com/en-us/product/calibration-tools/temperature-calibrators/fluke-calibration-9144" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
-
-        <article class="product-card" data-category="temperature" data-search="isotech fast-cal dry block temperature calibrator portable low medium high">
-          <div class="product-top"><span class="brand-pill">Isotech</span><span class="category-pill">Temperature</span></div>
-          <h3>Fast-Cal</h3>
-          <div class="product-type">Portable dry-block calibrator family</div>
-          <p>A portable dry-block family covering low, medium, and high temperature work with basic and reference-enabled configurations.</p>
-          <div class="best-for"><span>Best for</span><strong>Portable sensor checks and industrial temperature calibration across multiple ranges.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/isotech-fast-cal">View details →</a><a class="product-link" href="https://isotech.co.uk/industrial-calibration/fast-calibrators/" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
-
-        <article class="product-card" data-category="electrical" data-search="fluke 87v industrial multimeter true rms dmm field troubleshooting">
-          <div class="product-top"><span class="brand-pill">Fluke</span><span class="category-pill">Electrical</span></div>
-          <h3>87V</h3>
-          <div class="product-type">Industrial true-RMS digital multimeter</div>
-          <p>A rugged general-purpose industrial meter for field troubleshooting and everyday electrical measurement.</p>
-          <div class="best-for"><span>Best for</span><strong>Technicians who need a dependable field DMM — not a laboratory reference standard.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/fluke-87v">View details →</a><a class="product-link" href="https://www.fluke.com/en-us/product/electrical-testing/digital-multimeters/fluke-87v" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
-
-        <article class="product-card" data-category="electrical" data-search="keysight 34465a 6.5 digit truevolt bench digital multimeter dmm laboratory">
-          <div class="product-top"><span class="brand-pill">Keysight</span><span class="category-pill">Electrical</span></div>
-          <h3>34465A</h3>
-          <div class="product-type">6½-digit bench digital multimeter</div>
-          <p>A higher-resolution bench DMM with fast reading capability, data logging, graphical analysis, and automation interfaces.</p>
-          <div class="best-for"><span>Best for</span><strong>Bench measurement, lab automation, and applications that need more resolution than a handheld DMM.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/keysight-34465a">View details →</a><a class="product-link" href="https://www.keysight.com/us/en/product/34465A/digital-multimeter-6-5-digit-truevolt-dmm.html" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
-
-        <article class="product-card" data-category="dimensional" data-search="mitutoyo absolute digimatic caliper series 500 digital caliper dimensional inspection">
-          <div class="product-top"><span class="brand-pill">Mitutoyo</span><span class="category-pill">Dimensional</span></div>
-          <h3>ABSOLUTE Digimatic</h3>
-          <div class="product-type">Series 500 digital caliper</div>
-          <p>A widely used digital-caliper family for outside, inside, depth, and step measurements with multiple sizes and output options.</p>
-          <div class="best-for"><span>Best for</span><strong>General dimensional inspection when you want a proven professional caliper platform.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/mitutoyo-absolute-digimatic">View details →</a><a class="product-link" href="https://dev.pim.mitutoyo.com/products/small-tool-instruments-and-data-management/calipers/digimatic-calipers/absolute-digimatic-caliper/" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
-
-        <article class="product-card" data-category="dimensional" data-search="starrett 798 electronic caliper ip67 digital dimensional inspection machinist">
-          <div class="product-top"><span class="brand-pill">Starrett</span><span class="category-pill">Dimensional</span></div>
-          <h3>798 Electronic Caliper</h3>
-          <div class="product-type">IP67 electronic caliper family</div>
-          <p>A shop-focused electronic caliper family with coolant and dust protection, multiple sizes, and data-output options.</p>
-          <div class="best-for"><span>Best for</span><strong>Machine-shop environments where IP67 protection and traditional inspection ergonomics matter.</strong></div>
-          <div class="product-actions"><a class="detail-link" href="/products/starrett-798">View details →</a><a class="product-link" href="https://www.starrett.com/products/precision-measuring-tools/precision-hand-tools/slide-calipers/electronic-calipers" target="_blank" rel="noopener">Official page ↗</a></div>
-        </article>
-      </div>
-
-      <div class="empty-state" id="emptyState">No products match that search yet. Try a broader term or another category.</div>
-    </section>
-
-    <section class="how-we-choose">
-      <div class="shell how-grid">
-        <div>
-          <div class="eyebrow"><span></span> How we evaluate gear</div>
-          <h2>There is no universal “best.”</h2>
-        </div>
-        <div class="criteria-grid">
-          <div class="criterion"><span>01</span><strong>Measurement problem</strong><p>What quantity, range, medium, tolerance, and environment are you actually dealing with?</p></div>
-          <div class="criterion"><span>02</span><strong>Measurement capability</strong><p>Accuracy, uncertainty, stability, resolution, and turndown matter more than headline specs alone.</p></div>
-          <div class="criterion"><span>03</span><strong>Workflow</strong><p>Automation, documentation, HART, data transfer, and accessories can matter as much as raw performance.</p></div>
-          <div class="criterion"><span>04</span><strong>Total ownership</strong><p>Calibration cost, support, repairability, modules, software, and future expansion all affect value.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="directory-disclaimer shell">
-      <p><strong>Independent directory.</strong> MetrologyBase is not affiliated with or sponsored by the manufacturers listed here. Inclusion is not a ranking or endorsement. Product capabilities change; always verify current specifications, approvals, compatibility, and calibration requirements with the manufacturer before purchasing or using equipment for acceptance decisions.</p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="shell footer-grid">
-      <div><a class="brand footer-brand" href="/"><span class="brand-mark">M</span><span>MetrologyBase</span></a><p>Practical tools and resources for calibration professionals.</p></div>
-      <div class="footer-links"><a href="/#learn">Learn</a><a href="/articles">Articles</a><a href="/#tools">Tools</a><a href="/products">What to Buy</a><a href="/pressure-gauges">Pressure Gauges</a><a href="/#glossary">Glossary</a></div>
-      <div class="footer-meta">Independent educational reference.<br>Verify purchasing decisions against official manufacturer specifications.</div>
-    </div>
-  </footer>
-
-  <script>
-    const cards=[...document.querySelectorAll('.product-card')];
-    const buttons=[...document.querySelectorAll('.filter-button')];
-
-    cards.forEach(card=>{
-      const detailLink=card.querySelector('.detail-link');
-      if(!detailLink) return;
-      const href=detailLink.getAttribute('href');
-      card.dataset.href=href;
-      card.setAttribute('role','link');
-      card.setAttribute('tabindex','0');
-      card.setAttribute('aria-label','Open '+(card.querySelector('h3')?.textContent||'product')+' details');
-
-      card.addEventListener('click',event=>{
-        if(event.target.closest('a,button,input,select,textarea,label')) return;
-        window.location.href=href;
-      });
-
-      card.addEventListener('keydown',event=>{
-        if(event.target!==card) return;
-        if(event.key==='Enter'||event.key===' '){
-          event.preventDefault();
-          window.location.href=href;
-        }
-      });
-    });
-    const search=document.querySelector('#productSearch');
-    const count=document.querySelector('#productCount');
-    const empty=document.querySelector('#emptyState');
-    let active='all';
-
-    function render(){
-      const query=(search.value||'').trim().toLowerCase();
-      let visible=0;
-      cards.forEach(card=>{
-        const categories=(card.dataset.category||'').split(' ');
-        const haystack=(card.dataset.search+' '+card.textContent).toLowerCase();
-        const categoryMatch=active==='all'||categories.includes(active);
-        const searchMatch=!query||haystack.includes(query);
-        const show=categoryMatch&&searchMatch;
-        card.style.display=show?'flex':'none';
-        if(show) visible++;
-      });
-      count.textContent=visible+' product'+(visible===1?'':'s');
-      empty.style.display=visible?'none':'block';
-    }
-
-    function setFilter(filter){
-      active=filter;
-      buttons.forEach(button=>button.classList.toggle('active',button.dataset.filter===filter));
-      render();
-    }
-
-    buttons.forEach(button=>button.addEventListener('click',()=>setFilter(button.dataset.filter)));
-    search.addEventListener('input',render);
-
-    const requested=new URLSearchParams(location.search).get('category');
-    if(requested&&buttons.some(button=>button.dataset.filter===requested)) setFilter(requested);
-    else render();
-  </script>
-</body>
-</html>
+const params=new URLSearchParams(location.search);
+if(params.get('q')) search.value=params.get('q');
+for(const [key,select] of Object.entries(filters)){
+  const requested=params.get(key);
+  if(requested&&[...select.options].some(o=>o.value===requested)) select.value=requested;
+}
+render();
+</script>
+</body></html>
