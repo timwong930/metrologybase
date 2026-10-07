@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What Should I Buy? — Metrology Product Directory | MetrologyBase</title>
+  <meta name="description" content="A vendor-neutral directory of metrology and calibration equipment organized by use case, including pressure, process, temperature, electrical, and dimensional tools." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .directory-hero{padding:92px 0 54px}
+    .directory-hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:70px;align-items:end}
+    .directory-hero h1{font:700 clamp(54px,7vw,92px)/.96 'Fraunces',serif;letter-spacing:-.05em;margin:0}
+    .directory-hero h1 em{font-style:normal;color:var(--blue)}
+    .directory-hero p{max-width:760px;font-size:19px;color:#536176;margin:28px 0 0}
+    .directory-note{padding:24px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.48)}
+    .directory-note span{font:500 11px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#6c788c}
+    .directory-note strong{display:block;font:600 25px 'Fraunces',serif;margin:9px 0 7px}
+    .directory-note p{font-size:14px;margin:0;color:#667085}
+    .directory-controls-wrap{position:sticky;top:69px;z-index:10;padding:18px 0;background:rgba(245,241,232,.94);backdrop-filter:blur(16px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .directory-controls{display:grid;grid-template-columns:minmax(240px,1fr) auto;gap:16px;align-items:center}
+    .search-wrap{position:relative}
+    .search-wrap input{width:100%;padding:14px 16px 14px 44px;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);font:500 15px 'DM Sans',sans-serif;outline:none}
+    .search-wrap input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,104,229,.1)}
+    .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#7c8798}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .filter-button{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:9px 12px;font:600 12px 'DM Sans',sans-serif;cursor:pointer}
+    .filter-button:hover,.filter-button.active{background:var(--ink);border-color:var(--ink);color:white}
+    .directory-section{padding:72px 0 104px}
+    .directory-heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}
+    .directory-heading h2{font:600 clamp(36px,5vw,54px)/1 'Fraunces',serif;letter-spacing:-.035em;margin:0}
+    .result-count{font:500 12px 'DM Mono',monospace;color:#6f7b8e}
+    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .product-card{display:flex;flex-direction:column;min-height:365px;padding:26px;border:1px solid var(--line);border-radius:22px;background:var(--paper);transition:.23s ease}
+    .product-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .product-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+    .brand-pill{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;padding:7px 9px;border-radius:999px;background:#eef2f7;color:#4c5d74}
+    .category-pill{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--blue)}
+    .product-card h3{font:600 29px/1.05 'Fraunces',serif;letter-spacing:-.025em;margin:26px 0 10px}
+    .product-type{font:600 13px 'DM Sans',sans-serif;color:#4d5d72;margin-bottom:18px}
+    .product-card p{font-size:14px;color:#667085;margin:0}
+    .best-for{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+    .best-for span{display:block;font:500 10px 'DM Mono',monospace;letter-spacing:.07em;text-transform:uppercase;color:#7b8798;margin-bottom:6px}
+    .best-for strong{font-size:14px}
+    .product-link{margin-top:auto;padding-top:24px;color:var(--blue);font-weight:700;text-decoration:none;font-size:14px}
+    .product-link:hover{text-decoration:underline}
+    .empty-state{display:none;padding:34px;border:1px dashed #c8c3b8;border-radius:20px;color:#667085;background:rgba(255,255,255,.4)}
+    .how-we-choose{padding:94px 0;background:var(--navy);color:white}
+    .how-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px}
+    .how-we-choose h2{font:600 clamp(40px,5vw,62px)/1 'Fraunces',serif;letter-spacing:-.04em;margin:0}
+    .how-we-choose .eyebrow{color:#9eacc0}
+    .criteria-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .criterion{padding:22px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:#122641}
+    .criterion span{font:500 10px 'DM Mono',monospace;color:#84adff}
+    .criterion strong{display:block;margin:8px 0 6px;font-size:16px}
+    .criterion p{margin:0;color:#aebccd;font-size:13px}
+    .directory-disclaimer{padding:38px 0}
+    .directory-disclaimer p{max-width:900px;margin:0;color:#697386;font-size:13px}
+    @media(max-width:980px){.product-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:850px){.directory-hero-grid,.how-grid{grid-template-columns:1fr;gap:34px}.directory-controls{grid-template-columns:1fr}.filters{justify-content:flex-start}.directory-controls-wrap{position:static}.criteria-grid{grid-template-columns:1fr}}
+    @media(max-width:620px){.directory-hero{padding:58px 0 42px}.product-grid{grid-template-columns:1fr}.directory-heading{align-items:flex-start;flex-direction:column}.product-card{min-height:0}}
+  </style>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="MetrologyBase home">
+      <span class="brand-mark">M</span><span>MetrologyBase</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="/#learn">Learn</a>
+      <a href="/articles">Articles</a>
+      <a href="/#tools">Tools</a>
+      <a href="/products" aria-current="page">What to Buy</a>
+      <a href="/#glossary">Glossary</a>
+    </nav>
+    <a class="nav-cta" href="/#tools">Open tools</a>
+  </header>
+
+  <main>
+    <section class="directory-hero shell">
+      <div class="directory-hero-grid">
+        <div>
+          <div class="eyebrow"><span></span> Vendor-neutral product directory</div>
+          <h1>What should<br><em>I buy?</em></h1>
+          <p>Start with the measurement problem, then compare equipment across manufacturers. This directory is designed to help calibration professionals build a shortlist — not push a single brand.</p>
+        </div>
+        <aside class="directory-note">
+          <span>How to use this</span>
+          <strong>Shortlist first. Verify second.</strong>
+          <p>Use the “best for” notes to narrow the field, then confirm range, accuracy, uncertainty, safety ratings, accessories, and current specifications with the manufacturer before purchasing.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="directory-controls-wrap" aria-label="Directory filters">
+      <div class="shell directory-controls">
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="productSearch" type="search" placeholder="Search products, brands, or use cases…" aria-label="Search product directory" />
+        </div>
+        <div class="filters">
+          <button class="filter-button active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="pressure">Pressure</button>
+          <button class="filter-button" type="button" data-filter="process">Process</button>
+          <button class="filter-button" type="button" data-filter="temperature">Temperature</button>
+          <button class="filter-button" type="button" data-filter="electrical">Electrical</button>
+          <button class="filter-button" type="button" data-filter="dimensional">Dimensional</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="directory-section shell">
+      <div class="directory-heading">
+        <div>
+          <div class="eyebrow"><span></span> Browse equipment</div>
+          <h2>Use-case-first recommendations</h2>
+        </div>
+        <div class="result-count" id="productCount">13 products</div>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <article class="product-card" data-category="pressure" data-search="additel 760a 760s automatic handheld pressure calibrator automated field pump controller 375 psi">
+          <div class="product-top"><span class="brand-pill">Additel</span><span class="category-pill">Pressure</span></div>
+          <h3>760A / 760S</h3>
+          <div class="product-type">Automatic handheld pressure calibrator</div>
+          <p>Compact self-contained pressure generation and control with replaceable ranges and field-focused workflow features.</p>
+          <div class="best-for"><span>Best for</span><strong>Technicians who want automated pressure generation in a handheld package.</strong></div>
+          <a class="product-link" href="https://www.additel.com/product-detail.html/760A-760S-automatic-handheld-pressure-calibrator/" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+
+        <article class="product-card" data-category="pressure" data-search="fluke 729 pro automatic pressure calibrator hart portable 1000 psi">
+          <div class="product-top"><span class="brand-pill">Fluke</span><span class="category-pill">Pressure</span></div>
+          <h3>729 Pro</h3>
+          <div class="product-type">Automatic pressure calibrator</div>
+          <p>Portable automatic pressure generation with replaceable pressure modules, HART support, and documented test workflows.</p>
+          <div class="best-for"><span>Best for</span><strong>Process technicians who want automated transmitter and pressure-device calibration.</strong></div>
+          <a class="product-link" href="https://www.fluke.com/en-us/product/calibration-tools/pressure-calibrators/729pro" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+
+        <article class="product-card" data-category="pressure" data-search="druck dpi 612 flex pressure calibrator portable pump manual pneumatic hydraulic baker hughes">
+          <div class="product-top"><span class="brand-pill">Druck</span><span class="category-pill">Pressure</span></div>
+          <h3>DPI 612 Flex</h3>
+          <div class="product-type">Portable pressure calibrator family</div>
+          <p>A modular portable platform spanning pneumatic and hydraulic applications with interchangeable pressure modules.</p>
+          <div class="best-for"><span>Best for</span><strong>Field users who value an established manual-generation workflow and wide pressure coverage.</strong></div>
+          <a class="product-link" href="https://www.bakerhughes.com/druck/test-and-calibration-instrumentation/dpi-612" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+
+        <article class="product-card" data-category="pressure" data-search="wika cpc6050 pressure controller modular benchtop laboratory production">
+          <div class="product-top"><span class="brand-pill">WIKA</span><span class="category-pill">Pressure</span></div>
+          <h3>CPC6050</h3>
+          <div class="product-type">Modular pressure controller</div>
+          <p>Configurable benchtop pressure control intended for calibration labs, production environments, and higher-throughput workflows.</p>
+          <div class="best-for"><span>Best for</span><strong>Labs that need automated bench pressure control rather than a handheld field instrument.</strong></div>
+          <a class="product-link" href="https://www.wika.com/en-us/cpc6050.WIKA" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+
+        <article class="product-card" data-category="process pressure temperature electrical" data-search="beamex mc6 advanced field calibrator communicator hart foundation fieldbus profibus pressure temperature electrical">
+          <div class="product-top"><span class="brand-pill">Beamex</span><span class="category-pill">Process</span></div>
+          <h3>MC6</h3>
+          <div class="product-type">Advanced field calibrator & communicator</div>
+          <p>Multifunction field platform for pressure, temperature, and electrical calibration with documenting and fieldbus communication capabilities.</p>
+          <div class="best-for"><span>Best for</span><strong>Plants standardizing on a high-end documenting calibrator and digital calibration workflow.</strong></div>
+          <a class="product-link" href="https://www.beamex.com/us/calibrators/beamex-mc6/" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+
+        <article class="product-card" data-category="process temperature electrical pressure" data-search="fluke 754 documenting process calibrator hart loop pressure temperature">
+          <div class="product-top"><span class="brand-pill">Fluke</span><span class="category-pill">Process</span></div>
+          <h3>754</h3>
+          <div class="product-type">Documenting process calibrator with HART</div>
+          <p>A long-established documenting calibrator for process signals, HART transmitters, temperature work, and pressure when paired with modules.</p>
+          <div class="best-for"><span>Best for</span><strong>Industrial teams already invested in Fluke process-calibration workflows.</strong></div>
+          <a class="product-link" href="https://www.fluke.com/en-us/product/calibration-tools/multifunction-calibrators/fluke-754" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+
+        <article class="product-card" data-category="process pressure temperature electrical" data-search="additel 227 multifunction process calibrator hart pressure temperature electrical">
+          <div class="product-top"><span class="brand-pill">Additel</span><span class="category-pill">Process</span></div>
+          <h3>227</h3>
+          <div class="product-type">Multifunction process calibrator</div>
+          <p>Portable multifunction platform for pressure, temperature, and electrical signals, with models supporting integrated HART communication.</p>
+          <div class="best-for"><span>Best for</span><strong>Field technicians who want a modern touchscreen multifunction calibrator.</strong></div>
+          <a class="product-link" href="https://www.additel.com/product-detail.html/227-documenting-multifunction-documenting-process-calibrator/" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+
+        <article class="product-card" data-category="temperature" data-search="fluke 9144 field metrology well temperature calibrator dry block rtd thermocouple">
+          <div class="product-top"><span class="brand-pill">Fluke Calibration</span><span class="category-pill">Temperature</span></div>
+          <h3>9144 Metrology Well</h3>
+          <div class="product-type">Portable high-temperature metrology well</div>
+          <p>A field-oriented temperature source with process versions that add sensor readout, loop power, automation, and documentation.</p>
+          <div class="best-for"><span>Best for</span><strong>High-temperature field calibration where metrology performance matters more than minimum cost.</strong></div>
+          <a class="product-link" href="https://www.fluke.com/en-us/product/calibration-tools/temperature-calibrators/fluke-calibration-9144" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+
+        <article class="product-card" data-category="temperature" data-search="isotech fast-cal dry block temperature calibrator portable low medium high">
+          <div class="product-top"><span class="brand-pill">Isotech</span><span class="category-pill">Temperature</span></div>
+          <h3>Fast-Cal</h3>
+          <div class="product-type">Portable dry-block calibrator family</div>
+          <p>A portable dry-block family covering low, medium, and high temperature work with basic and reference-enabled configurations.</p>
+          <div class="best-for"><span>Best for</span><strong>Portable sensor checks and industrial temperature calibration across multiple ranges.</strong></div>
+          <a class="product-link" href="https://isotech.co.uk/industrial-calibration/fast-calibrators/" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+
+        <article class="product-card" data-category="electrical" data-search="fluke 87v industrial multimeter true rms dmm field troubleshooting">
+          <div class="product-top"><span class="brand-pill">Fluke</span><span class="category-pill">Electrical</span></div>
+          <h3>87V</h3>
+          <div class="product-type">Industrial true-RMS digital multimeter</div>
+          <p>A rugged general-purpose industrial meter for field troubleshooting and everyday electrical measurement.</p>
+          <div class="best-for"><span>Best for</span><strong>Technicians who need a dependable field DMM — not a laboratory reference standard.</strong></div>
+          <a class="product-link" href="https://www.fluke.com/en-us/product/electrical-testing/digital-multimeters/fluke-87v" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+
+        <article class="product-card" data-category="electrical" data-search="keysight 34465a 6.5 digit truevolt bench digital multimeter dmm laboratory">
+          <div class="product-top"><span class="brand-pill">Keysight</span><span class="category-pill">Electrical</span></div>
+          <h3>34465A</h3>
+          <div class="product-type">6½-digit bench digital multimeter</div>
+          <p>A higher-resolution bench DMM with fast reading capability, data logging, graphical analysis, and automation interfaces.</p>
+          <div class="best-for"><span>Best for</span><strong>Bench measurement, lab automation, and applications that need more resolution than a handheld DMM.</strong></div>
+          <a class="product-link" href="https://www.keysight.com/us/en/product/34465A/digital-multimeter-6-5-digit-truevolt-dmm.html" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+
+        <article class="product-card" data-category="dimensional" data-search="mitutoyo absolute digimatic caliper series 500 digital caliper dimensional inspection">
+          <div class="product-top"><span class="brand-pill">Mitutoyo</span><span class="category-pill">Dimensional</span></div>
+          <h3>ABSOLUTE Digimatic</h3>
+          <div class="product-type">Series 500 digital caliper</div>
+          <p>A widely used digital-caliper family for outside, inside, depth, and step measurements with multiple sizes and output options.</p>
+          <div class="best-for"><span>Best for</span><strong>General dimensional inspection when you want a proven professional caliper platform.</strong></div>
+          <a class="product-link" href="https://dev.pim.mitutoyo.com/products/small-tool-instruments-and-data-management/calipers/digimatic-calipers/absolute-digimatic-caliper/" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+
+        <article class="product-card" data-category="dimensional" data-search="starrett 798 electronic caliper ip67 digital dimensional inspection machinist">
+          <div class="product-top"><span class="brand-pill">Starrett</span><span class="category-pill">Dimensional</span></div>
+          <h3>798 Electronic Caliper</h3>
+          <div class="product-type">IP67 electronic caliper family</div>
+          <p>A shop-focused electronic caliper family with coolant and dust protection, multiple sizes, and data-output options.</p>
+          <div class="best-for"><span>Best for</span><strong>Machine-shop environments where IP67 protection and traditional inspection ergonomics matter.</strong></div>
+          <a class="product-link" href="https://www.starrett.com/products/precision-measuring-tools/precision-hand-tools/slide-calipers/electronic-calipers" target="_blank" rel="noopener">Official product page →</a>
+        </article>
+      </div>
+
+      <div class="empty-state" id="emptyState">No products match that search yet. Try a broader term or another category.</div>
+    </section>
+
+    <section class="how-we-choose">
+      <div class="shell how-grid">
+        <div>
+          <div class="eyebrow"><span></span> How we evaluate gear</div>
+          <h2>There is no universal “best.”</h2>
+        </div>
+        <div class="criteria-grid">
+          <div class="criterion"><span>01</span><strong>Measurement problem</strong><p>What quantity, range, medium, tolerance, and environment are you actually dealing with?</p></div>
+          <div class="criterion"><span>02</span><strong>Measurement capability</strong><p>Accuracy, uncertainty, stability, resolution, and turndown matter more than headline specs alone.</p></div>
+          <div class="criterion"><span>03</span><strong>Workflow</strong><p>Automation, documentation, HART, data transfer, and accessories can matter as much as raw performance.</p></div>
+          <div class="criterion"><span>04</span><strong>Total ownership</strong><p>Calibration cost, support, repairability, modules, software, and future expansion all affect value.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="directory-disclaimer shell">
+      <p><strong>Independent directory.</strong> MetrologyBase is not affiliated with or sponsored by the manufacturers listed here. Inclusion is not a ranking or endorsement. Product capabilities change; always verify current specifications, approvals, compatibility, and calibration requirements with the manufacturer before purchasing or using equipment for acceptance decisions.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div><a class="brand footer-brand" href="/"><span class="brand-mark">M</span><span>MetrologyBase</span></a><p>Practical tools and resources for calibration professionals.</p></div>
+      <div class="footer-links"><a href="/#learn">Learn</a><a href="/articles">Articles</a><a href="/#tools">Tools</a><a href="/products">What to Buy</a><a href="/#glossary">Glossary</a></div>
+      <div class="footer-meta">Independent educational reference.<br>Verify purchasing decisions against official manufacturer specifications.</div>
+    </div>
+  </footer>
+
+  <script>
+    const cards=[...document.querySelectorAll('.product-card')];
+    const buttons=[...document.querySelectorAll('.filter-button')];
+    const search=document.querySelector('#productSearch');
+    const count=document.querySelector('#productCount');
+    const empty=document.querySelector('#emptyState');
+    let active='all';
+
+    function render(){
+      const query=(search.value||'').trim().toLowerCase();
+      let visible=0;
+      cards.forEach(card=>{
+        const categories=(card.dataset.category||'').split(' ');
+        const haystack=(card.dataset.search+' '+card.textContent).toLowerCase();
+        const categoryMatch=active==='all'||categories.includes(active);
+        const searchMatch=!query||haystack.includes(query);
+        const show=categoryMatch&&searchMatch;
+        card.style.display=show?'flex':'none';
+        if(show) visible++;
+      });
+      count.textContent=visible+' product'+(visible===1?'':'s');
+      empty.style.display=visible?'none':'block';
+    }
+
+    function setFilter(filter){
+      active=filter;
+      buttons.forEach(button=>button.classList.toggle('active',button.dataset.filter===filter));
+      render();
+    }
+
+    buttons.forEach(button=>button.addEventListener('click',()=>setFilter(button.dataset.filter)));
+    search.addEventListener('input',render);
+
+    const requested=new URLSearchParams(location.search).get('category');
+    if(requested&&buttons.some(button=>button.dataset.filter===requested)) setFilter(requested);
+    else render();
+  </script>
+</body>
+</html>
