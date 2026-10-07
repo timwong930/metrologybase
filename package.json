@@ -2,9 +2,9 @@
   "name": "metrologybase",
   "version": "1.0.0",
   "private": true,
-  "description": "MetrologyBase — practical, independent metrology education and tools.",
+  "description": "MetrologyBase — practical tools, resources, and vendor-neutral buying guidance for calibration professionals.",
   "scripts": {
     "dev": "npx serve .",
-    "build": "rm -rf dist && mkdir -p dist && cp index.html articles.html full-scale-vs-full-span.html styles.css app.js dist/ && cp -R public/. dist/"
+    "build": "rm -rf dist && mkdir -p dist && cp index.html articles.html products.html full-scale-vs-full-span.html styles.css app.js dist/ && cp -R public/. dist/"
   }
 }
