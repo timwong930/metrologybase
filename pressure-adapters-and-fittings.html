@@ -45,14 +45,22 @@
     .use-card{padding:24px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.42)}
     .use-card h3{margin:0 0 8px}
     .use-card p{font-size:15px;margin:0}
+    .figure-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:30px 0}
+    .source-figure{margin:0;padding:14px;background:var(--paper);border:1px solid var(--line);border-radius:18px}
+    .source-figure img{display:block;width:100%;height:250px;object-fit:contain;background:white;border-radius:12px}
+    .source-figure figcaption{margin-top:10px;font-size:12px;line-height:1.45;color:#707b8d}
+    .source-figure figcaption a{font-size:12px}
+    .source-figure.wide{margin:30px 0}
+    .source-figure.wide img{height:auto;max-height:420px}
     .source-list{padding-left:20px}
     .source-list li{margin:12px 0}
     .article-note{margin-top:54px;padding-top:20px;border-top:1px solid var(--line);font-size:13px!important;color:#7b8492!important}
     @media(max-width:700px){
       .article-hero{padding:58px 0 32px}
       .article-lede{font-size:18px}
-      .connection-grid,.use-grid{grid-template-columns:1fr}
+      .connection-grid,.use-grid,.figure-grid{grid-template-columns:1fr}
       .seal-strip{grid-template-columns:1fr 1fr}
+      .source-figure img{height:auto;max-height:320px}
       .article-prose h2{font-size:32px;margin-top:52px}
     }
   </style>
@@ -197,6 +205,28 @@
         <p><strong>BSPT</strong> is tapered and seals in a similar general manner to NPT: the threaded connection is tightened with a compatible sealant. <strong>BSPP</strong>, commonly designated <strong>G</strong>, is straight. A BSPP connection usually seals against a washer, gasket, bonded seal, or O-ring rather than by wedging the threads together.</p>
         <p>This makes BSPP useful where an instrument is removed and reinstalled frequently, provided the correct sealing element and mating geometry are used. It also means that adding thread tape to a BSPP fitting does not convert the threads into the intended sealing surface.</p>
 
+        <div class="figure-grid" aria-label="Examples of NPT and BSPP pressure gauge connections">
+          <figure class="source-figure">
+            <img src="https://blog.wika.com/us//files/2019/08/npt-connection_cropped.png"
+                 alt="WIKA pressure gauge with a tapered NPT process connection"
+                 loading="lazy" />
+            <figcaption><strong>NPT connection:</strong> the male thread tapers toward the tip. Image source: <a href="https://blog.wika.com/us/knowhow/pressure-gauge-difference-between-npt-and-g-connections/" target="_blank" rel="noopener">WIKA — Difference Between NPT and G Connections</a>.</figcaption>
+          </figure>
+          <figure class="source-figure">
+            <img src="https://blog.wika.com/us//files/2019/08/g-connection.png"
+                 alt="WIKA pressure gauge with a straight G quarter inch BSPP connection"
+                 loading="lazy" />
+            <figcaption><strong>G / BSPP connection:</strong> the thread remains parallel rather than tapering. Image source: <a href="https://blog.wika.com/us/knowhow/pressure-gauge-difference-between-npt-and-g-connections/" target="_blank" rel="noopener">WIKA — Difference Between NPT and G Connections</a>.</figcaption>
+          </figure>
+        </div>
+
+        <figure class="source-figure wide">
+          <img src="https://blog.wika.com/us//files/2019/08/sealing-washer-838x331.png"
+               alt="WIKA comparison showing a sealing washer installed and removed from a G BSPP pressure gauge connection"
+               loading="lazy" />
+          <figcaption><strong>BSPP sealing washer:</strong> this illustrates why G/BSPP is not sealed by the thread itself. Image source: <a href="https://blog.wika.com/us/knowhow/pressure-gauge-difference-between-npt-and-g-connections/" target="_blank" rel="noopener">WIKA</a>.</figcaption>
+        </figure>
+
         <h2>SAE O-ring boss: common in hydraulics</h2>
         <p>SAE straight-thread O-ring boss connections are widely used on hydraulic ports. The male fitting carries an O-ring, and the straight thread pulls the fitting into the port so the O-ring can be compressed against the designed sealing surface.</p>
         <p>For calibration work, you may encounter ORB when connecting to hydraulic components, pumps, test stands, mobile equipment, or devices removed from hydraulic systems. The O-ring material matters: pressure, temperature, hydraulic fluid, gas, and cleaning requirements can all affect compatibility.</p>
@@ -220,6 +250,21 @@
         <div class="callout">
           <strong>“Autoclave” is not a generic pipe-thread size.</strong>
           <p>It describes a family of specialized high-pressure connections. Medium-pressure, high-pressure, reverse-high-pressure, and ordinary NPT ends can appear on adapters from the same manufacturer, so identify the exact connection family and size before assembling the system.</p>
+        </div>
+
+        <div class="figure-grid" aria-label="Examples of Autoclave and high-pressure calibration hardware">
+          <figure class="source-figure">
+            <img src="https://images.solutions.parker.com/EloquaImages/clients/Parker/%7B4c55d385-e06f-469a-8e0a-9dbd8b336c7c%7D_Autoclave_products.png"
+                 alt="Parker Autoclave Engineers high-pressure valves fittings tubing and pressure gauge"
+                 loading="lazy" />
+            <figcaption><strong>Autoclave high-pressure hardware:</strong> Parker Autoclave Engineers fittings, valves, and tubing used in high-pressure systems. Image source: <a href="https://discover.parker.com/ING_AP_Autoclave" target="_blank" rel="noopener">Parker Autoclave Engineers</a>.</figcaption>
+          </figure>
+          <figure class="source-figure">
+            <img src="https://anaum.sa.com/cdn/shop/products/ADT104_998x998.jpg?v=1592655575"
+                 alt="Open Additel ADT104-HP adapter kit containing labeled high-pressure NPT BSP and metric adapters"
+                 loading="lazy" />
+            <figcaption><strong>Additel ADT104-HP kit:</strong> a practical example of 1/4 HP (Autoclave M-250-C) adapters converting to NPT, BSP, metric, and HP connections. Image source: <a href="https://anaum.com/products/additel-adt104-hp" target="_blank" rel="noopener">Anaum product page</a>; connection specifications are verified against <a href="https://www.additel.com/download/datasheet/10X/10X_Pressure_Adapter_and_Fittings.pdf" target="_blank" rel="noopener">Additel's official datasheet</a>.</figcaption>
+          </figure>
         </div>
 
         <h2>What does “1/4 HP” mean on a pressure adapter?</h2>
