@@ -1,6 +1,6 @@
 # MetrologyBase
 
-MetrologyBase is an independent, practical metrology reference built to make calibration and measurement concepts easier to understand and use.
+MetrologyBase is an independent resource for calibration professionals: practical metrology education, calculators, reference guides, and vendor-neutral equipment buying guidance.
 
 ## Current direction
 
