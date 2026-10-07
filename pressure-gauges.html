@@ -55,8 +55,8 @@
     .catalog-head p{max-width:560px;color:#657287;margin:0}
     .count{font:500 11px 'DM Mono',monospace;color:#6f7b8e;white-space:nowrap}
     .gauge-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .gauge-card{display:flex;flex-direction:column;padding:27px;border:1px solid var(--line);border-radius:24px;background:var(--paper);box-shadow:0 1px 0 rgba(16,35,63,.02)}
-    .gauge-top{display:flex;justify-content:space-between;align-items:center}
+    .gauge-card{position:relative;display:flex;flex-direction:column;padding:27px;border:1px solid var(--line);border-radius:24px;background:var(--paper);box-shadow:0 1px 0 rgba(16,35,63,.02);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease}
+    .gauge-card:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(16,35,63,.11);border-color:rgba(23,104,229,.28);background:#fff}.gauge-card:focus-visible{outline:3px solid rgba(23,104,229,.28);outline-offset:3px;border-color:var(--blue)}.gauge-card:active{transform:translateY(-1px)}.gauge-card::after{content:'Open device →';position:absolute;top:25px;right:58px;font:600 10px 'DM Mono',monospace;letter-spacing:.04em;color:var(--blue);opacity:0;transform:translateX(-4px);transition:opacity .2s ease,transform .2s ease;pointer-events:none}.gauge-card:hover::after,.gauge-card:focus-visible::after{opacity:1;transform:none}.gauge-top{display:flex;justify-content:space-between;align-items:center}
     .brand-pill{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;padding:7px 9px;border-radius:999px;background:#edf2f8;color:#526176}
     .card-number{font:500 10px 'DM Mono',monospace;color:#9a7c41}
     .gauge-card h3{font:600 31px/1 'Fraunces',serif;letter-spacing:-.025em;margin:24px 0 7px}
@@ -695,6 +695,29 @@
 <script>
 const cards=[...document.querySelectorAll('.gauge-card')];
 const buttons=[...document.querySelectorAll('.filter-button')];
+
+cards.forEach(card=>{
+  const deviceLink=card.querySelector('.device-link');
+  if(!deviceLink) return;
+  const href=deviceLink.getAttribute('href');
+  card.dataset.href=href;
+  card.setAttribute('role','link');
+  card.setAttribute('tabindex','0');
+  card.setAttribute('aria-label','Open '+(card.querySelector('h3')?.textContent||'device')+' details');
+
+  card.addEventListener('click',event=>{
+    if(event.target.closest('a,button,input,select,textarea,label')) return;
+    window.location.href=href;
+  });
+
+  card.addEventListener('keydown',event=>{
+    if(event.target!==card) return;
+    if(event.key==='Enter'||event.key===' '){
+      event.preventDefault();
+      window.location.href=href;
+    }
+  });
+});
 const search=document.querySelector('#gaugeSearch');
 const count=document.querySelector('#gaugeCount');
 const empty=document.querySelector('#emptyState');
