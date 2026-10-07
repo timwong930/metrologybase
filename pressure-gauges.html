@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pressure Gauge Buying Guide & Comparison — MetrologyBase</title>
+  <meta name="description" content="Compare digital test gauges, reference pressure gauges, intrinsically safe gauges, differential gauges and mechanical process gauges from Additel, Fluke, WIKA, Crystal, Druck, Ashcroft, KELLER, OMEGA and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .guide-hero{padding:88px 0 54px}
+    .guide-hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:end}
+    .guide-hero h1{font:700 clamp(52px,7vw,88px)/.96 'Fraunces',serif;letter-spacing:-.05em;margin:0}
+    .guide-hero h1 em{font-style:normal;color:var(--blue)}
+    .guide-hero p{max-width:760px;font-size:18px;color:#536176;margin:26px 0 0}
+    .hero-note{padding:24px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.5)}
+    .hero-note .mini{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:#6f7b8e}
+    .hero-note strong{display:block;font:600 25px 'Fraunces',serif;margin:8px 0}
+    .hero-note p{font-size:14px;margin:0}
+    .method-strip{border-block:1px solid var(--line);background:rgba(255,255,255,.28)}
+    .method-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .method-grid div{padding:24px;border-right:1px solid var(--line)}
+    .method-grid div:last-child{border-right:0}
+    .method-grid span{font:500 10px 'DM Mono',monospace;color:var(--gold)}
+    .method-grid strong{display:block;margin:7px 0 4px;font-size:14px}
+    .method-grid p{margin:0;color:#6b778a;font-size:12px}
+    .pick-section{padding:82px 0}
+    .pick-section h2,.catalog h2,.comparison h2{font:600 clamp(38px,5vw,58px)/1 'Fraunces',serif;letter-spacing:-.04em;margin:0}
+    .pick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}
+    .pick{padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--paper)}
+    .pick span{font:500 10px 'DM Mono',monospace;text-transform:uppercase;color:var(--blue)}
+    .pick strong{display:block;font-size:17px;margin:8px 0}
+    .pick p{margin:0;color:#657287;font-size:13px}
+    .comparison{padding:86px 0;background:var(--navy);color:#fff}
+    .comparison .eyebrow{color:#91a1b8}
+    .comparison-copy{color:#aebccd;max-width:760px}
+    .table-wrap{overflow-x:auto;margin-top:30px;border:1px solid rgba(255,255,255,.13);border-radius:18px}
+    .compare-table{border-collapse:collapse;width:100%;min-width:1000px;background:#10233f}
+    .compare-table th,.compare-table td{padding:16px;text-align:left;vertical-align:top;border-bottom:1px solid rgba(255,255,255,.1)}
+    .compare-table th{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.06em;color:#87aff7;background:#0b192c}
+    .compare-table td{font-size:12px;color:#c8d3e1}
+    .compare-table td:first-child{color:white;min-width:165px}
+    .controls-wrap{position:sticky;top:69px;z-index:12;background:rgba(245,241,232,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .controls{padding:16px 0;display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:14px;align-items:center}
+    .search-wrap{position:relative}
+    .search-wrap input{width:100%;padding:13px 15px 13px 42px;border:1px solid var(--line);border-radius:13px;background:var(--paper);font:500 14px 'DM Sans',sans-serif;color:var(--ink)}
+    .search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#7d8795}
+    .filters{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+    .filter-button{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:8px 10px;font:600 11px 'DM Sans',sans-serif;cursor:pointer}
+    .filter-button.active,.filter-button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .catalog{padding:78px 0 110px}
+    .catalog-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:28px}
+    .catalog-head p{max-width:560px;color:#657287;margin:0}
+    .count{font:500 11px 'DM Mono',monospace;color:#6f7b8e;white-space:nowrap}
+    .gauge-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .gauge-card{display:flex;flex-direction:column;padding:27px;border:1px solid var(--line);border-radius:24px;background:var(--paper);box-shadow:0 1px 0 rgba(16,35,63,.02)}
+    .gauge-top{display:flex;justify-content:space-between;align-items:center}
+    .brand-pill{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;padding:7px 9px;border-radius:999px;background:#edf2f8;color:#526176}
+    .card-number{font:500 10px 'DM Mono',monospace;color:#9a7c41}
+    .gauge-card h3{font:600 31px/1 'Fraunces',serif;letter-spacing:-.025em;margin:24px 0 7px}
+    .gauge-type{font-weight:700;font-size:13px;color:#526176;margin-bottom:18px}
+    .spec-list{margin:0;border-top:1px solid var(--line)}
+    .spec-list>div{display:grid;grid-template-columns:112px 1fr;gap:16px;padding:11px 0;border-bottom:1px solid var(--line)}
+    .spec-list dt{font:500 9px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.06em;color:#7a8698}
+    .spec-list dd{margin:0;font-size:12.5px;color:#4f5d70}
+    .fit-block,.watch-block{margin-top:16px;padding:15px;border-radius:14px}
+    .fit-block{background:#eef5ff}
+    .watch-block{background:#f4f0e7}
+    .fit-block span,.watch-block span{font:500 9px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.07em;color:#55708f}
+    .fit-block p,.watch-block p{margin:5px 0 0;font-size:12.5px;color:#4e5e72}
+    .official-link{margin-top:auto;padding-top:20px;color:var(--blue);text-decoration:none;font-weight:700;font-size:13px}
+    .official-link:hover{text-decoration:underline}
+    .empty{display:none;padding:30px;border:1px dashed #c9c4b8;border-radius:18px;color:#667085}
+    .accuracy-note{padding:82px 0;border-top:1px solid var(--line)}
+    .accuracy-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+    .accuracy-grid h2{font:600 clamp(38px,5vw,56px)/1 'Fraunces',serif;letter-spacing:-.04em;margin:0}
+    .accuracy-grid p{color:#657287}
+    .accuracy-grid code{font-family:'DM Mono',monospace;background:#ece7dc;padding:2px 6px;border-radius:5px}
+    @media(max-width:920px){.guide-hero-grid,.accuracy-grid{grid-template-columns:1fr;gap:32px}.pick-grid{grid-template-columns:1fr 1fr}.gauge-grid{grid-template-columns:1fr}.controls{grid-template-columns:1fr}.filters{justify-content:flex-start}.controls-wrap{position:static}}
+    @media(max-width:620px){.guide-hero{padding:56px 0 40px}.method-grid{grid-template-columns:1fr 1fr}.method-grid div:nth-child(2){border-right:0}.pick-grid{grid-template-columns:1fr}.catalog-head{align-items:flex-start;flex-direction:column}.spec-list>div{grid-template-columns:1fr;gap:4px}}
+  </style>
+  <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/"><span class="brand-mark">M</span><span>MetrologyBase</span></a>
+  <nav class="nav-links" aria-label="Primary navigation">
+    <a href="/#learn">Learn</a><a href="/articles">Articles</a><a href="/#tools">Tools</a><a href="/products">What to Buy</a><a href="/pressure-gauges" aria-current="page">Pressure Gauges</a>
+  </nav>
+  <a class="nav-cta" href="/products">All gear</a>
+</header>
+
+<main>
+<section class="guide-hero shell">
+  <div class="guide-hero-grid">
+    <div>
+      <div class="eyebrow"><span></span> Pressure gauge buying guide</div>
+      <h1>Choose the gauge<br><em>for the job.</em></h1>
+      <p>A vendor-neutral comparison of 21 current digital test gauges, reference gauges, hazardous-area gauges, differential gauges, panel replacements, and mechanical process gauges. Specifications are summarized from manufacturer documentation; always verify the exact ordered configuration.</p>
+    </div>
+    <aside class="hero-note">
+      <div class="mini">Most important rule</div>
+      <strong>Accuracy numbers are not interchangeable.</strong>
+      <p>0.05% FS, 0.05% of reading, and a 0.05% total-error-band specification can behave very differently. MetrologyBase keeps the manufacturer's stated basis visible instead of ranking by the smallest number.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="method-strip">
+  <div class="shell method-grid">
+    <div><span>01</span><strong>Pick the pressure type</strong><p>Gauge, absolute, compound, vacuum, or differential.</p></div>
+    <div><span>02</span><strong>Use the right range</strong><p>A needlessly large FS range can destroy useful accuracy at low pressure.</p></div>
+    <div><span>03</span><strong>Check total performance</strong><p>Temperature, stability, media, overpressure, and uncertainty matter.</p></div>
+    <div><span>04</span><strong>Then compare workflow</strong><p>Logging, Bluetooth, safety approvals, fittings, and software.</p></div>
+  </div>
+</section>
+
+<section class="pick-section shell">
+  <div class="eyebrow"><span></span> Quick shortlist</div>
+  <h2>Start here by use case.</h2>
+  <div class="pick-grid">
+    <div class="pick"><span>Highest precision</span><strong>Additel 685 / KELLER LEX1 / WIKA CPG1500</strong><p>Start with the actual range and uncertainty requirement; all three offer precision-focused configurations.</p></div>
+    <div class="pick"><span>Rugged field reference</span><strong>Crystal XP3i / Fluke 700G</strong><p>Strong choices where portability, field durability, and established pressure-test workflows matter.</p></div>
+    <div class="pick"><span>Hazardous areas</span><strong>XP3i, 685Ex, 681AEx, 601Ex, DPI 104-IS</strong><p>Certification details differ. Match the exact gas group, zone/division, and temperature class to the site.</p></div>
+    <div class="pick"><span>Lower-cost digital replacement</span><strong>Additel 680A / WIKA CPG1200 / Ashcroft DG25 / KELLER LEO2</strong><p>Better fit for indication and service work than precision-reference calibration.</p></div>
+    <div class="pick"><span>Differential pressure</span><strong>Additel 685 DP / Crystal XP2i-DP</strong><p>Choose based on media compatibility, static-pressure limits, range, and required accuracy.</p></div>
+    <div class="pick"><span>Permanent process gauge</span><strong>WIKA 232.30 / Ashcroft 1279</strong><p>Mechanical gauges remain sensible where simplicity, local indication, and no batteries are the priority.</p></div>
+  </div>
+</section>
+
+<section class="comparison">
+  <div class="shell">
+    <div class="eyebrow"><span></span> Digital gauge comparison</div>
+    <h2>At-a-glance specifications</h2>
+    <p class="comparison-copy">This table intentionally preserves each manufacturer's accuracy language. A smaller-looking number is not automatically better unless the basis, temperature range, stability, and calibration uncertainty are comparable.</p>
+    <div class="table-wrap"><table class="compare-table"><thead><tr><th>Product</th><th>Range</th><th>Published accuracy</th><th>Hazardous area</th><th>Data / I/O</th></tr></thead><tbody>
+<tr data-tags="reference field digital">
+  <td><strong>Additel</strong><br>ADT686</td>
+  <td>Up to 60,000 psi / 4,200 bar</td>
+  <td>0.02% or 0.05% FS; 0.1% of reading options</td>
+  <td>Standard industrial</td>
+  <td>Bluetooth + USB; optional Wi‑Fi and data logging</td>
+</tr>
+
+<tr data-tags="reference field hazardous differential digital">
+  <td><strong>Additel</strong><br>ADT685 / 685Ex</td>
+  <td>±1 inH₂O class through 60,000 psi / 4,200 bar configurations</td>
+  <td>0.01%, 0.02%, 0.05% FS or 0.1% of reading</td>
+  <td>685Ex intrinsically safe option</td>
+  <td>USB‑C + Bluetooth; optional RS‑232/RS‑485/4–20 mA; optional 10M-point logger</td>
+</tr>
+
+<tr data-tags="reference field hazardous digital">
+  <td><strong>Additel</strong><br>ADT681A / 681AEx</td>
+  <td>Up to 60,000 psi / 4,200 bar</td>
+  <td>0.01%, 0.02%, 0.05% FS or 0.1% of reading</td>
+  <td>681AEx intrinsically safe option</td>
+  <td>Bluetooth; Additel Link; up to 10,000,000 logged records</td>
+</tr>
+
+<tr data-tags="field budget hazardous digital">
+  <td><strong>Additel</strong><br>ADT680A / 680AEx</td>
+  <td>Up to 60,000 psi / 4,200 bar</td>
+  <td>0.1% or 0.2% FS</td>
+  <td>680AEx intrinsically safe option</td>
+  <td>Bluetooth + RS‑232 capability; up to 800,000 records</td>
+</tr>
+
+<tr data-tags="field budget hazardous digital">
+  <td><strong>Additel</strong><br>ADT601Ex</td>
+  <td>-15 psi to 15,000 psi / 1,000 bar</td>
+  <td>0.5% FS</td>
+  <td>ATEX/IECEx Ex ia IIC T4 Ga</td>
+  <td>Bluetooth remote monitoring</td>
+</tr>
+
+<tr data-tags="reference field hazardous digital logging">
+  <td><strong>Crystal / AMETEK</strong><br>XP3i</td>
+  <td>Vacuum through 15,000 psi</td>
+  <td>0.05% of reading; 0.02% or 0.05% FS options</td>
+  <td>Intrinsically safe</td>
+  <td>Bluetooth + USB‑C; optional DataLoggerXP with >200M points and cloud/mobile workflow</td>
+</tr>
+
+<tr data-tags="reference field hazardous digital">
+  <td><strong>Crystal / AMETEK</strong><br>XP2i</td>
+  <td>Vacuum through 15,000 psi</td>
+  <td>0.1% of reading; 0.02% or 0.05% FS options</td>
+  <td>Intrinsically safe</td>
+  <td>RS‑232; optional DataLoggerXP up to 32,000 measurements</td>
+</tr>
+
+<tr data-tags="reference field hazardous differential digital">
+  <td><strong>Crystal / AMETEK</strong><br>XP2i-DP</td>
+  <td>Differential-pressure configurations; see factory range table</td>
+  <td>0.1% of reading</td>
+  <td>Intrinsically safe</td>
+  <td>Crystal digital-gauge ecosystem</td>
+</tr>
+
+<tr data-tags="panel reference digital">
+  <td><strong>Crystal / AMETEK</strong><br>WT Series</td>
+  <td>XP2i-based configurations</td>
+  <td>0.1% of reading</td>
+  <td>Configuration dependent</td>
+  <td>Front-access communications; optional data logging</td>
+</tr>
+
+<tr data-tags="field budget digital">
+  <td><strong>Crystal / AMETEK</strong><br>m1</td>
+  <td>30 psi digital manometer configuration</td>
+  <td>0.2% of reading</td>
+  <td>General industrial</td>
+  <td>Standalone indication</td>
+</tr>
+
+<tr data-tags="reference field hazardous digital logging">
+  <td><strong>Fluke</strong><br>700G Series</td>
+  <td>±10 inH₂O / 20 mbar through 10,000 psi / 690 bar</td>
+  <td>Standard models typically 0.05% FS; reference models up to ±(0.04% reading + 0.01% range)</td>
+  <td>CSA/ATEX intrinsically safe certifications listed by Fluke</td>
+  <td>Up to 8,493 records with 700G/TRACK</td>
+</tr>
+
+<tr data-tags="reference field hazardous digital logging">
+  <td><strong>WIKA</strong><br>CPG1500</td>
+  <td>15–15,000 psi at highest accuracy classes; higher-pressure variants listed to 150,000 psi</td>
+  <td>Down to 0.025% FS; accuracy class depends on range</td>
+  <td>Intrinsically safe version available</td>
+  <td>WIKA-Wireless/Bluetooth; logger up to 50 values/s; WIKA-CAL support</td>
+</tr>
+
+<tr data-tags="field budget hazardous digital logging">
+  <td><strong>WIKA</strong><br>CPG1200</td>
+  <td>-14.5 to 15,000 psi / -1 to 1,000 bar</td>
+  <td>Down to 0.25% FS</td>
+  <td>Intrinsically safe Ex version available</td>
+  <td>USB + Bluetooth; optional 1,000,000-point logger; up to ~4,000 h operation</td>
+</tr>
+
+<tr data-tags="reference field hazardous digital">
+  <td><strong>Druck / Baker Hughes</strong><br>DPI 104 / 104-IS</td>
+  <td>Up to 20,000 psi / 1,400 bar</td>
+  <td>0.05% FS including stated temperature effects over compensated range</td>
+  <td>DPI 104-IS intrinsically safe version</td>
+  <td>RS‑232; 0–5 V output; min/max, tare, alarm and switch-test functions</td>
+</tr>
+
+<tr data-tags="reference field hazardous digital">
+  <td><strong>Ashcroft</strong><br>2084 / 2086 / 2089</td>
+  <td>Gauge, compound, absolute and vacuum through 7,000 psi</td>
+  <td>2084: 0.25%; 2086: 0.10%; 2089: 0.05% of span TEB</td>
+  <td>FM / intrinsically safe options</td>
+  <td>Battery powered; field calibration; 12 engineering units</td>
+</tr>
+
+<tr data-tags="field budget digital">
+  <td><strong>Ashcroft</strong><br>DG25</td>
+  <td>Vacuum/compound and 15 to 25,000 psi</td>
+  <td>0.5% of span standard; 0.25% option</td>
+  <td>CE/CRN/RoHS/UL listed configurations</td>
+  <td>Standalone digital indication</td>
+</tr>
+
+<tr data-tags="reference field digital">
+  <td><strong>KELLER</strong><br>LEX1</td>
+  <td>-1…1 bar through 0…1,000 bar</td>
+  <td>≤±0.05% FS TEB over 0–50°C; higher-accuracy configurations are offered</td>
+  <td>Intrinsically safe variant available</td>
+  <td>RS‑485; PressureSuite ecosystem</td>
+</tr>
+
+<tr data-tags="field budget hazardous digital">
+  <td><strong>KELLER</strong><br>LEO2 / LEO2-Ei</td>
+  <td>0–4 bar through 0–700 bar</td>
+  <td>±0.1% FS at room temperature; ±0.2% FS TEB over 0–50°C</td>
+  <td>LEO2-Ei intrinsically safe</td>
+  <td>Standalone; simultaneous actual + min/max display</td>
+</tr>
+
+<tr data-tags="field panel digital output">
+  <td><strong>OMEGA</strong><br>DPG409</td>
+  <td>Low-pressure configurations through 5,000 psi</td>
+  <td>±0.08% BSL base accuracy; temperature effects specified separately</td>
+  <td>General industrial</td>
+  <td>Selectable 0–5 V, 0–10 V or 4–20 mA analog output options</td>
+</tr></tbody></table></div>
+  </div>
+</section>
+
+<section class="controls-wrap">
+  <div class="shell controls">
+    <div class="search-wrap"><span class="search-icon">⌕</span><input id="gaugeSearch" type="search" placeholder="Search brand, model, accuracy, range or use case…" aria-label="Search pressure gauges"></div>
+    <div class="filters">
+      <button class="filter-button active" data-filter="all">All</button>
+      <button class="filter-button" data-filter="reference">Reference</button>
+      <button class="filter-button" data-filter="field">Field</button>
+      <button class="filter-button" data-filter="hazardous">Hazardous</button>
+      <button class="filter-button" data-filter="differential">Differential</button>
+      <button class="filter-button" data-filter="panel">Panel</button>
+      <button class="filter-button" data-filter="mechanical">Mechanical</button>
+      <button class="filter-button" data-filter="budget">Value / service</button>
+    </div>
+  </div>
+</section>
+
+<section class="catalog shell">
+  <div class="catalog-head"><div><div class="eyebrow"><span></span> Full directory</div><h2>21 gauges researched</h2></div><div><p>Cards summarize the most decision-relevant details from official manufacturer pages and datasheets. Exact ranges, pressure ports, approvals, options, and accuracy conditions vary by part number.</p><div class="count" id="gaugeCount">21 products</div></div></div>
+  <div class="gauge-grid" id="gaugeGrid">
+<article class="gauge-card" data-tags="reference field digital" data-search="Additel ADT686 Advanced digital pressure gauge High-end field/lab work when touchscreen workflow, very high pressure, and gauge/absolute flexibility matter. Up to 60,000 psi / 4,200 bar 0.02% or 0.05% FS; 0.1% of reading options">
+  <div class="gauge-top"><span class="brand-pill">Additel</span><span class="card-number">01</span></div>
+  <h3>ADT686</h3>
+  <div class="gauge-type">Advanced digital pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>Up to 60,000 psi / 4,200 bar</dd></div>
+    <div><dt>Accuracy</dt><dd>0.02% or 0.05% FS; 0.1% of reading options</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge or absolute on every model; built-in barometer</dd></div>
+    <div><dt>Environment</dt><dd>IP67; fully temperature compensated</dd></div>
+    <div><dt>Data / I/O</dt><dd>Bluetooth + USB; optional Wi‑Fi and data logging</dd></div>
+    <div><dt>Hazardous area</dt><dd>Standard industrial</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>High-end field/lab work when touchscreen workflow, very high pressure, and gauge/absolute flexibility matter.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Higher capability than many users need; select accuracy class and range carefully.</p></div>
+  <a class="official-link" href="https://additel.com/product-detail.html/686-digital-pressure-gauge/" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="reference field hazardous differential digital" data-search="Additel ADT685 / 685Ex Precision digital pressure gauge Calibration/reference work needing broad pressure types, very high accuracy, logging, and modern connectivity. ±1 inH₂O class through 60,000 psi / 4,200 bar configurations 0.01%, 0.02%, 0.05% FS or 0.1% of reading">
+  <div class="gauge-top"><span class="brand-pill">Additel</span><span class="card-number">02</span></div>
+  <h3>ADT685 / 685Ex</h3>
+  <div class="gauge-type">Precision digital pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>±1 inH₂O class through 60,000 psi / 4,200 bar configurations</dd></div>
+    <div><dt>Accuracy</dt><dd>0.01%, 0.02%, 0.05% FS or 0.1% of reading</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge, compound, absolute, differential and barometric configurations</dd></div>
+    <div><dt>Environment</dt><dd>IP67; compensated -10 to 50°C</dd></div>
+    <div><dt>Data / I/O</dt><dd>USB‑C + Bluetooth; optional RS‑232/RS‑485/4–20 mA; optional 10M-point logger</dd></div>
+    <div><dt>Hazardous area</dt><dd>685Ex intrinsically safe option</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Calibration/reference work needing broad pressure types, very high accuracy, logging, and modern connectivity.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>0.01%/0.02% options are not available on every pressure/media combination.</p></div>
+  <a class="official-link" href="https://www.additel.com/product-detail.html/685-digital-pressure-gauge/" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="reference field hazardous digital" data-search="Additel ADT681A / 681AEx Digital pressure gauge Users wanting reference-class performance with physical buttons rather than the 685/686 touchscreen experience. Up to 60,000 psi / 4,200 bar 0.01%, 0.02%, 0.05% FS or 0.1% of reading">
+  <div class="gauge-top"><span class="brand-pill">Additel</span><span class="card-number">03</span></div>
+  <h3>ADT681A / 681AEx</h3>
+  <div class="gauge-type">Digital pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>Up to 60,000 psi / 4,200 bar</dd></div>
+    <div><dt>Accuracy</dt><dd>0.01%, 0.02%, 0.05% FS or 0.1% of reading</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge and absolute measurement options</dd></div>
+    <div><dt>Environment</dt><dd>IP67; compensated -10 to 50°C</dd></div>
+    <div><dt>Data / I/O</dt><dd>Bluetooth; Additel Link; up to 10,000,000 logged records</dd></div>
+    <div><dt>Hazardous area</dt><dd>681AEx intrinsically safe option</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Users wanting reference-class performance with physical buttons rather than the 685/686 touchscreen experience.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Verify exact pressure type, accuracy option, and sensor compatibility for the ordered range.</p></div>
+  <a class="official-link" href="https://www.additel.com/product-detail.html/681A-wireless-digital-pressure-gauge/" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="field budget hazardous digital" data-search="Additel ADT680A / 680AEx General-purpose digital pressure gauge Field measurement and mechanical-gauge replacement where ruggedness and logging matter more than reference-grade accuracy. Up to 60,000 psi / 4,200 bar 0.1% or 0.2% FS">
+  <div class="gauge-top"><span class="brand-pill">Additel</span><span class="card-number">04</span></div>
+  <h3>ADT680A / 680AEx</h3>
+  <div class="gauge-type">General-purpose digital pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>Up to 60,000 psi / 4,200 bar</dd></div>
+    <div><dt>Accuracy</dt><dd>0.1% or 0.2% FS</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge/compound configurations by range</dd></div>
+    <div><dt>Environment</dt><dd>IP67; stainless shell and welded sensor</dd></div>
+    <div><dt>Data / I/O</dt><dd>Bluetooth + RS‑232 capability; up to 800,000 records</dd></div>
+    <div><dt>Hazardous area</dt><dd>680AEx intrinsically safe option</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Field measurement and mechanical-gauge replacement where ruggedness and logging matter more than reference-grade accuracy.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Not the right choice when your calibration TUR requires 0.05% FS or better.</p></div>
+  <a class="official-link" href="https://www.additel.com/product-detail.html/680a-digital-pressure-gauge/" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="field budget hazardous digital" data-search="Additel ADT601Ex Economical intrinsically safe digital gauge Replacing dial gauges in hazardous areas without paying for calibration-reference accuracy. -15 psi to 15,000 psi / 1,000 bar 0.5% FS">
+  <div class="gauge-top"><span class="brand-pill">Additel</span><span class="card-number">05</span></div>
+  <h3>ADT601Ex</h3>
+  <div class="gauge-type">Economical intrinsically safe digital gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>-15 psi to 15,000 psi / 1,000 bar</dd></div>
+    <div><dt>Accuracy</dt><dd>0.5% FS</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge/compound configurations</dd></div>
+    <div><dt>Environment</dt><dd>IP67; compensated -20 to 50°C; 1 m drop rating</dd></div>
+    <div><dt>Data / I/O</dt><dd>Bluetooth remote monitoring</dd></div>
+    <div><dt>Hazardous area</dt><dd>ATEX/IECEx Ex ia IIC T4 Ga</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Replacing dial gauges in hazardous areas without paying for calibration-reference accuracy.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>0.5% FS is process-indication territory, not a high-accuracy calibration reference.</p></div>
+  <a class="official-link" href="https://additel.com/product-detail.html/601Ex-digital-pressure-gauge/" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="reference field hazardous digital logging" data-search="Crystal / AMETEK XP3i Rugged digital test gauge Oil & gas, pressure testing, and field calibration where ruggedness plus of-reading accuracy and connectivity are valuable. Vacuum through 15,000 psi 0.05% of reading; 0.02% or 0.05% FS options">
+  <div class="gauge-top"><span class="brand-pill">Crystal / AMETEK</span><span class="card-number">06</span></div>
+  <h3>XP3i</h3>
+  <div class="gauge-type">Rugged digital test gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>Vacuum through 15,000 psi</dd></div>
+    <div><dt>Accuracy</dt><dd>0.05% of reading; 0.02% or 0.05% FS options</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge; model-dependent absolute options</dd></div>
+    <div><dt>Environment</dt><dd>Fully temperature compensated -20 to 50°C; rugged industrial enclosure</dd></div>
+    <div><dt>Data / I/O</dt><dd>Bluetooth + USB‑C; optional DataLoggerXP with >200M points and cloud/mobile workflow</dd></div>
+    <div><dt>Hazardous area</dt><dd>Intrinsically safe</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Oil & gas, pressure testing, and field calibration where ruggedness plus of-reading accuracy and connectivity are valuable.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Accuracy architecture changes by option; compare %reading vs %FS carefully at low readings.</p></div>
+  <a class="official-link" href="https://www.ametekcalibration.com/products/pressure/digital-pressure-gauges/xp3i-digital-pressure-gauge" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="reference field hazardous digital" data-search="Crystal / AMETEK XP2i Digital test gauge Proven hazardous-area test-gauge workflows and users with an existing XP2i installed base. Vacuum through 15,000 psi 0.1% of reading; 0.02% or 0.05% FS options">
+  <div class="gauge-top"><span class="brand-pill">Crystal / AMETEK</span><span class="card-number">07</span></div>
+  <h3>XP2i</h3>
+  <div class="gauge-type">Digital test gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>Vacuum through 15,000 psi</dd></div>
+    <div><dt>Accuracy</dt><dd>0.1% of reading; 0.02% or 0.05% FS options</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge plus selected absolute versions</dd></div>
+    <div><dt>Environment</dt><dd>Temperature compensated -10 to 50°C; marine-grade enclosure</dd></div>
+    <div><dt>Data / I/O</dt><dd>RS‑232; optional DataLoggerXP up to 32,000 measurements</dd></div>
+    <div><dt>Hazardous area</dt><dd>Intrinsically safe</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Proven hazardous-area test-gauge workflows and users with an existing XP2i installed base.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>XP3i adds newer Bluetooth/USB-C/cloud connectivity and improved of-reading accuracy.</p></div>
+  <a class="official-link" href="https://www.ametekcalibration.com/products/pressure/digital-pressure-gauges/xp2i-digital-pressure-gauge" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="reference field hazardous differential digital" data-search="Crystal / AMETEK XP2i-DP Wet/wet differential pressure gauge Differential pressure where both sides can see wet media and rugged field construction is required. Differential-pressure configurations; see factory range table 0.1% of reading">
+  <div class="gauge-top"><span class="brand-pill">Crystal / AMETEK</span><span class="card-number">08</span></div>
+  <h3>XP2i-DP</h3>
+  <div class="gauge-type">Wet/wet differential pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>Differential-pressure configurations; see factory range table</dd></div>
+    <div><dt>Accuracy</dt><dd>0.1% of reading</dd></div>
+    <div><dt>Pressure type</dt><dd>Wet/wet differential</dd></div>
+    <div><dt>Environment</dt><dd>Designed for rugged field use and long-term vacuum measurement</dd></div>
+    <div><dt>Data / I/O</dt><dd>Crystal digital-gauge ecosystem</dd></div>
+    <div><dt>Hazardous area</dt><dd>Intrinsically safe</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Differential pressure where both sides can see wet media and rugged field construction is required.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>This is a specialized DP instrument; verify static pressure and range limits for the exact configuration.</p></div>
+  <a class="official-link" href="https://www.ametekcalibration.com/products/pressure/digital-pressure-gauges/xp2i-dp-differential-pressure-gauge" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="panel reference digital" data-search="Crystal / AMETEK WT Series Panel-mount digital test gauge Drop-in modernization of 6-inch or 8.5-inch Wally Box-style test-gauge cases. XP2i-based configurations 0.1% of reading">
+  <div class="gauge-top"><span class="brand-pill">Crystal / AMETEK</span><span class="card-number">09</span></div>
+  <h3>WT Series</h3>
+  <div class="gauge-type">Panel-mount digital test gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>XP2i-based configurations</dd></div>
+    <div><dt>Accuracy</dt><dd>0.1% of reading</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge; selected absolute options</dd></div>
+    <div><dt>Environment</dt><dd>Rugged portable-case / panel replacement format</dd></div>
+    <div><dt>Data / I/O</dt><dd>Front-access communications; optional data logging</dd></div>
+    <div><dt>Hazardous area</dt><dd>Configuration dependent</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Drop-in modernization of 6-inch or 8.5-inch Wally Box-style test-gauge cases.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Choose this for panel compatibility, not because it is the newest portable gauge platform.</p></div>
+  <a class="official-link" href="https://www.ametekcalibration.com/products/pressure/digital-pressure-gauges/wt-series-panel-mount-digital-pressure-gauge" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="field budget digital" data-search="Crystal / AMETEK m1 Economical digital pressure gauge Low-pressure general work where of-reading accuracy and long maintenance intervals are useful. 30 psi digital manometer configuration 0.2% of reading">
+  <div class="gauge-top"><span class="brand-pill">Crystal / AMETEK</span><span class="card-number">10</span></div>
+  <h3>m1</h3>
+  <div class="gauge-type">Economical digital pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>30 psi digital manometer configuration</dd></div>
+    <div><dt>Accuracy</dt><dd>0.2% of reading</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge pressure</dd></div>
+    <div><dt>Environment</dt><dd>Accuracy maintained -10 to 50°C; protective boot included</dd></div>
+    <div><dt>Data / I/O</dt><dd>Standalone indication</dd></div>
+    <div><dt>Hazardous area</dt><dd>General industrial</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Low-pressure general work where of-reading accuracy and long maintenance intervals are useful.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Current m1 offering is intentionally narrow; it is not a broad multi-range family.</p></div>
+  <a class="official-link" href="https://www.ametekcalibration.com/products/pressure/digital-pressure-gauges/m1-digital-pressure-gauge" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="reference field hazardous digital logging" data-search="Fluke 700G Series Precision pressure test gauge Straightforward rugged field calibration with a large installed base, multiple ranges, and easy pump-kit pairing. ±10 inH₂O / 20 mbar through 10,000 psi / 690 bar Standard models typically 0.05% FS; reference models up to ±(0.04% reading + 0.01% range)">
+  <div class="gauge-top"><span class="brand-pill">Fluke</span><span class="card-number">11</span></div>
+  <h3>700G Series</h3>
+  <div class="gauge-type">Precision pressure test gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>±10 inH₂O / 20 mbar through 10,000 psi / 690 bar</dd></div>
+    <div><dt>Accuracy</dt><dd>Standard models typically 0.05% FS; reference models up to ±(0.04% reading + 0.01% range)</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge, compound and absolute models</dd></div>
+    <div><dt>Environment</dt><dd>IP67; temperature compensated over specified range</dd></div>
+    <div><dt>Data / I/O</dt><dd>Up to 8,493 records with 700G/TRACK</dd></div>
+    <div><dt>Hazardous area</dt><dd>CSA/ATEX intrinsically safe certifications listed by Fluke</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Straightforward rugged field calibration with a large installed base, multiple ranges, and easy pump-kit pairing.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Model accuracy and media compatibility vary substantially by range; do not assume every 700G is 0.05% FS.</p></div>
+  <a class="official-link" href="https://www.fluke.com/en-us/product/calibration-tools/pressure-calibrators/fluke-700g" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="reference field hazardous digital logging" data-search="WIKA CPG1500 Precision digital pressure gauge Calibration/service work needing very high pressure coverage, multiple pressure types, and strong PC calibration integration. 15–15,000 psi at highest accuracy classes; higher-pressure variants listed to 150,000 psi Down to 0.025% FS; accuracy class depends on range">
+  <div class="gauge-top"><span class="brand-pill">WIKA</span><span class="card-number">12</span></div>
+  <h3>CPG1500</h3>
+  <div class="gauge-type">Precision digital pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>15–15,000 psi at highest accuracy classes; higher-pressure variants listed to 150,000 psi</dd></div>
+    <div><dt>Accuracy</dt><dd>Down to 0.025% FS; accuracy class depends on range</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge, absolute, vacuum and compound ranges</dd></div>
+    <div><dt>Environment</dt><dd>IP65; compensated -10 to 50°C</dd></div>
+    <div><dt>Data / I/O</dt><dd>WIKA-Wireless/Bluetooth; logger up to 50 values/s; WIKA-CAL support</dd></div>
+    <div><dt>Hazardous area</dt><dd>Intrinsically safe version available</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Calibration/service work needing very high pressure coverage, multiple pressure types, and strong PC calibration integration.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>At extreme pressure ranges the available accuracy class is lower than at standard ranges.</p></div>
+  <a class="official-link" href="https://www.wika.com/en-us/cpg1500.WIKA" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="field budget hazardous digital logging" data-search="WIKA CPG1200 Rugged service digital pressure gauge Hydrostatic tests, leak checks, pressure-switch setup, and service work that does not require reference-grade accuracy. -14.5 to 15,000 psi / -1 to 1,000 bar Down to 0.25% FS">
+  <div class="gauge-top"><span class="brand-pill">WIKA</span><span class="card-number">13</span></div>
+  <h3>CPG1200</h3>
+  <div class="gauge-type">Rugged service digital pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>-14.5 to 15,000 psi / -1 to 1,000 bar</dd></div>
+    <div><dt>Accuracy</dt><dd>Down to 0.25% FS</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge pressure</dd></div>
+    <div><dt>Environment</dt><dd>Built for mobile service; shock/vibration-focused design</dd></div>
+    <div><dt>Data / I/O</dt><dd>USB + Bluetooth; optional 1,000,000-point logger; up to ~4,000 h operation</dd></div>
+    <div><dt>Hazardous area</dt><dd>Intrinsically safe Ex version available</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Hydrostatic tests, leak checks, pressure-switch setup, and service work that does not require reference-grade accuracy.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>0.25% FS is materially less capable for calibration than CPG1500-class references.</p></div>
+  <a class="official-link" href="https://www.wika.com/en-us/cpg1200.WIKA" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="reference field hazardous digital" data-search="Druck / Baker Hughes DPI 104 / 104-IS Digital test gauge Classic compact test-gauge applications where 0.05% FS and simple serial/analog integration are useful. Up to 20,000 psi / 1,400 bar 0.05% FS including stated temperature effects over compensated range">
+  <div class="gauge-top"><span class="brand-pill">Druck / Baker Hughes</span><span class="card-number">14</span></div>
+  <h3>DPI 104 / 104-IS</h3>
+  <div class="gauge-type">Digital test gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>Up to 20,000 psi / 1,400 bar</dd></div>
+    <div><dt>Accuracy</dt><dd>0.05% FS including stated temperature effects over compensated range</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge/absolute configurations by range</dd></div>
+    <div><dt>Environment</dt><dd>Temperature compensated -10 to 50°C</dd></div>
+    <div><dt>Data / I/O</dt><dd>RS‑232; 0–5 V output; min/max, tare, alarm and switch-test functions</dd></div>
+    <div><dt>Hazardous area</dt><dd>DPI 104-IS intrinsically safe version</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Classic compact test-gauge applications where 0.05% FS and simple serial/analog integration are useful.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Connectivity is more traditional than newer Bluetooth/cloud-oriented gauges.</p></div>
+  <a class="official-link" href="https://www.bakerhughes.com/druck/test-and-calibration-instrumentation/pressure-testing-gauges-pumps-loop-calibratorss-1/dpi-104-series-pressure-gauge" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="reference field hazardous digital" data-search="Ashcroft 2084 / 2086 / 2089 Digital test gauge family Calibration labs and test benches wanting a specified total-error-band approach rather than a bare room-temperature accuracy number. Gauge, compound, absolute and vacuum through 7,000 psi 2084: 0.25%; 2086: 0.10%; 2089: 0.05% of span TEB">
+  <div class="gauge-top"><span class="brand-pill">Ashcroft</span><span class="card-number">15</span></div>
+  <h3>2084 / 2086 / 2089</h3>
+  <div class="gauge-type">Digital test gauge family</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>Gauge, compound, absolute and vacuum through 7,000 psi</dd></div>
+    <div><dt>Accuracy</dt><dd>2084: 0.25%; 2086: 0.10%; 2089: 0.05% of span TEB</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge, compound, absolute, vacuum</dd></div>
+    <div><dt>Environment</dt><dd>IP65; TEB includes temperature from 0 to 150°F</dd></div>
+    <div><dt>Data / I/O</dt><dd>Battery powered; field calibration; 12 engineering units</dd></div>
+    <div><dt>Hazardous area</dt><dd>FM / intrinsically safe options</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Calibration labs and test benches wanting a specified total-error-band approach rather than a bare room-temperature accuracy number.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Select the exact family member—2084, 2086, or 2089—based on the accuracy actually required.</p></div>
+  <a class="official-link" href="https://www.ashcroft.com/products/pressure/pressure-gauges/2084-2086-2089-pressure-gauge/" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="field budget digital" data-search="Ashcroft DG25 General-purpose digital pressure gauge OEM and industrial indication where a compact digital gauge is preferable to a mechanical dial. Vacuum/compound and 15 to 25,000 psi 0.5% of span standard; 0.25% option">
+  <div class="gauge-top"><span class="brand-pill">Ashcroft</span><span class="card-number">16</span></div>
+  <h3>DG25</h3>
+  <div class="gauge-type">General-purpose digital pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>Vacuum/compound and 15 to 25,000 psi</dd></div>
+    <div><dt>Accuracy</dt><dd>0.5% of span standard; 0.25% option</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge, vacuum and compound configurations</dd></div>
+    <div><dt>Environment</dt><dd>Compact 2.5-inch format; stainless pressure connections available</dd></div>
+    <div><dt>Data / I/O</dt><dd>Standalone digital indication</dd></div>
+    <div><dt>Hazardous area</dt><dd>CE/CRN/RoHS/UL listed configurations</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>OEM and industrial indication where a compact digital gauge is preferable to a mechanical dial.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Not intended as a precision reference gauge; the accuracy class is closer to process instrumentation.</p></div>
+  <a class="official-link" href="https://www.ashcroft.com/products/pressure/pressure-gauges/dg25-digital-pressure-gauge/" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="reference field digital" data-search="KELLER LEX1 Digital precision gauge Calibration/test work where compact size, strong total-error performance, and RS‑485 integration are priorities. -1…1 bar through 0…1,000 bar ≤±0.05% FS TEB over 0–50°C; higher-accuracy configurations are offered">
+  <div class="gauge-top"><span class="brand-pill">KELLER</span><span class="card-number">17</span></div>
+  <h3>LEX1</h3>
+  <div class="gauge-type">Digital precision gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>-1…1 bar through 0…1,000 bar</dd></div>
+    <div><dt>Accuracy</dt><dd>≤±0.05% FS TEB over 0–50°C; higher-accuracy configurations are offered</dd></div>
+    <div><dt>Pressure type</dt><dd>Relative and absolute ranges</dd></div>
+    <div><dt>Environment</dt><dd>Temperature compensated 0–50°C</dd></div>
+    <div><dt>Data / I/O</dt><dd>RS‑485; PressureSuite ecosystem</dd></div>
+    <div><dt>Hazardous area</dt><dd>Intrinsically safe variant available</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Calibration/test work where compact size, strong total-error performance, and RS‑485 integration are priorities.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Check the exact accuracy/configuration available for the selected range rather than assuming the highest option applies universally.</p></div>
+  <a class="official-link" href="https://keller-pressure.com/en/products/digital-pressure-gauges/digital-pressure-gauges/lex1" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="field budget hazardous digital" data-search="KELLER LEO2 / LEO2-Ei Compact digital pressure gauge Simple, compact pressure indication with better quantified accuracy than many generic digital gauges. 0–4 bar through 0–700 bar ±0.1% FS at room temperature; ±0.2% FS TEB over 0–50°C">
+  <div class="gauge-top"><span class="brand-pill">KELLER</span><span class="card-number">18</span></div>
+  <h3>LEO2 / LEO2-Ei</h3>
+  <div class="gauge-type">Compact digital pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>0–4 bar through 0–700 bar</dd></div>
+    <div><dt>Accuracy</dt><dd>±0.1% FS at room temperature; ±0.2% FS TEB over 0–50°C</dd></div>
+    <div><dt>Pressure type</dt><dd>Pressure ranges by configuration</dd></div>
+    <div><dt>Environment</dt><dd>Compact battery-powered design; swivel adapter</dd></div>
+    <div><dt>Data / I/O</dt><dd>Standalone; simultaneous actual + min/max display</dd></div>
+    <div><dt>Hazardous area</dt><dd>LEO2-Ei intrinsically safe</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Simple, compact pressure indication with better quantified accuracy than many generic digital gauges.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>No communications interface on standard LEO2; TEB is 0.2% FS across temperature.</p></div>
+  <a class="official-link" href="https://keller-pressure.com/en/products/digital-pressure-gauges/digital-pressure-gauges/leo2" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="field panel digital output" data-search="OMEGA DPG409 High-accuracy digital pressure gauge Applications needing a digital display plus analog retransmission/output to another system. Low-pressure configurations through 5,000 psi ±0.08% BSL base accuracy; temperature effects specified separately">
+  <div class="gauge-top"><span class="brand-pill">OMEGA</span><span class="card-number">19</span></div>
+  <h3>DPG409</h3>
+  <div class="gauge-type">High-accuracy digital pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>Low-pressure configurations through 5,000 psi</dd></div>
+    <div><dt>Accuracy</dt><dd>±0.08% BSL base accuracy; temperature effects specified separately</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge, compound, vacuum and absolute configurations</dd></div>
+    <div><dt>Environment</dt><dd>Operating -18 to 66°C</dd></div>
+    <div><dt>Data / I/O</dt><dd>Selectable 0–5 V, 0–10 V or 4–20 mA analog output options</dd></div>
+    <div><dt>Hazardous area</dt><dd>General industrial</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Applications needing a digital display plus analog retransmission/output to another system.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Do not treat 0.08% BSL as total accuracy over temperature; thermal terms must be included.</p></div>
+  <a class="official-link" href="https://assets.omega.com/pdf/test-and-measurement-equipment/pressure/pressure-gauges/DPG409.pdf" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="mechanical process field" data-search="WIKA 232.30 / 233.30 Mechanical safety pressure gauge Permanent process indication where mechanical simplicity, solid-front safety, and vibration-resistant liquid-fill options matter. Vacuum/compound to 200 psi; pressure ranges to 15,000 psi in US process versions ±0.5% of span (Grade 2A on 4.5-inch US version)">
+  <div class="gauge-top"><span class="brand-pill">WIKA</span><span class="card-number">20</span></div>
+  <h3>232.30 / 233.30</h3>
+  <div class="gauge-type">Mechanical safety pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>Vacuum/compound to 200 psi; pressure ranges to 15,000 psi in US process versions</dd></div>
+    <div><dt>Accuracy</dt><dd>±0.5% of span (Grade 2A on 4.5-inch US version)</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge/vacuum/compound</dd></div>
+    <div><dt>Environment</dt><dd>NEMA 4X / IP65 on US 4.5-inch version; dry or liquid-filled</dd></div>
+    <div><dt>Data / I/O</dt><dd>Mechanical indication</dd></div>
+    <div><dt>Hazardous area</dt><dd>Solid-front safety design; stainless construction</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Permanent process indication where mechanical simplicity, solid-front safety, and vibration-resistant liquid-fill options matter.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Temperature adds indication error; mechanical process gauges are not substitutes for precision digital references.</p></div>
+  <a class="official-link" href="https://www.wika.com/en-us/232_30_4_5_233_30_4_5.WIKA" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article>
+
+<article class="gauge-card" data-tags="mechanical process field" data-search="Ashcroft 1279 Duragauge Mechanical process pressure gauge Process plants needing a configurable, serviceable mechanical gauge with broad material and range choices. Vacuum, compound, and 15 to 30,000 psi ±0.5% of span (ASME B40.100 Grade 2A)">
+  <div class="gauge-top"><span class="brand-pill">Ashcroft</span><span class="card-number">21</span></div>
+  <h3>1279 Duragauge</h3>
+  <div class="gauge-type">Mechanical process pressure gauge</div>
+  <dl class="spec-list">
+    <div><dt>Range</dt><dd>Vacuum, compound, and 15 to 30,000 psi</dd></div>
+    <div><dt>Accuracy</dt><dd>±0.5% of span (ASME B40.100 Grade 2A)</dd></div>
+    <div><dt>Pressure type</dt><dd>Gauge/vacuum/compound</dd></div>
+    <div><dt>Environment</dt><dd>4.5-inch process gauge; multiple wetted-material and fill options</dd></div>
+    <div><dt>Data / I/O</dt><dd>Mechanical indication</dd></div>
+    <div><dt>Hazardous area</dt><dd>Solid-front case; 10-year pressure-system warranty</dd></div>
+  </dl>
+  <div class="fit-block"><span>Best fit</span><p>Process plants needing a configurable, serviceable mechanical gauge with broad material and range choices.</p></div>
+  <div class="watch-block"><span>Watch for</span><p>Selection is highly configuration-dependent—media, pulsation, connection, fill, and wetted material all matter.</p></div>
+  <a class="official-link" href="https://www.ashcroft.com/products/pressure/pressure-gauges/1279-pressure-gauge/" target="_blank" rel="noopener">Official manufacturer specs →</a>
+</article></div>
+  <div class="empty" id="emptyState">No gauges match that filter/search combination.</div>
+</section>
+
+<section class="accuracy-note">
+  <div class="shell accuracy-grid">
+    <div><div class="eyebrow"><span></span> Before you buy</div><h2>Read the accuracy basis.</h2></div>
+    <div>
+      <p><strong>%FS / %span:</strong> error is tied to the instrument's range. On a 1,000 psi gauge specified at <code>0.05% FS</code>, the published term is 0.5 psi across the range.</p>
+      <p><strong>% of reading:</strong> the absolute error typically shrinks as the reading falls, though manufacturers may add a floor/range term.</p>
+      <p><strong>TEB / total error band:</strong> can be especially useful because it may include temperature, linearity, hysteresis, and repeatability—but only use the exact definition provided by that manufacturer.</p>
+      <p><strong>Calibration decisions:</strong> do not choose a reference solely from its headline accuracy. Compare your DUT tolerance to the reference's applicable uncertainty/performance across the actual points you will calibrate.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="shell footer-grid">
+    <div><a class="brand footer-brand" href="/"><span class="brand-mark">M</span><span>MetrologyBase</span></a><p>Practical tools and resources for calibration professionals.</p></div>
+    <div class="footer-links"><a href="/#learn">Learn</a><a href="/articles">Articles</a><a href="/#tools">Tools</a><a href="/products">What to Buy</a><a href="/pressure-gauges">Pressure Gauges</a></div>
+    <div class="footer-meta">Independent, vendor-neutral reference.<br>Manufacturer specifications can change; verify before purchasing.</div>
+  </div>
+</footer>
+
+<script>
+const cards=[...document.querySelectorAll('.gauge-card')];
+const buttons=[...document.querySelectorAll('.filter-button')];
+const search=document.querySelector('#gaugeSearch');
+const count=document.querySelector('#gaugeCount');
+const empty=document.querySelector('#emptyState');
+let active='all';
+function render(){
+  const q=(search.value||'').trim().toLowerCase(); let shown=0;
+  cards.forEach(card=>{
+    const tags=(card.dataset.tags||'').split(' ');
+    const hit=!q||(card.dataset.search||'').toLowerCase().includes(q)||card.textContent.toLowerCase().includes(q);
+    const show=hit&&(active==='all'||tags.includes(active));
+    card.style.display=show?'flex':'none'; if(show) shown++;
+  });
+  count.textContent=shown+' product'+(shown===1?'':'s');
+  empty.style.display=shown?'none':'block';
+}
+buttons.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;buttons.forEach(x=>x.classList.toggle('active',x===b));render();}));
+search.addEventListener('input',render);
+render();
+</script>
+</body>
+</html>
