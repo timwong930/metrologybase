@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What Pressure Fittings Do I Need for 10,000 PSI? — MetrologyBase</title>
+  <meta name="description" content="A practical guide to choosing pressure fittings, adapters, tubing, hoses, and connection types for 10,000 psi calibration and test systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .article-hero{padding:88px 0 46px}
+    .article-hero h1{font:700 clamp(48px,7vw,86px)/.98 'Fraunces',serif;letter-spacing:-.045em;margin:0;max-width:1080px}
+    .article-hero h1 em{font-style:normal;color:var(--blue)}
+    .article-lede{font-size:20px;color:#536176;max-width:900px;margin:28px 0 0}
+    .article-body{padding:0 0 110px}.article-prose{max-width:920px}
+    .article-prose h2{font:600 38px/1.08 'Fraunces',serif;letter-spacing:-.025em;margin:64px 0 20px}
+    .article-prose h3{font:600 24px/1.2 'Fraunces',serif;margin:30px 0 10px}
+    .article-prose p,.article-prose li{font-size:17px;color:#526075}
+    .article-prose strong{color:var(--ink)}.article-prose a{color:var(--blue);font-weight:600}
+    .summary-box{margin-top:40px;padding:26px 28px;background:var(--ink);color:white;border-radius:22px}
+    .summary-box span{font:500 11px 'DM Mono',monospace;letter-spacing:.08em;color:#91b8ff}
+    .summary-box p{margin:8px 0 0;color:#d6deea;font-size:18px}
+    .callout{margin:28px 0;padding:22px 24px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.45)}
+    .callout.warning{border-color:#d4b56f;background:#faf3df}
+    .decision-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:26px 0}
+    .decision-card{padding:24px;background:var(--paper);border:1px solid var(--line);border-radius:18px}
+    .decision-card .label{font:500 11px 'DM Mono',monospace;color:var(--blue);letter-spacing:.07em;text-transform:uppercase}
+    .decision-card h3{margin:10px 0 8px}.decision-card p{font-size:15px;margin:0}
+    .table-wrap{overflow-x:auto;margin:24px 0}
+    .spec-table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line)}
+    .spec-table th,.spec-table td{padding:15px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+    .spec-table th{font:500 11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.05em;color:#68768b;background:#f0ece3}
+    .spec-table td{font-size:15px;color:#526075}.spec-table tr:last-child td{border-bottom:0}
+    .source-list{padding-left:20px}.source-list li{margin:12px 0}
+    .related{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0}
+    .related a{display:block;padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--paper);text-decoration:none}
+    .related strong{display:block;color:var(--ink);font-size:16px}.related span{display:block;margin-top:4px;color:#657287;font-size:13px}
+    .article-note{margin-top:54px;padding-top:20px;border-top:1px solid var(--line);font-size:13px!important;color:#7b8492!important}
+    @media(max-width:700px){.article-hero{padding:58px 0 32px}.article-lede{font-size:18px}.decision-grid,.related{grid-template-columns:1fr}.article-prose h2{font-size:32px;margin-top:52px}}
+  </style>
+  <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/" aria-label="MetrologyBase home"><span class="brand-mark">M</span><span>MetrologyBase</span></a>
+  <nav class="nav-links" aria-label="Primary navigation">
+    <a href="/#learn">Learn</a><a href="/articles">Articles</a><a href="/#tools">Tools</a><a href="/products">What to Buy</a><a href="/#glossary">Glossary</a><a href="/#about">About</a>
+  </nav>
+  <a class="nav-cta" href="/articles">All articles</a>
+</header>
+<main>
+<section class="article-hero shell">
+  <div class="eyebrow"><span></span> Pressure · 10,000 PSI</div>
+  <h1>What pressure fittings do I need for <em>10,000 psi?</em></h1>
+  <p class="article-lede">At 10,000 psi, the answer is not “buy a 10k fitting.” The pressure source, hose or tubing, adapters, valves, filters, reference, and DUT connection all have to be rated and compatible as one system.</p>
+  <div class="summary-box">
+    <span>SHORT VERSION</span>
+    <p>For a 10,000 psi calibration setup, use components explicitly rated to at least 10,000 psi for your media and temperature. Manufacturer-rated NPT, BSP, or metric hardware can be valid at this pressure, but if the system is frequently cycled or may grow beyond 10k, a <strong>15k–20k class instrumentation or cone-and-thread system</strong> is usually the better long-term platform.</p>
+  </div>
+</section>
+
+<section class="article-body shell"><article class="article-prose">
+  <h2>10,000 psi is a transition point</h2>
+  <p>Ten thousand psi sits between ordinary process-pressure plumbing and the specialized ultra-high-pressure world. You can find properly engineered NPT, BSP, metric, compression, and proprietary fittings rated for 10,000 psi. But once pressure moves above roughly 10,000–15,000 psi, manufacturers increasingly shift toward connection systems designed specifically for high pressure.</p>
+  <p>Parker Autoclave Engineers notes that conventional joining methods become less suitable above roughly <strong>10,000–15,000 psi</strong>, while its medium-pressure cone-and-thread family is designed for pressures up to <strong>20,000 psi</strong>. Parker also offers MPI instrumentation fittings to 15,000 psi in many sizes.</p>
+
+  <div class="decision-grid">
+    <div class="decision-card">
+      <div class="label">Existing 10k setup</div>
+      <h3>Rated NPT/BSP/metric can be appropriate</h3>
+      <p>If the manufacturer explicitly rates the complete fitting, adapter, hose, and port to 10,000 psi, there is no rule that says you must replace it with cone-and-thread.</p>
+    </div>
+    <div class="decision-card">
+      <div class="label">New or expandable setup</div>
+      <h3>Consider a 15k–20k connection family</h3>
+      <p>For repeated calibration cycles, lower leak risk, and future headroom, a medium-pressure cone-and-thread or 15k-class instrumentation system is often easier to standardize around.</p>
+    </div>
+  </div>
+
+  <h2>What parts actually need to be rated?</h2>
+  <p>Every pressure-containing component between the source and DUT matters. The working pressure of the assembly is limited by its lowest-rated part.</p>
+  <ul>
+    <li><strong>Pressure source:</strong> pump, controller, deadweight tester, intensifier, or pressure generator.</li>
+    <li><strong>Hose or tubing:</strong> including end fittings and crimped or threaded connections.</li>
+    <li><strong>Adapters:</strong> every reducer, gender changer, thread converter, elbow, tee, or coupling.</li>
+    <li><strong>Valves and manifolds:</strong> including isolation and vent valves.</li>
+    <li><strong>Filters:</strong> especially when protecting a calibration standard from contaminated hydraulic media.</li>
+    <li><strong>Reference and DUT:</strong> their ports and process connections must also be rated for the test pressure.</li>
+  </ul>
+
+  <h2>Can I use NPT at 10,000 psi?</h2>
+  <p><strong>Sometimes — if the exact component is rated for it.</strong> NPT itself is a thread standard, not a pressure rating. A generic 1/4 NPT fitting from a low-pressure plumbing catalog is not equivalent to a high-pressure fitting engineered and tested for 10,000 psi.</p>
+  <p>Additel's ADT100-FLT-10K hydraulic filter is one practical calibration example: it is rated to 10,000 psi and can be configured with 1/4 NPT, 1/2 NPT, BSP, or M20×1.5 inlet/outlet adapters. That shows those connection families can be used at 10k when the manufacturer rates the complete hardware accordingly.</p>
+
+  <div class="callout warning">
+    <strong>Do not infer pressure capability from thread size.</strong>
+    <p>“1/4 NPT” tells you the connection geometry. It does not tell you whether the fitting is suitable for 300 psi, 3,000 psi, or 10,000 psi.</p>
+  </div>
+
+  <h2>Good connection options for a 10,000 psi system</h2>
+  <div class="table-wrap"><table class="spec-table">
+    <thead><tr><th>Connection family</th><th>Why you might use it</th><th>Main caution</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Rated NPT / BSP / metric</strong></td><td>Common DUT interfaces; easy to adapt to gauges and transmitters</td><td>Only use components explicitly rated for the full pressure</td></tr>
+      <tr><td><strong>Parker MPI / similar 15k instrumentation fittings</strong></td><td>Compact small-bore tubing system with additional pressure margin</td><td>Requires the matching tubing and ferrule system</td></tr>
+      <tr><td><strong>Medium-pressure cone-and-thread</strong></td><td>Excellent choice for repeated high-pressure use and future expansion</td><td>Requires coned/threaded tubing or compatible adapters, gland, and collar</td></tr>
+      <tr><td><strong>Manufacturer high-pressure quick-connect system</strong></td><td>Fast DUT changes on calibration benches</td><td>Verify the complete quick-connect pair is rated to 10k; ordinary pneumatic quick disconnects are not suitable</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Example: calibrating a 10,000 psi gauge with 1/4 NPT</h2>
+  <p>A practical system might be:</p>
+  <ol>
+    <li><strong>10k+ hydraulic pressure source</strong></li>
+    <li><strong>10k+ rated hose or tubing</strong></li>
+    <li><strong>10k+ rated adapter or manifold</strong></li>
+    <li><strong>1/4 NPT female connection</strong> rated for the full test pressure</li>
+    <li><strong>10,000 psi gauge or transducer</strong> with a compatible male process connection</li>
+  </ol>
+  <p>If the pressure source uses a medium-pressure or HP cone-and-thread connection, keep that stronger connection family through as much of the setup as practical and convert to the DUT's NPT connection only at the final rated adapter.</p>
+
+  <h2>Should I use a 1/4 HP Autoclave adapter at 10k?</h2>
+  <p>You can, but it is usually more capability than strictly required. Additel's 1/4 HP adapter family includes HP-to-NPT, HP-to-BSP, and HP-to-metric adapters rated well above 10,000 psi in many configurations. It can be a good choice if your pressure source already uses a 1/4 HP connection or your lab also handles 15k, 20k, or higher-pressure work.</p>
+  <p>Do not choose HP hardware simply because “higher rating is safer.” The better goal is a standardized system with the fewest conversions, correct media compatibility, and fittings designed for the equipment you actually use.</p>
+
+  <h2>What I would avoid at 10,000 psi</h2>
+  <ul>
+    <li>Unmarked or generic adapters with no published working-pressure rating.</li>
+    <li>Ordinary brass plumbing fittings unless the manufacturer specifically rates the exact part and media for 10k.</li>
+    <li>General-purpose pneumatic quick disconnects.</li>
+    <li>Long stacks of reducers and thread converters.</li>
+    <li>Mixing NPT and BSP because they appear to thread together.</li>
+    <li>Using a hose whose fitting ends have a lower rating than the hose body.</li>
+  </ul>
+
+  <h2>A good default for a new 10k calibration bench</h2>
+  <p>If building from scratch, a sensible architecture is to make the source side a <strong>15k–20k-class connection system</strong> — for example medium-pressure cone-and-thread or a suitable 15k instrumentation fitting system — and then use one rated adapter at the DUT end for NPT, BSP, or metric instruments. That gives useful margin without jumping all the way to a 60k system.</p>
+
+  <div class="related">
+    <a href="/pressure-adapters-and-fittings"><strong>Pressure adapters &amp; fittings</strong><span>Learn the connection families and sealing methods first.</span></a>
+    <a href="/what-pressure-fittings-for-60000-psi"><strong>What fittings for 60,000 psi?</strong><span>See why the connection strategy changes completely at ultra-high pressure.</span></a>
+  </div>
+
+  <h2>Sources and further reading</h2>
+  <ul class="source-list">
+    <li><a href="https://www.parker.com/content/dam/Parker-com/Literature/Instrumentation-Products-Division/Autoclave/FluidComponentsFullCatalog.pdf" target="_blank" rel="noopener">Parker Autoclave Engineers — Fluid Components Catalog</a>, including medium-pressure cone-and-thread fittings to 20,000 psi.</li>
+    <li><a href="https://www.parker.com/content/dam/Parker-com/Literature/Instrumentation-Products-Division/WebSphere-Support-Material/Parker-AE-Technical-Bul.pdf" target="_blank" rel="noopener">Parker Autoclave Engineers — Technical Information</a>, discussing why specialized joining methods are used as pressures move beyond roughly 10,000–15,000 psi.</li>
+    <li><a href="https://ipd.parker.com/viewitems/mpi--fittings/x42hbmp7-medium-pressure-to-mpi--connector" target="_blank" rel="noopener">Parker MPI fittings</a>, with working pressures to 15,000 psi for many sizes.</li>
+    <li><a href="https://additel.com/download/datasheet/100-FLT/100-FLT_Filters.pdf" target="_blank" rel="noopener">Additel ADT100-FLT-10K datasheet</a>, a 10,000 psi calibration filter available with NPT, BSP, and metric port options.</li>
+    <li><a href="https://www.additel.com/download/datasheet/10X/10X_Pressure_Adapter_and_Fittings.pdf" target="_blank" rel="noopener">Additel Pressure Adapters and Fittings</a>, including 1/4 HP conversions and individual adapter pressure ratings.</li>
+  </ul>
+  <p class="article-note">High-pressure systems can store significant energy. This guide is educational and does not replace the equipment manufacturer's pressure ratings, assembly procedure, inspection requirements, or your organization's safety controls.</p>
+</article></section>
+</main>
+<footer>
+  <div class="shell footer-grid">
+    <div><a class="brand footer-brand" href="/"><span class="brand-mark">M</span><span>MetrologyBase</span></a><p>Practical tools and resources for calibration professionals.</p></div>
+    <div class="footer-links"><a href="/#learn">Learn</a><a href="/articles">Articles</a><a href="/#tools">Tools</a><a href="/products">What to Buy</a><a href="/#glossary">Glossary</a><a href="/#about">About</a></div>
+    <div class="footer-meta">Independent educational reference.<br>Not a substitute for accredited procedures or official specifications.</div>
+  </div>
+</footer>
+</body></html>

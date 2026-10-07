@@ -5,6 +5,6 @@
   "description": "MetrologyBase — practical tools, resources, and vendor-neutral buying guidance for calibration professionals.",
   "scripts": {
     "dev": "npx serve .",
-    "build": "rm -rf dist && mkdir -p dist/pressure-gauges && cp index.html articles.html products.html pressure-gauges.html full-scale-vs-full-span.html pressure-adapters-and-fittings.html styles.css app.js dist/ && cp pressure-gauges/*.html pressure-gauges/device.css pressure-gauges/device.js dist/pressure-gauges/ && cp -R public/. dist/"
+    "build": "rm -rf dist && mkdir -p dist/pressure-gauges && cp index.html articles.html products.html pressure-gauges.html full-scale-vs-full-span.html pressure-adapters-and-fittings.html what-pressure-fittings-for-10000-psi.html what-pressure-fittings-for-60000-psi.html styles.css app.js dist/ && cp pressure-gauges/*.html pressure-gauges/device.css pressure-gauges/device.js dist/pressure-gauges/ && cp -R public/. dist/"
   }
 }
