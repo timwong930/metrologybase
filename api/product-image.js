@@ -12,10 +12,12 @@ const TRUSTED_SUFFIXES = [
 
 function trustedHost(hostname) {
   const host = hostname.toLowerCase().replace(/^www\./, "");
-  return TRUSTED_SUFFIXES.some(suffix => host === suffix || host.endsWith("." + suffix));
+  return TRUSTED_SUFFIXES.some(function (suffix) {
+    return host === suffix || host.endsWith("." + suffix);
+  });
 }
 
-function safeRemoteUrl(value, requireTrusted = true) {
+function safeRemoteUrl(value, requireTrusted) {
   if (!value) return null;
   try {
     const url = new URL(value);
@@ -29,15 +31,15 @@ function safeRemoteUrl(value, requireTrusted = true) {
       /^192\.168\./.test(host) ||
       /^169\.254\./.test(host)
     ) return null;
-    if (requireTrusted && !trustedHost(host)) return null;
+    if (requireTrusted !== false && !trustedHost(host)) return null;
     return url;
-  } catch {
+  } catch (error) {
     return null;
   }
 }
 
-function decodeHtml(value = "") {
-  return value
+function decodeHtml(value) {
+  return String(value || "")
     .replace(/&amp;/g, "&")
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
@@ -45,25 +47,140 @@ function decodeHtml(value = "") {
     .replace(/&gt;/g, ">");
 }
 
-function findImage(html, baseUrl) {
-  const patterns = [
-    /<meta[^>]+property=["']og:image(?::secure_url)?["'][^>]+content=["']([^"']+)["']/i,
-    /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image(?::secure_url)?["']/i,
-    /<meta[^>]+name=["']twitter:image(?::src)?["'][^>]+content=["']([^"']+)["']/i,
-    /<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image(?::src)?["']/i
+function getAttr(tag, name) {
+  const pattern = new RegExp(name + "\\s*=\\s*[\\"']([^\\"']+)[\\"']", "i");
+  const match = tag.match(pattern);
+  return match && match[1] ? decodeHtml(match[1]) : "";
+}
+
+function getModelTokens(model) {
+  return String(model || "")
+    .toLowerCase()
+    .replace(/adt/g, " ")
+    .split(/[^a-z0-9]+/)
+    .filter(function (token) { return token.length >= 2; });
+}
+
+function candidateScore(url, context, model) {
+  const text = (url.href + " " + String(context || "")).toLowerCase();
+  let score = 0;
+
+  const positives = [
+    ["product", 40],
+    ["pressure", 18],
+    ["gauge", 30],
+    ["digital", 10],
+    ["gallery", 18],
+    ["zoom", 18],
+    ["large", 10],
+    ["detail", 10],
+    ["main", 8]
   ];
-  for (const pattern of patterns) {
-    const match = html.match(pattern);
-    if (match?.[1]) {
-      try { return new URL(decodeHtml(match[1]), baseUrl); } catch {}
+  const negatives = [
+    ["logo", -140],
+    ["icon", -100],
+    ["favicon", -140],
+    ["banner", -70],
+    ["video", -55],
+    ["youtube", -70],
+    ["flag", -90],
+    ["social", -55],
+    ["facebook", -70],
+    ["linkedin", -70],
+    ["instagram", -70],
+    ["avatar", -80],
+    ["sprite", -90],
+    ["arrow", -70],
+    ["loading", -90],
+    ["placeholder", -90],
+    ["certificate", -45],
+    ["datasheet", -30]
+  ];
+
+  positives.forEach(function (item) {
+    if (text.includes(item[0])) score += item[1];
+  });
+  negatives.forEach(function (item) {
+    if (text.includes(item[0])) score += item[1];
+  });
+  getModelTokens(model).forEach(function (token) {
+    if (text.includes(token)) score += 100;
+  });
+
+  if (/\.(?:jpe?g|png|webp)(?:$|\?)/i.test(url.href)) score += 15;
+  if (/thumb|small/i.test(text)) score -= 15;
+  return score;
+}
+
+function addCandidate(list, seen, raw, context, model, baseUrl, bonus) {
+  if (!raw || String(raw).startsWith("data:")) return;
+  try {
+    const url = new URL(decodeHtml(raw), baseUrl);
+    if (url.protocol !== "https:" || !trustedHost(url.hostname) || seen.has(url.href)) return;
+    seen.add(url.href);
+    list.push({
+      url: url,
+      score: candidateScore(url, context, model) + (bonus || 0)
+    });
+  } catch (error) {}
+}
+
+function findImage(html, baseUrl, model) {
+  const candidates = [];
+  const seen = new Set();
+
+  const metaPatterns = [
+    /<meta[^>]+property=["']og:image(?::secure_url)?["'][^>]+content=["']([^"']+)["']/ig,
+    /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image(?::secure_url)?["']/ig,
+    /<meta[^>]+name=["']twitter:image(?::src)?["'][^>]+content=["']([^"']+)["']/ig,
+    /<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image(?::src)?["']/ig
+  ];
+  metaPatterns.forEach(function (pattern) {
+    let match;
+    while ((match = pattern.exec(html)) !== null) {
+      addCandidate(candidates, seen, match[1], "social metadata", model, baseUrl, 10);
+    }
+  });
+
+  const jsonPattern = /"image"\s*:\s*(?:\[\s*)?["']([^"']+)["']/ig;
+  let jsonMatch;
+  while ((jsonMatch = jsonPattern.exec(html)) !== null) {
+    addCandidate(candidates, seen, jsonMatch[1], "structured product image", model, baseUrl, 25);
+  }
+
+  const imgPattern = /<img\b[^>]*>/ig;
+  let imgMatch;
+  while ((imgMatch = imgPattern.exec(html)) !== null) {
+    const tag = imgMatch[0];
+    const context = [
+      getAttr(tag, "alt"),
+      getAttr(tag, "title"),
+      getAttr(tag, "class"),
+      getAttr(tag, "id")
+    ].join(" ");
+
+    ["src", "data-src", "data-original", "data-lazy-src", "data-image", "data-zoom-image"].forEach(function (name) {
+      addCandidate(candidates, seen, getAttr(tag, name), context, model, baseUrl, name === "data-zoom-image" ? 20 : 0);
+    });
+
+    const srcset = getAttr(tag, "srcset") || getAttr(tag, "data-srcset");
+    if (srcset) {
+      const choices = srcset.split(",").map(function (part) {
+        return part.trim().split(/\s+/)[0];
+      }).filter(Boolean);
+      if (choices.length) addCandidate(candidates, seen, choices[choices.length - 1], context, model, baseUrl, 8);
     }
   }
 
-  const jsonImage = html.match(/"image"\s*:\s*(?:\[\s*)?["']([^"']+)["']/i);
-  if (jsonImage?.[1]) {
-    try { return new URL(decodeHtml(jsonImage[1]), baseUrl); } catch {}
+  candidates.sort(function (a, b) { return b.score - a.score; });
+  if (!candidates.length) return null;
+
+  if (baseUrl.hostname.toLowerCase().includes("additel.com")) {
+    const strong = candidates.find(function (candidate) { return candidate.score >= 45; });
+    return strong ? strong.url : null;
   }
-  return null;
+
+  return candidates[0].url;
 }
 
 async function fetchRemote(url, accept) {
@@ -81,6 +198,7 @@ module.exports = async function handler(req, res) {
   try {
     const direct = safeRemoteUrl(req.query.image, true);
     const source = safeRemoteUrl(req.query.source, true);
+    const model = String(req.query.model || "").slice(0, 80);
     let imageUrl = direct;
 
     if (!imageUrl && source) {
@@ -89,13 +207,13 @@ module.exports = async function handler(req, res) {
         const type = page.headers.get("content-type") || "";
         if (type.includes("text/html")) {
           const html = await page.text();
-          imageUrl = findImage(html, source);
+          imageUrl = findImage(html, source, model);
         }
       }
     }
 
     if (!imageUrl) {
-      res.status(404).json({ error: "No manufacturer image found" });
+      res.status(404).json({ error: "No manufacturer product image found" });
       return;
     }
 
@@ -112,13 +230,13 @@ module.exports = async function handler(req, res) {
     }
 
     const length = Number(image.headers.get("content-length") || 0);
-    if (length > 8_000_000) {
+    if (length > 8000000) {
       res.status(413).json({ error: "Image too large" });
       return;
     }
 
     const body = Buffer.from(await image.arrayBuffer());
-    if (body.length > 8_000_000) {
+    if (body.length > 8000000) {
       res.status(413).json({ error: "Image too large" });
       return;
     }
@@ -127,7 +245,7 @@ module.exports = async function handler(req, res) {
     res.setHeader("Cache-Control", "public, max-age=86400, s-maxage=604800, stale-while-revalidate=2592000");
     res.setHeader("X-Content-Type-Options", "nosniff");
     res.status(200).send(body);
-  } catch {
+  } catch (error) {
     res.status(500).json({ error: "Unable to load manufacturer image" });
   }
 };
