@@ -1,0 +1,481 @@
+{
+  "updated": "2026-10-07",
+  "selectionGuide": "https://additel.com/download/catalog_selection_guides/Additel_Pressure_Test_Pump_Selection_Guide.pdf",
+  "pumps": [
+    {
+      "slug": "adt992-993",
+      "model": "992 / 993",
+      "medium": "Pneumatic",
+      "range": "95% vacuum to 700 psi (992) or 1,000 psi (993)",
+      "bar": "50 / 70 bar",
+      "resolution": "0.1 mbar (10 Pa)",
+      "weight": "3.5 lb (1.6 kg)",
+      "dimensions": "320 × 110 × 122 mm (base length × width × height)",
+      "fluid": "Air",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "Max load 35 mL; 7.2 mL fine-adjust volume",
+      "features": [
+        "Dual-stage pre-pressure piston reduces pumping effort.",
+        "Lever pressurization and fine screw adjustment.",
+        "Adjustable reference port and four operating positions.",
+        "Hand-tight quick connectors with included flexible DUT hose.",
+        "Air intake filter 100 µm and standard/outlet filters 150 µm."
+      ],
+      "notes": [
+        "Choose 992 for applications at or below 700 psi; 993 extends to 1,000 psi.",
+        "Do not confuse the hose pressure rating with the pump output limit.",
+        "Port and carrying-case options are specified at order."
+      ],
+      "accessories": "20 O-rings, flexible hose and DUT connector; optional -SET case, ADT102/103 fittings and maintenance kit",
+      "img": "https://img.directindustry.com/images_di/photo-g/79975-20459785.webp",
+      "photo": "DirectIndustry (Additel product listing)",
+      "photoPage": "https://www.directindustry.com/prod/additel-corporation/product-79975-2757567.html",
+      "official": "https://additel.com/product-detail.html/992-993-handheld-pneumatic-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/992_993/992_and_993_Handheld_Pneumatic_Pressure_Pumps.pdf"
+    },
+    {
+      "slug": "adt901b",
+      "model": "901B",
+      "medium": "Pneumatic",
+      "range": "-6 to +6 psi",
+      "bar": "-0.4 to +0.4 bar",
+      "resolution": "0.001 mbar (0.1 Pa)",
+      "weight": "3.5 lb (1.6 kg)",
+      "dimensions": "245 × 165 × 145 mm",
+      "fluid": "Air",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "Fine screw-press adjustment (manufacturer does not state a piston volume)",
+      "features": [
+        "Isothermal bellows chamber reduces ambient-temperature effects.",
+        "Check-valve-free low-pressure adjustment minimizes an instability source.",
+        "Two hand-tight connectors for reference and device under test.",
+        "Very fine 0.1 Pa published adjustment resolution."
+      ],
+      "notes": [
+        "Specialized for low differential and near-atmospheric pressure, not general high-pressure service.",
+        "Contact Additel for oil-free applications."
+      ],
+      "accessories": "20 O-rings and manual; optional -SET case, ADT901B-X test kit, ADT102/103 adapters, 9240A DP gauge holder",
+      "img": "https://www.eurotronbenelux.nl/uploads/fl/1559724641_adt901_trans1.jpg",
+      "photo": "Eurotron Benelux",
+      "photoPage": "https://www.eurotronbenelux.nl/product/additel-901b-lage-druk-test-pomp",
+      "official": "https://additel.com/product-detail.html/901-low-pressure-air-pump/",
+      "datasheet": "https://additel.com/download/datasheet/901B/901B_Low_Pressure_Test_Pumps.pdf"
+    },
+    {
+      "slug": "adt912a",
+      "model": "912A",
+      "medium": "Pneumatic",
+      "range": "95% vacuum to +60 psi",
+      "bar": "-0.95 to +4 bar (approx.)",
+      "resolution": "0.001 mbar (0.1 Pa)",
+      "weight": "6.2 lb (2.8 kg)",
+      "dimensions": "273 × 258 × 140 mm",
+      "fluid": "Air",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "27 mL piston volume",
+      "features": [
+        "Isothermal bellows chamber for reduced temperature sensitivity.",
+        "Shut-off valve isolates the chamber during calibration.",
+        "Check-valve-free pressure control.",
+        "Integrated gas–liquid isolator guards against moisture and dirt.",
+        "Two hand-tight connectors for reference and DUT."
+      ],
+      "notes": [
+        "More range than the 901B with the same published adjustment resolution.",
+        "Contact Additel for oil-free applications."
+      ],
+      "accessories": "20 O-rings; optional -SET case, ADT912A test kit, ADT102/103 adapters and maintenance kit",
+      "img": "https://www.eurotronbenelux.nl/uploads/fl/1559723947_adt912_trans1.jpg",
+      "photo": "Eurotron Benelux",
+      "photoPage": "https://www.eurotronbenelux.nl/product/additel-912a-lage-druk-test-pomp",
+      "official": "https://additel.com/product-detail.html/912-low-pressure-air-pump/",
+      "datasheet": "https://additel.com/download/datasheet/912A/912A_Low_Pressure_Test_Pumps.pdf"
+    },
+    {
+      "slug": "adt914a",
+      "model": "914A",
+      "medium": "Pneumatic",
+      "range": "95% vacuum to +375 psi",
+      "bar": "-0.95 to +25 bar (approx.)",
+      "resolution": "0.1 mbar (10 Pa)",
+      "weight": "3.3 lb (1.5 kg)",
+      "dimensions": "240 × 120 × 130 mm",
+      "fluid": "Air",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "27 mL piston volume",
+      "features": [
+        "Compact handheld lever-assisted pressure generation.",
+        "High-quality fine screw press.",
+        "Shut-off valve helps pressure stability.",
+        "Built-in gas–liquid isolator.",
+        "Two hand-tight reference and DUT connectors."
+      ],
+      "notes": [
+        "A compact, light option when the required pressure stays at or below 375 psi.",
+        "Contact Additel regarding oil-free applications."
+      ],
+      "accessories": "20 O-rings; optional -SET carrying case, ADT100-HTK-8K hose kit, ADT102/103 adapter sets, maintenance kit",
+      "img": "https://www.avtekconsulting.com/wp-content/uploads/2023/11/ADT914A-PSI.jpg",
+      "photo": "Avtek Consulting",
+      "photoPage": "https://www.avtekconsulting.com/product/additel-914a-handheld-pneumatic-pressure-test-pump/",
+      "official": "https://additel.com/product-detail.html/914-portable-air-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/914A/914A_Handheld_Pneumatic_Pressure_Test_Pumps.pdf"
+    },
+    {
+      "slug": "adt916a",
+      "model": "916A",
+      "medium": "Pneumatic",
+      "range": "95% vacuum to +600 psi",
+      "bar": "-0.95 to +40 bar (approx.)",
+      "resolution": "0.1 mbar (10 Pa)",
+      "weight": "5.9 lb (2.7 kg)",
+      "dimensions": "315 × 198 × 140 mm",
+      "fluid": "Air",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "27 mL piston volume",
+      "features": [
+        "Hand-operated pneumatic generation with fine screw press.",
+        "Shut-off valve aids stable calibration pressure.",
+        "Gas–liquid isolator protects pump internals.",
+        "Two hand-tight connectors for reference and test device."
+      ],
+      "notes": [
+        "At 600 psi it bridges the smaller 914A and 1,000 psi 917.",
+        "Some text on Additel’s webpage appears copied from 912A; use the 916A datasheet for 0.1 mbar resolution and 5.9 lb weight."
+      ],
+      "accessories": "20 O-rings; optional case (9904-916), ADT100-HTK-8K hose, ADT102/103 fittings, maintenance kit",
+      "img": "https://anaum.com/cdn/shop/files/ADT916-1_700x700.jpg?v=1713008769",
+      "photo": "Anaum",
+      "photoPage": "https://anaum.com/products/additel-adt916a",
+      "official": "https://additel.com/product-detail.html/916-portable-air-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/916/916_Pneumatic_Pressure_Test_Pumps.pdf"
+    },
+    {
+      "slug": "adt917",
+      "model": "917",
+      "medium": "Pneumatic",
+      "range": "95% vacuum to +1,000 psi",
+      "bar": "-0.95 to +70 bar (approx.)",
+      "resolution": "0.1 mbar (10 Pa)",
+      "weight": "5.7 lb (2.6 kg)",
+      "dimensions": "315 × 198 × 140 mm",
+      "fluid": "Air",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "27 mL piston volume",
+      "features": [
+        "Lever pressure generation followed by fine screw adjustment.",
+        "Shut-off valve stabilizes the test volume.",
+        "Gas–liquid isolator helps protect from contamination.",
+        "Two hand-tight connectors simplify swaps of gauges and transmitters."
+      ],
+      "notes": [
+        "The normal working range ends at 1,000 psi; published safety/maximum values must not be used as operating range.",
+        "Oil-free special-order configurations: confirm availability with Additel."
+      ],
+      "accessories": "20 O-rings; optional -SET case, ADT102/103 adapters, ADT100-HTK-8K hose kit, maintenance kit",
+      "img": "https://www.instrumart.com/assets/Additel-917-360.jpg?bgcolor=fff&height=495&scale=upscalecanvas&width=660",
+      "photo": "Instrumart",
+      "photoPage": "https://www.instrumart.com/products/39537/additel-adt-917-pneumatic-pressure-test-pump",
+      "official": "https://additel.com/product-detail.html/917-portable-air-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/917/917_Pneumatic_Pressure_Test_Pumps.pdf"
+    },
+    {
+      "slug": "adt918",
+      "model": "918",
+      "medium": "Pneumatic",
+      "range": "95% vacuum to +1,500 psi",
+      "bar": "-0.95 to +100 bar (approx.)",
+      "resolution": "0.1 mbar (10 Pa)",
+      "weight": "5.7 lb (2.6 kg)",
+      "dimensions": "315 × 198 × 140 mm",
+      "fluid": "Air",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "27 mL piston volume",
+      "features": [
+        "High-range portable pneumatic generation by pump lever.",
+        "Fine screw press offers precise adjustment.",
+        "Shut-off valve and gas–liquid isolator aid stable clean operation.",
+        "Hand-tight quick connectors for reference and DUT."
+      ],
+      "notes": [
+        "Use when the pneumatic pressure requirement exceeds the 917’s 1,000 psi rating.",
+        "Ask Additel about oil-free configurations when required."
+      ],
+      "accessories": "20 O-rings; optional -SET case, 9904-918 case, ADT102/103 adapters, maintenance kit",
+      "img": "https://emin.vn/s-cdn/b2/b26b34c2042fb675d3f9e203b601dc09da6fbc84.jpg",
+      "photo": "EMIN",
+      "photoPage": "https://emin.vn/en/additel918-additel-918-pneumatic-pressure-test-pump-100-bar-31380/pr.html",
+      "official": "https://additel.com/product-detail.html/918-portable-air-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/918/918_Pneumatic_Pressure_Test_Pumps.pdf"
+    },
+    {
+      "slug": "adt919a",
+      "model": "919A",
+      "medium": "Pneumatic",
+      "range": "95% vacuum to +2,000 psi",
+      "bar": "-0.95 to +140 bar (approx.)",
+      "resolution": "0.1 mbar (10 Pa)",
+      "weight": "14.3 lb (6.5 kg)",
+      "dimensions": "540 × 270 × 178 mm",
+      "fluid": "Air",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "60 mL piston volume",
+      "features": [
+        "Long lever is rated by Additel to reach 2,000 psi in roughly 30 seconds under stated conditions.",
+        "Fine screw press for careful setting of the pressure point.",
+        "Gas–liquid isolator captures residual DUT liquid.",
+        "Shut-off valve provides stability during comparison work.",
+        "Two hand-tight connectors for test and reference."
+      ],
+      "notes": [
+        "A benchtop-style pneumatic pump, substantially larger than the handheld 917/918.",
+        "Verify the complete assembled test system pressure rating before high-pressure work."
+      ],
+      "accessories": "20 O-rings; optional 9909-919 carrying case, ADT102/103 fittings, ADT100-HTK-8K hose, maintenance kit",
+      "img": "https://pim-resources.coleparmer.com/item/xl/additel-adt919a-n-high-pressure-pneumatic-test-pump-14-to-2000-psi-1610744.jpg",
+      "photo": "Cole-Parmer",
+      "photoPage": "https://www.coleparmer.ca/i/additel-919a-high-pressure-pneumatic-test-pump-14-to-2000-psi/1610744",
+      "official": "https://additel.com/product-detail.html/919-air-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/919A/919A_High_Pressure_Test_Pumps.pdf"
+    },
+    {
+      "slug": "adt920-920hv",
+      "model": "920 / 920HV",
+      "medium": "Pneumatic",
+      "range": "95% vacuum to +3,000 psi",
+      "bar": "-0.95 to +200 bar (approx.)",
+      "resolution": "0.1 mbar (10 Pa)",
+      "weight": "920: 14.3 lb (6.5 kg); 920HV: 15.9 lb (7.2 kg)",
+      "dimensions": "540 × 270 × 178 mm",
+      "fluid": "Air",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "920: 60 mL piston; 920HV: 115 mL piston",
+      "features": [
+        "High-pressure pneumatic comparison work to 3,000 psi.",
+        "920HV increases displacement/volume for larger test loads.",
+        "Long lever; Additel quotes about 40 seconds to reach 3,000 psi.",
+        "Fine screw press and shut-off valve for stable adjustment.",
+        "Gas–liquid isolator helps protect against introduced liquid."
+      ],
+      "notes": [
+        "HV does not raise the maximum rated pressure; it increases pump volume.",
+        "Very high pneumatic energy—confirm safety and rating of every hose, fitting and DUT."
+      ],
+      "accessories": "20 O-rings; model-specific optional case (9909-920 or 9909-920HV), ADT102/103 adapters, maintenance kits",
+      "img": "https://emin.vn/s-cdn/98/9848e9e963a1dcd0799053d4ebbd686d73a70498.jpg",
+      "photo": "EMIN",
+      "photoPage": "https://emin.vn/additel920-bom-kiem-tra-ap-suat-cao-additel-920-200-bar-31382/pr.html",
+      "official": "https://additel.com/product-detail.html/920-air-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/920/920_High_Pressure_Test_Pumps.pdf"
+    },
+    {
+      "slug": "adt997",
+      "model": "997",
+      "medium": "Hydraulic",
+      "range": "Up to 10,000 psi",
+      "bar": "Up to 700 bar",
+      "resolution": "1 mbar (100 Pa)",
+      "weight": "4.19 lb (1.9 kg)",
+      "dimensions": "385 × 166 × 128 mm",
+      "fluid": "Hydraulic/mineral/transformer oil, deionized water, alcohol or antifreeze; confirm compatibility",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "Max load 100 mL; fine adjustment 1.5 mL",
+      "features": [
+        "Dual-stage pre-pressure piston with lever actuation.",
+        "Fine adjustment screw, adjustable reference port and multiple operating positions.",
+        "Hand-tight quick connectors and DUT hose.",
+        "150 µm standard/outlet and 100 µm intake filters.",
+        "Compact hydraulic field pump rated to 10,000 psi."
+      ],
+      "notes": [
+        "Only use approved fluids; consult Additel before alternative media.",
+        "The flexible hose is separately rated; check its rating before use."
+      ],
+      "accessories": "250 mL mineral oil bottle where applicable, 20 O-rings, hose, DUT connector; optional -SET case and maintenance kit",
+      "img": "https://img.directindustry.com/images_di/photo-g/79975-20459588.jpg",
+      "photo": "DirectIndustry (Additel product listing)",
+      "photoPage": "https://www.directindustry.com/prod/additel-corporation/product-79975-2757541.html",
+      "official": "https://additel.com/product-detail.html/997-handheld-hydraulic-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/997/997_Handheld_Hydraulic_Pressure_Pump.pdf"
+    },
+    {
+      "slug": "adt925",
+      "model": "925",
+      "medium": "Hydraulic",
+      "range": "85% vacuum to +6,000 psi",
+      "bar": "-0.85 to +400 bar (approx.)",
+      "resolution": "1 mbar (selection guide)",
+      "weight": "3.7 lb (1.7 kg)",
+      "dimensions": "250 × 140 × 120 mm",
+      "fluid": "Mineral oil standard; deionized-water variant ADT925W",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "200 mL reservoir; low/high-pressure piston 18 / 0.9 mL",
+      "features": [
+        "Screw-press system for smooth increases and decreases in pressure.",
+        "No internal check valve, helping to reduce leakage and service.",
+        "Two hand-tight connectors for reference and test gauges.",
+        "Small form factor supports handheld/field use."
+      ],
+      "notes": [
+        "Additel cautions that stability can be lower with water than with oil.",
+        "Order ADT925W if water media is required; do not assume default pump is water compatible."
+      ],
+      "accessories": "250 mL mineral oil and 20 O-rings on oil versions; optional -SET case, 9201/9202 fluids, fittings, hose kit and maintenance kit",
+      "img": "https://www.tester.co.uk/media/catalog/product/cache/4e97ee541d2c2591d4b5b803c88d3d0b/a/d/additel-925-handheld-hydraulic-pressure-test-pump-facing-left.jpg",
+      "photo": "Tester.co.uk",
+      "photoPage": "https://www.tester.co.uk/additel-925-handheld-hydraulic-pressure-test-pump-6-000-psi-400-bar",
+      "official": "https://additel.com/product-detail.html/925-portable-hydraulic-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/925/925_Handheld_Hydraulic_Pressure_Test_Pumps.pdf"
+    },
+    {
+      "slug": "adt927",
+      "model": "927",
+      "medium": "Hydraulic",
+      "range": "85% vacuum to +10,000 psi",
+      "bar": "-0.85 to +700 bar (approx.)",
+      "resolution": "1 mbar (selection guide)",
+      "weight": "7 lb (3.2 kg)",
+      "dimensions": "290 × 198 × 135 mm",
+      "fluid": "Mineral oil standard; deionized-water variant ADT927W",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "245 mL reservoir; low/high-pressure piston 19 / 0.9 mL",
+      "features": [
+        "Check-valve-free screw-press construction reduces leakage points.",
+        "Smooth manual raise/lower pressure control.",
+        "Two hand-tight quick connectors.",
+        "Wide-pressure field and laboratory comparison pump."
+      ],
+      "notes": [
+        "The ADT927W water-compatible option must be specifically ordered.",
+        "Additel notes that stability may decrease when using water instead of oil."
+      ],
+      "accessories": "250 mL mineral oil and 20 O-rings for oil version; optional 9904-927 case, ADT100-HTK-15K hose, adapters and maintenance kit",
+      "img": "https://intertechna.se/cdn/shop/files/Additel-927-2.jpg?v=1742303401",
+      "photo": "Intertechna",
+      "photoPage": "https://intertechna.se/products/additel-927-hydraulisk-handpump-for-hogt-tryck",
+      "official": "https://additel.com/product-detail.html/927-portable-hydraulic-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/927/927_Hydraulic_Pressure_Test_Pumps.pdf"
+    },
+    {
+      "slug": "adt928a",
+      "model": "928A",
+      "medium": "Hydraulic",
+      "range": "0 to +15,000 psi",
+      "bar": "0 to +1,000 bar",
+      "resolution": "1 mbar (selection guide)",
+      "weight": "9.5 lb (4.3 kg; latest datasheet)",
+      "dimensions": "345 × 215 × 162 mm",
+      "fluid": "Mineral oil standard (928A); deionized water (928AW); Skydrol-type fluid option (928AC)",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "150 mL reservoir; 0.9 mL fine-adjust piston; 3.72 mL per stroke",
+      "features": [
+        "Dual-piston hand pump for filling larger test volumes.",
+        "Isolation valve separates calibration volume from hand pump check valve.",
+        "Fine-adjust piston supports smooth pressure changes.",
+        "Two hand-tight connectors.",
+        "304 stainless-steel main body and ram in latest datasheet."
+      ],
+      "notes": [
+        "Latest Additel datasheet shows 9.5 lb, superseding the older 8.6 lb in the selection guide.",
+        "928A, 928AW and 928AC have different fluid compatibility; specify the correct one at ordering."
+      ],
+      "accessories": "250 mL mineral oil for oil models; 20 O-rings; optional -SET case, 15K hose kit, external reservoir expansion and maintenance kit",
+      "img": "https://www.teltherm.co.nz/wp-content/uploads/2025/08/928A.jpg",
+      "photo": "Teltherm",
+      "photoPage": "https://www.teltherm.co.nz/product/additel-928a-hydraulic-pressure-pump/",
+      "official": "https://additel.com/product-detail.html/928-portable-hydraulic-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/928/928_Hydraulic_Pressure_Test_Pumps.pdf"
+    },
+    {
+      "slug": "adt946a",
+      "model": "946A",
+      "medium": "Hydraulic",
+      "range": "0 to +15,000 psi",
+      "bar": "0 to +1,000 bar",
+      "resolution": "1 mbar (selection guide)",
+      "weight": "26.5 lb (12 kg; latest datasheet)",
+      "dimensions": "460 × 365 × 200 mm",
+      "fluid": "Mineral oil standard; ADT946AW deionized-water variant",
+      "ports": "1/4 NPT, 1/2 NPT, 1/4 BSP, 1/2 BSP, or M20×1.5 female, selected at order",
+      "volume": "420 mL reservoir; 2.5 mL fine-adjust piston; 3.72 mL per stroke",
+      "features": [
+        "Benchtop dual-piston hydraulic calibration pump.",
+        "High-volume fill pump plus precision fine-adjust screw press.",
+        "Isolation valve helps maintain stable pressure.",
+        "Three hand-tight pressure connectors.",
+        "Large 420 mL reservoir for larger DUT volumes."
+      ],
+      "notes": [
+        "Latest Additel datasheet lists 26.5 lb; older selection material quotes 28.7 lb.",
+        "Additel advises that oil provides better stability than water."
+      ],
+      "accessories": "Optional 9201/9202 fluids, ADT102/103 fittings, 9910 case, ADT946A-MK maintenance kit",
+      "img": "https://res.cloudinary.com/iwh/image/upload/q_auto%2Cg_center/h_768/assets/1/26/Additel_ADT946A_Series.jpg",
+      "photo": "TEquipment",
+      "photoPage": "https://www.tequipment.net/Additel/ADT946A-N-SET/Calibration-Pumps/",
+      "official": "https://additel.com/product-detail.html/946-hydraulic-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/946A/946A_Hydraulic_High_Pressure_Calibration_Pumps.pdf"
+    },
+    {
+      "slug": "adt959a",
+      "model": "959A",
+      "medium": "Hydraulic",
+      "range": "0 to +40,000 psi",
+      "bar": "0 to +2,800 bar",
+      "resolution": "1 mbar (selection guide)",
+      "weight": "28.7 lb (13 kg)",
+      "dimensions": "455 × 380 × 175 mm",
+      "fluid": "Diethylhexyl sebacate",
+      "ports": "Autoclave F-250-C 9/16-18 UNF female test/reference ports; 1/2 BSP or M20×1.5 on request",
+      "volume": "420 mL reservoir; 2.5 mL fine adjust; 3.72 mL per stroke",
+      "features": [
+        "Benchtop ultra-high pressure calibration.",
+        "Dual-piston large-volume filling and fine-adjust screw press.",
+        "Isolation valve reduces check-valve leakage effects.",
+        "Autoclave-style high-pressure connections.",
+        "Three pressure ports."
+      ],
+      "notes": [
+        "Not an ordinary NPT hydraulic pump; confirm high-pressure fittings, cone/thread geometry and media compatibility.",
+        "Pressure capacity of the complete test setup is limited by its lowest-rated component."
+      ],
+      "accessories": "250 mL diethylhexyl sebacate; optional 9201 fluid, ADT104 high-pressure adapters, 9910 carrying case, external reservoir hose and maintenance kit",
+      "img": "https://www.instrumart.com/assets/959a-2020.jpg",
+      "photo": "Instrumart",
+      "photoPage": "https://www.instrumart.com/products/47675/additel-adt-959a-hydraulic-ultra-high-pressure-test-pump",
+      "official": "https://additel.com/product-detail.html/959-hydraulic-high-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/959A/959A_Hydraulic_Ultra_High_Pressure_Calibration_Pumps.pdf"
+    },
+    {
+      "slug": "adt960",
+      "model": "960",
+      "medium": "Hydraulic",
+      "range": "0 to +60,000 psi",
+      "bar": "0 to +4,200 bar",
+      "resolution": "1 mbar (selection guide)",
+      "weight": "33.1 lb (15 kg; datasheet)",
+      "dimensions": "455 × 380 × 175 mm",
+      "fluid": "Diethylhexyl sebacate",
+      "ports": "Autoclave F-250-C female connection for reference and test ports",
+      "volume": "420 mL reservoir; 2.5 mL fine-adjust piston; 3.72 mL per stroke",
+      "features": [
+        "Highest-pressure model in the listed hand-operated Additel range.",
+        "Benchtop dual-piston pressure generation and fine control.",
+        "Isolation valve between calibration circuit and pumping check valve.",
+        "Two ultra-high-pressure Autoclave-style ports.",
+        "420 mL reservoir and 2.5 mL fine adjustment volume."
+      ],
+      "notes": [
+        "Datasheet states 33.1 lb; an older selection guide lists 28.7 lb.",
+        "60,000 psi requires appropriately rated tubing, fittings, references, shields and documented safety procedures."
+      ],
+      "accessories": "250 mL diethylhexyl sebacate; optional 9201 fluid, 9910 carrying case, ADT100-960-HK reservoir expansion and maintenance kit",
+      "img": "https://anaum.com/cdn/shop/files/ADT960_1000x.jpg?v=1713005891",
+      "photo": "Anaum",
+      "photoPage": "https://anaum.com/products/adt960",
+      "official": "https://additel.com/product-detail.html/960-hydraulic-high-pressure-pump/",
+      "datasheet": "https://additel.com/download/datasheet/960/960_Hydraulic_Ultra_High_Pressure_Calibration_Pumps.pdf"
+    }
+  ]
+}
