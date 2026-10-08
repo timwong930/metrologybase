@@ -1,0 +1,44 @@
+
+.pump-compare{margin:8px 0 65px;scroll-margin-top:95px}
+.pump-compare-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:15px}
+.pump-compare h2{font:600 clamp(29px,3.8vw,43px) 'Fraunces',serif;letter-spacing:-.03em;margin:0 0 8px}
+.pump-compare-intro{font-size:13px;line-height:1.6;color:#697789;max-width:750px;margin:0}
+.pump-compare-count{white-space:nowrap;color:#536479;font:600 12px 'DM Mono',monospace}
+.pump-compare-controls{display:grid;grid-template-columns:minmax(180px,1fr) 155px 180px 176px;gap:10px;align-items:end;padding:17px;background:#fff;border:1px solid var(--line);border-radius:18px 18px 0 0}
+.pump-compare-controls label{display:block;font:600 10px 'DM Mono',monospace;letter-spacing:.03em;text-transform:uppercase;color:#607185;margin-bottom:7px}
+.pump-compare-controls input,.pump-compare-controls select{width:100%;min-width:0;height:42px;border:1px solid #d1d9e2;border-radius:10px;padding:0 10px;color:var(--ink);background:#fff;font:600 12px 'DM Sans',sans-serif}
+.pump-compare-controls input:focus-visible,.pump-compare-controls select:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+.pump-compare-scroll-note{display:none;margin:9px 0;font-size:11px;color:#67768a}
+.pump-compare-scroller{max-height:750px;overflow:auto;scrollbar-gutter:stable;background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 18px 18px}
+.pump-compare-table{min-width:1110px;width:100%;border-collapse:separate;border-spacing:0;font-size:12px;line-height:1.45}
+.pump-compare-table thead th{position:sticky;top:0;z-index:2;text-align:left;padding:13px 11px;background:#e8edf4;color:#34465e;border-bottom:1px solid #cbd4df;font:700 11px 'DM Sans',sans-serif;white-space:nowrap}
+.pump-compare-table thead th:first-child{position:sticky;left:0;z-index:4}
+.pump-compare-table tbody tr:nth-child(even){background:#f6f8fb}
+.pump-compare-table tbody tr:hover{background:#eaf2fe}
+.pump-compare-table tbody td,.pump-compare-table tbody th{border-bottom:1px solid #e1e6ed;vertical-align:middle;text-align:left;padding:11px}
+.pump-compare-table tbody tr:last-child td,.pump-compare-table tbody tr:last-child th{border-bottom:0}
+.pump-compare-table tbody .pump-compare-model{position:sticky;left:0;z-index:1;background:#fff;min-width:215px}
+.pump-compare-table tbody tr:nth-child(even) .pump-compare-model{background:#f6f8fb}
+.pump-compare-table tbody tr:hover .pump-compare-model{background:#eaf2fe}
+.pump-compare-model-content{display:flex;align-items:center;gap:10px}
+.pump-compare-thumb{width:78px;height:67px;flex:none;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #e2e8ef;border-radius:9px;overflow:hidden}
+.pump-compare-thumb img{width:100%;height:100%;object-fit:contain}
+.pump-compare-name{font:700 12px 'DM Sans',sans-serif;color:var(--blue);text-decoration:none}
+.pump-compare-model small{display:block;font-size:10px;color:#778699;font-weight:500;margin-top:4px}
+.pump-compare-pill{display:inline-block;padding:5px 8px;border-radius:8px;font-size:10px;font-weight:700;white-space:nowrap}
+.pump-compare-pill.pneumatic{color:#2b5e93;background:#e7f1fe}
+.pump-compare-pill.hydraulic{color:#276449;background:#e8f5ec}
+.pump-compare-table td:nth-child(3){min-width:185px}
+.pump-compare-table td:nth-child(4){min-width:155px}
+.pump-compare-table td:nth-child(5){min-width:172px}
+.pump-compare-table td:nth-child(6){min-width:120px}
+.pump-compare-table td:nth-child(7){min-width:135px}
+.pump-compare-table td:nth-child(8){min-width:105px}
+.pump-compare-table td{font-variant-numeric:tabular-nums}
+.pump-compare-link{display:block;font-size:11px;color:var(--blue);font-weight:700;text-decoration:none;margin:5px 0}
+.pump-compare-link:hover,.pump-compare-name:hover{text-decoration:underline}
+.pump-compare-empty{border:1px dashed #bec8d5;border-radius:12px;padding:15px;margin-top:12px;background:#fff;color:#67768a}
+.pump-compare-note{margin:13px 0 0;font-size:11px;line-height:1.7;color:#6b7a8e;max-width:1020px}
+.pump-compare-note a{color:var(--blue);font-weight:700}
+@media(max-width:1050px){.pump-compare-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.pump-compare-scroll-note{display:block}}
+@media(max-width:580px){.pump-compare-controls .pump-compare-search{grid-column:1/-1}.pump-compare-head{align-items:start;flex-direction:column}.pump-compare-controls{padding:12px}.pump-compare{margin-bottom:48px}}
