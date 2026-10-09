@@ -1,0 +1,389 @@
+{
+  "source": {
+    "catalog": "Additel 2026 Product Catalog, printed pages 12–17 (PDF pages 18–23)",
+    "manufacturerPdf": "https://additel.com/download/datasheet/761A/761A_Automated_Pressure_Calibrators.pdf",
+    "manufacturerProduct": "https://additel.com/product-detail.html/761A-portable-automatic-pressure-calibrator/",
+    "catalogPage": "https://www.insatech.com/media/mygaw321/additel_product_catalog.pdf#page=18"
+  },
+  "ports": [
+    {
+      "code": "N",
+      "name": "1/4 NPT female"
+    },
+    {
+      "code": "N2",
+      "name": "1/2 NPT female"
+    },
+    {
+      "code": "B",
+      "name": "1/4 BSP female"
+    },
+    {
+      "code": "B2",
+      "name": "1/2 BSP female"
+    },
+    {
+      "code": "M",
+      "name": "M20 × 1.5 female"
+    }
+  ],
+  "modules": {
+    "DP025": {
+      "range": "±0.25 inH₂O",
+      "accuracy": "0.20% FS",
+      "note": "6-month spec; 1-year drift 0.20% FS"
+    },
+    "DP050": {
+      "range": "±0.5 inH₂O",
+      "accuracy": "0.10% FS",
+      "note": "6-month spec; 1-year drift 0.10% FS"
+    },
+    "DP1": {
+      "range": "±1 inH₂O",
+      "accuracy": "0.05% FS",
+      "note": "6-month spec; 1-year drift 0.05% FS"
+    },
+    "DP2": {
+      "range": "±2 inH₂O",
+      "accuracy": "0.05% FS",
+      "note": "6-month spec; 1-year drift 0.05% FS"
+    },
+    "DP5": {
+      "range": "±5 inH₂O",
+      "accuracy": "0.05% FS",
+      "note": "6-month spec; 1-year drift 0.05% FS"
+    },
+    "DP10": {
+      "range": "±10 inH₂O",
+      "accuracy": "0.05% FS",
+      "note": "6-month spec; 1-year drift 0.05% FS"
+    },
+    "DP20": {
+      "range": "±20 inH₂O",
+      "accuracy": "0.05% FS",
+      "note": "1-year spec"
+    },
+    "DP30": {
+      "range": "±30 inH₂O",
+      "accuracy": "0.05% FS",
+      "note": "1-year spec"
+    },
+    "DP50": {
+      "range": "±50 inH₂O",
+      "accuracy": "0.05% FS",
+      "note": "1-year spec"
+    },
+    "DP100": {
+      "range": "±100 inH₂O",
+      "accuracy": "0.02% FS",
+      "note": "1-year spec"
+    },
+    "DP150": {
+      "range": "±150 inH₂O",
+      "accuracy": "0.02% FS",
+      "note": "1-year spec"
+    },
+    "DP300": {
+      "range": "±300 inH₂O",
+      "accuracy": "0.02% FS",
+      "note": "1-year spec"
+    },
+    "DP400": {
+      "range": "−380 to +400 inH₂O",
+      "accuracy": "0.02% FS",
+      "note": "1-year spec"
+    },
+    "DP800": {
+      "range": "−380 to +800 inH₂O",
+      "accuracy": "0.02% FS",
+      "note": "1-year spec"
+    },
+    "DP1K": {
+      "range": "−380 to +1,000 inH₂O",
+      "accuracy": "0.02% FS",
+      "note": "1-year spec"
+    },
+    "CP10": {
+      "range": "±10 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    },
+    "CP15": {
+      "range": "−13.5 to +15 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    },
+    "CP30": {
+      "range": "−13.5 to +30 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    },
+    "CP35": {
+      "range": "−13.5 to +35 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    },
+    "CP50": {
+      "range": "−13.5 to +50 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    },
+    "CP100": {
+      "range": "−13.5 to +100 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    },
+    "CP150": {
+      "range": "−13.5 to +150 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    },
+    "CP200": {
+      "range": "−13.5 to +200 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    },
+    "CP300": {
+      "range": "−13.5 to +300 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    },
+    "CP500": {
+      "range": "−13.5 to +500 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    },
+    "CP600": {
+      "range": "−13.5 to +600 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    },
+    "CP1K": {
+      "range": "−13.5 to +1,000 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    },
+    "CP1.5K": {
+      "range": "−13.5 to +1,500 psi",
+      "accuracy": "0.01% or 0.02% FS (except 761A-D: 0.02% FS)",
+      "note": "Select module accuracy to match ordered configuration; 0.01% unavailable for 761A-D."
+    }
+  },
+  "models": [
+    {
+      "code": "LLP",
+      "title": "Low / differential",
+      "range": "−30 to +30 inH₂O (−75 to +75 mbar)",
+      "maximum": "30 inH₂O",
+      "accuracy": [
+        "05"
+      ],
+      "stability": "0.003% FS or 0.05 Pa",
+      "pressureTypes": "Gauge · differential",
+      "highModule": "DP30",
+      "lowModules": [
+        "DP025",
+        "DP050",
+        "DP1",
+        "DP2",
+        "DP5",
+        "DP10",
+        "DP20"
+      ],
+      "defaultLow": "DP5",
+      "connection": false,
+      "builtIn": "Differential/gauge low pressure",
+      "bestFor": "Airflow, cleanrooms and very-low-pressure transmitters",
+      "guidance": "Select for the lowest differential ranges; the included fixed high module is DP30. Very-low-range DP modules have 6-month accuracy specifications."
+    },
+    {
+      "code": "D",
+      "title": "Differential & gauge",
+      "range": "−13.5 to +35 psi (−0.95 to +2.5 bar)",
+      "maximum": "35 psi",
+      "accuracy": [
+        "02"
+      ],
+      "stability": "0.003% FS",
+      "pressureTypes": "Gauge · differential",
+      "highModule": "CP35",
+      "lowModules": [
+        "DP10",
+        "DP20",
+        "DP30",
+        "DP50",
+        "DP100",
+        "DP150",
+        "DP300",
+        "DP400",
+        "DP800",
+        "DP1K",
+        "CP10",
+        "CP15",
+        "CP30"
+      ],
+      "defaultLow": "DP100",
+      "connection": true,
+      "builtIn": "Differential/gauge low pressure",
+      "bestFor": "DP transmitters, filters and low-pressure field calibration",
+      "guidance": "High module CP35 is fixed at 0.02% FS. The ADT155-01 low-pressure CP modules are NOT available at 0.01% on the D."
+    },
+    {
+      "code": "500",
+      "title": "Gauge / absolute · 500 psi",
+      "range": "−13 to +500 psig (−0.9 to +35 bar.g)",
+      "maximum": "500 psi",
+      "accuracy": [
+        "01",
+        "02"
+      ],
+      "stability": "0.003% FS",
+      "pressureTypes": "Gauge · derived absolute",
+      "highModule": "CP500",
+      "lowModules": [
+        "CP10",
+        "CP15",
+        "CP30",
+        "CP35",
+        "CP50",
+        "CP100",
+        "CP150",
+        "CP200",
+        "CP300"
+      ],
+      "defaultLow": "CP35",
+      "connection": true,
+      "builtIn": "Gauge + barometer",
+      "bestFor": "General process transmitters through 500 psig",
+      "guidance": "Absolute pressure is derived using the built-in barometer, adding 55 Pa uncertainty."
+    },
+    {
+      "code": "1K",
+      "title": "Gauge / absolute · 1,000 psi",
+      "range": "−13 to +1,000 psig (−0.9 to +70 bar.g)",
+      "maximum": "1,000 psi",
+      "accuracy": [
+        "01",
+        "02"
+      ],
+      "stability": "0.003% FS",
+      "pressureTypes": "Gauge · derived absolute",
+      "highModule": "CP1K",
+      "lowModules": [
+        "CP30",
+        "CP35",
+        "CP50",
+        "CP100",
+        "CP150",
+        "CP200",
+        "CP300",
+        "CP500",
+        "CP600"
+      ],
+      "defaultLow": "CP100",
+      "connection": true,
+      "builtIn": "Gauge + barometer",
+      "bestFor": "Midrange industrial gauges and transmitters",
+      "guidance": "Select a smaller compatible module for improved measurement uncertainty at low applied pressures."
+    },
+    {
+      "code": "1.5K",
+      "title": "Gauge / absolute · 1,500 psi",
+      "range": "−13 to +1,500 psig (−0.9 to +100 bar.g)",
+      "maximum": "1,500 psi",
+      "accuracy": [
+        "01",
+        "02"
+      ],
+      "stability": "0.003% FS",
+      "pressureTypes": "Gauge · derived absolute",
+      "highModule": "CP1.5K",
+      "lowModules": [
+        "CP30",
+        "CP35",
+        "CP50",
+        "CP100",
+        "CP150",
+        "CP200",
+        "CP300",
+        "CP500",
+        "CP600",
+        "CP1K"
+      ],
+      "defaultLow": "CP35",
+      "connection": true,
+      "builtIn": "Gauge + barometer",
+      "bestFor": "Higher-pressure pneumatic calibration through 1,500 psig",
+      "guidance": "This model uses its own ADT111-X-KIT manifold and ADT100-761A-1.5K hose kit (not the general ADT106A manifold)."
+    },
+    {
+      "code": "BP",
+      "title": "Absolute barometer",
+      "range": "100 to 1,200 hPa absolute (1.45 to 17.41 psia)",
+      "maximum": "1,200 hPa",
+      "accuracy": [
+        "01"
+      ],
+      "stability": "0.02 hPa",
+      "pressureTypes": "Absolute only",
+      "highModule": null,
+      "lowModules": [],
+      "defaultLow": null,
+      "connection": false,
+      "builtIn": "Barometric pressure",
+      "bestFor": "Barometers, weather instruments and aviation-pressure sensors",
+      "guidance": "The catalog shows the BP ordering pattern as ADT761A-BP-X; confirm connection suffix X directly with Additel."
+    }
+  ],
+  "accessories": [
+    {
+      "code": "ADT161",
+      "label": "External digital pressure module",
+      "models": [
+        "LLP",
+        "D",
+        "500",
+        "1K",
+        "1.5K",
+        "BP"
+      ],
+      "note": "Check ADT161 range and connector compatibility; connection cable may be ordered separately."
+    },
+    {
+      "code": "ADT112-761A-X",
+      "label": "Pneumatic filter (up to 1,500 psi)",
+      "models": [
+        "D",
+        "500",
+        "1K",
+        "1.5K"
+      ],
+      "note": "For approved hose and quick-connector assemblies; check media and fitting."
+    },
+    {
+      "code": "ADT100-761AHose",
+      "label": "Additional 5 ft hose",
+      "models": [
+        "D",
+        "500",
+        "1K",
+        "1.5K",
+        "BP"
+      ],
+      "note": "Hose rated 2,390 psi burst. Burst pressure is not the working-pressure rating."
+    },
+    {
+      "code": "9530",
+      "label": "ACal automation software",
+      "models": [
+        "LLP",
+        "D",
+        "500",
+        "1K",
+        "1.5K",
+        "BP"
+      ],
+      "note": "Licensing and version selected separately."
+    }
+  ]
+}
