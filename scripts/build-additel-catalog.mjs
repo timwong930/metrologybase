@@ -95,6 +95,11 @@ function page(item) {
 
 let count=0;
 for (const item of items) {
+  if (item.model === '761A') { // Hand-authored configurator is copied from products/ before this builder.
+    const detailed = path.join(productDir, 'additel-761a.html');
+    if (!fs.existsSync(detailed)) throw new Error('Missing dedicated ADT761A configurator page');
+    continue;
+  }
   const dest = path.join(productDir, slug(item)+'.html');
   if (fs.existsSync(dest)) throw new Error('Catalog generator would overwrite an existing detailed page: '+dest);
   fs.writeFileSync(dest,page(item),'utf8'); count++;
