@@ -1,0 +1,82 @@
+{
+  "site": {
+    "name": "MetrologyBase",
+    "mark": "M",
+    "tagline": "Practical tools and resources for calibration professionals.",
+    "logoPath": "",
+    "faviconPath": "/favicon.svg",
+    "url": ""
+  },
+  "theme": {
+    "colors": {
+      "--bg": "#f5f1e8",
+      "--paper": "#fffdf8",
+      "--ink": "#10233f",
+      "--blue": "#1768e5",
+      "--blue2": "#2d7ff0",
+      "--gold": "#b4924d"
+    }
+  },
+  "navigation": {
+    "links": [
+      {
+        "label": "Learn",
+        "href": "/#learn"
+      },
+      {
+        "label": "Articles",
+        "href": "/articles"
+      },
+      {
+        "label": "Tools",
+        "href": "/#tools"
+      },
+      {
+        "label": "Products",
+        "href": "/products"
+      },
+      {
+        "label": "Pressure Gauges",
+        "href": "/pressure-gauges"
+      }
+    ],
+    "defaultCta": {
+      "label": "Browse gear",
+      "href": "/products"
+    }
+  },
+  "footer": {
+    "enabled": true,
+    "links": [
+      {
+        "label": "Articles",
+        "href": "/articles"
+      },
+      {
+        "label": "Products",
+        "href": "/products"
+      },
+      {
+        "label": "Pressure Gauges",
+        "href": "/pressure-gauges"
+      },
+      {
+        "label": "Glossary",
+        "href": "/#glossary"
+      },
+      {
+        "label": "About",
+        "href": "/#about"
+      }
+    ],
+    "notice": "Independent educational reference. Verify manufacturer specifications, safety limits, and applicable calibration procedures."
+  },
+  "seo": {
+    "homepageTitle": "{siteName} — Practical tools, resources & buying guides for calibration professionals",
+    "homepageDescription": "Practical metrology resources, calculators, buying guides, and a vendor-neutral equipment directory for calibration and measurement professionals.",
+    "defaultDescription": "Practical metrology resources for calibration and measurement professionals."
+  },
+  "features": {
+    "globalSearch": true
+  }
+}
