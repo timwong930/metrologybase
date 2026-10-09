@@ -10,12 +10,16 @@ const escape = value => String(value ?? '').replace(/&/g,'&amp;').replace(/</g,'
 const slug = item => (item.model.startsWith('AM') ? 'accumac-' : 'additel-') + item.model.toLowerCase();
 const display = item => (item.model.startsWith('AM') ? 'AccuMac ' : 'Additel ADT') + item.model;
 const pageURL = item => '/products/' + slug(item);
+const photoURL = item => '/additel-catalog/' + slug(item) + '.jpg';
 const catalogURL = item => catalog.source + '#page=' + (item.page + 6);
 const sectionType = measurement => measurement.includes('temperature') ? 'Temperature' : measurement.includes('process') ? 'Process / electrical' : measurement.includes('electrical') ? 'Electrical' : 'Pressure';
 const cite = (url,text) => '<a href="'+escape(url)+'" target="_blank" rel="noopener noreferrer">'+escape(text)+' ↗</a>';
 
 if (items.length < 40) throw new Error('Catalog inventory appears incomplete');
 const ids = items.map(slug);
+for (const item of items) {
+  if (!fs.existsSync(path.join(dist,photoURL(item)))) throw new Error('Missing locally hosted 2026 catalog photo for '+item.model+'. Generate images via scripts/extract-additel-photos.py.');
+}
 if(new Set(ids).size !== ids.length) throw new Error('Duplicate catalog product slug');
 if(items.some(p => !p.page || p.page < 1 || p.page > 221 || !p.overview || !p.features.length)) throw new Error('Missing catalog page or product information');
 fs.mkdirSync(productDir, {recursive:true});
@@ -62,7 +66,7 @@ function page(item) {
   ];
   return [
     '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">',
-    '<title>'+escape(name+' '+item.title+' — MetrologyBase')+'</title><meta name="description" content="'+escape(item.overview)+'">',
+    '<title>'+escape(name+' '+item.title+' — MetrologyBase')+'</title><meta name="description" content="'+escape(item.overview)+'"><meta property="og:image" content="'+escape(photoURL(item))+'">',
     '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
     '<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">',
     '<link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/products/device.css"><style>'+styles+'</style>',
@@ -73,9 +77,9 @@ function page(item) {
     '<h1>'+escape(name)+'</h1><p class="catalog-subtitle">'+escape(item.title)+'</p><p class="catalog-lede">'+intro+'</p>',
     '<div class="catalog-pillbox"><span class="catalog-pill">'+escape(item.range)+'</span><span class="catalog-pill">Catalog verified · 2026</span></div>',
     '<div class="catalog-actions">'+(item.official?cite(item.official,'Official manufacturer page'):'')+cite(catalogURL(item),'Original catalog page')+cite(catalog.resources,'Manufacturer resources')+'</div></div>',
-    '<figure class="catalog-image">'+(item.official?'<img loading="lazy" decoding="async" alt="'+escape(name)+' manufacturer product photograph" width="650" height="380" src="/api/product-image?source='+encodeURIComponent(item.official)+'&model='+encodeURIComponent(item.model)+'" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\'"><div class="catalog-photo-fallback">Manufacturer photo could not be loaded. Use the original catalog preview below.</div>':'')+
-    '<details'+(item.official?'':' open')+'><summary>View original catalog product photograph and specifications</summary><iframe loading="lazy" title="'+escape(name)+' page in the 2026 Additel catalog" src="'+escape(catalogURL(item)+'&toolbar=0&navpanes=0')+'"></iframe></details>',
-    '<figcaption>Photo source: '+(item.official?cite(item.official,'Additel manufacturer product listing'):cite(catalogURL(item),'2026 manufacturer catalog'))+'. Catalog page '+item.page+' · Image &copy; Additel/AccuMac.</figcaption></figure></section>',
+    '<figure class="catalog-image"><img loading="eager" fetchpriority="high" decoding="async" alt="'+escape(name)+' product photograph sourced from the 2026 Additel catalog" width="650" height="380" src="'+escape(photoURL(item))+'" onerror="this.hidden=true;this.nextElementSibling.open=true">',
+    '<details><summary>View full manufacturer catalog page and photo</summary><iframe loading="lazy" title="'+escape(name)+' page in the 2026 Additel catalog" src="'+escape(catalogURL(item)+'&toolbar=0&navpanes=0')+'"></iframe></details>',
+    '<figcaption>Product photograph: '+cite(catalogURL(item),'Additel 2026 Product Catalog · p. '+item.page)+'. Some product-family photos depict multiple available models. &copy; Additel/AccuMac.</figcaption></figure></section>',
     '<div class="catalog-columns"><section class="catalog-card"><h2>At a glance</h2><table class="catalog-facts"><tbody>'+facts+'</tbody></table>',
     '<p class="catalog-small">Accuracy values are shown as the catalog describes them; FS = full span/scale, RD = reading. Never treat an accuracy option as a guarantee for every pressure range or configuration.</p></section>',
     '<section class="catalog-card"><h2>Technical highlights</h2><ul class="catalog-bullets">'+item.features.map(f=>'<li>'+escape(f)+'</li>').join('')+'</ul><p class="catalog-small">Features and available configurations may differ between submodels. Review ordering tables in the referenced product section.</p></section></div>',
@@ -107,11 +111,12 @@ const cards = items.map(item=>{
   const text=(display(item)+' '+item.title+' '+item.range+' '+item.accuracy+' '+item.overview+' '+item.features.join(' '));
   return '<article class="product-card" data-measurement="'+data('measurement')+'" data-brand="'+brand+'" data-equipment="'+data('type')+'" data-use="reference-calibration field-calibration lab-bench" data-environment="lab bench field" data-detail="'+url+'" data-search="'+escape(text)+'" tabindex="0" role="link" aria-label="Open '+label+' details">'+
   '<div class="product-top"><span class="brand-lockup"><span class="brand-pill">'+brand+'</span></span><span class="measurement-pill">'+escape(sectionType(item.measurement))+'</span></div>'+
-  '<h3>'+label+'</h3><div class="product-type">'+data('title')+'</div><p>'+data('overview')+'</p>'+
+  '<div class="catalog-card-photo"><img src="'+escape(photoURL(item))+'" loading="lazy" decoding="async" width="250" height="125" alt="'+label+' product image"></div>'+\n  '<h3>'+label+'</h3><div class="product-type">'+data('title')+'</div><p>'+data('overview')+'</p>'+
   '<div class="card-meta"><span>'+data('range')+'</span></div>'+
   '<div class="best-for"><span>Catalog reference</span><strong>2026 · page '+item.page+'</strong></div>'+
   '<div class="product-actions"><a class="detail-link" href="'+url+'">Review unit →</a></div></article>';
 }).join('\n');
+directory=directory.replace('</head>','<style>.catalog-card-photo{display:flex;align-items:center;justify-content:center;height:144px;overflow:hidden;background:#fff;border:1px solid #e4eaf2;border-radius:12px;margin:10px 0 14px}.catalog-card-photo img{display:block;max-width:100%;width:100%;height:139px;object-fit:contain;padding:7px}</style></head>');
 directory=directory.replace('<div class="product-grid" id="productGrid">','<div class="product-grid" id="productGrid">\n'+cards);
 // Fix existing pump gallery cards so they link to their previously generated dedicated pages.
 for(const pump of pumps) {
