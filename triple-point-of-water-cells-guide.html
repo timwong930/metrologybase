@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Triple Point of Water (TPW) Cells: Science, Water Hammer &amp; Additel 878 Guide — MetrologyBase</title>
+<meta name="description" content="How triple point of water (TPW) cells work, why 0.01°C matters for reference PRTs, what the water-hammer test means, and how the Additel 878-160 TPW kit works. Photos, videos, and original sources.">
+<link rel="canonical" href="https://metrologybase.vercel.app/triple-point-of-water-cells-guide">
+<meta property="og:title" content="TPW Cells: The Tiny Temperature Standard That Changes Everything">
+<meta property="og:description" content="Understand the science, the water-hammer integrity test, and Additel 878-160 automatic TPW realization.">
+<meta property="og:image" content="https://www.techeyesonline.com/img/measuring-device/HINCD-01051-ADT878-TPW-KIT.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.tpw-hero{padding:72px 0 34px}.tpw-hero h1{font:700 clamp(42px,6.4vw,78px)/1.03 'Fraunces',serif;letter-spacing:-.043em;max-width:1100px;margin:18px 0}.tpw-hero h1 em{color:var(--blue);font-style:normal}.tpw-lead{color:#516078;font-size:clamp(17px,2vw,20px);line-height:1.65;max-width:850px}.tpw-meta,.tpw-kicker{font:500 11px 'DM Mono',monospace;color:#67768b;letter-spacing:.055em}.tpw-kicker{color:var(--blue);text-transform:uppercase}
+.tpw-article{max-width:1100px;margin:auto;padding:0 22px 110px}.tpw-article h2{font:600 clamp(29px,4vw,45px)/1.12 'Fraunces',serif;letter-spacing:-.03em;margin:68px 0 19px}.tpw-article h3{font:600 23px/1.2 'Fraunces',serif;margin:24px 0 10px}.tpw-article p,.tpw-article li{line-height:1.75;color:#526176}.tpw-article a{color:var(--blue)}.tpw-article ul,.tpw-article ol{padding-left:24px}.tpw-article li+li{margin-top:9px}.tpw-article .eyebrow{margin-bottom:8px}
+.tpw-factbar{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:25px 0 34px}.tpw-fact{background:#102541;color:white;padding:24px;border-radius:19px}.tpw-fact strong{font:600 35px/1.1 'Fraunces',serif;display:block}.tpw-fact span{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.05em;color:#b8cce6;display:block;margin-top:13px}
+.tpw-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 32px}.tpw-nav a{text-decoration:none;font:600 12px 'DM Sans',sans-serif;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:99px}.tpw-nav a:hover{background:#ecf3ff}
+.tpw-figure{margin:26px 0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff}.tpw-figure img{display:block;max-height:480px;width:100%;object-fit:contain;padding:16px}.tpw-figure figcaption{padding:12px 17px;background:#f5f3ee;border-top:1px solid var(--line);font-size:12px;line-height:1.65;color:#5b697d}.tpw-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.tpw-grid .tpw-figure{margin:5px 0}.tpw-panel{border:1px solid var(--line);border-radius:20px;padding:25px;background:#fff}.tpw-panel h3{margin-top:0}.tpw-panel p:last-child{margin-bottom:0}
+.tpw-callout{background:#102541;color:#fff;border-radius:22px;padding:27px 30px;margin:35px 0}.tpw-callout strong{font:600 24px 'Fraunces',serif}.tpw-callout p,.tpw-callout li{color:#d1deea}.tpw-callout a{color:#a8caff}.tpw-warning{padding:20px 24px;border-left:4px solid #b27826;background:#fbf5ea;border-radius:0 14px 14px 0;margin:23px 0}.tpw-warning p{margin:0}.tpw-steps{counter-reset:steps;display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.tpw-step{position:relative;padding:22px 22px 20px 64px;border:1px solid var(--line);background:white;border-radius:18px}.tpw-step::before{counter-increment:steps;content:counter(steps,decimal-leading-zero);position:absolute;left:20px;top:23px;font:500 13px 'DM Mono',monospace;color:var(--blue)}.tpw-step strong{display:block;font-size:16px;color:#19314f}.tpw-step p{font-size:13px;margin-bottom:0}
+.tpw-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.tpw-video{border:1px solid var(--line);background:white;border-radius:19px;overflow:hidden}.tpw-frame{aspect-ratio:16/9}.tpw-frame iframe{display:block;width:100%;height:100%;border:0}.tpw-video p{padding:0 18px}.tpw-video h3{padding:0 18px;margin:18px 0 7px;font-size:21px}.tpw-video .tpw-credit{font-size:12px;color:#6a7889;margin-bottom:20px}
+.tpw-table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:17px;background:white}.tpw-table{width:100%;border-collapse:collapse;min-width:620px}.tpw-table th,.tpw-table td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:top}.tpw-table thead th{background:#f5f1ea;font:500 11px 'DM Mono',monospace;color:#48566c}.tpw-table tr:last-child td{border:0}.tpw-sources{padding:24px;background:#f5f2eb;border-radius:18px}.tpw-sources li{overflow-wrap:anywhere;font-size:14px}.tpw-related{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.tpw-related a{padding:12px 17px;background:#102541;color:white;text-decoration:none;border-radius:99px;font-weight:700;font-size:13px}
+@media(max-width:760px){.tpw-hero{padding-top:45px}.tpw-factbar{grid-template-columns:1fr}.tpw-fact{padding:16px}.tpw-fact strong{font-size:28px}.tpw-grid,.tpw-steps,.tpw-video-grid{grid-template-columns:1fr}.tpw-article h2{margin-top:48px}.tpw-nav{margin-top:10px}}
+</style>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script><script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<header class="site-header"><a class="brand" href="/"><span class="brand-mark">M</span><span>MetrologyBase</span></a><nav class="nav-links" aria-label="Primary navigation"><a href="/#learn">Learn</a><a href="/articles" aria-current="page">Articles</a><a href="/#tools">Tools</a><a href="/products">What to Buy</a><a href="/#glossary">Glossary</a></nav><a class="nav-cta" href="/products/additel-878">Explore Additel 878 →</a></header>
+<main>
+<section class="tpw-hero shell">
+<div class="tpw-kicker"><a href="/articles">Articles</a> / Temperature · Primary standards</div>
+<h1>How can a glass cell give you <em>one of the most reliable temperatures on Earth?</em></h1>
+<p class="tpw-lead">Triple point of water (TPW) cells use a rare coexistence of ice, liquid water, and water vapor to establish <strong>0.01°C</strong>. Here is what makes them useful, the science of the ice mantle, what a mysterious “water hammer” tells you, and how the <strong>Additel 878-160</strong> makes the process easier.</p>
+<p class="tpw-meta">10-minute guide · Updated October 9, 2026 · Sources: NIST, ASTM &amp; Additel</p>
+</section>
+<article class="tpw-article">
+<div class="tpw-factbar" aria-label="Triple point of water quick facts">
+<div class="tpw-fact"><strong>0.01°C</strong><span>ITS-90 water triple point temperature</span></div>
+<div class="tpw-fact"><strong>273.16 K</strong><span>Temperature on the Kelvin scale</span></div>
+<div class="tpw-fact"><strong>≈611.7 Pa</strong><span>Equilibrium water-vapor pressure</span></div>
+</div>
+<nav class="tpw-nav" aria-label="Jump to an article section"><a href="#what-is-tpw">What is TPW?</a><a href="#why-use-it">Why use it?</a><a href="#science">The science</a><a href="#water-hammer">Water hammer</a><a href="#videos">Watch it</a><a href="#additel-878">Additel 878 setup</a><a href="#sources">Sources</a></nav>
+
+<h2 id="what-is-tpw">A thermometer reference that does not depend on a dial setting</h2>
+<p>At the <strong>triple point of water</strong>, solid ice, liquid water, and water vapor coexist in thermal equilibrium. For a properly realized reference cell with specified water composition, the ITS-90 reference temperature is <strong>273.16 K (0.01°C)</strong>. Unlike an ordinary stirred ice bath, a sealed TPW cell controls the water's own vapor environment, giving thermometry laboratories an extraordinarily reproducible fixed point.</p>
+<p>It is <strong>not simply the temperature at which ice melts in open air</strong>. The familiar atmospheric freezing point is about 0°C; the TPW is 0.01°C at the water's equilibrium vapor pressure, roughly 611.657 Pa. The internal pressure is established by the sealed system, not by setting a gauge in the laboratory.</p>
+<div class="tpw-grid">
+<figure class="tpw-figure"><img src="https://www.itc.gov.hk/assets/images/scl/si/triple_point.jpg" alt="Real water triple point cell containing a transparent ice mantle in a glass vessel" loading="lazy" decoding="async"><figcaption><strong>Real TPW cell.</strong> The central thermometer well sits inside the sealed water volume. Photo: <a href="https://www.itc.gov.hk/en/quality/scl/teachers_students/si/triple_point.html" target="_blank" rel="noopener noreferrer">Hong Kong Standards and Calibration Laboratory</a>.</figcaption></figure>
+<figure class="tpw-figure"><img src="https://images.squarespace-cdn.com/content/v1/566f015c5a5668e19853a2cc/1468091334970-Z71351SZLPLI05EDIXCY/K29AB_KeyFeatures_B.png" alt="Cutaway diagram of a triple point cell with a glass thermometer well, ice mantle and surrounding temperature-maintenance bath" loading="lazy" decoding="async"><figcaption><strong>What's inside.</strong> Ice mantle, central well and thermal coupling around a precision thermometer. Illustration: <a href="https://www.pondengineering.com/k29ab-type-cell" target="_blank" rel="noopener noreferrer">Pond Engineering Laboratories</a>.</figcaption></figure>
+</div>
+
+<h2 id="why-use-it">Why do calibration laboratories use TPW cells?</h2>
+<div class="tpw-grid">
+<section class="tpw-panel"><h3>Check reference PRT/SPRT drift</h3><p>Measure the probe resistance at a known fixed point, commonly recorded as <strong>R<sub>TPW</sub></strong>. Repeated measurements help reveal changes after transport, thermal cycling, mechanical shock or aging.</p></section>
+<section class="tpw-panel"><h3>Support ITS-90 thermometry</h3><p>Water's triple point is a foundational fixed point used in standard platinum resistance thermometer calibration and temperature-scale realization. It is a reference, not a replacement for the full calibration procedure.</p></section>
+<section class="tpw-panel"><h3>Verify your temperature reference</h3><p>A stable bath or dry well still needs a trustworthy sensor. TPW measurement helps validate that sensor's assigned resistance, supporting confidence in the rest of the temperature calibration chain.</p></section>
+<section class="tpw-panel"><h3>Improve repeatability and traceability</h3><p>A qualified cell and a controlled procedure can give a highly reproducible check point. Traceability still requires documented instruments, comparisons or qualifications, corrections, and an uncertainty budget.</p></section>
+</div>
+<p><strong>Example:</strong> A reference PRT used in a dry well reads a slightly different resistance at TPW than it did last month. That difference can reveal reference-probe drift before it affects many customer calibrations. Whether the change exceeds a tolerance depends on the probe history and the laboratory's uncertainty and acceptance rules.</p>
+
+<h2 id="science">The science: why all three phases make a temperature anchor</h2>
+<p>In a pressure–temperature phase diagram, boundaries show conditions where two phases coexist. Where the solid–liquid, liquid–vapor and solid–vapor boundaries meet, <strong>three phases are simultaneously in equilibrium</strong>. Heating or cooling during the phase change is absorbed or released as latent heat rather than immediately producing a large temperature change; the equilibrium fixes the reference condition.</p>
+<figure class="tpw-figure"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Phase_diagram_of_water.svg/2456px-Phase_diagram_of_water.svg.png" alt="Phase diagram of water showing solid, liquid, and vapor regions converging at the triple point at 273.16 kelvin and approximately 611.7 pascals" loading="lazy" decoding="async"><figcaption>The water phase diagram: the meeting point of solid, liquid and vapor boundaries is at 273.16 K. Image: <a href="https://commons.wikimedia.org/wiki/File:Phase_diagram_of_water.svg" target="_blank" rel="noopener noreferrer">Wikimedia Commons, phase diagram of water</a> (see source for attribution/license).</figcaption></figure>
+<h3>Why the ice mantle matters</h3>
+<p>The cell is a sealed glass vessel containing high-purity, degassed water and water vapor, with a separate inner <strong>thermometer well</strong>. Cooling creates an ice mantle around that well. A very thin liquid layer adjacent to the thermometer well can be formed so the probe sees the ice–water equilibrium while the outer cell maintains the triple-phase state.</p>
+<p>Results at microkelvin-level precision are sensitive to water isotopes, soluble contamination, liquid depth (hydrostatic head), thermometer self-heating, heat leaks, and the way the ice mantle is prepared and maintained. A TPW cell is only as good as its qualification and measurement procedure.</p>
+<div class="tpw-warning"><p><strong>Important 2019 correction:</strong> The TPW <em>formerly defined</em> the kelvin. Since the 2019 SI redefinition, the kelvin is defined through a fixed value of the Boltzmann constant. TPW remains an essential <strong>ITS-90 practical reference point</strong>, not the current definition of the SI kelvin. <a href="https://www.nist.gov/si-redefinition/kelvin/kelvin-present-realization" target="_blank" rel="noopener noreferrer">NIST explanation ↗</a></p></div>
+
+<h2 id="water-hammer">The “water hammer”: an unexpected quality check</h2>
+<p>If a TPW cell makes a sharp, glass-like <em>clink</em> when it is carefully inverted at room temperature, that sound has a technical meaning. In the <strong>water-hammer test</strong> described in ASTM E1750, liquid rushes through the sealed vessel and the water-vapor pocket collapses as the liquid strikes the end of the cell. If noncondensable air is present, it cushions the impact and the sound becomes duller. This gives a useful <em>qualitative</em> check for air contamination or compromised cell integrity.</p>
+<div class="tpw-grid">
+<div class="tpw-panel"><h3>Sharp “clink”</h3><p>Consistent with a well-evacuated cell: minimal noncondensable gas allows a more abrupt vapor collapse and impact.</p></div>
+<div class="tpw-panel"><h3>Duller impact</h3><p>Can indicate extra air acting like a spring. It is a reason to investigate further, <strong>not</strong> a standalone verdict on calibration accuracy.</p></div>
+</div>
+<div class="tpw-warning"><p><strong>Handle with care:</strong> Water-hammer integrity testing is a controlled procedure for the appropriate cell type and temperature, not an invitation to strike or vigorously shake glassware. Follow the cell maker's instructions and ASTM E1750, and use suitable protection and handling methods.</p></div>
+<h3>Water hammer is not the same as Additel's “shake” step</h3>
+<p>These are often confused. <strong>Water hammer</strong> checks for the presence of noncondensable air through the collapse/impact sound, usually at room temperature. <strong>Shaking a supercooled TPW cell</strong> during realization promotes ice nucleation so freezing starts. The Additel procedure uses the second phenomenon; it is <em>not</em> a substitute for the integrity test.</p>
+<p>For formal handling and integrity procedures, consult <a href="https://store.astm.org/e1750-23.html" target="_blank" rel="noopener noreferrer">ASTM E1750-23</a>.</p>
+
+<h2>Two ways to realize the triple point</h2>
+<div class="tpw-grid">
+<div class="tpw-panel"><h3>Traditional laboratory method</h3><ol><li>Inspect and qualify the cell, including integrity checks.</li><li>Cool the thermometer well to form a controlled ice mantle around it.</li><li>Condition/anneal the mantle using the cell and lab procedure.</li><li>Create a thin melt layer next to the well and insert the thermometer.</li><li>Read resistance after equilibrium; apply relevant corrections.</li></ol><p>Reference: <a href="https://www.nist.gov/video/triple-point-cell" target="_blank" rel="noopener noreferrer">NIST preparation demonstration</a>. The long annealing procedure NIST describes is not identical to rapid supercooling methods.</p></div>
+<div class="tpw-panel"><h3>Automated supercooling method</h3><ol><li>Place the compatible cell assembly in a controlled instrument.</li><li>Run the device's programmed cool-down sequence.</li><li>At the prompt, carefully remove and agitate the <em>supercooled</em> cell to initiate freezing.</li><li>Return the cell to the instrument to maintain the triple point.</li><li>Measure and record PRT resistance at TPW.</li></ol><p>Reference: <a href="https://additel.com/download/datasheet/878-TPW-KIT/878-TPW-KIT_Triple_Point_of_Water_Realization_Kits.pdf" target="_blank" rel="noopener noreferrer">Additel TPW-kit datasheet</a>.</p></div>
+</div>
+
+<h2 id="videos">Watch the science—and the setup</h2>
+<div class="tpw-video-grid">
+<div class="tpw-video"><div class="tpw-frame"><iframe src="https://www.youtube-nocookie.com/embed/WEvlgJjEpr0" title="Additel ADT878 triple point of water setup and realization video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><h3>ADT878 TPW: step-by-step</h3><p>Manufacturer demonstration of the <strong>ADT878-160 + TPW kit</strong> program, including realization and probe reading.</p><p class="tpw-credit">Video: <a href="https://www.youtube.com/watch?v=WEvlgJjEpr0" target="_blank" rel="noopener noreferrer">Additel on YouTube</a>.</p></div>
+<div class="tpw-video"><div class="tpw-frame"><iframe src="https://www.youtube-nocookie.com/embed/wyIIB-2eV28" title="Isothermal Technology video of shaking a supercooled water triple point cell" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><h3>When supercooled water freezes</h3><p>Watch a <strong>supercooled water triple-point cell</strong> being shaken to start freezing. This is ice nucleation—not the water-hammer integrity test.</p><p class="tpw-credit">Video: <a href="https://www.youtube.com/watch?v=wyIIB-2eV28" target="_blank" rel="noopener noreferrer">Isothermal Technology on YouTube</a>.</p></div>
+</div>
+<p>For a broader explanation of the thermodynamics, watch <a href="https://www.youtube.com/watch?v=HEzkHqWIiKM" target="_blank" rel="noopener noreferrer">Thermodynamics – Explaining the Triple Point</a> (Bergen University College demonstration).</p>
+
+<h2 id="additel-878">How Additel's ADT878 makes a TPW reference more approachable</h2>
+<p>On the <a href="/products/additel-878"><strong>Additel ADT878-160 Reference Dry Well</strong></a>, the optional <strong>ADT878-TPW-KIT</strong> adds a custom TPW cell and handling hardware. The firmware guides cooling, prompts the operator to start crystallization and then controls the cell's holding temperature. This lets laboratories check reference-PRT resistance without building a separate traditional maintenance bath setup.</p>
+<div class="tpw-grid">
+<figure class="tpw-figure"><img src="https://www.techeyesonline.com/img/measuring-device/HINCD-01051-ADT878-TPW-KIT.jpg" alt="Additel ADT878-160 reference dry well configured with the water triple point cell, support assembly and PRT lead" loading="lazy" decoding="async"><figcaption><strong>Actual ADT878 TPW arrangement.</strong> Cell and probe installed on the reference dry well. Product photo: <a href="https://www.techeyesonline.com/measuring-device/detail/HINCD-01051-ADT878-TPW-KIT/" target="_blank" rel="noopener noreferrer">TechEyesOnline / Additel</a>.</figcaption></figure>
+<figure class="tpw-figure"><img src="https://tekknow.com.ua/image/catalog/Additel/Additel%20878%20Reference%20Dry%20Well%20Calibrator.jpg" alt="Technician gently handling a clear water triple point cell over the Additel 878 reference dry well" loading="lazy" decoding="async"><figcaption>Technician working with the TPW cell on an ADT878 unit. Photo: <a href="https://tekknow.com.ua/ru/blog/additel-878%C2%A0etalonnyj-suhoblochnyj-kalibrator" target="_blank" rel="noopener noreferrer">Tek Know</a>.</figcaption></figure>
+</div>
+<h3>Typical ADT878-160 workflow</h3>
+<div class="tpw-steps">
+<div class="tpw-step"><strong>Assemble the TPW kit</strong><p>Use the matching cell, basket, bottom cushion, covers and support hardware. Verify probe fit and handling precautions.</p></div>
+<div class="tpw-step"><strong>Start the Water Triple Point application</strong><p>Follow the 878-160 firmware and current user manual. The instrument executes a programmed cooling/freezing sequence.</p></div>
+<div class="tpw-step"><strong>Initiate ice formation at the prompt</strong><p>When supercooling is complete, carefully remove and shake the cell as instructed, checking for successful freezing before returning it.</p></div>
+<div class="tpw-step"><strong>Maintain and read R<sub>TPW</sub></strong><p>The 878 holds a near-TPW environment. Allow the thermometer to stabilize, log the resistance, and compare with the probe's calibration history.</p></div>
+</div>
+<p>The kit's published figures are <strong>20 minutes realization time</strong>, approximately <strong>2 hours estimated working time</strong>, and <strong>&lt;0.0005°C uncertainty</strong> for the shake-method realization maintained in the ADT878-160 under the manufacturer's stated conditions. These figures <strong>must not be presented as the total uncertainty of your calibration</strong>; your sensor/readout, setup and procedure contribute additional terms. Current instrument manuals may describe different hold-cycle behavior; verify the applicable firmware and manufacturer documentation.</p>
+<div class="tpw-callout"><strong>Model compatibility matters.</strong><p>TPW automatic realization with the optional kit is advertised for <strong>ADT878-160 only</strong>. The <strong>ADT878-425</strong> and <strong>ADT878-700</strong> are useful temperature calibrators, but the 700 model's automated annealing is a separate feature; do not assume it performs the 160's TPW routine.</p><a href="/products/additel-878">Review the ADT878 model selection page →</a></div>
+
+<h3>What comes in the ADT878-TPW-KIT?</h3>
+<div class="tpw-table-scroll"><table class="tpw-table"><thead><tr><th>Included item</th><th>Additel part number</th><th>Why it matters</th></tr></thead><tbody>
+<tr><td>TPW glass cell</td><td>1520000292</td><td>Sealed water/vapor reference volume with thermometer well</td></tr>
+<tr><td>Cell basket</td><td>1223000410</td><td>Holds and locates the cell in the reference well</td></tr>
+<tr><td>Basket cover</td><td>1223000411</td><td>Cell basket accessory</td></tr>
+<tr><td>Basket cover with hole</td><td>1223000412</td><td>Probe-access basket cover</td></tr>
+<tr><td>Support ring</td><td>1520000291</td><td>Positions/supports the assembly</td></tr>
+<tr><td>Cell removal tool</td><td>1810298249</td><td>Safer retrieval and handling of the cell</td></tr>
+<tr><td>Bottom cushion</td><td>1520000290</td><td>Protects/supports the base of the glass cell</td></tr>
+</tbody></table></div>
+<p>The datasheet lists <strong>borosilicate glass</strong>, <strong>115 mm immersion depth × 8 mm internal diameter</strong>, <strong>160 mm × 25 mm outer dimensions</strong>, and <strong>ethanol</strong> as the recommended thermal fluid. Check the current operating manual for approved fluid/volume, cleaning, probe geometry, and safe handling before using the setup. The ADT878-160 dry well and suitable reference thermometer are separate from the list of included TPW kit accessories.</p>
+<p>Manufacturer documents: <a href="https://additel.com/download/datasheet/878-TPW-KIT/878-TPW-KIT_Triple_Point_of_Water_Realization_Kits.pdf" target="_blank" rel="noopener noreferrer">TPW kit datasheet (includes part numbers)</a> · <a href="https://www.additel.com/download/user%20manual/878%20User%20Manual.pdf" target="_blank" rel="noopener noreferrer">ADT878 manual, section 5.8</a>.</p>
+
+<h2>What TPW cells cannot tell you on their own</h2>
+<ul><li><strong>One point is not a complete multi-temperature calibration.</strong> A good R<sub>TPW</sub> check is especially valuable for drift surveillance, but it does not alone verify the full response of a PRT across its range.</li><li><strong>Cell qualification is separate from routine thermometer calibration.</strong> ASTM E1750 distinguishes demonstrating a valid fixed point from calibrating the thermometer placed in it.</li><li><strong>Uncertainty is method-specific.</strong> A datasheet's microkelvin figure does not eliminate readout accuracy, self-heating, hydrostatic head, contamination, thermal gradients or probe effects.</li><li><strong>Handle glass and thermal fluids carefully.</strong> Incorrect fluid use, rough handling or unauthorized steps risk breakage and measurement error.</li></ul>
+
+<h2>Frequently asked questions</h2>
+<h3>Why is the TPW 0.01°C instead of 0°C?</h3><p>Because the triple point occurs at the equilibrium water-vapor pressure in a sealed cell, not atmospheric pressure. The distinction is small in degrees but important in precision thermometry.</p>
+<h3>Does hearing a water hammer prove the cell is accurate?</h3><p>No. The sound is a qualitative integrity clue; documented cell qualification, water composition, contamination checks and proper realization still matter.</p>
+<h3>Can I use an ordinary ice bath instead?</h3><p>An ice bath can be excellent for many practical checks near 0°C, but it does not automatically reproduce the TPW's intrinsic sealed three-phase reference or its achievable uncertainty.</p>
+<h3>Do I need the process calibrator (PC) option on the 878?</h3><p>The TPW kit requires the compatible ADT878-160 platform. The measurement/readout workflow shown in Additel's demonstration uses an equipped unit; verify the required readout, electronics and probe connection options against the current 878 ordering guide before purchasing.</p>
+
+<h2 id="sources">Primary sources &amp; image/video credits</h2>
+<div class="tpw-sources"><ol>
+<li><a href="https://www.nist.gov/si-redefinition/kelvin/kelvin-present-realization" target="_blank" rel="noopener noreferrer">NIST — Kelvin: Present Realization</a> (phase equilibrium, cell construction, historical SI definition).</li>
+<li><a href="https://store.astm.org/e1750-23.html" target="_blank" rel="noopener noreferrer">ASTM E1750-23 — Standard Guide for Use of Water Triple Point Cells</a> (cell integrity, water hammer, qualification and use).</li>
+<li><a href="https://www.nist.gov/video/triple-point-cell" target="_blank" rel="noopener noreferrer">NIST — Triple-Point Cell</a> (traditional mantle and annealing procedure).</li>
+<li><a href="https://additel.com/download/datasheet/878-TPW-KIT/878-TPW-KIT_Triple_Point_of_Water_Realization_Kits.pdf" target="_blank" rel="noopener noreferrer">Additel — ADT878-TPW-KIT datasheet</a> (specifications, part numbers, kit function).</li>
+<li><a href="https://additel.com/product-detail.html/878-dry-well-temperature-calibrator/" target="_blank" rel="noopener noreferrer">Additel — ADT878 Reference Dry Well</a> and <a href="https://www.additel.com/download/user%20manual/878%20User%20Manual.pdf" target="_blank" rel="noopener noreferrer">user manual</a> (model compatibility and workflow).</li>
+<li>Photo and illustration credits are linked directly in their respective figure captions. Videos belong to <a href="https://www.youtube.com/watch?v=WEvlgJjEpr0" target="_blank" rel="noopener noreferrer">Additel</a> and <a href="https://www.youtube.com/watch?v=wyIIB-2eV28" target="_blank" rel="noopener noreferrer">Isothermal Technology</a>.</li>
+</ol></div>
+<div class="tpw-related"><a href="/products/additel-878">See Additel ADT878 details →</a><a href="/articles">More calibration articles →</a></div>
+</article></main>
+<footer><div class="shell footer-grid"><div><a class="brand footer-brand" href="/"><span class="brand-mark">M</span><span>MetrologyBase</span></a><p>Independent metrology education, tools and equipment references.</p></div></div></footer>
+<script defer src="/search.js"></script>
+</body></html>
