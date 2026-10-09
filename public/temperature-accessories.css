@@ -1,0 +1,26 @@
+/* Shared manufacturer-accessory buying guide for ADT835/875/878 */
+.temp-accessory-intro{max-width:900px;color:#617085;margin:0 0 24px}
+.temp-included{padding:22px 25px;border:1px solid #cedce9;border-radius:20px;background:#eef5fb;margin-bottom:28px}
+.temp-included h3{font:600 22px 'Fraunces',serif;margin:0 0 12px}
+.temp-included ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 26px;padding-left:19px;margin:0;color:#42536a;font-size:13px;line-height:1.55}
+.temp-accessory-group{margin:26px 0 14px}
+.temp-accessory-group h3{font:600 27px/1.14 'Fraunces',serif;margin:0 0 5px}
+.temp-accessory-group p{font-size:12px;color:#65758a;margin:0 0 13px}
+.temp-accessory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.accessory-choice{display:flex;align-items:flex-start;gap:13px;padding:17px;border:1px solid var(--line);border-radius:17px;background:white;cursor:pointer;transition:background .15s,border-color .15s}
+.accessory-choice:has(input:checked){border-color:#4b83d0;background:#f3f8ff}
+.accessory-choice.unavailable{opacity:.53;cursor:not-allowed;background:#f5f4f0}
+.accessory-choice input{accent-color:#1768e5;flex:0 0 auto;margin:5px 0 0;width:17px;height:17px}
+.accessory-text{display:block;min-width:0}
+.accessory-head{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.accessory-head strong{font-size:14px;color:#203249}
+.accessory-sku{font:500 10px 'DM Mono',monospace;overflow-wrap:anywhere;color:#215f9f}
+.accessory-text .accessory-description{display:block;color:#5f6e82;font-size:12px;line-height:1.55;margin-top:7px}
+.accessory-tag{display:inline-block;background:#eef3f7;border-radius:6px;color:#56687f;font:500 9px 'DM Mono',monospace;line-height:1.4;padding:4px 6px;margin-top:10px}
+.temp-accessory-fineprint{font-size:12px;line-height:1.6;color:#5c6b80;margin-top:20px}
+.temp-accessory-fineprint a{color:var(--blue)}
+.temp-accessory-bundle{padding:20px 23px;margin:25px 0 0;border-left:3px solid #4175b5;background:#f2f5f8;border-radius:0 13px 13px 0}
+.temp-accessory-bundle strong{display:block;margin-bottom:7px}
+.temp-accessory-bundle p{margin:0;font-size:13px;color:#53637a;line-height:1.6}
+.temp-accessory-summary{border-top:1px solid rgba(255,255,255,.16);padding:12px 0 0;margin-top:16px;font-size:12px;color:#cfe0f8}
+@media(max-width:760px){.temp-accessory-grid,.temp-included ul{grid-template-columns:1fr}.temp-included{padding:18px}.temp-accessory-group h3{font-size:24px}}
