@@ -1,0 +1,723 @@
+{
+  "edition": "2026",
+  "source": "https://www.insatech.com/media/mygaw321/additel_product_catalog.pdf",
+  "resources": "https://www.additel.com/productresources/",
+  "items": [
+    {
+      "model": "762",
+      "title": "Automated Hydraulic Pressure Calibrator",
+      "page": 1,
+      "measurement": "pressure",
+      "type": "pressure-calibrator",
+      "range": "15,000 psi (1,035 bar)",
+      "accuracy": "Up to 0.01% FS",
+      "overview": "Portable, fully automated hydraulic pressure generation and control with HART/PROFIBUS support and documented pressure calibration.",
+      "features": [
+        "Oil-based hydraulic system",
+        "dual-range control",
+        "auto-purge",
+        "external pressure modules"
+      ],
+      "official": "https://additel.com/product-detail.html/762-hydraulic-pressure-portable-automatic-calibrator/"
+    },
+    {
+      "model": "762W",
+      "title": "Automated Hydraulic Pressure Calibrator — Water",
+      "page": 6,
+      "measurement": "pressure",
+      "type": "pressure-calibrator",
+      "range": "15,000 psi (1,035 bar)",
+      "accuracy": "Up to 0.01% FS",
+      "overview": "Automated hydraulic pressure calibrator specifically designed for deionized-water applications with fluid management and auto-purge.",
+      "features": [
+        "DI water only",
+        "automatic fluid extraction",
+        "dual-port manifold",
+        "HART/PROFIBUS"
+      ],
+      "official": "https://additel.com/product-detail.html/762-hydraulic-pressure-portable-automatic-calibrator-with-water/"
+    },
+    {
+      "model": "761A",
+      "title": "Automated Pressure Calibrator",
+      "page": 12,
+      "measurement": "pressure",
+      "type": "pressure-calibrator",
+      "range": "Up to 1,500 psi (100 bar)",
+      "accuracy": "Selected models to 0.01% FS",
+      "overview": "Self-contained pneumatic pressure generator and calibrator for transmitter, gauge and pressure-switch work in laboratories or the field.",
+      "features": [
+        "Models LLP, D, 500, 1K, 1.5K and BP",
+        "two internal modules",
+        "task logging",
+        "full HART"
+      ],
+      "official": "https://additel.com/product-detail.html/761A-portable-automatic-pressure-calibrator/"
+    },
+    {
+      "model": "760",
+      "title": "Automatic Handheld Pressure Calibrator (Original Series)",
+      "page": 20,
+      "measurement": "pressure",
+      "type": "pressure-calibrator",
+      "range": "Up to 300 psig (20 bar)",
+      "accuracy": "Selected modules to 0.01% FS",
+      "overview": "Original portable automated pressure calibrator with built-in pump; model families LLP, D and MA, with documenting DL options.",
+      "features": [
+        "Less than 4 lb",
+        "four channels",
+        "replaceable ADT155 modules",
+        "distinguish from newer 760A/760S"
+      ]
+    },
+    {
+      "model": "773",
+      "title": "Pressure Controller / Generator",
+      "page": 25,
+      "measurement": "pressure",
+      "type": "pressure-controller",
+      "range": "−380 to +2,500 inH₂O (−0.95 to +7 bar)",
+      "accuracy": "0.01% or 0.02% FS options",
+      "overview": "Low-pressure modular controller with built-in pump, removable ADT151 modules and quick automated setpoint control.",
+      "features": [
+        "773-LLP and 773-D models",
+        "0.003% FS control stability",
+        "optional CPS",
+        "rack-mount"
+      ],
+      "official": "https://additel.com/product-detail.html/773-low-pressure-controller-generator/"
+    },
+    {
+      "model": "783",
+      "title": "Pressure Controller",
+      "page": 32,
+      "measurement": "pressure",
+      "type": "pressure-controller",
+      "range": "−14.35 to +6,000 psi (−0.99 to +420 bar)",
+      "accuracy": "0.01% FS, 0.02% FS or 0.01% RD options",
+      "overview": "External-gas-source modular pressure controller for automated calibration, production and testing.",
+      "features": [
+        "783-D, 1K, 3.6K, 6K",
+        "0.003% FS control stability",
+        "ADT151 modules",
+        "optional barometer"
+      ],
+      "official": "https://additel.com/product-detail.html/783-pressure-controller/"
+    },
+    {
+      "model": "793",
+      "title": "High Pressure Controller / Generator",
+      "page": 42,
+      "measurement": "pressure",
+      "type": "pressure-controller",
+      "range": "Up to 15,000 psi (1,035 bar)",
+      "accuracy": "0.01% FS, 0.02% FS or 0.01% RD options",
+      "overview": "Self-generating high-pressure controller for automated hydraulic calibration without an external pressure supply.",
+      "features": [
+        "Oil and water configurations",
+        "interchangeable modules",
+        "0.005% FS control stability",
+        "contamination prevention option"
+      ],
+      "official": "https://additel.com/product-detail.html/793-high-pressure-controller-generator/"
+    },
+    {
+      "model": "151",
+      "title": "Digital Pressure Control Module",
+      "page": 49,
+      "measurement": "pressure",
+      "type": "pressure-transducer",
+      "range": "Up to 15,000 psi (1,035 bar)",
+      "accuracy": "0.01% FS, 0.02% FS or 0.01% RD options",
+      "overview": "Interchangeable, dual-range pressure modules used by Additel automated pressure controllers.",
+      "features": [
+        "Dual pressure calibrations per module",
+        "fully temperature compensated",
+        "check host compatibility"
+      ],
+      "official": "https://additel.com/product-detail.html/151-digital-pressure-module/"
+    },
+    {
+      "model": "161",
+      "title": "Intelligent Digital Pressure Module",
+      "page": 54,
+      "measurement": "pressure",
+      "type": "pressure-transducer",
+      "range": "Up to 60,000 psi (4,200 bar)",
+      "accuracy": "Precision options to 0.01% of reading",
+      "overview": "External digital reference pressure module for Additel pressure calibrators and compatible readouts.",
+      "features": [
+        "Gauge and differential versions",
+        "module cable and connection compatibility vary"
+      ],
+      "official": "https://additel.com/product-detail.html/161-digital-pressure-module/"
+    },
+    {
+      "model": "161Ex",
+      "title": "Intrinsically Safe Intelligent Pressure Module",
+      "page": 54,
+      "measurement": "pressure",
+      "type": "pressure-transducer",
+      "range": "Up to 60,000 psi (4,200 bar)",
+      "accuracy": "Model- and range-dependent",
+      "overview": "Intrinsically safe variant of the ADT161 pressure module family for compatible equipment and classified environments.",
+      "features": [
+        "Check exact Ex marking",
+        "pressure type, range and host compatibility before ordering"
+      ],
+      "official": "https://additel.com/product-detail.html/161-digital-pressure-module/"
+    },
+    {
+      "model": "158Ex",
+      "title": "Intrinsically Safe Digital Pressure Module",
+      "page": 58,
+      "measurement": "pressure",
+      "type": "pressure-transducer",
+      "range": "Up to 60,000 psi (4,200 bar)",
+      "accuracy": "0.02% FS",
+      "overview": "Field-swappable pressure reference module for intrinsically safe ADT273Ex and ADT260Ex handheld instruments.",
+      "features": [
+        "Ex certified",
+        "temperature compensated",
+        "intended for compatible 273Ex and 260Ex"
+      ],
+      "official": "https://additel.com/product-detail.html/158-intelligent-digital-pressure-module/"
+    },
+    {
+      "model": "715",
+      "title": "Precision Pressure Indicator",
+      "page": 61,
+      "measurement": "pressure",
+      "type": "pressure-transducer",
+      "range": "2 to 15,000 psi (range options)",
+      "accuracy": "0.02% FS, 0.01% FS or 0.01% RD options",
+      "overview": "Multi-input laboratory pressure indicator supporting internal sensors, external digital modules and barometric referencing.",
+      "features": [
+        "Up to five channels",
+        "10.1-inch screen",
+        "internal and external modules"
+      ],
+      "official": "https://additel.com/product-detail.html/715-precision-pressure-indicator/"
+    },
+    {
+      "model": "260Ex",
+      "title": "Intrinsically Safe Multichannel Reference Recorder",
+      "page": 66,
+      "measurement": "pressure process",
+      "type": "pressure-calibrator",
+      "range": "Range depends on ADT158Ex modules",
+      "accuracy": "Pressure uncertainty depends on installed module",
+      "overview": "Portable intrinsically safe data recorder for pressure, temperature, electrical and hydrostatic-test measurements.",
+      "features": [
+        "Eight channel configurations",
+        "real-time trends",
+        "Bluetooth and USB",
+        "external RTD probes"
+      ],
+      "official": "https://additel.com/product-detail.html/260-handheld-multichannel-reference-recorder/"
+    },
+    {
+      "model": "680P",
+      "title": "Panel-Mount Digital Pressure Gauge",
+      "page": 82,
+      "measurement": "pressure",
+      "type": "panel-pressure-gauge",
+      "range": "Range depends on ordered sensor",
+      "accuracy": "See model-specific ordering tables",
+      "overview": "Stainless-housed digital pressure gauge designed for fixed or panel-mount pressure indication.",
+      "features": [
+        "IP67",
+        "welded sensor",
+        "optional logging",
+        "Bluetooth"
+      ],
+      "official": "https://additel.com/product-detail.html/680P-digital-pressure-gauge/"
+    },
+    {
+      "model": "680PEx",
+      "title": "Intrinsically Safe Panel-Mount Digital Pressure Gauge",
+      "page": 82,
+      "measurement": "pressure",
+      "type": "panel-pressure-gauge",
+      "range": "Range depends on ordered sensor",
+      "accuracy": "See Ex model ordering tables",
+      "overview": "Ex-certified panel-gauge variant of the ADT680P for applications requiring approved hazardous-area installations.",
+      "features": [
+        "Confirm Ex approvals and panel requirements",
+        "IP67",
+        "optional logging by configuration"
+      ],
+      "official": "https://additel.com/product-detail.html/680P-digital-pressure-gauge/"
+    },
+    {
+      "model": "273Ex",
+      "title": "Intrinsically Safe Handheld Pressure Calibrator",
+      "page": 91,
+      "measurement": "pressure",
+      "type": "pressure-calibrator",
+      "range": "Range depends on ADT158Ex module",
+      "accuracy": "0.02% or 0.05% FS module options",
+      "overview": "Field pressure calibrator with dual digital module inputs, internal barometer and pressure transmitter test functions.",
+      "features": [
+        "Intrinsic safety",
+        "touchscreen",
+        "optional HART",
+        "uses ADT158Ex modules"
+      ],
+      "official": "https://additel.com/product-detail.html/273-handheld-pressure-calibrator/"
+    },
+    {
+      "model": "673",
+      "title": "Advanced Digital Pressure Calibrator",
+      "page": 95,
+      "measurement": "pressure process",
+      "type": "pressure-calibrator",
+      "range": "Up to 60,000 psi (4,200 bar)",
+      "accuracy": "0.02% FS, 0.05% FS or 0.1% RD",
+      "overview": "Touchscreen digital pressure calibrator combining high-pressure measurement with electrical loop functions.",
+      "features": [
+        "Built-in barometer",
+        "measures volts and mA",
+        "24 V loop power",
+        "HART option"
+      ],
+      "official": "https://additel.com/product-detail.html/673-digital-pressure-calibrator/"
+    },
+    {
+      "model": "286",
+      "title": "Multifunction Reference Thermometer Readout",
+      "page": 136,
+      "measurement": "temperature",
+      "type": "thermometer-readout",
+      "range": "Up to 82 measurement channels",
+      "accuracy": "1 ppm resistance-ratio accuracy on channel 1",
+      "overview": "Laboratory reference thermometer readout supporting precision PRTs, thermocouples, thermistors and automation of temperature sources.",
+      "features": [
+        "8½-digit DMM",
+        "10.1-inch touchscreen",
+        "automated coefficient calculations"
+      ],
+      "official": "https://additel.com/product-detail.html/286-multifunction-reference-thermometer-readout/"
+    },
+    {
+      "model": "282",
+      "title": "Dual-Channel Reference Thermometer Readout",
+      "page": 148,
+      "measurement": "temperature",
+      "type": "thermometer-readout",
+      "range": "Two reference measurement channels",
+      "accuracy": "Reference-grade, sensor-dependent",
+      "overview": "Handheld reference thermometer readout for precision RTD, PRT and thermocouple calibrations.",
+      "features": [
+        "Smart probe connections",
+        "ratio measurement",
+        "logger",
+        "IP67"
+      ],
+      "official": "https://additel.com/product-detail.html/282-dual-channel-reference-thermometer-readout/"
+    },
+    {
+      "model": "878-TPW-KIT",
+      "title": "Triple Point of Water Realization Kit",
+      "page": 161,
+      "measurement": "temperature",
+      "type": "temperature-source",
+      "range": "0.01°C TPW fixed point",
+      "accuracy": "Intrinsic temperature reference",
+      "overview": "Realizes the triple point of water using the ADT878-160 reference dry well as a self-contained fixed-point setup.",
+      "features": [
+        "Works with ADT878-160",
+        "automatic realization",
+        "reference PRT update"
+      ]
+    },
+    {
+      "model": "110",
+      "title": "Short-Probe Temperature Calibration Kit",
+      "page": 171,
+      "measurement": "temperature",
+      "type": "temperature-source",
+      "range": "For ADT875-155 and ADT878-160",
+      "accuracy": "Depends on reference and immersion",
+      "overview": "Insert and reference-probe kit designed for reliable calibrations of short-stem sensors that are difficult to immerse.",
+      "features": [
+        "Metric and imperial options",
+        "custom control probe",
+        "reduced immersion error"
+      ]
+    },
+    {
+      "model": "875-TC",
+      "title": "Thermocouple Calibration Furnace — Standard",
+      "page": 180,
+      "measurement": "temperature",
+      "type": "temperature-source",
+      "range": "100 to 1,210°C",
+      "accuracy": "0.1°C stability (specified conditions)",
+      "overview": "Portable high-temperature furnace platform for industrial thermocouple testing and calibration.",
+      "features": [
+        "Standard ADT875 furnace configuration",
+        "multi-zone control",
+        "interchangeable metal inserts"
+      ],
+      "official": "https://additel.com/product-detail.html/875-dry-well-ultra-high-temperature-calibrator/"
+    },
+    {
+      "model": "878-TC",
+      "title": "Thermocouple Calibration Furnace — Reference",
+      "page": 180,
+      "measurement": "temperature",
+      "type": "temperature-source",
+      "range": "100 to 1,210°C",
+      "accuracy": "±1.5°C display accuracy; 0.1°C stability",
+      "overview": "Reference-configuration thermocouple furnace with process-calibrator options and multi-zone control.",
+      "features": [
+        "ADT878 reference furnace",
+        "optional measurement channels",
+        "internal and external control"
+      ],
+      "official": "https://additel.com/product-detail.html/875-dry-well-ultra-high-temperature-calibrator/"
+    },
+    {
+      "model": "850",
+      "title": "Laboratory Thermocouple Calibration Furnace",
+      "page": 184,
+      "measurement": "temperature",
+      "type": "temperature-source",
+      "range": "300 to 1,200°C",
+      "accuracy": "±0.1°C stability",
+      "overview": "Laboratory multipurpose thermocouple furnace with high uniformity, controlled insertion geometry and automated operating modes.",
+      "features": [
+        "Three-in-one furnace, nine modes",
+        "multi-zone control",
+        "quick cool"
+      ],
+      "official": "https://additel.com/product-detail.html/850-laboratory-thermocouple-calibration-furnace/"
+    },
+    {
+      "model": "AM1612A",
+      "title": "Full Immersion Platinum Resistance Thermometer",
+      "page": 188,
+      "measurement": "temperature",
+      "type": "temperature-probe",
+      "range": "−200 to +160°C",
+      "accuracy": "Better than 0.05°C",
+      "overview": "AccuMac compact full-immersion PRT designed for freezers, humidity chambers, climate testing and wet processes.",
+      "features": [
+        "Wetted lead-junction design",
+        "moisture-resistant probe construction",
+        "ISO 17025 calibration"
+      ],
+      "official": "https://additel.com/product-detail.html/am1612a-full-immersion-prt/"
+    },
+    {
+      "model": "AM1660",
+      "title": "Precision Industrial PRT",
+      "page": 190,
+      "measurement": "temperature",
+      "type": "temperature-probe",
+      "range": "Series −200 to +670°C",
+      "accuracy": "Series accuracy better than 0.035°C",
+      "overview": "Rugged AccuMac industrial platinum resistance thermometer for high-accuracy reference or verification applications.",
+      "features": [
+        "Inconel sheath",
+        "0.00385 Ω/Ω/°C coefficient",
+        "select diameter and length"
+      ],
+      "official": "https://additel.com/product-detail.html/am1660-am1640-precision-industrial-prts/"
+    },
+    {
+      "model": "AM1640",
+      "title": "Precision Industrial PRT",
+      "page": 190,
+      "measurement": "temperature",
+      "type": "temperature-probe",
+      "range": "Series −200 to +670°C",
+      "accuracy": "Series accuracy better than 0.035°C",
+      "overview": "AccuMac precision industrial PRT family member built for stability and mechanical shock resistance.",
+      "features": [
+        "0.00385 Ω/Ω/°C coefficient",
+        "verify model-specific sheath dimensions"
+      ],
+      "official": "https://additel.com/product-detail.html/am1660-am1640-precision-industrial-prts/"
+    },
+    {
+      "model": "AM1710",
+      "title": "Secondary Reference PRT",
+      "page": 192,
+      "measurement": "temperature",
+      "type": "temperature-probe",
+      "range": "−40 to +160°C",
+      "accuracy": "Better than 0.012°C at 0.01°C",
+      "overview": "AccuMac secondary reference platinum resistance thermometer designed for precise low-temperature work.",
+      "features": [
+        "ITS-90 reference criteria",
+        "short-term stability better than 0.007°C"
+      ],
+      "official": "https://additel.com/product-detail.html/am1710-secondary-reference-prt/"
+    },
+    {
+      "model": "AM1730",
+      "title": "Secondary Reference PRT",
+      "page": 194,
+      "measurement": "temperature",
+      "type": "temperature-probe",
+      "range": "−200 to +420°C",
+      "accuracy": "Better than 0.012°C at 0.01°C",
+      "overview": "AccuMac reference PRT with Inconel sheath options for field and laboratory comparison calibration.",
+      "features": [
+        "3/16-inch or 1/4-inch sheath",
+        "ITS-90 reference criteria"
+      ],
+      "official": "https://additel.com/product-detail.html/am1730-secondary-reference-prt/"
+    },
+    {
+      "model": "AM1751",
+      "title": "Secondary Reference PRT",
+      "page": 196,
+      "measurement": "temperature",
+      "type": "temperature-probe",
+      "range": "−200 to +670°C",
+      "accuracy": "Better than 0.012°C at 0.01°C",
+      "overview": "AccuMac reference PRT for high-precision temperature measurement across cryogenic and elevated ranges.",
+      "features": [
+        "Inconel sheath",
+        "short-term stability better than 0.007°C"
+      ],
+      "official": "https://additel.com/product-detail.html/am1751-secondary-reference-prt/"
+    },
+    {
+      "model": "AM1760",
+      "title": "Secondary Standard Platinum Resistance Thermometer",
+      "page": 198,
+      "measurement": "temperature",
+      "type": "temperature-probe",
+      "range": "Series −200 to +670°C",
+      "accuracy": "Better than 0.006°C at 0.01°C",
+      "overview": "AccuMac secondary SPRT for laboratory ITS-90 measurement and transfer-standard applications.",
+      "features": [
+        "Short-term stability better than 0.002°C",
+        "12-inch/20-inch family variants"
+      ],
+      "official": "https://additel.com/product-detail.html/am1760-am1762-secondary-sprts/"
+    },
+    {
+      "model": "AM1762",
+      "title": "Secondary Standard Platinum Resistance Thermometer",
+      "page": 198,
+      "measurement": "temperature",
+      "type": "temperature-probe",
+      "range": "Series −200 to +670°C",
+      "accuracy": "Better than 0.006°C at 0.01°C",
+      "overview": "AccuMac secondary SPRT in the AM1760/AM1762 family for laboratory ITS-90 reference and transfer-standard applications.",
+      "features": [
+        "Short-term stability better than 0.002°C",
+        "confirm sheath length option"
+      ],
+      "official": "https://additel.com/product-detail.html/am1760-am1762-secondary-sprts/"
+    },
+    {
+      "model": "AM1210",
+      "title": "Reference Standard Type S Thermocouple",
+      "page": 200,
+      "measurement": "temperature",
+      "type": "temperature-probe",
+      "range": "0 to +1,300°C",
+      "accuracy": "Short-term stability better than 0.2°C at 1,084.62°C",
+      "overview": "AccuMac reference Type S thermocouple made from platinum/platinum-rhodium for furnace standards.",
+      "features": [
+        "Reference thermocouple",
+        "annealed wire",
+        "special insertion and handling needs"
+      ],
+      "official": "https://additel.com/product-detail.html/am1210-reference-standard-type-s-thermocouple/"
+    },
+    {
+      "model": "209",
+      "title": "Handheld Loop Calibrator",
+      "page": 201,
+      "measurement": "electrical process",
+      "type": "process-calibrator",
+      "range": "DC mA loop measurement and simulation",
+      "accuracy": "0.03% of reading",
+      "overview": "Compact Additel process loop calibrator for field current-loop troubleshooting, sourcing and simulating.",
+      "features": [
+        "Current source, simulate and measure",
+        "voltage measure",
+        "HART resistor"
+      ],
+      "official": "https://additel.com/product-detail.html/209-210-series-loop-calibrator/"
+    },
+    {
+      "model": "210",
+      "title": "Precision Handheld Loop Calibrator",
+      "page": 201,
+      "measurement": "electrical process",
+      "type": "process-calibrator",
+      "range": "DC mA loop measurement and simulation",
+      "accuracy": "0.01% of reading",
+      "overview": "Higher-accuracy member of Additel's loop calibrator series for process signal verification.",
+      "features": [
+        "Current source, simulate and measure",
+        "voltage measure",
+        "HART resistor"
+      ],
+      "official": "https://additel.com/product-detail.html/209-210-series-loop-calibrator/"
+    },
+    {
+      "model": "226",
+      "title": "Multifunction Process Calibrator",
+      "page": 204,
+      "measurement": "process electrical temperature pressure",
+      "type": "process-calibrator",
+      "range": "Electrical, RTD, TC and module-based pressure",
+      "accuracy": "Function-dependent (see specification table)",
+      "overview": "Handheld process calibrator for sourcing, simulating and measuring transmitter, sensor and electrical signals.",
+      "features": [
+        "Two pressure module ports",
+        "high-static differential support",
+        "USB-C and Bluetooth"
+      ],
+      "official": "https://additel.com/product-detail.html/226-multifunction-documenting-process-calibrator/"
+    },
+    {
+      "model": "226Ex",
+      "title": "Intrinsically Safe Multifunction Process Calibrator",
+      "page": 204,
+      "measurement": "process electrical temperature pressure",
+      "type": "process-calibrator",
+      "range": "Electrical, RTD, TC and module-based pressure",
+      "accuracy": "Ex configuration/function dependent",
+      "overview": "Intrinsically safe ADT226 process calibrator for approved hazardous-area field maintenance.",
+      "features": [
+        "ATEX model option",
+        "dual pressure module inputs",
+        "verify voltage-mode limitations"
+      ],
+      "official": "https://additel.com/product-detail.html/226-multifunction-documenting-process-calibrator/"
+    },
+    {
+      "model": "227Ex",
+      "title": "Intrinsically Safe Documenting Multifunction Process Calibrator",
+      "page": 212,
+      "measurement": "process electrical temperature pressure",
+      "type": "process-calibrator",
+      "range": "Electrical, RTD, TC and module-based pressure",
+      "accuracy": "Ex configuration/function dependent",
+      "overview": "Intrinsically safe documenting process calibrator in the ADT227 series with on-device task capabilities.",
+      "features": [
+        "HART support depends on model",
+        "documentation",
+        "field measurements"
+      ],
+      "official": "https://additel.com/product-detail.html/227-documenting-multifunction-documenting-process-calibrator/"
+    },
+    {
+      "model": "121",
+      "title": "Pneumatic Pressure Manifold",
+      "page": 130,
+      "measurement": "pressure",
+      "type": "pressure-accessory",
+      "range": "Up to 3,600 psi (250 bar)",
+      "accuracy": "Not a measurement instrument",
+      "overview": "Four-port Additel ADT121 manifold expanding pneumatic pressure connection points for multi-device calibrations.",
+      "features": [
+        "Four hand-tight quick connectors",
+        "integrated filter",
+        "verify thread options"
+      ],
+      "official": "https://additel.com/product-detail.html/12X-pressure-manifolds/"
+    },
+    {
+      "model": "123",
+      "title": "Hydraulic Pressure Manifold",
+      "page": 130,
+      "measurement": "pressure",
+      "type": "pressure-accessory",
+      "range": "Up to 15,000 psi (1,000 bar)",
+      "accuracy": "Not a measurement instrument",
+      "overview": "Four-port ADT123 manifold for distributing hydraulic pressure to multiple devices during calibration.",
+      "features": [
+        "High-pressure hydraulic service",
+        "four hand-tight quick connectors"
+      ],
+      "official": "https://additel.com/product-detail.html/12X-pressure-manifolds/"
+    },
+    {
+      "model": "100-FLT",
+      "title": "Pressure Calibration Filters",
+      "page": 131,
+      "measurement": "pressure",
+      "type": "pressure-accessory",
+      "range": "Pneumatic models to 1,000 psi; hydraulic to 10,000 psi",
+      "accuracy": "Filter rating varies by model",
+      "overview": "Replaceable particle filters used to reduce contamination in pneumatic and hydraulic calibration systems.",
+      "features": [
+        "ADT100-FLT-1K and ADT100-FLT-10K models",
+        "distinct media and safety limits"
+      ],
+      "official": "https://additel.com/product-detail.html/100-series-filters/"
+    },
+    {
+      "model": "102",
+      "title": "Pressure Adapters and Fittings",
+      "page": 133,
+      "measurement": "pressure",
+      "type": "pressure-accessory",
+      "range": "Fitting-specific pressure ratings",
+      "accuracy": "Not a measurement instrument",
+      "overview": "Additel adapter assortments for connecting NPT, BSP and metric calibration instruments.",
+      "features": [
+        "Check port type, gender, thread pitch and pressure class for each fitting"
+      ],
+      "official": "https://additel.com/product-detail.html/102-adapters/"
+    },
+    {
+      "model": "103",
+      "title": "Hand-Tight Quick Pressure Adapters",
+      "page": 133,
+      "measurement": "pressure",
+      "type": "pressure-accessory",
+      "range": "Selected fittings up to 15,000 psi",
+      "accuracy": "Not a measurement instrument",
+      "overview": "ADT103 hand-tight quick-connection adapters for common pressure test-port interfaces.",
+      "features": [
+        "1/4 NPT source",
+        "multiple female thread standards",
+        "pressure-rating review required"
+      ],
+      "official": "https://additel.com/product-detail.html/103-quick-connect-adapters/"
+    },
+    {
+      "model": "104-HP",
+      "title": "Ultra-High-Pressure Adapters",
+      "page": 134,
+      "measurement": "pressure",
+      "type": "pressure-accessory",
+      "range": "Model and material dependent",
+      "accuracy": "Not a measurement instrument",
+      "overview": "High-pressure adapters for specialized calibration connections requiring confirmed pressure compatibility.",
+      "features": [
+        "Check cone-and-thread compatibility",
+        "pressure and media ratings"
+      ],
+      "official": "https://additel.com/product-detail.html/104-high-pressure-adapters/"
+    },
+    {
+      "model": "100-HTK",
+      "title": "High-Pressure Hose Test Kits",
+      "page": 135,
+      "measurement": "pressure",
+      "type": "pressure-accessory",
+      "range": "8,000 or 15,000 psi hose kits",
+      "accuracy": "Not a measurement instrument",
+      "overview": "Five-foot hose assemblies for extending calibrated pressure connections from a bench or pump to the DUT.",
+      "features": [
+        "NPT/BSP/metric options",
+        "quick connectors",
+        "verify end fitting and hose rating"
+      ],
+      "official": "https://additel.com/product-detail.html/100-hose-test-kit/"
+    }
+  ]
+}

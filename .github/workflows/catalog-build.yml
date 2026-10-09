@@ -1,0 +1,48 @@
+name: Verify catalog product pages
+on:
+  pull_request:
+    paths:
+      - 'scripts/additel-catalog-data.json'
+      - 'scripts/build-additel-catalog.mjs'
+      - 'scripts/build-additel-pumps.mjs'
+      - 'package.json'
+      - 'products.html'
+      - '.github/workflows/catalog-build.yml'
+  push:
+    branches:
+      - feat/additel-2026-catalog-product-pages
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check catalog builder
+        run: node --check scripts/build-additel-catalog.mjs
+      - name: Build all static pages
+        run: npm run build
+      - name: Verify generated pages, gallery links and search coverage
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          const items=JSON.parse(fs.readFileSync('scripts/additel-catalog-data.json','utf8')).items;
+          const index=JSON.parse(fs.readFileSync('dist/search-index.json','utf8'));
+          const gallery=fs.readFileSync('dist/products.html','utf8');
+          for(const p of items){
+            const slug=(p.model.startsWith('AM')?'accumac-':'additel-')+p.model.toLowerCase();
+            const route='/products/'+slug;
+            const file='dist'+route+'.html';
+            if(!fs.existsSync(file))throw Error('Missing detail page: '+route);
+            const html=fs.readFileSync(file,'utf8');
+            if(!html.includes('Catalog page '+p.page)||!html.includes('Original catalog page'))throw Error('Missing catalog provenance: '+route);
+            if(!index.find(x=>x.url===route))throw Error('Not in search index: '+route);
+            if(!gallery.includes('data-detail="'+route+'"'))throw Error('Not in product gallery: '+route);
+          }
+          if(items.length<40)throw Error('Catalog inventory incomplete');
+          if(!index.find(x=>x.url==='/products/additel-adt997'))throw Error('Existing pump page missing');
+          if(!index.find(x=>x.url==='/pressure-gauges/additel-adt685'))throw Error('Existing gauge page missing');
+          console.log('Validated '+items.length+' new detail pages, linked gallery cards, search index and existing catalog families.');
+          NODE
