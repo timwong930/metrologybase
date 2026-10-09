@@ -42,7 +42,7 @@ for(const text of [
  'id="adt761a-models"','id="adt761a-accuracy"','id="adt761a-low"',
  'id="adt761a-port"','id="adt761a-part"','id="adt761a-copy"'
 ])assert.ok(page.includes(text),'Missing detail content: '+text);
-for(const text of ['state.accuracy','m.lowModules.includes','m.connection','renderSummary','navigator.clipboard'])assert.ok(js.includes(text),'Missing interaction: '+text);
+for(const text of ['state.accuracy','model().lowModules.includes','m.connection','renderSummary','navigator.clipboard'])assert.ok(js.includes(text),'Missing interaction: '+text);
 assert.ok(css.includes('@media') && css.length>3500);
 assert.ok(search.find(p=>p.url==='/products/additel-761a' && p.text.includes('761A-BP')));
 assert.ok(directory.includes('data-detail="/products/additel-761a"'));
