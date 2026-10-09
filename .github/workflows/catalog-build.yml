@@ -23,6 +23,10 @@ jobs:
         run: node --check scripts/build-additel-catalog.mjs
       - name: Build all static pages
         run: npm run build
+      - name: Verify 761A configurator options, page and scripts
+        run: |
+          node --check public/adt761a-configurator.js
+          npm run test:761a
       - name: Verify generated pages, gallery links and search coverage
         run: |
           node --input-type=module <<'NODE'

@@ -95,6 +95,11 @@ function page(item) {
 
 let count=0;
 for (const item of items) {
+  if (item.model === '761A') { // Hand-authored configurator is copied from products/ before this builder.
+    const detailed = path.join(productDir, 'additel-761a.html');
+    if (!fs.existsSync(detailed)) throw new Error('Missing dedicated ADT761A configurator page');
+    continue;
+  }
   const dest = path.join(productDir, slug(item)+'.html');
   if (fs.existsSync(dest)) throw new Error('Catalog generator would overwrite an existing detailed page: '+dest);
   fs.writeFileSync(dest,page(item),'utf8'); count++;
@@ -115,7 +120,7 @@ const cards = items.map(item=>{
   '<h3>'+label+'</h3><div class="product-type">'+data('title')+'</div><p>'+data('overview')+'</p>'+
   '<div class="card-meta"><span>'+data('range')+'</span></div>'+
   '<div class="best-for"><span>Catalog reference</span><strong>2026 · page '+item.page+'</strong></div>'+
-  '<div class="product-actions"><a class="detail-link" href="'+url+'">Review unit →</a></div></article>';
+  '<div class="product-actions"><a class="detail-link" href="'+url+'">'+(item.model==='761A'?'Configure & compare →':'Review unit →')+'</a></div></article>';
 }).join('\n');
 directory=directory.replace('</head>','<style>.catalog-card-photo{display:flex;align-items:center;justify-content:center;height:144px;overflow:hidden;background:#fff;border:1px solid #e4eaf2;border-radius:12px;margin:10px 0 14px}.catalog-card-photo img{display:block;max-width:100%;width:100%;height:139px;object-fit:contain;padding:7px}</style></head>');
 directory=directory.replace('<div class="product-grid" id="productGrid">','<div class="product-grid" id="productGrid">\n'+cards);
