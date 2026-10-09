@@ -1,5 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { loadSiteSettings } from './site-settings.mjs';
+
+const settings = loadSiteSettings();
 
 const dist = path.resolve('dist');
 
@@ -79,11 +82,20 @@ const htmlFiles = walk(dist).filter(function(file){ return file.endsWith('.html'
 const docs = htmlFiles.map(function(file) {
   let html = fs.readFileSync(file,'utf8');
   const url = urlFromFile(file);
-  const title = pageTitle(html).replace(/\s*[—|-]\s*MetrologyBase.*$/i,'').trim() || 'MetrologyBase';
+  const originalTitle = pageTitle(html);
+  let title = originalTitle;
+  for (const separator of [' — ', ' | ', ' - ']) {
+    const suffix = separator + settings.site.name;
+    if (originalTitle.endsWith(suffix)) {
+      title = originalTitle.slice(0, -suffix.length);
+      break;
+    }
+  }
+  title = title.trim() || settings.site.name;
   const description = meta(html,'description');
   const text = visibleText(html).slice(0,65000);
 
-  if (!/\/search\.js["']/.test(html)) {
+  if (settings.features?.globalSearch !== false && !/\/search\.js["']/.test(html)) {
     html = html.replace(/<\/body>/i,'<script defer src="/search.js"></script></body>');
     fs.writeFileSync(file,html);
   }
