@@ -111,7 +111,8 @@ const cards = items.map(item=>{
   const text=(display(item)+' '+item.title+' '+item.range+' '+item.accuracy+' '+item.overview+' '+item.features.join(' '));
   return '<article class="product-card" data-measurement="'+data('measurement')+'" data-brand="'+brand+'" data-equipment="'+data('type')+'" data-use="reference-calibration field-calibration lab-bench" data-environment="lab bench field" data-detail="'+url+'" data-search="'+escape(text)+'" tabindex="0" role="link" aria-label="Open '+label+' details">'+
   '<div class="product-top"><span class="brand-lockup"><span class="brand-pill">'+brand+'</span></span><span class="measurement-pill">'+escape(sectionType(item.measurement))+'</span></div>'+
-  '<div class="catalog-card-photo"><img src="'+escape(photoURL(item))+'" loading="lazy" decoding="async" width="250" height="125" alt="'+label+' product image"></div>'+\n  '<h3>'+label+'</h3><div class="product-type">'+data('title')+'</div><p>'+data('overview')+'</p>'+
+  '<div class="catalog-card-photo"><img src="'+escape(photoURL(item))+'" loading="lazy" decoding="async" width="250" height="125" alt="'+label+' product image"></div>'+
+  '<h3>'+label+'</h3><div class="product-type">'+data('title')+'</div><p>'+data('overview')+'</p>'+
   '<div class="card-meta"><span>'+data('range')+'</span></div>'+
   '<div class="best-for"><span>Catalog reference</span><strong>2026 · page '+item.page+'</strong></div>'+
   '<div class="product-actions"><a class="detail-link" href="'+url+'">Review unit →</a></div></article>';
