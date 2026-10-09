@@ -131,8 +131,9 @@ def main():
     doc=fitz.open(stream=downloaded,filetype="pdf")
     if len(doc)<229:
         raise RuntimeError(f"Unexpected edition: source PDF has only {len(doc)} pages")
-    if "2026" not in doc[0].get_text():
-        raise RuntimeError("Catalog edition changed: cover does not mention 2026")
+    toc_text = doc[3].get_text()
+    if "762W" not in toc_text and "762" not in toc_text:
+        raise RuntimeError("Catalog table of contents differs from the 2026 source. Image positions must be reverified.")
     OUTPUT.mkdir(parents=True,exist_ok=True)
     for index,(model,item) in enumerate(models.items(),1):
         xref,mask=locate_image(doc,item["page"],RECTS[model])
