@@ -37,7 +37,9 @@ jobs:
             const file='dist'+route+'.html';
             if(!fs.existsSync(file))throw Error('Missing detail page: '+route);
             const html=fs.readFileSync(file,'utf8');
-            if(!html.includes('Catalog page '+p.page)||!html.includes('Original catalog page'))throw Error('Missing catalog provenance: '+route);
+            if(!html.includes('Original catalog page') || !html.includes('2026 Product Catalog'))throw Error('Missing catalog provenance: '+route);
+            if(!html.includes('src="/additel-catalog/'+slug+'.jpg"'))throw Error('Missing local detail-page photograph: '+route);
+            if(!gallery.includes('src="/additel-catalog/'+slug+'.jpg"'))throw Error('Missing gallery photograph: '+route);
             if(!index.find(x=>x.url===route))throw Error('Not in search index: '+route);
             if(!gallery.includes('data-detail="'+route+'"'))throw Error('Not in product gallery: '+route);
           }
