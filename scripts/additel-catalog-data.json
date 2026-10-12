@@ -273,13 +273,16 @@
       "measurement": "pressure process",
       "type": "pressure-calibrator",
       "range": "Up to 60,000 psi (4,200 bar)",
-      "accuracy": "0.02% FS, 0.05% FS or 0.1% RD",
-      "overview": "Touchscreen digital pressure calibrator combining high-pressure measurement with electrical loop functions.",
+      "accuracy": "0.02% or 0.05% FS; 0.1% RD option on compatible ranges (pressure-dependent)",
+      "overview": "Advanced touchscreen pressure calibrator: measures pressure and transmitter mA/V output with 24 V loop power, optional HART communication and calibration task logging. External source required to generate pressure.",
       "features": [
-        "Built-in barometer",
-        "measures volts and mA",
-        "24 V loop power",
-        "HART option"
+        "3.4-inch color touchscreen and IP67 enclosure",
+        "Pressure reference sensor with built-in barometer; no internal pressure pump",
+        "DC current measurement ±30 mA and DC voltage measurement ±30 V",
+        "24 V ±1 V transmitter loop supply (30 mA maximum)",
+        "Optional HART transmitter communicator with device parameter and trim functions",
+        "Documenting tasks, simultaneous pressure and electrical data logging",
+        "USB-C and Bluetooth included; Wi-Fi or RS-232 optional"
       ],
       "official": "https://additel.com/product-detail.html/673-digital-pressure-calibrator/"
     },
