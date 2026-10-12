@@ -44,6 +44,8 @@
     .article-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
     .article-card{display:block;position:relative;min-height:270px;padding:28px;background:var(--paper);border:1px solid var(--line);border-radius:22px;color:inherit;text-decoration:none;transition:.23s ease}
     .article-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .article-card-875-photo{width:100%;height:164px;object-fit:contain;margin:17px 0 0;display:block;background:#f7f8fa;border:1px solid var(--line);border-radius:13px}
+    .article-card:has(.article-card-875-photo){min-height:430px}
     .article-card:hover h3{color:var(--blue)}
     .article-card-meta{font:500 11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.07em;color:#6f7b8e}
     .article-card h3{font:600 31px/1.08 'Fraunces',serif;letter-spacing:-.025em;margin:28px 0 12px;transition:.2s ease}
@@ -157,12 +159,13 @@
 
         <div class="article-grid" id="articleGrid">
           <a class="article-card" href="/how-to-use-additel-adt875-non-pc"
-             data-title="how to use additel 875 ADT875 dry well calibrator non pc standard 155 350 660 operation touchscreen setpoint temperature reference thermometer dehumidification safety"
+             data-title="illustrated photos pictures how to set up and use additel 875 ADT875 dry well calibrator non pc standard 155 350 660 touchscreen setpoint insert reference thermometer dehumidification safety"
              data-tags="temperature fundamentals">
-            <div class="article-card-meta">Temperature · How-to · Standard non-PC model</div>
-            <h3>How to use the ADT875 (non-PC)</h3>
-            <p>Real touchscreen steps: load the insert, set INT control, stabilize, compare with an external thermometer, document readings and shut down safely.</p>
-            <div class="article-card-footer"><span>Read operating guide</span><span aria-hidden="true">→</span></div>
+            <div class="article-card-meta">Temperature · Illustrated setup guide · Non-PC</div>
+            <img class="article-card-875-photo" src="https://d3ihv40z8hdxm.cloudfront.net/uploads/products/temperature-calibrators/additel-875-155/two_versions_of_875-ejs-200-2x_1631655884390-7861.jpeg" alt="Side-by-side ADT875 standard and PC model photograph" loading="lazy" decoding="async">
+            <h3>ADT875 setup: the illustrated non-PC guide</h3>
+            <p>Real equipment photos, seven operating steps, touchscreen diagrams, the correct insert, external reference readings, and safe shutdown.</p>
+            <div class="article-card-footer"><span>Explore illustrated guide</span><span aria-hidden="true">→</span></div>
           </a>
 
           <a class="article-card" href="/how-to-calibrate-pressure-transmitters-hart-4-20ma"
