@@ -95,9 +95,10 @@ function page(item) {
 
 let count=0;
 for (const item of items) {
-  if (item.model === '761A') { // Hand-authored configurator is copied from products/ before this builder.
-    const detailed = path.join(productDir, 'additel-761a.html');
-    if (!fs.existsSync(detailed)) throw new Error('Missing dedicated ADT761A configurator page');
+  if (item.model === '761A' || item.model === '673') { // Preserve hand-authored manufacturer-verified pages.
+    const detailedName = item.model === '673' ? 'additel-673.html' : 'additel-761a.html';
+    const detailed = path.join(productDir, detailedName);
+    if (!fs.existsSync(detailed)) throw new Error('Missing dedicated product page: ' + detailedName);
     continue;
   }
   const dest = path.join(productDir, slug(item)+'.html');
@@ -140,7 +141,8 @@ const existing = [
  'pressure-gauges/additel-adt681a.html','pressure-gauges/additel-adt685.html',
  'pressure-gauges/additel-adt686.html','products/additel-875.html',
  'products/additel-878.html','products/additel-835.html','products/additel-227.html',
- 'products/additel-760a-760s.html','products/additel-pressure-pumps.html'
+ 'products/additel-760a-760s.html','products/additel-pressure-pumps.html',
+ 'products/additel-673.html'
 ];
 const checks = {
  'pressure-gauges/additel-adt601ex.html':['0.5%','15,000'],
@@ -152,6 +154,7 @@ const checks = {
  'products/additel-878.html':['700'],
  'products/additel-835.html':['250'],
  'products/additel-227.html':['HART'],
+ 'products/additel-673.html':['HART','±30 mA','does not contain a pump'],
  'products/additel-760a-760s.html':['760A','760S']
 };
 for(const f of existing) {
