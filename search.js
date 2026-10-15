@@ -100,7 +100,9 @@
       return title.includes(term) || description.includes(term) ||
         keywords.includes(term) || body.includes(term);
     });
-    if (!allTerms) return 0;
+    const skuPrefix = doc.type === 'Adapter' &&
+      normalize(doc.partNumber).replace(/[^a-z0-9]/g,'').startsWith(compactQuery);
+    if (!allTerms && !skuPrefix) return 0;
 
     if (doc.type === 'Directory') score += 14;
     if (doc.type === 'Product') score += 2;
