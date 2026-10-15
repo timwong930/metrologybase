@@ -24,7 +24,11 @@
   kbd.textContent = isMac ? '⌘K' : 'Ctrl K';
 
   let index = null;
+  let indexPromise = null;
   let selected = -1;
+  let currentMatches = [];
+  let expanded = false;
+  const INITIAL_LIMIT = 10;
 
   function escapeHtml(value) {
     return String(value || '')
@@ -37,6 +41,7 @@
       .toLowerCase()
       .normalize('NFKD')
       .replace(/[\u0300-\u036f]/g,'')
+      .replace(/×/g,'x')
       .replace(/[^a-z0-9.%+\-\/\s]/g,' ')
       .replace(/\s+/g,' ')
       .trim();
@@ -61,28 +66,45 @@
   function scoreDoc(doc, query, terms) {
     const title = doc._title || normalize(doc.title);
     const description = doc._description || normalize(doc.description);
+    const keywords = doc._keywords || normalize(doc.keywords);
     const body = doc._body || normalize(doc.text);
     const normalizedQuery = normalize(query);
+    const compactQuery = normalizedQuery.replace(/[^a-z0-9]/g,'');
     let score = 0;
+
+    // Individual fittings should only appear when somebody is searching a
+    // concrete part number. Generic "Additel" searches belong to the directory.
+    if (doc.type === 'Adapter') {
+      if (!compactQuery.startsWith('adt100') || compactQuery.length < 8) return 0;
+      const compactSku = normalize(doc.partNumber).replace(/[^a-z0-9]/g,'');
+      if (compactSku === compactQuery) score += 400;
+      else if (compactSku.startsWith(compactQuery)) score += 170;
+    }
 
     if (title === normalizedQuery) score += 180;
     else if (title.startsWith(normalizedQuery)) score += 120;
     else if (title.includes(normalizedQuery)) score += 90;
 
     if (description.includes(normalizedQuery)) score += 45;
+    if (keywords.includes(normalizedQuery)) score += 65;
     if (body.includes(normalizedQuery)) score += 30;
 
     terms.forEach(function(term) {
       if (title.includes(term)) score += 32;
       if (description.includes(term)) score += 14;
+      if (keywords.includes(term)) score += 36;
       score += Math.min(20, frequency(body, term) * 4);
     });
 
     const allTerms = terms.every(function(term) {
-      return title.includes(term) || description.includes(term) || body.includes(term);
+      return title.includes(term) || description.includes(term) ||
+        keywords.includes(term) || body.includes(term);
     });
-    if (!allTerms) return 0;
+    const skuPrefix = doc.type === 'Adapter' &&
+      normalize(doc.partNumber).replace(/[^a-z0-9]/g,'').startsWith(compactQuery);
+    if (!allTerms && !skuPrefix) return 0;
 
+    if (doc.type === 'Directory') score += 14;
     if (doc.type === 'Product') score += 2;
     if (doc.url === location.pathname) score -= 3;
     return score;
@@ -129,16 +151,30 @@
 
   async function ensureIndex() {
     if (index) return index;
-    const response = await fetch('/search-index.json',{cache:'force-cache'});
-    if (!response.ok) throw new Error('Search index unavailable');
-    const raw = await response.json();
-    index = raw.map(function(doc) {
-      doc._title = normalize(doc.title);
-      doc._description = normalize(doc.description);
-      doc._body = normalize(doc.text);
-      return doc;
-    });
-    return index;
+    if (!indexPromise) {
+      // The catalog is rebuilt at deployment. Never reuse a stale index
+      // from a previous site version in the same browser.
+      indexPromise = fetch('/search-index.json', {cache:'no-store'})
+        .then(function(response) {
+          if (!response.ok) throw new Error('Search index unavailable');
+          return response.json();
+        })
+        .then(function(raw) {
+          index = raw.map(function(doc) {
+            doc._title = normalize(doc.title);
+            doc._description = normalize(doc.description);
+            doc._keywords = normalize(doc.keywords);
+            doc._body = normalize(doc.text);
+            return doc;
+          });
+          return index;
+        })
+        .catch(function(error) {
+          indexPromise = null;
+          throw error;
+        });
+    }
+    return indexPromise;
   }
 
   function closeResults() {
@@ -163,30 +199,38 @@
     selected = -1;
 
     if (!query.trim()) {
-      results.innerHTML = '<div class="global-search-empty"><strong>Search everything on MetrologyBase</strong><span>Try “0.01% full span”, “Autoclave”, “IP67”, “TUR”, or a model number.</span></div>';
+      results.innerHTML = '<div class="global-search-empty"><strong>Search all pages and products</strong><span>Try “Additel adapters”, “Autoclave”, “ADT100-HPM-HPM”, “IP67”, or “TUR”.</span></div>';
       results.hidden = false;
       input.setAttribute('aria-expanded','true');
       return;
     }
 
     if (!docs.length) {
-      results.innerHTML = '<div class="global-search-empty"><strong>No exact matches</strong><span>Try a broader term or another model/specification.</span></div>';
+      results.innerHTML = '<div class="global-search-empty"><strong>No matching pages or parts</strong><span>Try a broader keyword, alternate product name or exact part number.</span></div>';
       results.hidden = false;
       input.setAttribute('aria-expanded','true');
       return;
     }
 
-    results.innerHTML = docs.map(function(doc,i) {
-      const snippet = makeSnippet(doc,terms);
-      return '<a class="global-search-result" role="option" aria-selected="false" data-index="' + i + '" href="' + escapeHtml(doc.url) + '">' +
-        '<div class="global-search-result-top">' +
-          '<span class="global-search-type">' + escapeHtml(doc.type) + '</span>' +
-          '<span class="global-search-path">' + escapeHtml(doc.url) + '</span>' +
-        '</div>' +
-        '<strong>' + highlight(doc.title,terms) + '</strong>' +
-        '<p>' + highlight(snippet,terms) + '</p>' +
-      '</a>';
-    }).join('');
+    const visible = expanded ? docs : docs.slice(0, INITIAL_LIMIT);
+    results.innerHTML = '<div class="global-search-count">' +
+      'Found ' + docs.length + ' matching pages or parts' +
+      (docs.length > INITIAL_LIMIT && !expanded ? ' · showing first ' + INITIAL_LIMIT : '') +
+      '</div>' +
+      visible.map(function(doc,i) {
+        const snippet = makeSnippet(doc,terms);
+        return '<a class="global-search-result" role="option" aria-selected="false" data-index="' + i + '" href="' + escapeHtml(doc.url) + '">' +
+          '<div class="global-search-result-top">' +
+            '<span class="global-search-type">' + escapeHtml(doc.type) + '</span>' +
+            '<span class="global-search-path">' + escapeHtml(doc.url) + '</span>' +
+          '</div>' +
+          '<strong>' + highlight(doc.title,terms) + '</strong>' +
+          '<p>' + highlight(snippet,terms) + '</p>' +
+        '</a>';
+      }).join('') +
+      (docs.length > INITIAL_LIMIT && !expanded
+        ? '<button class="global-search-more" type="button">Show all ' + docs.length + ' results ↓</button>'
+        : '');
 
     results.hidden = false;
     input.setAttribute('aria-expanded','true');
@@ -199,24 +243,33 @@
     timer = setTimeout(async function() {
       try {
         const docs = await ensureIndex();
+        if (input.value !== query) return;
         if (!query.trim()) {
           render('',[]);
           return;
         }
         const terms = tokens(query);
-        const ranked = docs
+        currentMatches = docs
           .map(function(doc){ return {doc:doc,score:scoreDoc(doc,query,terms)}; })
           .filter(function(item){ return item.score > 0; })
           .sort(function(a,b){ return b.score-a.score || a.doc.title.localeCompare(b.doc.title); })
-          .slice(0,8)
           .map(function(item){ return item.doc; });
-        render(query,ranked);
+        expanded = false;
+        render(query,currentMatches);
       } catch (error) {
         results.innerHTML = '<div class="global-search-empty"><strong>Search is temporarily unavailable</strong><span>Please try again in a moment.</span></div>';
         results.hidden = false;
       }
     },70);
   }
+
+  results.addEventListener('click',function(event) {
+    const button = event.target.closest('.global-search-more');
+    if (!button) return;
+    expanded = true;
+    render(input.value,currentMatches);
+    results.scrollTop = 0;
+  });
 
   input.addEventListener('focus',function(){
     if (!input.value.trim()) render('',[]);
