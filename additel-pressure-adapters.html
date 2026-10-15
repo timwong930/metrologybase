@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <style>
+.kit-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:-5px 0 25px}.kit-photo{display:block;border:1px solid var(--line);border-radius:17px;overflow:hidden;background:var(--paper);text-decoration:none;color:var(--ink);transition:box-shadow .2s ease,transform .2s ease}.kit-photo:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.kit-photo img{width:100%;height:165px;object-fit:contain;background:white;display:block}.kit-photo-copy{padding:13px 15px}.kit-photo-copy strong{display:block;font-size:15px}.kit-photo-copy span{display:block;font-size:12px;color:#617187;margin-top:4px}.image-credit{display:block;margin:7px 0 0;color:#79869a;font-size:10px}.kit-photo:focus-visible{outline:3px solid var(--blue);outline-offset:3px}@media(max-width:700px){.kit-photo-grid{grid-template-columns:1fr}.kit-photo{display:grid;grid-template-columns:130px 1fr}.kit-photo img{height:100%;min-height:135px}.kit-photo-copy{align-self:center}}
 .adapter-hero{padding:62px 0 28px}.adapter-hero h1{font:700 clamp(42px,6vw,68px)/1 'Fraunces',serif;letter-spacing:-.04em;margin:0;max-width:1000px}.adapter-hero h1 em{font-style:normal;color:var(--blue)}
 .adapter-hero p{font-size:17px;line-height:1.7;color:#536176;max-width:880px;margin:18px 0 0}
 .adapter-hero a,.adapter-footer a{color:var(--blue);font-weight:650}
@@ -83,6 +84,11 @@
 <div class="summary-item"><strong>15,000 psi</strong><span>Most NPT / BSP / metric</span></div>
 <div class="summary-item"><strong>40,000 psi</strong><span>Selected ADT104-HP parts</span></div>
 <div class="summary-item"><strong>60,000 psi</strong><span>ADT100-HPM-HPM only</span></div>
+</div>
+<div class="kit-photo-grid shell" aria-label="Visual reference of Additel adapter kits">
+<a class="kit-photo" href="/additel-pressure-adapters?kit=ADT102#adapterTable"><img src="https://www.transcat.com/media/catalog/product/a/d/additel-102-1000x1000.jpg" alt="Additel ADT102 adapter kit opened to show threaded fittings and hose" width="360" height="165" loading="lazy"><div class="kit-photo-copy"><strong>ADT102 · Standard adapters</strong><span>25-part NPT source kit with metric and BSP conversions</span><span class="image-credit">Photo: Transcat (Additel distributor)</span></div></a>
+<a class="kit-photo" href="/additel-pressure-adapters?kit=ADT103-BSP#adapterTable"><img src="https://jmtest.com/wp-content/uploads/2017/04/6154-103.jpg" alt="Additel ADT103-BSP hand-tight quick fitting set in an open carrying case" width="360" height="165" loading="lazy"><div class="kit-photo-copy"><strong>ADT103 · Hand-tight quick</strong><span>10-piece sets available with NPT, BSP or M20 male ends</span><span class="image-credit">Photo: JM Test Systems (BSP variant)</span></div></a>
+<a class="kit-photo" href="/additel-pressure-adapters?kit=ADT104-HP#adapterTable"><img src="https://anaum.com/cdn/shop/files/ADT104_1000x.jpg?v=1713008857" alt="Additel ADT104-HP Autoclave high-pressure cone and thread adapter kit in a carrying case" width="360" height="165" loading="lazy"><div class="kit-photo-copy"><strong>ADT104-HP · Autoclave</strong><span>17 pieces, with selected fittings rated to 60,000 psi</span><span class="image-credit">Photo: Anaum (Additel distributor)</span></div></a>
 </div>
 <div class="adapter-note"><strong>Pressure and connection safety:</strong> “HP” and “Autoclave” mean the <strong>1/4 HP high-pressure cone-and-thread connection (Autoclave M-250-C)</strong> in this catalog; they do <em>not</em> mean all HP-ended adapters are rated to 60,000 psi. The adapter, mating port, seals, hoses, pump, and entire assembly must each be suitable for the service. The lowest-rated component limits the system. One listed hose-barb fitting is rated only <strong>150 psi</strong>. “BSP” is Additel’s catalog wording; confirm BSPP vs. BSPT and the sealing geometry with Additel rather than assuming interchangeability.</div>
 </section>
@@ -677,7 +683,7 @@
 <section class="adapter-footer shell">
 <h2>Which kit should I start with?</h2>
 <ul>
-<li><strong><a href="https://additel.com/product-detail.html/102-adapters/" target="_blank" rel="noopener noreferrer">ADT102</a> (25 pieces):</strong> Common threaded NPT, BSP, and metric conversions with a 1/4 NPT male source end; includes a hose, 90-degree quick connector, and low-pressure hose barb. Additel's current product page excludes pumps 949, 959, and 960; verify pump model.</li>
+<li><strong><a href="https://additel.com/product-detail.html/102-adapters/" target="_blank" rel="noopener noreferrer">ADT102</a> (25 pieces):</strong> Common threaded NPT, BSP, and metric conversions with a 1/4 NPT male source end; includes a hose, 90-degree quick connector, and low-pressure hose barb. Other source threads may be available by request; confirm SKU and pressure rating with Additel. Additel's current product page excludes pumps 949, 959, and 960; verify pump model.</li>
 <li><strong><a href="https://additel.com/product-detail.html/103-quick-connect-adapters/" target="_blank" rel="noopener noreferrer">ADT103-NPT, -BSP, -M20</a> (10 pieces each):</strong> Hand-tight female quick connectors with 1/4 NPT, 1/4 BSP, or M20×1.5 male pump ends, respectively. Additel excludes the 949 pump.</li>
 <li><strong><a href="https://additel.com/product-detail.html/104-high-pressure-adapters/" target="_blank" rel="noopener noreferrer">ADT104-HP</a> (17 pieces; 15 unique part numbers):</strong> 1/4 HP male (Autoclave M-250-C) source for Additel 949/959/960 pumps. Each adapter has its own 15,000, 40,000, or 60,000 psi maximum.</li>
 </ul>
@@ -697,7 +703,7 @@ var count=document.getElementById('adapterCount');
 var empty=document.getElementById('adapterEmpty');
 function norm(s){return String(s||'').toLowerCase().replace(/×/g,'x').replace(/autoclave/g,'hp').replace(/high[ -]?pressure/g,'hp').replace(/\b60k\b/g,'60000').replace(/\b40k\b/g,'40000').replace(/\b15k\b/g,'15000').replace(/[^a-z0-9]+/g,' ' ).trim();}
 function apply(){
- var parts=norm(query.value).split(/\s+/).filter(Boolean);
+ var parts=norm(query.value).split(/\s+/).filter(function(term){return term && term!=='to' && term!=='from' && term!=='with';});
  var kit=controls[0].value,from=controls[1].value,to=controls[2].value,gender=controls[3].value,style=controls[4].value,min=Number(controls[5].value);
  var total=0;
  rows.forEach(function(row){
