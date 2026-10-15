@@ -116,7 +116,7 @@ const docs = htmlFiles.map(function(file) {
 const adapterFile = path.join(dist,'additel-pressure-adapters.html');
 if (fs.existsSync(adapterFile)) {
   const adapterHtml = fs.readFileSync(adapterFile,'utf8');
-  const adapterRows = [...adapterHtml.matchAll(/<tr id="(part-[^"]+)" data-kit="([^"]+)" data-from="([^"]+)" data-to="([^"]+)" data-gender="([^"]+)" data-kind="([^"]+)" data-psi="(\\d+)" data-search="([^"]+)"/g)];
+  const adapterRows = [...adapterHtml.matchAll(/<tr id="(part-[^"]+)" data-kit="([^"]+)" data-from="([^"]+)" data-to="([^"]+)" data-gender="([^"]+)" data-kind="([^"]+)" data-psi="(\d+)" data-search="([^"]+)"/g)];
   for (const match of adapterRows) {
     const sku = match[1].slice(5).toUpperCase();
     const rating = Number(match[7]).toLocaleString('en-US') + ' psi';
