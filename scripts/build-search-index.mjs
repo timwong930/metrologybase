@@ -70,7 +70,7 @@ function urlFromFile(file) {
 
 function inferType(url,title) {
   if (url === '/') return 'Home';
-  if (url === '/products' || url === '/pressure-gauges' || url === '/articles') return 'Directory';
+  if (url === '/products' || url === '/pressure-gauges' || url === '/articles' || url === '/additel-pressure-adapters') return 'Directory';
   if (url.startsWith('/pressure-gauges/') || url.startsWith('/products/')) return 'Product';
   if (url === '/full-scale-vs-full-span') return 'Tool';
   if (/calculator/i.test(title)) return 'Tool';
@@ -93,6 +93,7 @@ const docs = htmlFiles.map(function(file) {
   }
   title = title.trim() || settings.site.name;
   const description = meta(html,'description');
+  const keywords = meta(html,'keywords');
   const text = visibleText(html).slice(0,65000);
 
   if (settings.features?.globalSearch !== false && !/\/search\.js["']/.test(html)) {
@@ -104,10 +105,35 @@ const docs = htmlFiles.map(function(file) {
     url:url,
     title:title,
     description:description,
+    keywords:keywords,
     type:inferType(url,title),
     text:text
   };
 });
+
+// Index each exact Additel adapter part number as a navigable search hit.
+// Broad queries still prioritize the directory; see the client-side ranking guard.
+const adapterFile = path.join(dist,'additel-pressure-adapters.html');
+if (fs.existsSync(adapterFile)) {
+  const adapterHtml = fs.readFileSync(adapterFile,'utf8');
+  const adapterRows = [...adapterHtml.matchAll(/<tr id="(part-[^"]+)" data-kit="([^"]+)" data-from="([^"]+)" data-to="([^"]+)" data-gender="([^"]+)" data-kind="([^"]+)" data-psi="(\\d+)" data-search="([^"]+)"/g)];
+  for (const match of adapterRows) {
+    const sku = match[1].slice(5).toUpperCase();
+    const rating = Number(match[7]).toLocaleString('en-US') + ' psi';
+    docs.push({
+      url:'/additel-pressure-adapters#' + match[1],
+      title:sku,
+      description:'Additel ' + match[2] + ' · ' + decodeEntities(match[6]) + ' · max ' + rating,
+      keywords:sku,
+      type:'Adapter',
+      partNumber:sku,
+      text:decodeEntities(match[8])
+    });
+  }
+  if (adapterRows.length !== 70) {
+    throw new Error('Expected 70 searchable Additel adapter part numbers; found ' + adapterRows.length);
+  }
+}
 
 fs.writeFileSync(path.join(dist,'search-index.json'),JSON.stringify(docs));
 console.log('Built full-text search index for ' + docs.length + ' pages.');
